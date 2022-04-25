@@ -1,0 +1,33 @@
+extends layout/app
+
+block page
+    include chunk/header
+    main.main
+      section.about
+        .swiper.mySwiper 
+          .swiper-wrapper 
+            .swiper-slide.about-card.about-card-first
+              .wrapper
+                .about-content
+                  h1.about-title Инвестиции в сферу ЖКХ и Энергетики
+                  p Жить на полную мощность
+                  button Подробнее
+            .swiper-slide.about-card.about-card-second
+              .wrapper
+                .about-content
+                  h1.about-title Инвестиции в сферу ЖКХ и Энергетики
+                  p Жить на полную мощность
+                  button Подробнее
+            .swiper-slide.about-card.about-card-third
+              .wrapper
+                .about-content 
+                  h1.about-title Инвестиции в сферу ЖКХ и Энергетики
+                  p Жить на полную мощность
+                  button Подробнее
+          .swiper-pagination
+      include chunk/activity
+      include chunk/news
+      include chunk/map
+
+    include chunk/footer
+
