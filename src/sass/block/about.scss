@@ -9,7 +9,7 @@
 .about-card-second {
   background: url("../img/Слайдер.png") no-repeat;
 }
-.about-card-third{
+.about-card-third {
   background: url("../img/Слайдер.png") no-repeat;
 }
 
@@ -22,10 +22,7 @@
   width: 100%;
 }
 
-
-
 .swiper-slide {
-
   .about-content {
     position: absolute;
     top: 250px;
@@ -47,24 +44,24 @@
     }
     button {
       margin-top: 32px;
-      background: #ffffff;
-      border-radius: 8px;
+      background: transparent;
       border-style: unset;
-      border: unset;
-      padding: 12px 28px;
+      border: 2px solid #ffffff;
+      border-radius: 6px;
+      padding: 12px 27px;
 
       letter-spacing: 1.5px;
       cursor: pointer;
       font-family: "Poppins", sans-serif;
       font-style: normal;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 16px;
       line-height: 140%;
-      color: rgba(58, 75, 49, 0.5);
-      transition: all .4s ease;
+      color: #ffffff;
+      transition: all 0.4s ease;
       &:hover {
         transform: scale(1.03);
-        color: black;
+        color: #ffffff;
       }
     }
   }
@@ -79,4 +76,11 @@
     border-radius: 3px !important;
     transform: unset !important;
   }
+}
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 30px;
+  left: -7px;
 }

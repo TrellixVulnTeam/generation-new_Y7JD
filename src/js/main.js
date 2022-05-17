@@ -96,7 +96,7 @@ function ready() {
     if (funcStatus === true) {
       let idx = isLoading;
       requestAnimationFrame(draw);
-      setAround((t / 25) % 100, idx);
+      setAround((t / 30) % 100, idx);
     }
   }
 }

@@ -17,8 +17,8 @@
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
-        line-height: 22px;
-        color: #29362f;
+        line-height: 25px;
+        color: #0B1600;
       }
     }
   }
@@ -44,11 +44,10 @@
     padding: 20px;
 
     img {
-      max-width: 230px;
       width: 100%;
       height: 100%;
-      max-height: 170px;
-
+      max-height: 175px;
+      object-fit: none;
       border-radius: 6px;
     }
     .card-title {
@@ -71,7 +70,7 @@
       font-weight: 600;
       font-size: 16px;
       line-height: 130%;
-      color: #d1764f;
+      color: #6B9B3C;
       margin-top: 30px;
     }
   }

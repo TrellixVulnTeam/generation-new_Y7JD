@@ -1,17 +1,15 @@
-@font-face {
-  font-family: 'Poppins-Regular';
-  src: url("./fonts/Poppins-Regular.ttf") format('truetype');
-}
+// @font-face {
+//   font-family: 'Poppins-Regular';
+//   src: url("./fonts/Poppins-Regular.ttf") format('truetype');
+// }
 
-@font-face {
-  font-family: 'Inter-Regular';
-  src: url("./fonts/Inter-Regular.ttf") format('truetype');
-}
-
+// @font-face {
+//   font-family: 'Inter-Regular';
+//   src: url("./fonts/Inter-Regular.ttf") format('truetype');
+// }
 
 $base-font-size: 22px;
 $color-gold: #f1cdb3;
-
 
 @mixin ph {
   @media (max-width: 1240px) {
@@ -33,6 +31,7 @@ body {
   height: auto;
   overflow-x: hidden;
   background: #FBFEFE;
+  letter-spacing: 1px;
   // @include ph {
   //     background-color: rgb(141, 138, 138);
   // }
@@ -71,7 +70,7 @@ body {
 }
 
 .arrow {
-  border: solid #d1764f;
+  border: solid #6B9B3C;
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 4px;

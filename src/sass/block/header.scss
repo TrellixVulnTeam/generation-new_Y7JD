@@ -95,8 +95,8 @@ $fs-15px: 15px;
         &::before {
           content: "";
           position: absolute;
-          left: -20px;
-          top: 0px;
+          left: -25px;
+          top: -2px;
           background: url("../img/point.svg") no-repeat;
           padding: 10px;
           background-size: contain;
@@ -126,7 +126,7 @@ $fs-15px: 15px;
         align-items: center;
         li {
           display: flex;
-          margin-right: 64px;
+          margin-right: 60px;
           a {
             color: $color-white;
             font-weight: 600;
