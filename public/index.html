@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <title>Генерация</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   </head>
@@ -28,9 +31,9 @@
           <hr>
           <div class="header-bottom"> 
             <div class="header-logo"><a href="#"> <img src="../img/Logo.svg" alt=""></a></div>
-            <nav class="header-nav"> 
-              <ul class="nav-items"> 
-                <li class="nav-item"><a class="nav-link" href="#">О группе компаний</a></li>
+            <nav class="header-nav">
+              <ul class="nav-items dropdown menu" data-dropdown-menu>
+                <li class="nav-item"><a class="nav-link link" href="#">О группе компаний</a></li>
                 <li class="nav-item"> <a class="nav-link" href="#">Проекты</a></li>
                 <li class="nav-item"> <a class="nav-link" href="#">Деятельность</a></li>
                 <li class="nav-item"> <a class="nav-link" href="#">Пресс-центр</a></li>
@@ -86,15 +89,13 @@
             </div>
             <div class="activity-swiper mySwiper1">
               <div class="swiper-wrapper"> 
-                <div class="swiper-slide activity-card">  <img src="./img/act-1.png" alt=""><span class="card-title">Сервисное</span><span class="card-p">Техническое и аварийно-диспетчерское обслужевание</span><a href="#">Подробнее<i class="arrow"></i></a></div>
-                <div class="swiper-slide activity-card">  <img src="https://dummyimage.com/230x169/000/fff" alt=""><span class="card-title">Сервисное</span><span class="card-p">Техническое и аварийно-диспетчерское обслужевание</span><a href="#">Подробнее<i class="arrow"></i></a></div>
-                <div class="swiper-slide activity-card">  <img src="https://dummyimage.com/230x169/000/fff" alt=""><span class="card-title">Сервисное</span><span class="card-p">Техническое и аварийно-диспетчерское обслужевание</span><a href="#">Подробнее<i class="arrow"></i></a></div>
-                <div class="swiper-slide activity-card">  <img src="https://dummyimage.com/230x169/000/fff" alt=""><span class="card-title">Сервисное</span><span class="card-p">Техническое и аварийно-диспетчерское обслужевание</span><a href="#">Подробнее<i class="arrow"></i></a></div>
-                <div class="swiper-slide activity-card">  <img src="https://dummyimage.com/230x169/000/fff" alt=""><span class="card-title">Сервисное</span><span class="card-p">Техническое и аварийно-диспетчерское обслужевание</span><a href="#">Подробнее<i class="arrow"></i></a></div>
-                <div class="swiper-slide activity-card">  <img src="https://dummyimage.com/230x169/000/fff" alt=""><span class="card-title">Сервисное</span><span class="card-p">Техническое и аварийно-диспетчерское обслужевание</span><a href="#">Подробнее<i class="arrow"></i></a></div>
-                <div class="swiper-slide activity-card">  <img src="https://dummyimage.com/230x169/000/fff" alt=""><span class="card-title">Сервисное</span><span class="card-p">Техническое и аварийно-диспетчерское обслужевание</span><a href="#">Подробнее<i class="arrow"></i></a></div>
-                <div class="swiper-slide activity-card">  <img src="https://dummyimage.com/230x169/000/fff" alt=""><span class="card-title">Сервисное</span><span class="card-p">Техническое и аварийно-диспетчерское обслужевание</span><a href="#">Подробнее<i class="arrow"></i></a></div>
-                <div class="swiper-slide activity-card">  <img src="https://dummyimage.com/230x169/000/fff" alt=""><span class="card-title">Сервисное</span><span class="card-p">Техническое и аварийно-диспетчерское обслужевание</span><a href="#">Подробнее<i class="arrow"></i></a></div>
+                <div class="swiper-slide activity-card">  <img src="../img/activity/сервисное.png" alt=""><span class="card-title">Сервисное</span><span class="card-p">Техническое и аварийно-диспетчерское обслужевание</span><a href="#">Подробнее<i class="arrow"></i></a></div>
+                <div class="swiper-slide activity-card">  <img src="../img/activity/консультации.png" alt=""><span class="card-title">Консультации</span><span class="card-p">Решим существующие проблемы фирмы</span><a href="#">Подробнее<i class="arrow"></i></a></div>
+                <div class="swiper-slide activity-card">  <img src="../img/activity/ивестиции.png" alt=""><span class="card-title">Инвестиции</span><span class="card-p">Концессионные соглашения</span><a href="#">Подробнее<i class="arrow"></i></a></div>
+                <div class="swiper-slide activity-card">  <img src="../img/activity/капстон.png" alt=""><span class="card-title">Capstone</span><span class="card-p">Газовые микротурбинные установки</span><a href="#">Подробнее<i class="arrow"></i></a></div>
+                <div class="swiper-slide activity-card">  <img src="../img/activity/проектирование.png" alt=""><span class="card-title">Проектирование</span><span class="card-p">Изыскательские и проектные работы</span><a href="#">Подробнее<i class="arrow"></i></a></div>
+                <div class="swiper-slide activity-card">  <img src="../img/activity/теплоснабжение.png" alt=""><span class="card-title">Теплоснабжение</span><span class="card-p">Эксплуатация котельных</span><a href="#">Подробнее<i class="arrow"></i></a></div>
+                <div class="swiper-slide activity-card">  <img src="../img/activity/ниокр.png" alt=""><span class="card-title">НИОКР</span><span class="card-p">Научно-исследовательские и опытно-конструкт-е работы</span><a href="#">Подробнее<i class="arrow"></i></a></div>
               </div>
               <div class="swiper-pagination1"></div>
             </div>

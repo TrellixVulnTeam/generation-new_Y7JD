@@ -150,3 +150,4 @@ function closeInfo(idx) {
   // beforeElemIdx = idx;
   // нужно изменить beforeElemIdx на только что нажатый элемент
 }
+

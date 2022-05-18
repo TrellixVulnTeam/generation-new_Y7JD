@@ -6,7 +6,7 @@
     padding: 42px 0 10px 0;
     color: #ffffff;
     .footer-top__block {
-      padding-bottom: 47px;
+      padding-bottom: 36px;
       .footer__list-items {
         display: flex;
         align-items: center;
@@ -48,6 +48,7 @@
                 line-height: 120%;
                 text-align: center;
                 color: #ffffff;
+                white-space: nowrap;
               }
             }
           }

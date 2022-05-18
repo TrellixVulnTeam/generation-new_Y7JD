@@ -5,14 +5,14 @@ $white: white;
   width: 100%;
   height: auto;
   .news-content {
-    padding: 82px 0 60px 0;
+    padding: 68px 0 60px 0;
     .title-block {
       display: flex;
       justify-content: space-between;
       align-items: center;
       .all-news {
         a {
-          color: #d1764f;
+          color: #6B9B3C;
           font-weight: 600;
           font-size: 16px;
           line-height: 140%;
@@ -59,12 +59,6 @@ $white: white;
             overflow: hidden;
             height: 50px;
             width: 100%;
-            // &:active, &:hover {
-            //   overflow: visible;
-            //   position: relative;
-            //   height: auto;
-            //   width: 100%;
-            // }
           }
         }
 
@@ -86,6 +80,9 @@ $white: white;
             &:first-child {
               padding-right: 10px;
               border-right: 2px solid #05111B;
+            }
+            &:last-child {
+              color: #6B9B3C;
             }
           }
         }
