@@ -38,8 +38,11 @@ body {
   margin: 0 auto;
   @media screen and (max-width: 1200px) {
     padding: 0 50px;
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 470px) {
       padding: 0 24px;
+      @media screen and (max-width: 375px) {
+        padding: 0 14px;
+      }
     }
   }
 }
@@ -63,7 +66,12 @@ body {
     line-height: 140%;
     color: #6b9b3c;
     text-transform: none;
-    
+    @include l {
+      font-size: 32px;
+      @include m-small {
+        font-size: 24px;
+      }
+    }
   }
 }
 

@@ -9,9 +9,32 @@ let swiper1 = new Swiper(".mySwiper1", {
     el: ".swiper-pagination1",
     type: "progressbar",
   },
-  spaceBetween: 20,
-  speed: 100,
-  slidesPerView: 4,
+  // freeMode: true,
+  // spaceBetween: 20,
+  // speed: 100,
+  // slidesPerView: 4,
+  breakpoints: {
+    // 320: {
+    //   slidesPerView: 2,
+    //   spaceBetween: 20,
+    // },
+    // 480: {
+    //   slidesPerView: 3,
+    //   spaceBetween: 30,
+    // },
+    // 640: {
+    //   slidesPerView: 4,
+    //   spaceBetween: 40,
+    // },
+    // 1014: {
+    //   slidesPerView: 1,
+    //   spaceBetween: 40,
+    // },
+    // 1014: {
+    //   slidesPerView: 3,
+    //   spaceBetween: 30,
+    // }
+  },
 });
 
 var swiper2 = new Swiper(".mySwiper2", {
@@ -61,7 +84,6 @@ function addCircle(idx) {
 }
 
 function ready() {
-
   function setAround(percent, idx) {
     removeCircle();
     let beforeElemIdx;
@@ -150,4 +172,3 @@ function closeInfo(idx) {
   // beforeElemIdx = idx;
   // нужно изменить beforeElemIdx на только что нажатый элемент
 }
-

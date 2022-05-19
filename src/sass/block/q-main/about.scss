@@ -1,3 +1,5 @@
+@import "media-mixin.scss";
+
 .about {
   width: 100%;
   height: auto;
@@ -20,19 +22,41 @@
   height: 100%;
   min-height: 650px;
   width: 100%;
+  @include xxs {
+    min-height: 440px;
+  }
 }
 
 .swiper-slide {
   .about-content {
     position: absolute;
     top: 250px;
+    @include m-small {
+      left: 40px;
+      @include xxs {
+        left: unset;
+        top: 133px;
+      }
+    }
     .about-title {
       letter-spacing: 1.5px;
       font-weight: 700;
       font-size: 40px;
       line-height: 142%;
       color: #ffffff;
-      border-bottom: 2px solid #77b946;
+      border-bottom: 3px solid #77b946;
+      padding-bottom: 8px;
+      @include l {
+        font-size: 36px;
+        line-height: 120%;
+        width: clamp(300px, 83.5vw, 750px);
+        @include m-small {
+          font-size: 24px;
+          @include xxs {
+            width: clamp(289px, 83.5vw, 750px);
+          }
+        }
+      }
     }
     p {
       margin-top: 16px;
@@ -41,6 +65,12 @@
       font-size: 20px;
       line-height: 140%;
       color: #ffffff;
+      @include m-small {
+        font-size: 20px;
+        @include xxs {
+          font-size: 18px;
+        }
+      }
     }
     button {
       margin-top: 32px;
@@ -59,6 +89,12 @@
       line-height: 140%;
       color: #ffffff;
       transition: all 0.4s ease;
+      @include m-small {
+        font-size: 14px;
+        @include xxs {
+          margin-top: 24px;
+        }
+      }
       &:hover {
         transform: scale(1.03);
         color: #ffffff;
@@ -75,6 +111,10 @@
     background: #ffffff !important;
     border-radius: 3px !important;
     transform: unset !important;
+    @include xxs {
+      width: 36px !important;
+      height: 4px !important;
+    }
   }
 }
 .swiper-horizontal > .swiper-pagination-bullets,
@@ -83,4 +123,7 @@
 .swiper-pagination-fraction {
   bottom: 30px;
   left: -7px;
+  @include xxs {
+    bottom: 23px;
+  }
 }

@@ -29,6 +29,18 @@
   }
 }
 
+@mixin m-small {
+  @media (max-width: 560px) {
+    @content;
+  }
+}
+
+@mixin xxs-big {
+  @media (max-width: 470px) {
+    @content;
+  }
+}
+
 @mixin xxs {
   @media (max-width: 425px) {
     @content;

@@ -13,38 +13,6 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   </head>
   <body> 
-    <header class="header">
-      <div class="wrapper"> 
-        <div class="header-content"> 
-          <div class="header-top"> 
-            <div class="header-top__companys">
-              <div class="dropdown"><a class="dropbtn">Компании</a>
-                <div class="drop-content" id="dropdown"> <a href="#">first</a><a href="#">second</a><a href="#">third</a></div>
-              </div>
-            </div>
-            <ul class="header-top__nav"> 
-              <li class="top-nav__item phone"><a href="tel: 89998003344">+ 7 (4112) 31-84-40</a></li>
-              <li class="top-nav__item mail"> <a href="mailto: dsadsa@mai.ru">info@dvenergy.pro</a></li>
-              <li class="top-nav__item point"><a href="#">Птицефабрика микрорайон</a></li>
-            </ul>
-          </div>
-          <hr>
-          <div class="header-bottom"> 
-            <div class="header-logo"><a href="index.html"> <img src="../img/Logo.svg" alt=""></a></div>
-            <nav class="header-nav">
-              <ul class="nav-items dropdown menu" data-dropdown-menu>
-                <li class="nav-item"><a class="nav-link link" href="about-companys.html">О группе компаний</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Проекты</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Деятельность</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Пресс-центр</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Контакты</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#"> </a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
     <main class="main">
       <section class="about">
         <div class="swiper mySwiper"> 
@@ -85,17 +53,24 @@
           <div class="activity-content">
             <div class="title-block"> 
               <div class="title">     <span>Виды деятельности</span></div>
-              <div class="activity-descr"> <span>Все наши деятельности, будь то строительство, теплоснабжение, производство направлены на выполнение высококачественного проекта в кратчайшие сроки.</span></div>
+              <div class="activity-descr"> <span>Все наши деятельности, будь то строительство, теплоснабжение, производство направлены на выполнение высококачественного проекта в кратчайшие сроки.</span><span>Все наши деятельности направлены на выполнение проекта в кратчайшие сроки.</span></div>
             </div>
             <div class="activity-swiper mySwiper1">
               <div class="swiper-wrapper"> 
-                <div class="swiper-slide activity-card">  <img src="../img/activity/сервисное.png" alt=""><span class="card-title">Сервисное</span><span class="card-p">Техническое и аварийно-диспетчерское обслужевание</span><a href="#">Подробнее<i class="arrow"></i></a></div>
-                <div class="swiper-slide activity-card">  <img src="../img/activity/консультации.png" alt=""><span class="card-title">Консультации</span><span class="card-p">Решим существующие проблемы фирмы</span><a href="#">Подробнее<i class="arrow"></i></a></div>
-                <div class="swiper-slide activity-card">  <img src="../img/activity/ивестиции.png" alt=""><span class="card-title">Инвестиции</span><span class="card-p">Концессионные соглашения</span><a href="#">Подробнее<i class="arrow"></i></a></div>
-                <div class="swiper-slide activity-card">  <img src="../img/activity/капстон.png" alt=""><span class="card-title">Capstone</span><span class="card-p">Газовые микротурбинные установки</span><a href="#">Подробнее<i class="arrow"></i></a></div>
-                <div class="swiper-slide activity-card">  <img src="../img/activity/проектирование.png" alt=""><span class="card-title">Проектирование</span><span class="card-p">Изыскательские и проектные работы</span><a href="#">Подробнее<i class="arrow"></i></a></div>
-                <div class="swiper-slide activity-card">  <img src="../img/activity/теплоснабжение.png" alt=""><span class="card-title">Теплоснабжение</span><span class="card-p">Эксплуатация котельных</span><a href="#">Подробнее<i class="arrow"></i></a></div>
-                <div class="swiper-slide activity-card">  <img src="../img/activity/ниокр.png" alt=""><span class="card-title">НИОКР</span><span class="card-p">Научно-исследовательские и опытно-конструкт-е работы</span><a href="#">Подробнее<i class="arrow"></i></a></div>
+                <div class="swiper-slide activity-card">  <a class="card-content" href="#"><img src="../img/activity/сервисное.png" alt=""><span class="card-title">Сервисное</span>
+                    <p class="card-p">Техническое и аварийно-диспетчерское обслужевание</p><a class="card-link" href="#">Подробнее<i class="arrow"></i></a></a></div>
+                <div class="swiper-slide activity-card">  <a class="card-content" href="#"><img src="../img/activity/консультации.png" alt=""><span class="card-title">Консультации</span>
+                    <p class="card-p">Решим существующие проблемы фирмы</p><a class="card-link" href="#">Подробнее<i class="arrow"></i></a></a></div>
+                <div class="swiper-slide activity-card">  <a class="card-content" href="#"><img src="../img/activity/ивестиции.png" alt=""><span class="card-title">Инвестиции</span>
+                    <p class="card-p">Концессионные соглашения</p><a class="card-link" href="#">Подробнее<i class="arrow"></i></a></a></div>
+                <div class="swiper-slide activity-card">  <a class="card-content" href="#"><img src="../img/activity/капстон.png" alt=""><span class="card-title">Capstone</span>
+                    <p class="card-p">Газовые микротурбинные установки</p><a class="card-link" href="#">Подробнее<i class="arrow"></i></a></a></div>
+                <div class="swiper-slide activity-card"> <a class="card-content" href="#"> <img src="../img/activity/проектирование.png" alt=""><span class="card-title">Проектирование</span>
+                    <p class="card-p">Изыскательские и проектные работы</p><a class="card-link" href="#">Подробнее<i class="arrow"></i></a></a></div>
+                <div class="swiper-slide activity-card">  <a class="card-content" href="#"><img src="../img/activity/теплоснабжение.png" alt=""><span class="card-title">Теплоснабжение</span>
+                    <p class="card-p">Эксплуатация котельных</p><a class="card-link" href="#">Подробнее<i class="arrow"></i></a></a></div>
+                <div class="swiper-slide activity-card">  <a class="card-content" href="#"><img src="../img/activity/ниокр.png" alt=""><span class="card-title">НИОКР</span>
+                    <p class="card-p">Научно-исследовательские и опытно-конструкт-е работы</p><a class="card-link" href="#">Подробнее<i class="arrow"></i></a></a></div>
               </div>
               <div class="swiper-pagination1"></div>
             </div>

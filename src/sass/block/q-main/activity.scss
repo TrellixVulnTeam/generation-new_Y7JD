@@ -1,7 +1,8 @@
+@import "media-mixin.scss";
+
 .activity {
   padding: 100px 0 26px 0;
-  background: #FBFEFE;
-
+  background: #fbfefe;
 }
 
 .activity-content {
@@ -17,9 +18,23 @@
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
-        line-height: 25px;
-        color: #0B1600;
+        line-height: 140%;
+        color: #0b1600;
         letter-spacing: 0.5px;
+        &:first-child {
+          @include xxs-big {
+            display: none;
+          }
+        }
+        &:last-child {
+          display: none;
+          @include xxs-big {
+            display: inline-block;
+          }
+        }
+        @include l {
+          letter-spacing: 0;
+        }
       }
     }
   }
@@ -33,46 +48,57 @@
     background: #ffffff;
     border: 1px solid #d6e9ec;
     box-shadow: 0px 4px 16px rgba(17, 79, 92, 0.1);
-    border-radius: 12px;
+    border-radius: 6px;
 
-    max-width: 271px;
-    width: 100%;
+    // width: 271px !important;
     height: auto;
 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: space-between;
     padding: 20px;
-
-    img {
-      width: 100%;
-      height: 100%;
-      max-height: 175px;
-      object-fit: none;
-      border-radius: 6px;
+    @include l {
+      // width: 250px !important;
     }
-    .card-title {
-      display: inline-block;
-      margin: 16px 0 10px 0;
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 140%;
-      color: #0B1600;
+    .card-content {
+      img {
+        width: 100%;
+        height: 100%;
+        max-height: 175px;
+        object-fit: none;
+        border-radius: 6px;
+        @include m-small {
+          max-height: 116px;
+        }
+      }
+      .card-title {
+        display: inline-block;
+        margin: 16px 0 10px 0;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 140%;
+        color: #0b1600;
+      }
+      .card-p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        color: #0b1600;
+        @include xxs {
+          letter-spacing: 0;
+        }
+      }
     }
-
-    .card-p {
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 130%;
-      color: #0B1600;
-    }
-
-    a {
+    .card-link {
       font-weight: 600;
       font-size: 16px;
       line-height: 130%;
-      color: #6B9B3C;
+      color: #6b9b3c;
       margin-top: 30px;
+      @include l {
+        display: none;
+      }
     }
   }
 }
@@ -85,7 +111,7 @@
   bottom: -52px !important;
   top: unset !important;
   border-radius: 4px !important;
-  background: #CADFE2!important;
+  background: #cadfe2 !important;
   box-shadow: 0px 4px 16px rgba(17, 79, 92, 0.1) !important;
   span {
     background: #8bacb2 !important;
