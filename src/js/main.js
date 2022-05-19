@@ -10,14 +10,14 @@ let swiper1 = new Swiper(".mySwiper1", {
     type: "progressbar",
   },
   // freeMode: true,
-  // spaceBetween: 20,
-  // speed: 100,
-  // slidesPerView: 4,
+  spaceBetween: 20,
+  centeredSlides: true,
+  slidesPerView: "auto",
   breakpoints: {
-    // 320: {
-    //   slidesPerView: 2,
-    //   spaceBetween: 20,
-    // },
+    425: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+    },
     // 480: {
     //   slidesPerView: 3,
     //   spaceBetween: 30,
