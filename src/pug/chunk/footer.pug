@@ -4,7 +4,7 @@ footer.footer
       .footer-top__block
         .footer__list-items 
           .footer-logo 
-            a(href="#")
+            a(href="index.html")
               img(src="../img/Logo.svg", alt="")
             p Это сплоченная сильная команда. Мы создаем автономные электростанции, сопровождая и обслуживая их с гарантией
           .footer-nav
@@ -20,13 +20,9 @@ footer.footer
               li 
                 a(href="#") Контакты
           .footer-contacts 
-            ul.footer-contacts__list
-              li.phone
-                a(href="tel: 89998003344") + 7 (4112) 31-84-40
-              li.mail 
-                a(href="mailto: dsadsa@mai.ru") info@dvenergy.pro
-              li.point
-                a(href="#") Птицефабрика микрорайон
+            include components/contacts
+          .space
+          .space
       hr
       .footer-lower__block
         .footer-date 

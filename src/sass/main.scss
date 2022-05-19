@@ -1,12 +1,3 @@
-// @font-face {
-//   font-family: 'Poppins-Regular';
-//   src: url("./fonts/Poppins-Regular.ttf") format('truetype');
-// }
-
-// @font-face {
-//   font-family: 'Inter-Regular';
-//   src: url("./fonts/Inter-Regular.ttf") format('truetype');
-// }
 
 $base-font-size: 22px;
 $color-gold: #f1cdb3;
@@ -19,6 +10,7 @@ $color-gold: #f1cdb3;
 
 
 @import "block/reset.scss";
+@import "media-mixin.scss";
 
 html {
   scroll-behavior: smooth;
@@ -31,7 +23,7 @@ body {
   height: auto;
   overflow-x: hidden;
   background: #FBFEFE;
-  // letter-spacing: 1px;
+  letter-spacing: 1px;
   // @include ph {
   //     background-color: rgb(141, 138, 138);
   // }
@@ -44,6 +36,12 @@ body {
   padding: 0 70px;
   height: auto;
   margin: 0 auto;
+  @media screen and (max-width: 1200px) {
+    padding: 0 50px;
+    @media screen and (max-width: 425px) {
+      padding: 0 24px;
+    }
+  }
 }
 
 .button {
@@ -80,12 +78,10 @@ body {
 
 @import "block/header.scss";
 
-@import "block/about.scss";
-
-@import "block/activity.scss";
-
-@import "block/news.scss";
-
-@import "block/map.scss";
+// MAIN PAGE SCSS
+@import "block/q-main/about.scss";
+@import "block/q-main/activity.scss";
+@import "block/q-main/news.scss";
+@import "block/q-main/map.scss";
 
 @import "block/footer.scss";

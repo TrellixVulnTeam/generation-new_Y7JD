@@ -124,9 +124,10 @@ $fs-15px: 15px;
       .nav-items {
         display: flex;
         align-items: center;
+        gap: 59px;
         li {
           display: flex;
-          margin-right: 60px;
+          // margin-right: 60px;
           a {
             color: $color-white;
             font-weight: 600;
@@ -157,5 +158,12 @@ hr {
     .drop-content {
       display: block;
     }
+  }
+}
+
+.is-dropdown-submenu {
+
+  a {
+    color: black !important;
   }
 }

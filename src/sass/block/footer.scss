@@ -1,3 +1,6 @@
+@import "media-mixin.scss";
+@import "./components-style/contacts.scss";
+
 .footer {
   width: 100%;
   height: auto;
@@ -6,12 +9,38 @@
     padding: 42px 0 10px 0;
     color: #ffffff;
     .footer-top__block {
-      padding-bottom: 36px;
+      padding-bottom: 56px;
+      @include xxs {
+        padding-bottom: 39px;
+      }
       .footer__list-items {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 30px;
+        @include l {
+          gap: 10px;
+          @include xxm {
+            flex-wrap: wrap;
+            justify-content: unset;
+            gap: 41px;
+            @include m-670 {
+              flex-direction: column;
+              align-items: flex-start;
+            }
+          }
+        }
         .footer-logo {
-          margin-right: 99px;
+          a {
+            display: inline-block;
+            @include xl {
+              max-width: 200px;
+            }
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
           p {
             max-width: 241px;
             width: 100%;
@@ -21,15 +50,22 @@
             font-size: 14px;
             line-height: 140%;
             margin-top: 16px;
+            letter-spacing: 0;
+            opacity: .8;
+            @include xl {
+              min-width: 240px;
+            }
           }
         }
 
         .footer-nav {
-          margin-right: 120px;
           max-width: 288px;
           width: 100%;
           max-height: 140px;
           height: 100%;
+          @include m-670 {
+            max-height: unset;
+          }
           ul {
             display: flex;
             flex-wrap: wrap;
@@ -39,6 +75,11 @@
             max-height: 140px;
             height: 100%;
             gap: 40px;
+            @include m-670 {
+              flex-wrap: unset;
+              gap: 30px;
+              max-height: unset;
+            }
             li {
               max-width: 165px;
               a {
@@ -49,8 +90,37 @@
                 text-align: center;
                 color: #ffffff;
                 white-space: nowrap;
+                @include l {
+                  font-size: 14px;
+                }
               }
             }
+          }
+        }
+
+        .footer-contacts {
+          ul {
+            flex-direction: column;
+            gap: 33px;
+            @include l {
+              gap: 31px;
+            }
+            li {
+              a {
+                @include l {
+                  font-size: 14px;
+                  @include xxs {
+                    white-space: normal;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .space {
+          @include xl {
+            display: none;
           }
         }
       }
@@ -62,75 +132,26 @@
   }
 }
 
-.footer-contacts__list {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 40px;
-
-  li {
-    position: relative;
-    margin-right: 55px;
-    &:last-child {
-      margin-right: unset;
-    }
-    a {
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 120%;
-      color: #ffffff;
-    }
-  }
-  .phone {
-    &::before {
-      content: "";
-      position: absolute;
-      left: -26px;
-      top: 0;
-      background: url("../img/phone.svg") no-repeat;
-      padding: 9px;
-      background-size: contain;
-    }
-  }
-  .mail {
-    &::before {
-      content: "";
-      position: absolute;
-      left: -27px;
-      top: 0px;
-      background: url("../img/mail.svg") no-repeat;
-      padding: 10px;
-      background-size: contain;
-    }
-  }
-  .point {
-    &::before {
-      content: "";
-      position: absolute;
-      left: -24px;
-      top: 0px;
-      background: url("../img/point.svg") no-repeat;
-      padding: 10px;
-      background-size: contain;
-    }
-  }
-}
-
 .footer-lower__block {
   padding-top: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @include xm {
+    flex-direction: column-reverse;
+    gap: 28px;
+  }
   .footer-date {
+    text-align: center;
     span {
-      font-family: 'Inter', sans-serif;
+      font-family: "Inter", sans-serif;
       font-weight: 400;
       font-size: 12px;
       line-height: 140%;
+      
     }
   }
   .footer__social-icons {
-
     ul {
       display: flex;
       gap: 24px;
