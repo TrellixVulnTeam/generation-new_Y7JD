@@ -70,6 +70,7 @@ body {
       font-size: 32px;
       @include m-small {
         font-size: 24px;
+        letter-spacing: normal;
       }
     }
   }

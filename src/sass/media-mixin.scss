@@ -18,6 +18,11 @@
     @content;
   }
 }
+@mixin m-950 {
+  @media (max-width: 950px) {
+    @content;
+  }
+}
 @mixin xm {
   @media (max-width: 768px) {
     @content;

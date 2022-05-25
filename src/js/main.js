@@ -9,31 +9,33 @@ let swiper1 = new Swiper(".mySwiper1", {
     el: ".swiper-pagination1",
     type: "progressbar",
   },
-  // freeMode: true,
   spaceBetween: 20,
-  centeredSlides: true,
   slidesPerView: "auto",
   breakpoints: {
-    425: {
-      slidesPerView: 4,
-      spaceBetween: 20,
+    475: {
+      centeredSlides: true,
     },
-    // 480: {
-    //   slidesPerView: 3,
-    //   spaceBetween: 30,
-    // },
-    // 640: {
-    //   slidesPerView: 4,
-    //   spaceBetween: 40,
-    // },
-    // 1014: {
-    //   slidesPerView: 1,
-    //   spaceBetween: 40,
-    // },
-    // 1014: {
-    //   slidesPerView: 3,
-    //   spaceBetween: 30,
-    // }
+    752: {
+      slidesPerView: "auto",
+    },
+    880: {
+      slidesPerView: 2.5,
+    },
+    960: {
+      slidesPerView: 3,
+    },
+    1024: {
+      slidesPerView: 3.5,
+    },
+    1150: {
+      slidesPerView: 4,
+    },
+    1320: {
+      slidesPerView: 4.5,
+    },
+    1440: {
+      slidesPerView: 4.5,
+    }
   },
 });
 
@@ -54,6 +56,18 @@ var swiper2 = new Swiper(".mySwiper2", {
   },
   initialSlide: 1,
 });
+
+var newsSwiper = new Swiper(".news-swiper", {
+  spaceBetween: 20,
+  slidesPerView: "auto",
+  enabled: true,
+  speed: 400,
+  breakpoints: {
+    950: {
+      enabled: false,
+    }
+  }
+})
 
 // map with dots
 var isActive = 0;

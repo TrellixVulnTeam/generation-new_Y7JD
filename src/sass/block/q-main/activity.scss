@@ -13,6 +13,9 @@
     width: 100%;
     .activity-descr {
       margin: 20px 0 40px 0;
+      @include xxs-big {
+        margin: 16px 0 32px 0;
+      }
       span {
         font-family: "Inter", sans-serif;
         font-style: normal;
@@ -50,7 +53,7 @@
     box-shadow: 0px 4px 16px rgba(17, 79, 92, 0.1);
     border-radius: 6px;
 
-    width: 250px !important;
+    width: 271px !important;
     height: auto;
 
     display: flex;
@@ -58,8 +61,8 @@
     align-items: flex-start;
     justify-content: space-between;
     padding: 20px;
-    @include l {
-      // width: 250px !important;
+    @include xxl {
+      width: 250px !important;
     }
     .card-content {
       img {
