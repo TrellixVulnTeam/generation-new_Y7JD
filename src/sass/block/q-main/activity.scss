@@ -55,12 +55,9 @@
 
     width: 271px !important;
     height: auto;
-
+    max-width: 271px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 20px;
     @include xxl {
       width: 250px !important;
     }

@@ -35,8 +35,8 @@ let swiper1 = new Swiper(".mySwiper1", {
     },
     1440: {
       slidesPerView: 4.5,
-    }
-  },
+    },
+  }
 });
 
 var swiper2 = new Swiper(".mySwiper2", {
