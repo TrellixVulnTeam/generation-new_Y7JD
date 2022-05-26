@@ -17,8 +17,8 @@ $white: white;
           font-weight: 600;
           font-size: 16px;
           line-height: 140%;
-          @include xxs-big { 
-              text-transform: capitalize !important; 
+          @include xxs-big {
+            text-transform: capitalize !important;
           }
           .dn {
             @include xxs-big {
@@ -56,9 +56,15 @@ $white: white;
             @media screen and (max-width: 1300px) {
               min-height: 340px;
               @include xl {
+                max-height: 305px;
                 min-height: 300px;
                 @include xxm {
+                  max-height: 295px;
                   min-height: 290px;
+                  @include xm {
+                    max-height: 325px;
+                    min-height: 322px;
+                  }
                 }
               }
             }

@@ -10,7 +10,13 @@
       margin-top: 20px;
       .map-bg {
         max-height: 557px;
+        min-height: 555px;
         height: 100%;
+        background: url("../img/mother-russia.png") no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+        width: 100%;
+        position: relative;
       }
     }
 
@@ -51,7 +57,7 @@
   width: 22px;
   height: 22px;
   position: absolute;
-  transform: translate3d(186px, -280px, 0);
+  transform: translate3d(297px,278px,0);
   z-index: 1000;
   svg {
     width: 22px;
@@ -63,7 +69,7 @@
   width: 22px;
   height: 22px;
   position: absolute;
-  transform: translate3d(734px, -85px, 0);
+  transform: translate3d(846px,477px,0);
   z-index: 1000;
   svg {
     width: 22px;
@@ -74,7 +80,7 @@
   width: 22px;
   height: 22px;
   position: absolute;
-  transform: translate3d(747px, -242px, 0);
+  transform: translate3d(895px,320px,0);
   z-index: 1000;
   svg {
     width: 22px;
@@ -85,7 +91,7 @@
   width: 22px;
   height: 22px;
   position: absolute;
-  transform: translate3d(774px, -266px, 0);
+  transform: translate3d(858px,310px,0);
   z-index: 1000;
   svg {
     width: 22px;
@@ -96,7 +102,7 @@
   width: 22px;
   height: 22px;
   position: absolute;
-  transform: translate3d(712px, -368px, 0);
+  transform: translate3d(879px,288px,0);
   z-index: 1000;
   svg {
     width: 22px;
@@ -107,7 +113,7 @@
   width: 22px;
   height: 22px;
   position: absolute;
-  transform: translate3d(980px, -472px, 0);
+  transform: translate3d(815px,189px,0);
   z-index: 1000;
   svg {
     width: 22px;
@@ -118,7 +124,29 @@
   width: 22px;
   height: 22px;
   position: absolute;
-  transform: translate3d(958px, -532px, 0);
+  transform: translate3d(1092px,89px,0);
+  z-index: 1000;
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+.dot8 {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  transform: translate3d(1071px,28px,0);
+  z-index: 1000;
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+.dot9 {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  transform: translate3d(1063px,395px,0);
   z-index: 1000;
   svg {
     width: 22px;
@@ -166,31 +194,39 @@
 }
 
 .info1 {
-  transform: translate3d(204px, -262px, 0);
+  transform: translate3d(319px,295px,0)
 }
 
 .info2 {
-  transform: translate3d(752px, -67px, 0);
+  transform: translate3d(869px,492px,0)
 }
 
 .info3 {
-  transform: translate3d(770px, -225px, 0);
+  transform: translate3d(914px,338px,0)
 }
 
 .info4 {
-  transform: translate3d(794px, -249px, 0);
+  transform: translate3d(876px,329px,0)
 }
 
 .info5 {
-  transform: translate3d(732px, -351px, 0);
+  transform: translate3d(899px,303px,0)
 }
 
 .info6 {
-  transform: translate3d(1002px, -458px, 0);
+  transform: translate3d(835px,205px,0)
 }
 
 .info7 {
-  transform: translate3d(981px, -516px, 0);
+  transform: translate3d(1114px,108px,0)
+}
+
+.info8 {
+  transform: translate3d(1090px,44px,0)
+}
+
+.info9 {
+  transform: translate3d(1090px,395px,0)
 }
 
 .show {
