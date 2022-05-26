@@ -1,3 +1,6 @@
+@import "media-mixin.scss";
+@import "./components-style/contacts.scss";
+
 
 $primary-color: #fafafa;
 $color-white: #ffffff;
@@ -58,7 +61,18 @@ $fs-15px: 15px;
         }
       }
     }
-
+    .contacts {
+      gap: 20px;
+      .point {
+        a {
+          span {
+            &:last-child {
+              display: none;
+            }
+          }
+        }
+      }
+    }
     .header-top__nav {
       display: flex;
       align-items: center;

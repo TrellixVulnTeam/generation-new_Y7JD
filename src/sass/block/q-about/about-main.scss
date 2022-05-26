@@ -1,0 +1,18 @@
+.about-group {
+  height: 100vh;
+  background-color: #FBFEFE;
+  border-top:  2px solid rgba(11, 22, 0, 0.1);
+  padding-top: 33px;
+}
+
+.about-content  {
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+  .about-content__head  {
+    .title-border {
+      max-width: 166px;
+      width: 100%;
+    }
+  }
+}

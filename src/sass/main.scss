@@ -1,4 +1,3 @@
-
 $base-font-size: 22px;
 $color-gold: #f1cdb3;
 
@@ -8,9 +7,9 @@ $color-gold: #f1cdb3;
   }
 }
 
-
 @import "block/reset.scss";
 @import "media-mixin.scss";
+@import "./block/components-style/breadcrumbs.scss";
 
 html {
   scroll-behavior: smooth;
@@ -18,11 +17,11 @@ html {
 
 body {
   position: relative;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   width: 100%;
   height: auto;
   overflow-x: hidden;
-  background: #FBFEFE;
+  background: #fbfefe;
   letter-spacing: 1px;
   // @include ph {
   //     background-color: rgb(141, 138, 138);
@@ -76,8 +75,21 @@ body {
   }
 }
 
+
+.title-border {
+  border-bottom: 3px solid #77B946;
+  padding-bottom: 8px;
+  span {
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 120%;
+    color: #0b1600;
+  }
+}
+
 .arrow {
-  border: solid #6B9B3C;
+  border: solid #6b9b3c;
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 4px;
@@ -92,5 +104,8 @@ body {
 @import "block/q-main/activity.scss";
 @import "block/q-main/news.scss";
 @import "block/q-main/map.scss";
+
+// about companys SCSS
+@import "block/q-about/about-main.scss";
 
 @import "block/footer.scss";
