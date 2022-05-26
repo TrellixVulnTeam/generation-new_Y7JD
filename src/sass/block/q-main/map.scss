@@ -1,3 +1,5 @@
+@import "media-map.scss";
+
 .map {
   padding: 46px 0 82px 0;
   background-color: #fbfefe;
@@ -12,11 +14,26 @@
         max-height: 557px;
         min-height: 555px;
         height: 100%;
-        background: url("../img/mother-russia.png") no-repeat;
+        background: url("../img/mother-russia.svg") no-repeat;
         background-position: 50% 50%;
         background-size: contain;
         width: 100%;
         position: relative;
+        @include m-1440 {
+          width: 1000px;
+          @include m-1100 {
+            width: 860px;
+            @include m-960 {
+              width: 768px;
+              @include m-940 {
+                width: 666px;
+                @include m-768 {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
       }
     }
 
@@ -59,6 +76,15 @@
   position: absolute;
   transform: translate3d(297px,278px,0);
   z-index: 1000;
+  @include m-1440 {
+    transform: translate3d(177px,274px,0);
+    @include m-1100 {
+      transform: translate3d(147px,274px,0);
+      @include m-960 {
+        transform: translate3d(130px,274px,0);
+      }
+    }
+  }
   svg {
     width: 22px;
     height: 22px;
@@ -71,6 +97,15 @@
   position: absolute;
   transform: translate3d(846px,477px,0);
   z-index: 1000;
+  @include m-1440 {
+    transform: translate3d(681px,459px,0);
+    @include m-1100 {
+      transform: translate3d(583px,432px,0);
+      @include m-960 {
+        transform: translate3d(521px,417px,0)
+      }
+    }
+  }
   svg {
     width: 22px;
     height: 22px;
@@ -82,6 +117,15 @@
   position: absolute;
   transform: translate3d(895px,320px,0);
   z-index: 1000;
+  @include m-1440 {
+    transform: translate3d(725px,320px,0);
+    @include m-1100 {
+      transform: translate3d(623px,308px,0);
+      @include m-960 {
+        transform: translate3d(557px,308px,0)
+      }
+    }
+  }
   svg {
     width: 22px;
     height: 22px;
@@ -93,6 +137,15 @@
   position: absolute;
   transform: translate3d(858px,310px,0);
   z-index: 1000;
+  @include m-1440 {
+    transform: translate3d(694px,310px,0);
+    @include m-1100 {
+      transform: translate3d(591px,295px,0);
+      @include m-960 {
+        transform: translate3d(527px,295px,0)
+      }
+    }
+  }
   svg {
     width: 22px;
     height: 22px;
@@ -104,6 +157,15 @@
   position: absolute;
   transform: translate3d(879px,288px,0);
   z-index: 1000;
+  @include m-1440 {
+    transform: translate3d(717px,288px,0);
+    @include m-1100 {
+      transform: translate3d(616px,281px,0);
+      @include m-960 {
+        transform: translate3d(550px,281px,0)
+      }
+    }
+  }
   svg {
     width: 22px;
     height: 22px;
@@ -115,6 +177,15 @@
   position: absolute;
   transform: translate3d(815px,189px,0);
   z-index: 1000;
+  @include m-1440 {
+    transform: translate3d(652px,189px,0);
+    @include m-1100 {
+      transform: translate3d(562px,205px,0);
+      @include m-960 {
+        transform: translate3d(502px,214px,0)
+      }
+    }
+  }
   svg {
     width: 22px;
     height: 22px;
@@ -126,6 +197,15 @@
   position: absolute;
   transform: translate3d(1092px,89px,0);
   z-index: 1000;
+  @include m-1440 {
+    transform: translate3d(906px,96px,0);
+    @include m-1100 {
+      transform: translate3d(780px,123px,0);
+      @include m-960 {
+        transform: translate3d(691px,137px,0)
+      }
+    }
+  }
   svg {
     width: 22px;
     height: 22px;
@@ -137,6 +217,15 @@
   position: absolute;
   transform: translate3d(1071px,28px,0);
   z-index: 1000;
+  @include m-1440 {
+    transform: translate3d(889px,43px,0);
+    @include m-1100 {
+      transform: translate3d(758px,75px,0);
+      @include m-960 {
+        transform: translate3d(677px,97px,0)
+      }
+    }
+  }
   svg {
     width: 22px;
     height: 22px;
@@ -148,6 +237,15 @@
   position: absolute;
   transform: translate3d(1063px,395px,0);
   z-index: 1000;
+  @include m-1440 {
+    transform: translate3d(886px,387px,0);
+    @include m-1100 {
+      transform: translate3d(757px,366px,0);
+      @include m-960 {
+        transform: translate3d(676px,359px,0)
+      }
+    }
+  }
   svg {
     width: 22px;
     height: 22px;
