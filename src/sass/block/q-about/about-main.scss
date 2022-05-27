@@ -1,18 +1,134 @@
+@import "media-mixin.scss";
+
+.mission-group {
+  span {
+    letter-spacing: normal;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #77b946;
+  }
+}
+.mission-descr {
+  span {
+    font-family: "Inter", sans-serif;
+    letter-spacing: normal;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    color: #7c7c87;
+  }
+}
+
 .about-group {
-  height: 100vh;
-  background-color: #FBFEFE;
-  border-top:  2px solid rgba(11, 22, 0, 0.1);
+  height: 100%;
+  width: 100%;
+  background-color: #fbfefe;
+  border-top: 2px solid rgba(11, 22, 0, 0.1);
   padding-top: 33px;
 }
 
-.about-content  {
+.about-content {
   width: 100%;
   height: auto;
   margin-top: 40px;
-  .about-content__head  {
+  .about-content__head {
     .title-border {
       max-width: 166px;
       width: 100%;
+    }
+  }
+}
+
+.about-content__body {
+  .about-body__top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 64px 0 50px 0;
+    .mission-group {
+      display: flex;
+      flex-direction: column;
+      gap: 23px;
+
+      width: 100%;
+      height: auto;
+    }
+    .mission-group__descr {
+      display: flex;
+      .title-mini {
+        max-width: 420px;
+        width: 100%;
+      }
+    }
+  }
+  .about-body__middle {
+    padding: 50px 0 50px 0;
+  }
+}
+
+.about-body__lower {
+  padding: 50px 0 100px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  .left {
+    max-width: 570px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .title-mini {
+      max-width: 420px;
+      width: 100%;
+    }
+  }
+  .mission-group {
+  }
+}
+
+.about-content__footer {
+  .about-footer__title {
+    span {
+      color: #0b1600;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 130%;
+      letter-spacing: normal;
+    }
+  }
+
+  .partners-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 48px 0 100px 0;
+    .partners-top {
+      .swiper-wrapper {
+        -webkit-transition-timing-function: linear !important;
+        transition-timing-function: linear !important;
+        position: relative;
+        .partners-item {
+          width: 310px;
+          height: 188px;
+          background: #ffffff;
+          border: 1px solid #d6e9ec;
+          box-shadow: 0px 4px 16px rgba(17, 79, 92, 0.1);
+          border-radius: 8px;
+          a {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
     }
   }
 }

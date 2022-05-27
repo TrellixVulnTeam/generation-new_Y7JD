@@ -46,6 +46,8 @@
       color: #ffffff;
       border-bottom: 3px solid #77b946;
       padding-bottom: 8px;
+      display: inline-block;
+      width: auto;
       @include l {
         font-size: 36px;
         line-height: 120%;
@@ -79,10 +81,8 @@
       border: 2px solid #ffffff;
       border-radius: 6px;
       padding: 12px 27px;
-
-      letter-spacing: 1.5px;
+      font-family: "Open sans", sans-serif;
       cursor: pointer;
-      font-family: "Poppins", sans-serif;
       font-style: normal;
       font-weight: 600;
       font-size: 16px;

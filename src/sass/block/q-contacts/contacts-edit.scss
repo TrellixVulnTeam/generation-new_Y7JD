@@ -1,0 +1,75 @@
+.contacts-page {
+  height: 100%;
+  width: 100%;
+  background-color: #fbfefe;
+  border-top: 2px solid rgba(11, 22, 0, 0.1);
+  padding-top: 33px;
+}
+
+.q-contacts-wrapper {
+  .q-contacts-head {
+    margin-top: 40px;
+  }
+}
+
+.q-contacts-body {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  padding-top: 64px;
+  .q-left {
+    display: flex;
+    gap: 20px;
+    .q-card-item {
+      max-width: 310px;
+      width: 100%;
+      .phone-div {
+        display: flex;
+        flex-direction: column;
+      }
+      .q-card-title {
+        span {
+          display: inline-block;
+          margin-bottom: 24px;
+          font-family: "Inter", sans-serif;
+          font-weight: 300;
+          font-size: 24px;
+          line-height: 120%;
+          background: linear-gradient(180deg, #77b946 0%, #317300 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-fill-color: transparent;
+        }
+      }
+      .q-card-adress {
+        span {
+          font-family: "Poppins", sans-serif;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 140%;
+          color: #0b1600;
+        }
+      }
+    }
+  }
+
+  .q-right {
+    .q-hire-me {
+      background: #dbebee;
+      border-radius: 6px;
+      padding: 24px;
+      max-width: 640px;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.q-contacts-cards__left,
+.q-contacts-cards__right {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}

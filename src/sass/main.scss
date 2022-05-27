@@ -17,12 +17,11 @@ html {
 
 body {
   position: relative;
-  font-family: "Poppins", sans-serif;
+  font-family: "Open Sans", sans-serif !important;
   width: 100%;
   height: auto;
   overflow-x: hidden;
   background: #fbfefe;
-  letter-spacing: 1px;
   // @include ph {
   //     background-color: rgb(141, 138, 138);
   // }
@@ -58,9 +57,9 @@ body {
 
 .title {
   span {
-    font-family: "Poppins", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 36px;
     line-height: 140%;
     color: #6b9b3c;
@@ -75,10 +74,11 @@ body {
   }
 }
 
-
 .title-border {
-  border-bottom: 3px solid #77B946;
+  border-bottom: 3px solid #77b946;
   padding-bottom: 8px;
+  display: inline-block;
+  width: auto;
   span {
     white-space: nowrap;
     font-weight: 600;
@@ -97,6 +97,40 @@ body {
   -webkit-transform: rotate(-45deg);
 }
 
+.img-block {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+  img {
+    border-radius: 8px;
+  }
+}
+
+.title-mini {
+  display: inline-block;
+  span {
+    letter-spacing: normal;
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 140%;
+    color: #0b1600;
+  }
+}
+
+.grey-text {
+  display: inline-block;
+  span {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    color: #7c7c87;
+  }
+}
+
 @import "block/header.scss";
 
 // MAIN PAGE SCSS
@@ -107,5 +141,9 @@ body {
 
 // about companys SCSS
 @import "block/q-about/about-main.scss";
+@import "block/q-about/history.scss";
+
+// Contacts scss
+@import "block/q-contacts/contacts-edit.scss";
 
 @import "block/footer.scss";
