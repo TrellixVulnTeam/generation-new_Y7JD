@@ -63,6 +63,43 @@
       max-width: 640px;
       width: 100%;
       height: auto;
+      min-height: 185px;
+      max-height: 190px;
+      height: 100%;
+
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      .q-hire-me__text {
+        span {
+          font-family: "Poppins", sans-serif;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 160%;
+          color: #0b1600;
+        }
+        .green-text {
+          a {
+            color: #77b946;
+          }
+        }
+      }
+      .q-hire-me__btn {
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: "Poppins", sans-serif;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 140%;
+          color: #ffffff;
+          background: #77b946;
+          border-radius: 6px;
+          width: 174px;
+          height: 47px;
+        }
+      }
     }
   }
 }
@@ -72,4 +109,15 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+}
+
+.q-contacts-map {
+  padding-top: 100px;
+  margin: 0 auto;
+  margin-bottom: -2px;
+  img {
+    width: 100vw;
+    border-radius: unset;
+    height: 100%;
+  }
 }
