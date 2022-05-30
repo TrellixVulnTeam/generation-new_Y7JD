@@ -1,0 +1,128 @@
+@import "media-mixin.scss";
+
+.leadership {
+  height: 100%;
+  width: 100%;
+  background-color: #fbfefe;
+  border-top: 2px solid rgba(11, 22, 0, 0.1);
+  padding-top: 33px;
+}
+
+.q-leadership-wrapper {
+  width: 100%;
+  height: auto;
+  padding-top: 40px;
+  .q-leadership-head {
+    .title-border {
+    }
+  }
+  .q-leadership-content {
+    padding-top: 64px;
+    .q-leadership-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      .q-top-title {
+        max-width: 420px;
+        width: 100%;
+        min-width: 420px;
+        .green-text {
+          color: #77b946;
+        }
+        span {
+          display: inline-block;
+          width: 100%;
+          font-family: "Open sans", sans-serif;
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 140%;
+        }
+      }
+      .q-top-text {
+        p {
+          font-family: "Inter", sans-serif;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 140%;
+          color: #7c7c87;
+          letter-spacing: normal;
+        }
+      }
+    }
+  }
+}
+
+.q-leadership-leaders {
+  padding: 100px 0;
+  .q-leaders-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+    .q-leaders-card {
+      max-height: 586px;
+      min-height: 585px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .img-block {
+        img {
+          max-width: 380px;
+          width: 100%;
+          min-height: 366px;
+          max-height: 370px;
+          height: 100%;
+        }
+      }
+      .q-card-name {
+        span {
+          display: inline-block;
+          max-width: 340px;
+          text-shadow: 0px 4px 16px rgba(17, 79, 92, 0.1);
+          color: #0b1600;
+          // font-family: "Poppins";
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 140%;
+          text-transform: uppercase;
+        }
+      }
+      .q-card-descr {
+        span {
+          display: inline-block;
+          max-width: 254px;
+          text-shadow: 0px 4px 16px rgba(17, 79, 92, 0.1);
+          font-family: "Inter", sans-serif;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 130%;
+          color: #6b9b3c;
+        }
+      }
+      .q-contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+        li {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          i {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+          }
+          a {
+            color: #000000;
+            font-family: "Inter", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 120%;
+          }
+        }
+      }
+    }
+  }
+}
