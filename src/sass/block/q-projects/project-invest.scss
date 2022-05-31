@@ -1,0 +1,65 @@
+.project-invest {
+  height: 100%;
+  width: 100%;
+  background-color: #fbfefe;
+  border-top: 2px solid rgba(11, 22, 0, 0.1);
+  padding-top: 33px;
+}
+
+.q-invest-wrapper {
+  padding: 40px 0 100px 0;
+}
+
+.q-invest-head {
+  .q-invest-descr {
+    .green-text {
+      color: #77b946;
+    }
+    span {
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 140%;
+      color: #0b1600;
+      letter-spacing: normal;
+    }
+  }
+}
+
+.q-invest-content {
+  .q-invest-card__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 71px;
+    .q-invest-card {
+      .q-card-title {
+        span {
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 140%;
+          color: #0b1600;
+        }
+      }
+      .q-card-descr {
+        margin-top: 16px;
+        span {
+          font-family: "Inter", sans-serif;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 130%;
+          color: #7c7c87;
+        }
+      }
+      .img-block {
+        margin-top: 16px;
+        img {
+          max-width: 610px;
+          width: 100%;
+          max-height: 426px;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
