@@ -16,40 +16,6 @@
     .title-border {
     }
   }
-  .q-leadership-content {
-    padding-top: 64px;
-    .q-leadership-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      .q-top-title {
-        max-width: 420px;
-        width: 100%;
-        min-width: 420px;
-        .green-text {
-          color: #77b946;
-        }
-        span {
-          display: inline-block;
-          width: 100%;
-          font-family: "Open sans", sans-serif;
-          font-weight: 700;
-          font-size: 24px;
-          line-height: 140%;
-        }
-      }
-      .q-top-text {
-        p {
-          font-family: "Inter", sans-serif;
-          font-weight: 400;
-          font-size: 18px;
-          line-height: 140%;
-          color: #7c7c87;
-          letter-spacing: normal;
-        }
-      }
-    }
-  }
 }
 
 .q-leadership-leaders {

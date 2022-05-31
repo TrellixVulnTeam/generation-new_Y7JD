@@ -131,6 +131,45 @@ body {
   }
 }
 
+.descr {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  .left {
+    max-width: 420px;
+    width: 100%;
+    min-width: 420px;
+    .green-text {
+      color: #77b946;
+    }
+    span {
+      display: inline-block;
+      width: 100%;
+      font-family: "Open sans", sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 140%;
+    }
+  }
+  .right {
+    p {
+      font-family: "Inter", sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 140%;
+      color: #7c7c87;
+      letter-spacing: normal;
+    }
+  }
+}
+
+.pt-64 {
+  padding-top: 64px;
+}
+.pt-100 {
+  padding-top: 100px;
+}
+
 @import "block/header.scss";
 
 // MAIN PAGE SCSS
@@ -147,5 +186,8 @@ body {
 
 // Contacts scss
 @import "block/q-contacts/contacts-edit.scss";
+
+// projects scss
+@import "block/q-projects/projects.scss";
 
 @import "block/footer.scss";
