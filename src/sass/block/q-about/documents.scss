@@ -1,0 +1,40 @@
+@import "media-mixin.scss";
+
+.documents {
+  height: 100%;
+  width: 100%;
+  background-color: #fbfefe;
+  border-top: 2px solid rgba(11, 22, 0, 0.1);
+  padding-top: 33px;
+}
+.q-docs-wrapper {
+  padding-top: 40px;
+  .q-docs-content {
+    padding-top: 64px;
+    padding-bottom: 150px;
+    .q-docs-card__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      .q-docs-card {
+        display: inline-block;
+        height: auto;
+        margin:0 40px 40px 0;
+        transition: all .4s ease-in-out;
+        &:hover {
+          transform: scale(1.02);
+
+        }
+        .q-docs-title {
+          text-align: center;
+          margin-top: 24px;
+          span {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 120%;
+            color: #0b1600;
+          }
+        }
+      }
+    }
+  }
+}
