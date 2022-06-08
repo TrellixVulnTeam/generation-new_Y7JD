@@ -1,0 +1,34 @@
+@import "media-mixin.scss";
+
+.vacancys-jobs {
+  height: 100%;
+  width: 100%;
+  background-color: #fbfefe;
+  border-top: 2px solid rgba(11, 22, 0, 0.1);
+  padding-top: 33px;
+}
+
+.q-jobs-wrapper {
+  padding-top: 40px;
+  padding-bottom: 100px;
+}
+
+.q-jobs-content {
+  .q-jobs-card_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+    .q-jobs-card {
+      background: #dbebee;
+      border-radius: 6px;
+      max-width: 640px;
+      width: 100%;
+      height: auto;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

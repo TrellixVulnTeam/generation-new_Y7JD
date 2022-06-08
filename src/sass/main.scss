@@ -173,6 +173,18 @@ body {
   padding-top: 100px;
 }
 
+.btn-more {
+  margin-top: 32px;
+  color: #77b946;
+  align-self: flex-start;
+  border: 2px solid #77b946;
+  border-radius: 6px;
+  padding: 12px 28px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+}
+
 @import "block/header.scss";
 
 // MAIN PAGE SCSS
@@ -187,6 +199,7 @@ body {
 @import "block/q-about/leadership.scss";
 @import "block/q-about/documents.scss";
 @import "block/q-about/about-vacancys.scss";
+@import "block/q-about/about-vacancys-jobs.scss";
 
 // Contacts scss
 @import "block/q-contacts/contacts-edit.scss";
