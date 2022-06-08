@@ -1,8 +1,10 @@
 import { parnersSwiperTop, parnersSwiperLower  } from './modules/partners-swiper.js'
 import { ready } from './modules/map-main.js'
+import { vacancySwiper } from './modules/vacancys-swiper.js'
 
 parnersSwiperTop
 parnersSwiperLower
+vacancySwiper
 
 let swiper = new Swiper(".mySwiper", {
   pagination: {

@@ -143,7 +143,7 @@ body {
       color: #77b946;
     }
     span {
-      display: inline-block;
+      // display: inline-block;
       width: 100%;
       font-family: "Open sans", sans-serif;
       font-weight: 700;
@@ -159,6 +159,9 @@ body {
       line-height: 140%;
       color: #7c7c87;
       letter-spacing: normal;
+      &:last-child {
+        margin-top: 20px;
+      }
     }
   }
 }
@@ -183,6 +186,7 @@ body {
 @import "block/q-about/history.scss";
 @import "block/q-about/leadership.scss";
 @import "block/q-about/documents.scss";
+@import "block/q-about/about-vacancys.scss";
 
 // Contacts scss
 @import "block/q-contacts/contacts-edit.scss";

@@ -16,7 +16,7 @@
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_partners_swiper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/partners-swiper.js */ \"./src/js/modules/partners-swiper.js\");\n/* harmony import */ var _modules_map_main_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/map-main.js */ \"./src/js/modules/map-main.js\");\n\r\n\r\n\r\n_modules_partners_swiper_js__WEBPACK_IMPORTED_MODULE_0__.parnersSwiperTop\r\n_modules_partners_swiper_js__WEBPACK_IMPORTED_MODULE_0__.parnersSwiperLower\r\n\r\nlet swiper = new Swiper(\".mySwiper\", {\r\n  pagination: {\r\n    el: \".swiper-pagination\",\r\n  },\r\n});\r\n\r\nlet swiper1 = new Swiper(\".mySwiper1\", {\r\n  pagination: {\r\n    el: \".swiper-pagination1\",\r\n    type: \"progressbar\",\r\n  },\r\n  spaceBetween: 20,\r\n  slidesPerView: \"auto\",\r\n  breakpoints: {\r\n    475: {\r\n      centeredSlides: true,\r\n    },\r\n    752: {\r\n      slidesPerView: \"auto\",\r\n    },\r\n    880: {\r\n      slidesPerView: 2.5,\r\n    },\r\n    960: {\r\n      slidesPerView: 3,\r\n    },\r\n    1024: {\r\n      slidesPerView: 3.5,\r\n    },\r\n    1150: {\r\n      slidesPerView: 4,\r\n    },\r\n    1320: {\r\n      slidesPerView: 4.5,\r\n    },\r\n    1440: {\r\n      slidesPerView: 4.5,\r\n    },\r\n  }\r\n});\r\n\r\nvar swiper2 = new Swiper(\".mySwiper2\", {\r\n  effect: \"coverflow\",\r\n  grabCursor: true,\r\n  centeredSlides: true,\r\n  slidesPerView: \"3\",\r\n  coverflowEffect: {\r\n    rotate: 100,\r\n    stretch: -50,\r\n    depth: 100,\r\n    modifier: 0,\r\n  },\r\n  navigation: {\r\n    nextEl: \".swiper-button-next\",\r\n    prevEl: \".swiper-button-prev\",\r\n  },\r\n  initialSlide: 1,\r\n});\r\n\r\nvar newsSwiper = new Swiper(\".news-swiper\", {\r\n  spaceBetween: 20,\r\n  slidesPerView: \"auto\",\r\n  enabled: true,\r\n  speed: 400,\r\n  breakpoints: {\r\n    950: {\r\n      enabled: false,\r\n    }\r\n  }\r\n})\r\n\r\nwindow.onload = function() {\r\n  if(document.querySelector('.map ')) {\r\n    (0,_modules_map_main_js__WEBPACK_IMPORTED_MODULE_1__.ready)();\r\n  }\r\n}\n\n//# sourceURL=webpack://gulp-settings/./src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_partners_swiper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/partners-swiper.js */ \"./src/js/modules/partners-swiper.js\");\n/* harmony import */ var _modules_map_main_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/map-main.js */ \"./src/js/modules/map-main.js\");\n/* harmony import */ var _modules_vacancys_swiper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/vacancys-swiper.js */ \"./src/js/modules/vacancys-swiper.js\");\n\r\n\r\n\r\n\r\n_modules_partners_swiper_js__WEBPACK_IMPORTED_MODULE_0__.parnersSwiperTop\r\n_modules_partners_swiper_js__WEBPACK_IMPORTED_MODULE_0__.parnersSwiperLower\r\n_modules_vacancys_swiper_js__WEBPACK_IMPORTED_MODULE_2__.vacancySwiper\r\n\r\nlet swiper = new Swiper(\".mySwiper\", {\r\n  pagination: {\r\n    el: \".swiper-pagination\",\r\n  },\r\n});\r\n\r\nlet swiper1 = new Swiper(\".mySwiper1\", {\r\n  pagination: {\r\n    el: \".swiper-pagination1\",\r\n    type: \"progressbar\",\r\n  },\r\n  spaceBetween: 20,\r\n  slidesPerView: \"auto\",\r\n  breakpoints: {\r\n    475: {\r\n      centeredSlides: true,\r\n    },\r\n    752: {\r\n      slidesPerView: \"auto\",\r\n    },\r\n    880: {\r\n      slidesPerView: 2.5,\r\n    },\r\n    960: {\r\n      slidesPerView: 3,\r\n    },\r\n    1024: {\r\n      slidesPerView: 3.5,\r\n    },\r\n    1150: {\r\n      slidesPerView: 4,\r\n    },\r\n    1320: {\r\n      slidesPerView: 4.5,\r\n    },\r\n    1440: {\r\n      slidesPerView: 4.5,\r\n    },\r\n  }\r\n});\r\n\r\nvar swiper2 = new Swiper(\".mySwiper2\", {\r\n  effect: \"coverflow\",\r\n  grabCursor: true,\r\n  centeredSlides: true,\r\n  slidesPerView: \"3\",\r\n  coverflowEffect: {\r\n    rotate: 100,\r\n    stretch: -50,\r\n    depth: 100,\r\n    modifier: 0,\r\n  },\r\n  navigation: {\r\n    nextEl: \".swiper-button-next\",\r\n    prevEl: \".swiper-button-prev\",\r\n  },\r\n  initialSlide: 1,\r\n});\r\n\r\nvar newsSwiper = new Swiper(\".news-swiper\", {\r\n  spaceBetween: 20,\r\n  slidesPerView: \"auto\",\r\n  enabled: true,\r\n  speed: 400,\r\n  breakpoints: {\r\n    950: {\r\n      enabled: false,\r\n    }\r\n  }\r\n})\r\n\r\nwindow.onload = function() {\r\n  if(document.querySelector('.map ')) {\r\n    (0,_modules_map_main_js__WEBPACK_IMPORTED_MODULE_1__.ready)();\r\n  }\r\n}\n\n//# sourceURL=webpack://gulp-settings/./src/js/main.js?");
 
 /***/ }),
 
@@ -49,6 +49,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ (function(module) {
 
 eval("module.exports = (a, b) => a + b;\n\n//# sourceURL=webpack://gulp-settings/./src/js/modules/sum.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/vacancys-swiper.js":
+/*!*******************************************!*\
+  !*** ./src/js/modules/vacancys-swiper.js ***!
+  \*******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"vacancySwiper\": function() { return /* binding */ vacancySwiper; }\n/* harmony export */ });\nvar vacancySwiper = new Swiper(\".q-vacancys-swiper\", {\r\n  spaceBetween: 20,\r\n  // centeredSlides: true,\r\n  slidesPerView: 2,\r\n  allowTouchMove: true,\r\n  // disableOnInteraction: true,\r\n});\r\n\r\n\r\n\n\n//# sourceURL=webpack://gulp-settings/./src/js/modules/vacancys-swiper.js?");
 
 /***/ })
 
@@ -115,7 +126,8 @@ eval("module.exports = (a, b) => a + b;\n\n//# sourceURL=webpack://gulp-settings
 /******/ 	__webpack_require__("./src/js/main.js");
 /******/ 	__webpack_require__("./src/js/modules/map-main.js");
 /******/ 	__webpack_require__("./src/js/modules/partners-swiper.js");
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/modules/sum.js");
+/******/ 	__webpack_require__("./src/js/modules/sum.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/modules/vacancys-swiper.js");
 /******/ 	
 /******/ })()
 ;
