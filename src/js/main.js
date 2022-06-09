@@ -1,10 +1,13 @@
-import { parnersSwiperTop, parnersSwiperLower  } from './modules/partners-swiper.js'
-import { ready } from './modules/map-main.js'
-import { vacancySwiper } from './modules/vacancys-swiper.js'
+import {
+  parnersSwiperTop,
+  parnersSwiperLower,
+} from "./modules/partners-swiper.js";
+import { ready } from "./modules/map-main.js";
+import { vacancySwiper } from "./modules/vacancys-swiper.js";
 
-parnersSwiperTop
-parnersSwiperLower
-vacancySwiper
+parnersSwiperTop;
+parnersSwiperLower;
+vacancySwiper;
 
 let swiper = new Swiper(".mySwiper", {
   pagination: {
@@ -44,7 +47,7 @@ let swiper1 = new Swiper(".mySwiper1", {
     1440: {
       slidesPerView: 4.5,
     },
-  }
+  },
 });
 
 var swiper2 = new Swiper(".mySwiper2", {
@@ -73,12 +76,18 @@ var newsSwiper = new Swiper(".news-swiper", {
   breakpoints: {
     950: {
       enabled: false,
-    }
-  }
-})
+    },
+  },
+});
 
-window.onload = function() {
-  if(document.querySelector('.map ')) {
+window.onload = function () {
+  if (document.querySelector(".map ")) {
     ready();
   }
-}
+};
+
+const myModal = new HystModal({
+  catchFocus: true,
+  closeOnEsc: true,
+  backscroll: true,
+});

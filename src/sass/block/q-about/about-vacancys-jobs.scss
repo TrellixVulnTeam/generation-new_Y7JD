@@ -32,3 +32,157 @@
     }
   }
 }
+
+// .q-jobs-popup {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   overflow: hidden;
+//   overflow-y: auto;
+//   -webkit-overflow-scrolling: touch;
+//   display: flex;
+//   flex-flow: column nowrap;
+//   justify-content: flex-start;
+//   align-items: center;
+//   z-index: 99;
+//   // background-color: rgba(0, 0, 0, 0.664);
+//   padding: 30px;
+//   .q-popup-body {
+//     flex-shrink: 0;
+//     flex-grow: 0;
+//     width: 100%;
+//     min-height: 100%;
+//     margin: auto;
+//     display: flex;
+//     flex-flow: column nowrap;
+//     align-items: center;
+//     justify-content: center;
+//     .q-popup-content {
+//       position: relative;
+//       display: flex;
+//       flex-flow: column nowrap;
+//       align-items: flex-start;
+//       justify-content: center;
+//       flex-shrink: 0;
+//       flex-grow: 0;
+
+//       width: 100%;
+//       height: 100%;
+//       max-width: 720px;
+//       overflow: visible;
+
+//       margin: auto;
+//       background-color: #fff;
+//       padding: 78px 70px;
+//       border-radius: 6px;
+
+//       transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
+//       transform: scale(0.9);
+//       opacity: 0;
+//       .close-btn {
+//         width: 32px;
+//         height: 32px;
+//         opacity: 0.6;
+//         &::after,
+//         &::before {
+//           position: absolute;
+//           right: 82px;
+//           top: 52px;
+//           content: " ";
+//           height: 33px;
+//           width: 2px;
+//           background-color: #333;
+//         }
+//         &::after {
+//           transform: rotate(-45deg);
+//         }
+//         &::before {
+//           transform: rotate(45deg);
+//         }
+//         &:hover {
+//           opacity: 1;
+//         }
+//       }
+//       .q-popup-content__head {
+//         display: flex;
+//         flex-direction: column;
+//       }
+//     }
+//   }
+// }
+
+// .q-popup-content__body {
+//   .q-p-item {
+//     margin-top: 55px;
+//     .q-p-title {
+//       span {
+//         font-weight: 700;
+//         font-size: 18px;
+//         line-height: 140%;
+//         color: #0b1600;
+//       }
+//     }
+//     .q-p-list {
+//       counter-reset: li;
+
+//       li {
+//         position: relative;
+//         padding: 0px 0 0px 35px;
+//         margin-top: 24px;
+//         &::before {
+//           content: counter(li);
+//           counter-increment: li;
+//           position: absolute;
+//           left: 0;
+//           top: -1px;
+//           height: 22px;
+//           width: 22px;
+//           background-color: #b0d0d6;
+//           border-radius: 50%;
+//           font-family: "Inter", sans-serif;
+//           font-weight: 400;
+//           font-size: 14px;
+//           line-height: 17px;
+//           display: flex;
+//           align-items: center;
+//           justify-content: center;
+//           color: #ffffff;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .popup--active {
+//   visibility: visible;
+
+//   .q-popup-content {
+//     transform: scale(1);
+//     opacity: 1;
+//   }
+// }
+
+// .popup-shadow {
+//   position: fixed;
+//   border:none;
+//   display: block;
+//   width: 100%;
+//   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   left: 0;
+//   overflow: hidden;
+//   pointer-events: none;
+//   z-index: 98;
+//   opacity: 0;
+//   transition: opacity 0.15s ease;
+//   background-color: black;
+
+// }
+// .popup-shadow--active {
+//   pointer-events: auto;
+//   opacity: 0.6;
+// }
+

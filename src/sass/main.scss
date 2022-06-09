@@ -10,6 +10,7 @@ $color-gold: #f1cdb3;
 @import "block/reset.scss";
 @import "media-mixin.scss";
 @import "./block/components-style/breadcrumbs.scss";
+@import "./block/hystmodal.scss";
 
 html {
   scroll-behavior: smooth;
@@ -183,6 +184,29 @@ body {
   font-weight: 700;
   font-size: 16px;
   line-height: 140%;
+}
+.q-jobs-green-text {
+  color: #6b9b3c;
+  margin-top: 16px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 140%;
+}
+.q-jobs-grey-text {
+  color: #7c7c87;
+  margin-top: 24px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  font-size: 16px;
+}
+
+.popup-opened {
+  position: fixed;
+  right: 0;
+  left: 0;
+  overflow: hidden;
 }
 
 @import "block/header.scss";
