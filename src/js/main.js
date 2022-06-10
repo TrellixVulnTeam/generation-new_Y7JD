@@ -87,7 +87,13 @@ window.onload = function () {
 };
 
 const myModal = new HystModal({
+  linkAttributeName: 'data-hystmodal',
   catchFocus: true,
   closeOnEsc: true,
   backscroll: true,
 });
+
+import HystModal from './hystmodal';
+// import 'element-closest-polyfill';
+// import '../sass/block/hystmodal.scss';
+global.HystModal = HystModal;

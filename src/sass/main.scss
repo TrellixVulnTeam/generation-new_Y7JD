@@ -10,6 +10,7 @@ $color-gold: #f1cdb3;
 @import "block/reset.scss";
 @import "media-mixin.scss";
 @import "./block/components-style/breadcrumbs.scss";
+@import "./block/components-style/contacts.scss";
 @import "./block/hystmodal.scss";
 
 html {
@@ -184,6 +185,11 @@ body {
   font-weight: 700;
   font-size: 16px;
   line-height: 140%;
+  transition: all .25s ease-in-out;
+  &:hover {
+    background: #77B946;
+    color: white;
+  }
 }
 .q-jobs-green-text {
   color: #6b9b3c;

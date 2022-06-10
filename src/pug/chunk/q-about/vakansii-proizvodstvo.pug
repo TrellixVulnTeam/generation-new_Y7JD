@@ -12,7 +12,7 @@ section.vacancys-jobs
               span Начальник транспортного цеха и АХЧ
             span.q-jobs-green-text Группа компаний ООО “Генерация”; г.Якутск
             span.q-jobs-grey-text Нам нужен менеджер для активных продаж с опытом, работа подразумевает продажу американского энергетического оборудования и запасных частей на территории Дальневосточного и Сибирского ФО.
-            a.btn-more(href="#" data-hystmodal="myModal") Подробнее
+            a.btn-more(href="#" data-hystmodal="#myModal") Подробнее
           .q-jobs-card 
             .title-mini 
               span Начальник транспортного цеха и АХЧ
@@ -36,46 +36,63 @@ section.vacancys-jobs
               span Начальник транспортного цеха и АХЧ
             span.q-jobs-green-text Группа компаний ООО “Генерация”; г.Якутск
             span.q-jobs-grey-text Нам нужен менеджер для активных продаж с опытом, работа подразумевает продажу американского энергетического оборудования и запасных частей на территории Дальневосточного и Сибирского ФО.
-            a.btn-more(href="#" data-hystmodal="myModal") Подробнее
-    .q-jobs-popup.hystmodal#myModal(aria-hidden="true")
-      .q-popup-body.hystmodal__wrapF
-        .q-popup-content.hystmodal__window(role='dialog' aria-modal='true')
-          button(data-hystclose).close-btn CLOSE
-          .q-popup-content__head
-            .title-mini 
-              span Начальник транспортного цеха и АХЧ
-            span.q-jobs-green-text Группа компаний ООО “Генерация”; г.Якутск
-            span.q-jobs-grey-text Нам нужен менеджер для активных продаж с опытом, работа подразумевает продажу американского энергетического оборудования и запасных частей на территории Дальневосточного и Сибирского ФО.
-          .q-popup-content__body 
-            .q-p-item
-              .q-p-title 
-                span Обязанности:
-              ul.q-p-list 
-                li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
-                li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
-                li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
-                li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
-                li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
-            .q-p-item
-              .q-p-title 
-                span Требования:
-              ul.q-p-list 
-                li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
-                li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
-                li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
-                li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
-                li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
-            .q-p-item
-              .q-p-title 
-                span Условия:
-              ul.q-p-list 
-                li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
-                li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
-                li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
-                li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
-                li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
-            .q-p-contact 
-              .q-p-title 
-                span Контактная информация:
-
-
+            a.btn-more(href="#" data-hystmodal="#myModal") Подробнее
+        .q-jobs-popup.hystmodal#myModal(aria-hidden="true")
+          .q-popup-body.hystmodal__wrap
+            .q-popup-content.hystmodal__window(role='dialog' aria-modal='true')
+              a(href='#' data-hystclose).hystmodal__close 
+              .q-popup-content__head
+                .title-mini 
+                  span Начальник транспортного цеха и АХЧ
+                span.q-jobs-green-text Группа компаний ООО “Генерация”; г.Якутск
+                span.q-jobs-grey-text Нам нужен менеджер для активных продаж с опытом, работа подразумевает продажу американского энергетического оборудования и запасных частей на территории Дальневосточного и Сибирского ФО.
+              .q-popup-content__body 
+                .q-p-item
+                  .q-p-title 
+                    span Обязанности:
+                  ul.q-p-list 
+                    li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
+                    li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
+                    li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
+                    li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
+                    li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
+                .q-p-item
+                  .q-p-title 
+                    span Требования:
+                  ul.q-p-list 
+                    li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
+                    li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
+                    li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
+                    li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
+                    li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
+                .q-p-item
+                  .q-p-title 
+                    span Условия:
+                  ul.q-p-list 
+                    li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
+                    li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
+                    li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
+                    li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
+                    li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor nisi.
+                .q-p-item 
+                  .q-p-title 
+                    span Контактная информация:
+                  include ../components/contacts
+                  a(href="#" data-hystmodal="#popup-form").btn-more Отправить резюме 
+        .q-popup-form.hystmodal#popup-form 
+          .hystmodal__wrap
+            .q-p-form-content.hystmodal__window(role='dialog' aria-modal='true')
+              a(href='#' data-hystclose).hystmodal__close 
+              .q-p-form-head
+                .title-mini 
+                  span Отравить резюме
+              .q-p-form-body 
+                form.q-form(action="")
+                  ul.q-form-row   
+                    li 
+                      input(type="text" placeholder='ФИО')
+                    li 
+                      input(type="text" placeholder='Контактные данные')
+                    li 
+                      input(type="text" placeholder='Электронная почта')
+                    
