@@ -186,6 +186,8 @@ body {
   font-size: 16px;
   line-height: 140%;
   transition: all .25s ease-in-out;
+  background-color: transparent;
+  cursor: pointer;
   &:hover {
     background: #77B946;
     color: white;

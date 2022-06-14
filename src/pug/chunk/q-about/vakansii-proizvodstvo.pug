@@ -85,14 +85,20 @@ section.vacancys-jobs
               a(href='#' data-hystclose).hystmodal__close 
               .q-p-form-head
                 .title-mini 
-                  span Отравить резюме
+                  span Отправить резюме
               .q-p-form-body 
                 form.q-form(action="")
                   ul.q-form-row   
                     li 
-                      input(type="text" placeholder='ФИО')
+                      input.q-form-name.input(type="text" placeholder='ФИО')
                     li 
-                      input(type="text" placeholder='Контактные данные')
+                      input.q-form-phone.input(type="text" placeholder='Контактные данные')
                     li 
-                      input(type="text" placeholder='Электронная почта')
-                    
+                      input.q-form-email.input(type="text" placeholder='Электронная почта')
+                    li 
+                      textarea#rewview(name="rewview" cols="20" rows="5" style="resize: vertical;" placeholder="Сопроводительное письмо (по желанию)")
+                    li.q-form__file-upload 
+                      input.q-form-file(type="file" id="file-input" multiple style="display: none;")
+                      label(for="file-input") Прикрепите резюме
+                    li 
+                      button.btn-more(type='sumbit') Отправить

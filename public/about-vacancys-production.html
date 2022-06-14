@@ -97,19 +97,29 @@
                 <div class="hystmodal__wrap">
                   <div class="q-p-form-content hystmodal__window" role="dialog" aria-modal="true"><a class="hystmodal__close" href="#" data-hystclose> </a>
                     <div class="q-p-form-head">
-                      <div class="title-mini"> <span>Отравить резюме</span></div>
+                      <div class="title-mini"> <span>Отправить резюме</span></div>
                     </div>
                     <div class="q-p-form-body"> 
                       <form class="q-form" action="">
                         <ul class="q-form-row">  
                           <li> 
-                            <input type="text" placeholder="ФИО">
+                            <input class="q-form-name input" type="text" placeholder="ФИО">
                           </li>
                           <li> 
-                            <input type="text" placeholder="Контактные данные">
+                            <input class="q-form-phone input" type="text" placeholder="Контактные данные">
                           </li>
                           <li> 
-                            <input type="text" placeholder="Электронная почта">
+                            <input class="q-form-email input" type="text" placeholder="Электронная почта">
+                          </li>
+                          <li> 
+                            <textarea id="rewview" name="rewview" cols="20" rows="5" style="resize: vertical;" placeholder="Сопроводительное письмо (по желанию)"></textarea>
+                          </li>
+                          <li class="q-form__file-upload"> 
+                            <input class="q-form-file" type="file" id="file-input" multiple style="display: none;">
+                            <label for="file-input">Прикрепите резюме</label>
+                          </li>
+                          <li> 
+                            <button class="btn-more" type="sumbit">Отправить</button>
                           </li>
                         </ul>
                       </form>
