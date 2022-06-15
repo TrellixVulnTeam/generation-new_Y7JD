@@ -5,10 +5,12 @@ import {
 import { ready } from "./modules/map-main.js";
 import { vacancySwiper } from "./modules/vacancys-swiper.js";
 import { phoneValidate } from "./modules/phone-number.js";
+import { projectCardSwiper } from "./modules/project-swiper.js";
 
 parnersSwiperTop;
 parnersSwiperLower;
 vacancySwiper;
+projectCardSwiper;
 
 let swiper = new Swiper(".mySwiper", {
   pagination: {
@@ -82,19 +84,23 @@ var newsSwiper = new Swiper(".news-swiper", {
 });
 
 window.onload = function () {
-  if (document.querySelector(".map ")) {
+  if (document.querySelector(".map")) {
     ready();
   }
 };
+window.onload = function () {
+  if (document.querySelector(".q-form-phone")) {
+    phoneValidate();
+  }
+};
 
-window.addEventListener("DOMContentLoaded", phoneValidate)
 
 const myModal = new HystModal({
-  linkAttributeName: 'data-hystmodal',
+  linkAttributeName: "data-hystmodal",
   catchFocus: true,
   closeOnEsc: true,
   backscroll: true,
 });
 
-import HystModal from './hystmodal';
+import HystModal from "./hystmodal";
 global.HystModal = HystModal;
