@@ -1,0 +1,27 @@
+.q-docs-files {
+  display: flex;
+  flex-direction: column;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 30px;
+    &:first-child {
+      margin-top: unset;
+    }
+    img {
+      width: 34px;
+      height: 40px;
+    }
+    a {
+      font-family: "Inter", sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      color: #7c7c87;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+  }
+}
