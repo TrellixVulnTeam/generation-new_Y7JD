@@ -4,6 +4,7 @@ import {
 } from "./modules/partners-swiper.js";
 import { ready } from "./modules/map-main.js";
 import { vacancySwiper } from "./modules/vacancys-swiper.js";
+import { phoneValidate } from "./modules/phone-number.js";
 
 parnersSwiperTop;
 parnersSwiperLower;
@@ -86,6 +87,8 @@ window.onload = function () {
   }
 };
 
+window.addEventListener("DOMContentLoaded", phoneValidate)
+
 const myModal = new HystModal({
   linkAttributeName: 'data-hystmodal',
   catchFocus: true,
@@ -94,6 +97,4 @@ const myModal = new HystModal({
 });
 
 import HystModal from './hystmodal';
-// import 'element-closest-polyfill';
-// import '../sass/block/hystmodal.scss';
 global.HystModal = HystModal;

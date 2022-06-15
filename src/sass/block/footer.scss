@@ -1,6 +1,12 @@
 @import "media-mixin.scss";
 @import "./components-style/contacts.scss";
 
+.urls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .footer {
   width: 100%;
   height: auto;

@@ -103,13 +103,13 @@
                       <form class="q-form" action="">
                         <ul class="q-form-row">  
                           <li> 
-                            <input class="q-form-name input" type="text" placeholder="ФИО">
+                            <input class="q-form-name input" type="text" placeholder="ФИО" required>
                           </li>
                           <li> 
-                            <input class="q-form-phone input" type="text" placeholder="Контактные данные">
+                            <input class="q-form-phone input" type="text" placeholder="Контактные данные" required maxlength="12">
                           </li>
                           <li> 
-                            <input class="q-form-email input" type="text" placeholder="Электронная почта">
+                            <input class="q-form-email input" type="text" placeholder="Электронная почта" required>
                           </li>
                           <li> 
                             <textarea id="rewview" name="rewview" cols="20" rows="5" style="resize: vertical;" placeholder="Сопроводительное письмо (по желанию)"></textarea>
@@ -118,6 +118,7 @@
                             <input class="q-form-file" type="file" id="file-input" multiple style="display: none;">
                             <label for="file-input">Прикрепите резюме</label>
                           </li>
+                          <li class="q-form__privacy"><span>Нажимая кнопку вы даете информационное согласие </span><a href="#">на обработку персональных данных</a></li>
                           <li> 
                             <button class="btn-more" type="sumbit">Отправить</button>
                           </li>
@@ -174,6 +175,7 @@
         </div>
       </div>
     </footer>
+    <div class="urls"><a href="http://localhost:3000/index.html"> мэйн</a><a href="http://localhost:3000/about.html"> О группе компаний</a><a href="http://localhost:3000/about-vacancys.html">вакансии</a><a href="http://localhost:3000/about-vacancys-production.html">вакансии ппроизводства</a><a href="http://localhost:3000/about-history.html">ИСТОРИЯ</a><a href="http://localhost:3000/about-leadership.html">РУКОВОДИТЕЛИ</a><a href="http://localhost:3000/about-documents.html">документы</a><a href="http://localhost:3000/about-documents-files.html">документы внутри</a><a href="http://localhost:3000/contacts.html">КОНТАКТЫ</a><a href="http://localhost:3000/projects.html">ПРОЕКТЫ</a><a href="http://localhost:3000/projects-investStadii.html">ПРОЕКТЫ в инвест стадии</a></div>
     <script src="js/main.js"></script>
     <script src="js/hystmodal.js"> </script>
   </body>

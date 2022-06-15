@@ -90,15 +90,18 @@ section.vacancys-jobs
                 form.q-form(action="")
                   ul.q-form-row   
                     li 
-                      input.q-form-name.input(type="text" placeholder='ФИО')
+                      input.q-form-name.input(type="text" placeholder='ФИО' required)
                     li 
-                      input.q-form-phone.input(type="text" placeholder='Контактные данные')
+                      input.q-form-phone.input(type="text" placeholder='Контактные данные'  required maxlength="12")
                     li 
-                      input.q-form-email.input(type="text" placeholder='Электронная почта')
+                      input.q-form-email.input(type="text" placeholder='Электронная почта'  required )
                     li 
                       textarea#rewview(name="rewview" cols="20" rows="5" style="resize: vertical;" placeholder="Сопроводительное письмо (по желанию)")
                     li.q-form__file-upload 
                       input.q-form-file(type="file" id="file-input" multiple style="display: none;")
                       label(for="file-input") Прикрепите резюме
+                    li.q-form__privacy
+                      span Нажимая кнопку вы даете информационное согласие 
+                      a(href="#") на обработку персональных данных
                     li 
                       button.btn-more(type='sumbit') Отправить
