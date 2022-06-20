@@ -94,7 +94,6 @@ window.onload = function () {
   }
 };
 
-
 const myModal = new HystModal({
   linkAttributeName: "data-hystmodal",
   catchFocus: true,
@@ -104,3 +103,25 @@ const myModal = new HystModal({
 
 import HystModal from "./hystmodal";
 global.HystModal = HystModal;
+
+
+// press center tabs
+const tabs = document.querySelector(".q-news-body");
+const tabBtn = document.querySelectorAll(".tab-btn");
+const tabContent = document.querySelectorAll(".tab-content");
+
+tabBtn.forEach((el) => {
+  el.addEventListener("click", openTabs);
+});
+function openTabs(el) {
+  var btnTarget = el.currentTarget;
+  var tab = btnTarget.dataset.tab;
+  tabContent.forEach(function (el) {
+    el.classList.remove("tab-content-active");
+  });
+  tabBtn.forEach(function (el) {
+    el.classList.remove("active-tab-btn");
+  });
+  document.querySelector("#" + tab).classList.add("tab-content-active");
+  btnTarget.classList.add("active-tab-btn");
+}

@@ -99,6 +99,13 @@ body {
   -webkit-transform: rotate(-45deg);
 }
 
+.arrow-pagination {
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='12' viewBox='0 0 8 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.16587 0.516175C2.58387 0.924175 6.66787 5.21118 6.66787 5.21118C6.77373 5.31331 6.85792 5.43572 6.91542 5.57111C6.97292 5.7065 7.00256 5.85208 7.00256 5.99918C7.00256 6.14627 6.97292 6.29185 6.91542 6.42724C6.85792 6.56263 6.77373 6.68504 6.66787 6.78718C6.66787 6.78718 2.58387 11.0762 2.16587 11.4822C1.74787 11.8902 0.995874 11.9182 0.550874 11.4822C0.104874 11.0482 0.0698738 10.4412 0.550874 9.90818L4.29787 6.00018L0.550874 2.09218C0.0698738 1.55917 0.104874 0.951175 0.550874 0.516175C0.995874 0.0801746 1.74787 0.107175 2.16587 0.516175Z' fill='%2399BF74'/%3E%3C/svg%3E%0A");
+  display: inline-block;
+  width: 7px;
+  height: 12px;
+}
+
 .img-block {
   display: inline-block;
   vertical-align: middle;
@@ -243,3 +250,6 @@ body {
 @import "block/q-projects/project-invest-card.scss";
 
 @import "block/footer.scss";
+
+// Press center scss
+@import "block/q-press-center/press-center-main.scss";

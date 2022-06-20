@@ -1,0 +1,65 @@
+section.press-center
+  .wrapper 
+    include ../components/breadcrumbs
+    .q-news-wrapper 
+      .q-news-head
+        .title-border 
+          span Пресс-центр
+      .q-news-body.pt-64 
+        .q-news-tabs  
+          button.tab-btn.active-tab-btn(data-tab="news") Новости
+          button.tab-btn(data-tab="smi") СМИ
+          button.tab-btn(data-tab="contacts") Контакты
+        .q-news-tabs__content
+          .news-wrapper.tab-content.tab-content-active#news
+            .news-card
+              a(href="#").news-card__link
+                .img-block 
+                  img(src="https://dummyimage.com/310x216/000/fff", alt="")
+                .news-card-content 
+                  .news-card__title 
+                    span ЧИСТОЙ АРКТИКЕ БЫТЬ! В пос. Тикси дан старт реализации пилотного проекта «ОПЭК»
+                  .news-card__descr 
+                    span С 23 по 27 августа п. Тикси прошло заседание проектного офиса по продвижению проектов Комплексного плана развития поселка Тикси на период до 2025 года под председательством первого вице-премьера Правительства Якутии, постоянного представителя в Москве Якутии Андрея Сандаминовича Федотова.
+                  .news-card__date 
+                    span.news-author DvEnergy  
+                    span 05.09.2021
+            .news-card
+              a(href="#").news-card__link
+                .img-block 
+                  img(src="https://dummyimage.com/310x216/000/fff", alt="")
+                .news-card-content 
+                  .news-card__title 
+                    span ЧИСТОЙ АРКТИКЕ БЫТЬ! В пос. Тикси дан старт реализации пилотного проекта «ОПЭК»
+                  .news-card__descr 
+                    span С 23 по 27 августа п. Тикси прошло заседание проектного офиса по продвижению проектов Комплексного плана развития поселка Тикси на период до 2025 года под председательством первого вице-премьера Правительства Якутии, постоянного представителя в Москве Якутии Андрея Сандаминовича Федотова.
+                  .news-card__date 
+                    span.news-author DvEnergy  
+                    span 05.09.2021
+            .news-card
+              a(href="#").news-card__link
+                .img-block 
+                  img(src="https://dummyimage.com/310x216/000/fff", alt="")
+                .news-card-content 
+                  .news-card__title 
+                    span ЧИСТОЙ АРКТИКЕ БЫТЬ! В пос. Тикси дан старт реализации пилотного проекта «ОПЭК»
+                  .news-card__descr 
+                    span С 23 по 27 августа п. Тикси прошло заседание проектного офиса по продвижению проектов Комплексного плана развития поселка Тикси на период до 2025 года под председательством первого вице-премьера Правительства Якутии, постоянного представителя в Москве Якутии Андрея Сандаминовича Федотова.
+                  .news-card__date 
+                    span.news-author DvEnergy  
+                    span 05.09.2021
+          .q-smi-wrapper.tab-content#smi
+            .news-wrapper 
+              span TYT PUSTO
+          .q-contacts-wrapper.tab-content#contacts
+            .news-wrapper 
+              span TYT PUSTO
+        .q-pagination
+          //- .left tyt nado sdelat tak chtobu kogda paginatsia na 1 straniste to arrow left doljen but hide
+          a(href="#").arrow-pagination.left 
+          a(href="#").q-pag-number.active-pagination 1
+          a(href="#").q-pag-number 2
+          a(href="#").q-pag-number ...
+          a(href="#").q-pag-number 9
+          a(href="#").q-pag-number 10
+          a(href="#").arrow-pagination.right 
