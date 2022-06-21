@@ -6,11 +6,15 @@ import { ready } from "./modules/map-main.js";
 import { vacancySwiper } from "./modules/vacancys-swiper.js";
 import { phoneValidate } from "./modules/phone-number.js";
 import { projectCardSwiper } from "./modules/project-swiper.js";
+import { scrollHeader } from "./modules/scroll-header.js";
 
 parnersSwiperTop;
 parnersSwiperLower;
 vacancySwiper;
 projectCardSwiper;
+
+// scroll header
+scrollHeader
 
 let swiper = new Swiper(".mySwiper", {
   pagination: {
@@ -103,7 +107,6 @@ const myModal = new HystModal({
 
 import HystModal from "./hystmodal";
 global.HystModal = HystModal;
-
 
 // press center tabs
 const tabs = document.querySelector(".q-news-body");
