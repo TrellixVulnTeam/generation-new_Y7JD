@@ -17,14 +17,12 @@ projectCardSwiper;
 scrollHeader;
 // header dropdown code
 
-
 // document.querySelector(".menu").addEventListener("click", (event) => {
 //   if (event.target.className === "nav-link") {
 //     event.target.classList.add = "active-nav-link";
 //     console.log(event.target.classList);
 //   }
 // });
-
 
 // SWIPERS
 let swiper = new Swiper(".mySwiper", {
@@ -140,23 +138,3 @@ function openTabs(el) {
   btnTarget.classList.add("active-tab-btn");
 }
 
-
-$(document).ready(function navLink() {
-  //Open Drop Down
-  $(".nav-link").click(function () {
-    if ($(".nav-items").hasClass("active-nav-link")) {
-      console.log("DSADASDAS");
-      $(".nav-items").removeClass("active-nav-link");
-      $(this).parent().parent().toggleClass("active-nav-link");
-    } else {
-      $(this).parent().parent().toggleClass("active-nav-link");
-    }
-  });
-
-  // close when click on Body
-  // $("html").click(function (event) {
-  //   if ($(event.target).closest(".custom-select").length === 0) {
-  //     $(".custom-select-wrapper").removeClass("open-dropdown");
-  //   }
-  // });
-});

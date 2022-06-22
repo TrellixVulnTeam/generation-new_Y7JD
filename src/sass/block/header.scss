@@ -97,7 +97,7 @@ $fs-15px: 15px;
             background: rgba(109, 173, 185, 0.1);
             backdrop-filter: blur(40px);
           }
-          &:active {
+          &:focus {
             .staff {
               top: 33px;
               left: 0;
@@ -129,6 +129,9 @@ $fs-15px: 15px;
                 }
               }
             }
+          }
+          &:active {
+            
           }
           &:last-child {
             margin-right: unset;
