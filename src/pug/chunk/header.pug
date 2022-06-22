@@ -1,37 +1,74 @@
 header.header
   .header-content 
     .header-top 
-      .header-top__companys
-        .dropdown
-          a.dropbtn Компании
-          .drop-content#dropdown 
-            a(href="#") first
-            a(href="#") second
-            a(href="#") third
+      .header-bottom
+        nav.header-nav
+          ul.nav-items
+            li.nav-item 
+                a.nav-link.companys-link(href='project.html') Компании
+                i.arrow-white
+                div.staff
+                  ul.dropdown
+                    li 
+                      a(href="#").companys-link Captone(Дв Энерджи)
+                    li 
+                      a(href="#").companys-link СПК Первомайский
+                    li 
+                      a(href="#").companys-link ДВ Энерджи
+                    li 
+                      a(href="#").companys-link Артик Консалт
       include components/contacts
-      //- ul.header-top__nav 
-      //-   li.top-nav__item.phone
-      //-     a(href="tel: 89998003344") + 7 (4112) 31-84-40
-      //-   li.top-nav__item.mail 
-      //-     a(href="mailto: dsadsa@mai.ru") info@dvenergy.pro
-      //-   li.top-nav__item.point
-      //-     a(href="#") Птицефабрика микрорайон
     hr
     .header-bottom 
       .header-logo
         a(href="index.html") 
-          img(src="../img/Logo.svg" alt="")
+          img.logo(src="../img/Logo.svg" alt="")
       nav.header-nav
-        ul.nav-items.dropdown.menu(data-dropdown-menu)
+        ul.nav-items.menu
           li.nav-item
-            a.nav-link.link(href='about-companys.html') О группе компаний
+            .nav-link О группе компаний
+            i.arrow-white
+            ul.dropdown
+              li 
+                a(href="about-history.html") История
+              li 
+                a(href="about-history.html") Руководство компаний
+              li 
+                a(href="about-history.html") Структурa группы компаний
+              li 
+                a(href="about-history.html") Партнеры
+              li 
+                a(href="about-history.html") Соглашения
           li.nav-item 
-            a.nav-link(href='#') Проекты
+            .nav-link Проекты
+            i.arrow-white
+            div.staff
+              ul.dropdown
+                li 
+                  a(href="project-investStadii.html") Проекты в инвестиционной стадии
+                li 
+                  a(href="project-investStadii-card.html") Проекты в стадии эксплуатации
+                li 
+                  a(href="project-investStadii-card.html") Реализованные проекты
+                li 
+                  a(href="#") Показ нижней карты
           li.nav-item 
             a.nav-link(href='#') Деятельность
+            i.arrow-white
           li.nav-item 
-            a.nav-link(href='#') Пресс-центр
+            a.nav-link(href='press-center.html') Пресс-центр
+            i.arrow-white
+            div.staff
+              ul.dropdown
+                li 
+                  a(href="project-investStadii.html") Группа компаний Генерации в СМИ
+                li 
+                  a(href="project-investStadii-card.html") Новости группы компаний
+                li 
+                  a(href="project-investStadii-card.html") Презентации
+                li 
+                  a(href="#") Контакты для прессы
           li.nav-item 
-            a.nav-link(href='#') Контакты
+            a.nav-link(href='contacts.html') Контакты
           li.nav-item 
             a.nav-link(href='#') 

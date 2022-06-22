@@ -10,16 +10,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Open+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   </head>
   <body>
     <header class="header">
       <div class="header-content"> 
         <div class="header-top"> 
-          <div class="header-top__companys">
-            <div class="dropdown"><a class="dropbtn">Компании</a>
-              <div class="drop-content" id="dropdown"> <a href="#">first</a><a href="#">second</a><a href="#">third</a></div>
-            </div>
+          <div class="header-bottom">
+            <nav class="header-nav">
+              <ul class="nav-items">
+                <li class="nav-item"> <a class="nav-link companys-link" href="project.html">Компании</a><i class="arrow-white"></i>
+                  <div class="staff">
+                    <ul class="dropdown">
+                      <li> <a class="companys-link" href="#">Captone(Дв Энерджи)</a></li>
+                      <li> <a class="companys-link" href="#">СПК Первомайский</a></li>
+                      <li> <a class="companys-link" href="#">ДВ Энерджи</a></li>
+                      <li> <a class="companys-link" href="#">Артик Консалт</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </nav>
           </div>
           <ul class="contacts">
             <li class="phone"><i> <img src="./img/phone.svg" alt=""></i><a href="tel: 89998003344">+ 7 (4112) 31-84-40</a></li>
@@ -29,14 +41,42 @@
         </div>
         <hr>
         <div class="header-bottom"> 
-          <div class="header-logo"><a href="index.html"> <img src="../img/Logo.svg" alt=""></a></div>
+          <div class="header-logo"><a href="index.html"> <img class="logo" src="../img/Logo.svg" alt=""></a></div>
           <nav class="header-nav">
-            <ul class="nav-items dropdown menu" data-dropdown-menu>
-              <li class="nav-item"><a class="nav-link link" href="about-companys.html">О группе компаний</a></li>
-              <li class="nav-item"> <a class="nav-link" href="#">Проекты</a></li>
-              <li class="nav-item"> <a class="nav-link" href="#">Деятельность</a></li>
-              <li class="nav-item"> <a class="nav-link" href="#">Пресс-центр</a></li>
-              <li class="nav-item"> <a class="nav-link" href="#">Контакты</a></li>
+            <ul class="nav-items menu">
+              <li class="nav-item">
+                <div class="nav-link">О группе компаний</div><i class="arrow-white"></i>
+                <ul class="dropdown">
+                  <li> <a href="about-history.html">История</a></li>
+                  <li> <a href="about-history.html">Руководство компаний</a></li>
+                  <li> <a href="about-history.html">Структурa группы компаний</a></li>
+                  <li> <a href="about-history.html">Партнеры</a></li>
+                  <li> <a href="about-history.html">Соглашения</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"> 
+                <div class="nav-link">Проекты</div><i class="arrow-white"></i>
+                <div class="staff">
+                  <ul class="dropdown">
+                    <li> <a href="project-investStadii.html">Проекты в инвестиционной стадии</a></li>
+                    <li> <a href="project-investStadii-card.html">Проекты в стадии эксплуатации</a></li>
+                    <li> <a href="project-investStadii-card.html">Реализованные проекты</a></li>
+                    <li> <a href="#">Показ нижней карты</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item"> <a class="nav-link" href="#">Деятельность</a><i class="arrow-white"></i></li>
+              <li class="nav-item"> <a class="nav-link" href="press-center.html">Пресс-центр</a><i class="arrow-white"></i>
+                <div class="staff">
+                  <ul class="dropdown">
+                    <li> <a href="project-investStadii.html">Группа компаний Генерации в СМИ</a></li>
+                    <li> <a href="project-investStadii-card.html">Новости группы компаний</a></li>
+                    <li> <a href="project-investStadii-card.html">Презентации</a></li>
+                    <li> <a href="#">Контакты для прессы</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item"> <a class="nav-link" href="contacts.html">Контакты</a></li>
               <li class="nav-item"> <a class="nav-link" href="#"> </a></li>
             </ul>
           </nav>
@@ -270,6 +310,6 @@
     </footer>
     <div class="urls"><a href="http://localhost:3000/index.html"> мэйн</a><a href="http://localhost:3000/about.html"> О группе компаний</a><a href="http://localhost:3000/about-vacancys.html">вакансии</a><a href="http://localhost:3000/about-vacancys-production.html">вакансии ппроизводства</a><a href="http://localhost:3000/about-history.html">ИСТОРИЯ</a><a href="http://localhost:3000/about-leadership.html">РУКОВОДИТЕЛИ</a><a href="http://localhost:3000/about-documents.html">документы</a><a href="http://localhost:3000/about-documents-files.html">документы внутри</a><a href="http://localhost:3000/contacts.html">КОНТАКТЫ</a><a href="http://localhost:3000/projects.html">ПРОЕКТЫ</a><a href="http://localhost:3000/projects-investStadii.html">ПРОЕКТЫ в инвест стадии</a><a href="http://localhost:3000/projects-investStadii-card.html">ПРОЕКТЫ в инвест стадии внутри</a><a href="http://localhost:3000/press-center.html">ПРесс центр мэйн</a><a href="http://localhost:3000/press-center-news-card.html">ПРесс центр карточка</a><a href="http://localhost:3000/about-structure.html">СТРУКТУРА КОМПАНИи</a></div>
     <script src="js/main.js"></script>
-    <script src="js/hystmodal.js"> </script>
+    <script src="js/header-nav.js"> </script>
   </body>
 </html>
