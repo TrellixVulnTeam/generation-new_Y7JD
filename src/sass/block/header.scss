@@ -11,9 +11,9 @@ $fs-15px: 15px;
   width: 100%;
   height: auto;
   z-index: 1000;
+  transition: background-color 0.05s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: transparent;
-  transition: background-color 0.3s ease-in-out;
   animation: transHeaderOut 0.2s;
 }
 .header-content {
@@ -32,9 +32,7 @@ $fs-15px: 15px;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: auto;
-    margin-top: 19px;
-    margin-bottom: 14px;
+    height: 51px;
     .header-bottom {
       height: unset;
       z-index: 10;
@@ -54,7 +52,7 @@ $fs-15px: 15px;
   }
   .header-bottom {
     z-index: 9;
-    height: 100px;
+    height: 88px;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -204,7 +202,7 @@ $fs-15px: 15px;
 
 .top-companys {
   a {
-    font-weight: 400;
+    font-weight: 500;
     font-size: 14px;
     line-height: 120%;
   }
@@ -221,9 +219,9 @@ hr {
   width: 100%;
   background-color: #fffffff3;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.4s;
-  transition: all 0.15s ease;
-  transform: translateY(-68px);
+  transition: background-color 0.05s !important;
+  // transition: all 0.15s;
+  transform: translateY(-51px);
   animation: translateHeader 0.2s;
   .header-content {
     transition: all 0.15s ease-in-out;
@@ -233,6 +231,7 @@ hr {
     }
     .header-bottom {
       transition: all 0.15s ease-in-out;
+
       a {
         color: black !important;
       }
@@ -260,21 +259,21 @@ ul li ul li a {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-68px);
+    transform: translateY(-51px);
   }
 }
-@keyframes translateHeaderChild {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-8px);
-  }
-}
+// @keyframes translateHeaderChild {
+//   0% {
+//     transform: translateY(0);
+//   }
+//   100% {
+//     transform: translateY(-8px);
+//   }
+// }
 
 @keyframes transHeaderOut {
   0% {
-    transform: translateY(-49px);
+    transform: translateY(-50px);
   }
   100% {
     transform: translateY(0);

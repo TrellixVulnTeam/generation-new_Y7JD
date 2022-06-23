@@ -1,6 +1,15 @@
-section.about-group 
+section.about-group.section
+  hr
   .wrapper
-    include ../components/breadcrumbs
+    nav.breadcrumbs 
+      ul  
+        li.breadcrumbs-item
+          a(href="/") 
+            i.icon-home 
+        li 
+          i.arrow-black
+        li 
+          a(href="javascript:void(0)") О группе
     .about-content 
       .about-content__head 
         .title-border

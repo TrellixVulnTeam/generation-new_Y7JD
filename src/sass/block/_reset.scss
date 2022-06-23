@@ -358,3 +358,11 @@ a {
   min-width: unset;
   border: unset;
 }
+
+.breadcrumbs li:not(:last-child)::after {
+  content: '';
+}
+
+.breadcrumbs li {
+  text-transform: unset;
+}

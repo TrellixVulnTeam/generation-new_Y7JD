@@ -2,3 +2,24 @@
   width: 16px !important;
   height: 16px !important;
 }
+.breadcrumbs {
+  margin-top: 33px;
+  ul {
+    display: flex;
+    align-items: center;
+    li {
+      a {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 120%;
+        color: #0b1600;
+      }
+      &:last-child {
+        a {
+          color: #0b1600af;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}
