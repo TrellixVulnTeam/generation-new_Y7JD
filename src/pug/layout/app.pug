@@ -9,6 +9,7 @@ html(lang="ru")
     link(rel='preconnect' href='https://fonts.googleapis.com')
     link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
     link(href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap' rel='stylesheet') 
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous")
     link(rel="stylesheet" href="css/main.min.css")
 
     script(src='https://code.jquery.com/jquery-3.6.0.min.js')
@@ -16,5 +17,8 @@ html(lang="ru")
   body
     block page
     script(src="js/main.js")
+    script(src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous")
+    script.
+      $(document).foundation();
     //- script(src="js/hystmodal.js") 
     //- script(src="js/header-nav.js") 

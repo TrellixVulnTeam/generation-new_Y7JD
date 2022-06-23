@@ -138,3 +138,10 @@ function openTabs(el) {
   btnTarget.classList.add("active-tab-btn");
 }
 
+// header
+const isClickBtn = document.querySelectorAll(['data-is-click']);
+console.log(isClickBtn);
+// isClickBtn.forEach((el) => {
+//   console.dir(el);
+//   el.addEventListener('click', console.log(el))
+// })

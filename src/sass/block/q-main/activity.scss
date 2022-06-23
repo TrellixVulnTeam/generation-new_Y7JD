@@ -59,6 +59,7 @@
     max-width: 271px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     @include xxl {
       width: 250px !important;
     }

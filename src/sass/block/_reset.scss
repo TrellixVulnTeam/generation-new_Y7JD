@@ -1,8 +1,60 @@
-*, *:before, *:after{
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
-html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video{
+html,
+body,
+div,
+span,
+object,
+iframe,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+code,
+em,
+img,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+b,
+u,
+i,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+main,
+canvas,
+embed,
+footer,
+header,
+nav,
+section,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -15,33 +67,294 @@ html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockq
   text-decoration: none;
 }
 
-footer, header, nav, section, main{
+footer,
+header,
+nav,
+section,
+main {
   display: block;
 }
 
-body{
+body {
   line-height: 1;
 }
 
-ol, ul{
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q{
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after, q:before, q:after{
-  content: '';
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
   content: none;
 }
 
-table{
+table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-input{
+input {
   -webkit-appearance: none;
   border-radius: 0;
+}
+/* ==========================================================================
+Foundation (reset + base)
+============================================================================== */
+/* Reset
+    -------------------------------------------------------------------- */
+ins,
+mark {
+  color: #000;
+}
+a,
+hr {
+  padding: 0;
+}
+#page-top a,
+.l-panel-item > a,
+a,
+ins {
+  text-decoration: none;
+}
+abbr,
+address,
+article,
+aside,
+audio,
+b,
+blockquote,
+body,
+canvas,
+caption,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+p,
+pre,
+q,
+samp,
+section,
+small,
+span,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+ul,
+var,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: 0 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+li,
+nav ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+  content: "";
+  content: none;
+}
+a {
+  margin: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: 0 0;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+a:hover {
+  color: #00ceff;
+}
+ins {
+  background-color: #00f;
+}
+mark {
+  background-color: #ff9;
+  font-style: italic;
+  font-weight: 700;
+}
+del {
+  text-decoration: line-through;
+}
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input,
+select {
+  vertical-align: middle;
+}
+.cf:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+/*clearfix*/
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  font-size: 0;
+  clear: both;
+  visibility: hidden;
+}
+/* Hides from IE Mac */
+* html .clearfix {
+  height: 1%;
+}
+hr {
+  max-width: unset;
+}
+/* End Hack */
+
+/* Base
+-------------------------------------------------------------------- */
+#page-top a:before,
+.c-heading-bg::before {
+  content: " ";
+}
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  vertical-align: bottom;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Lato", arial, helvetica, "メイリオ", YuGothic, "游ゴシック",
+    Meiryo, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック",
+    "MS P Gothic", sans-serif, serif;
+  color: #333;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 13px;
+  font-size: 1.3rem;
+  -webkit-text-size-adjust: 100%;
+  background: #fff;
+  min-width: 320px;
+}
+.hide {
+  display: none;
+}
+.dropdown.menu>li.is-dropdown-submenu-parent>a::after,
+.dropdown.menu.vertical>li.opens-right>a::after {
+  display: none ;
+  border-style: unset ;
+}
+.dropdown.menu>li.is-dropdown-submenu-parent>a {
+  position: unset ;
+  padding-right: unset;
+}
+.dropdown.menu>li>a {
+  padding: unset ;
+}
+a {
+  color: unset;
+  &:hover {
+    color: unset;
+  }
+  &:focus {
+    color: unset;
+  }
+}
+
+.dropdown.menu>li.is-active>a {
+  color: unset;
+}
+
+.is-dropdown-submenu {
+  min-width: unset;
+  border: unset;
 }
