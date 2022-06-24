@@ -1,17 +1,13 @@
 $base-font-size: 22px;
 $color-gold: #f1cdb3;
 
-@mixin ph {
-  @media (max-width: 1240px) {
-    @content;
-  }
-}
 
 @import "block/reset.scss";
 @import "media-mixin.scss";
 @import "./block/components-style/breadcrumbs.scss";
 @import "./block/components-style/contacts.scss";
 @import "./block/components-style/_icons.scss";
+@import "./block/components-style/burger-menu.scss";
 @import "./block/hystmodal.scss";
 
 html {

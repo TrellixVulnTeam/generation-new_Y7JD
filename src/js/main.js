@@ -138,5 +138,27 @@ function openTabs(el) {
   btnTarget.classList.add("active-tab-btn");
 }
 
-// header
+// header burger
+const burgerBtn = document.querySelector(".navTrigger");
+const burgerBtnClose = document.querySelector(".navTrigger");
+const topHeader = document.querySelector(".header-top");
+const navBg = document.querySelector(".header-content");
+const nav = document.querySelector(".nav-items");
+const hr = document.querySelector(".hr");
+
+burgerBtn.addEventListener("click", function () {
+  // burgerBtn.classList.toggle("active-burger");
+  burgerBtn.style.display = 'none'
+  burgerBtnClose.style.display = 'block'
+  topHeader.classList.toggle("active-bg");
+  
+  if(topHeader.classList.length == 2) {
+    // topHeader.classList.add('active-bg')
+    hr.style.display = 'none'
+  }else {
+    // topHeader.classList.remove('active-bg')
+    hr.style.display = 'block'
+  }
+});
+
 

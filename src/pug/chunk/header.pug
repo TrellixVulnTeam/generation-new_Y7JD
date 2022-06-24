@@ -1,100 +1,112 @@
 header.header
   .header-content 
     .header-top 
-      .header-bottom
-        nav.header-nav.top-companys
-          ul.nav-items.dropdown.menu(data-dropdown-menu data-click-open='true' data-disable-hover='true')
-            li.nav-item.is-dropdown-submenu-parent 
-              a(href="#").nav-link Компании
-                i.arrow-white
-              ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu')
-                li.nav-item__child
-                  a(href="about.html") Captone(ДВ Энерджи)
-                li.nav-item__child
-                  a(href="about-history.html") СПК Первомайский
-                li.nav-item__child
-                  a(href="about-history.html") ДВ Энерджи
-                li.nav-item__child
-                  a(href="about-history.html") Артик Консалт
+      nav.header-nav.top-companys
+          //- ul.nav-items.dropdown.menu(data-dropdown-menu data-click-open='true' data-disable-hover='true')
+          //-   li.nav-item.is-dropdown-submenu-parent 
+          //-     a(href="#").nav-link Компании
+          //-       i.arrow-white
+          //-     ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu' data-closing-time='500')
+          //-       li.nav-item__child
+          //-         a(href="about.html") Captone(ДВ Энерджи)
+          //-       li.nav-item__child
+          //-         a(href="about-history.html") СПК Первомайский
+          //-       li.nav-item__child
+          //-         a(href="about-history.html") ДВ Энерджи
+          //-       li.nav-item__child
+          //-         a(href="about-history.html") Артик Консалт
       include components/contacts
-    hr
+    hr.hr
     .header-bottom 
       .header-logo
         a(href="index.html") 
           img.logo(src="../img/Logo.svg" alt="")
       nav.header-nav
-        ul.nav-items.dropdown.menu(data-dropdown-menu data-click-open='true' data-disable-hover='true')
-          li.nav-item.is-dropdown-submenu-parent 
-            a(href="#").nav-link О группе компаний
-              i.arrow-white
-            ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu')
-              li.nav-item__child
-                a(href="about.html") О группе
-              li.nav-item__child
-                a(href="about-history.html") История
-              li.nav-item__child
-                a(href="about-history.html") Руководство компаний
-              li.nav-item__child
-                a(href="about-history.html") Структурa группы компаний
-              li.nav-item__child
-                a(href="about-history.html") Партнеры
-              li.nav-item__child
-                a(href="about-history.html") Соглашения
-          li.nav-item.is-dropdown-submenu-parent 
-            a(href="#").nav-link Проекты
-              i.arrow-white
-            ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu')
-              li.nav-item__child
-                a(href="about.html") Проекты в инвестиционной стадии
-              li.nav-item__child
-                a(href="about-history.html") Проекты в стадии эксплуатации 
-              li.nav-item__child
-                a(href="about-history.html") Реализованные проекты
-              li.nav-item__child
-                a(href="about-history.html") Показ нижней карты
-          li.nav-item.is-dropdown-submenu-parent 
-            a(href="#").nav-link Деятельность 
-              i.arrow-white
-            ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu')
-              li.nav-item__child
-                a(href="about.html") Инвестиционная деятельность
-              li.nav-item__child
-                a(href="about-history.html") Capstone
-              li.nav-item__child.sub 
-                a(href="about-history.html") Теплоснабжение
-                  i.arrow-white.sub-arrow
-                ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu')
-                  li.nav-item__child
-                    a(href="about.html") Инвестиционная деятельность
-                  li.nav-item__child
-                    a(href="about-history.html") Capstone
-              li.nav-item__child.sub 
-                a(href="about-history.html") Теплоснабжение
-                  i.arrow-white.sub-arrow
-                ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu')
-                  li.nav-item__child
-                    a(href="about.html") Инвестиционная деятельность
-                  li.nav-item__child
-                    a(href="about-history.html") Capstone
-              li.nav-item__child.sub 
-                a(href="about-history.html") Теплоснабжение
-                  i.arrow-white.sub-arrow
-                ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu')
-                  li.nav-item__child
-                    a(href="about.html") Инвестиционная деятельность
-                  li.nav-item__child
-                    a(href="about-history.html") Capstone
-          li.nav-item.is-dropdown-submenu-parent 
-            a(href="#").nav-link Пресс-центр
-              i.arrow-white
-            ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu')
-              li.nav-item__child
-                a(href="about.html") Группа компаний Генерации в СМИ
-              li.nav-item__child
-                a(href="about-history.html") Новости группы компаний
-              li.nav-item__child
-                a(href="about-history.html") Презентации
-              li.nav-item__child
-                a(href="about-history.html") Контакты для прессы
-          li.nav-item 
-            a(href="contacts.html").nav-link Контакты
+        .nav-items__wrapper
+          ul.nav-items.dropdown.menu(data-dropdown-menu data-click-open='false' data-disable-hover='true'  data-force-follow='false' data-close-on-click-inside='true' )
+            li.nav-item.is-dropdown-submenu-parent
+              a(href="#").nav-link О группе компаний
+                i.arrow-white
+              ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu')
+                li.nav-item__child
+                  a(href="about.html") О группе
+                li.nav-item__child
+                  a(href="about-history.html") История
+                li.nav-item__child
+                  a(href="about-history.html") Руководство компаний
+                li.nav-item__child
+                  a(href="about-history.html") Структурa группы компаний
+                li.nav-item__child
+                  a(href="about-history.html") Партнеры
+                li.nav-item__child
+                  a(href="about-history.html") Соглашения
+            li.nav-item.is-dropdown-submenu-parent 
+              a(href="#").nav-link Проекты
+                i.arrow-white
+              ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu' )
+                li.nav-item__child
+                  a(href="about.html") Проекты в инвестиционной стадии
+                li.nav-item__child
+                  a(href="about-history.html") Проекты в стадии эксплуатации 
+                li.nav-item__child
+                  a(href="about-history.html") Реализованные проекты
+                li.nav-item__child
+                  a(href="about-history.html") Показ нижней карты
+            li.nav-item.is-dropdown-submenu-parent(data-disable-hover='true')
+              a(href="#").nav-link Деятельность 
+                i.arrow-white
+              ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu' )
+                li.nav-item__child
+                  a(href="about.html") Инвестиционная деятельность
+                li.nav-item__child
+                  a(href="about-history.html") Capstone
+                li.nav-item__child.sub 
+                  a(href="about-history.html") Теплоснабжение
+                    i.arrow-white.sub-arrow
+                  ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu')
+                    li.nav-item__child
+                      a(href="about.html") Инвестиционная деятельность
+                    li.nav-item__child
+                      a(href="about-history.html") Capstone
+                li.nav-item__child.sub 
+                  a(href="about-history.html") Теплоснабжение
+                    i.arrow-white.sub-arrow
+                  ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu')
+                    li.nav-item__child
+                      a(href="about.html") Инвестиционная деятельность
+                    li.nav-item__child
+                      a(href="about-history.html") Capstone
+                li.nav-item__child.sub 
+                  a(href="about-history.html") Теплоснабжение
+                    i.arrow-white.sub-arrow
+                  ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu')
+                    li.nav-item__child
+                      a(href="about.html") Инвестиционная деятельность
+                    li.nav-item__child
+                      a(href="about-history.html") Capstone
+            li.nav-item.is-dropdown-submenu-parent 
+              a(href="#").nav-link Пресс-центр
+                i.arrow-white
+              ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu')
+                li.nav-item__child
+                  a(href="about.html") Группа компаний Генерации в СМИ
+                li.nav-item__child
+                  a(href="about-history.html") Новости группы компаний
+                li.nav-item__child
+                  a(href="about-history.html") Презентации
+                li.nav-item__child
+                  a(href="about-history.html") Контакты для прессы
+            li.nav-item 
+              a(href="contacts.html").nav-link Контакты
+            //- li.nav-item 
+            //-   a(href="javascript:void(0)").nav-link 
+            //-     i.icon-search
+        a(href="javascript:void(0)").nav-search
+          .icon-search
+        .navTrigger   
+          span   
+          span 
+          span
+        .btnClose
+          span 
+          span

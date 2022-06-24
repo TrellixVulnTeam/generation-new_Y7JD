@@ -27,6 +27,9 @@ $fs-15px: 15px;
   z-index: 100;
   transition: all 0.3s ease-in-out;
   transform: translateY(0);
+  @include xl {
+    padding: 0 50px;
+  }
   .header-top {
     display: flex;
     align-items: center;
@@ -61,10 +64,15 @@ $fs-15px: 15px;
     transition: all 0.3s;
 
     .header-nav {
+      display: flex;
+      align-items: center;
       .nav-items {
         display: flex;
         align-items: center;
-
+        margin-right: 20px;
+        @include xl {
+          margin-right: unset;
+        }
         .nav-item {
           position: relative;
           display: flex;
@@ -77,6 +85,16 @@ $fs-15px: 15px;
           font-size: 16px;
           line-height: 120%;
           color: #ffffff;
+          @include xxl {
+            margin-right: unset;
+            @include xl {
+              position: unset !important;
+              margin-bottom: 16px;
+              .arrow-white {
+                transform: rotate(270deg);
+              }
+            }
+          }
           .nav-link {
             padding: 8px 15px;
             display: flex;
@@ -92,8 +110,14 @@ $fs-15px: 15px;
             left: 0;
             top: 0;
             z-index: 10000;
-            transform: translateY(405px);
+            transform: translateY(400%);
             transition: all 0.2s ease;
+            @include xl {
+              background: rgba(0, 0, 0, 0.562);
+              left: 100%;
+              right: auto;
+              z-index: 10000000000000000000;
+            }
           }
           &:last-child {
             margin-right: unset;
@@ -110,30 +134,30 @@ $fs-15px: 15px;
   }
 }
 
-.sub {
-  display: flex;
-  align-items: center;
-  a {
-    display: flex;
-    align-items: center;
-  }
-  &:hover {
-    // padding-bottom: 2px;
-    &::after {
-      content: "";
-      position: absolute;
-      left: -5px;
-      top: 0px;
-      width: 2px;
-      height: 100%;
-      background-color: #648b97;
-      border-left: 2px solid rgba(255, 255, 255, 0.3);
-    }
-  }
-  .arrow-white {
-    transform: rotate(-90deg);
-  }
-}
+// .sub {
+//   display: flex;
+//   align-items: center;
+//   a {
+//     display: flex;
+//     align-items: center;
+//   }
+//   &:hover {
+//     // padding-bottom: 2px;
+//     &::after {
+//       content: "";
+//       position: absolute;
+//       left: -5px;
+//       top: 0px;
+//       width: 2px;
+//       height: 100%;
+//       background-color: #648b97;
+//       border-left: 2px solid rgba(255, 255, 255, 0.3);
+//     }
+//   }
+//   .arrow-white {
+//     transform: rotate(-90deg);
+//   }
+// }
 
 .is-dropdown-submenu {
   .sub .is-active {
@@ -155,7 +179,12 @@ $fs-15px: 15px;
   border-radius: 6px;
   transform: translateY(44px) !important;
   z-index: 10000;
-
+  @include xl {
+    background: unset;
+    box-shadow: unset;
+    backdrop-filter: unset;
+    transform: translateX(0);
+  }
   .nav-item__child {
     margin-top: 21px;
     &:first-child {
@@ -163,20 +192,23 @@ $fs-15px: 15px;
     }
     a {
       white-space: nowrap;
-      position: relative;
-      &:hover {
-        // padding-bottom: 2px;
-        &::after {
-          content: "";
-          position: absolute;
-          left: -5px;
-          top: 6px;
-          width: 2px;
-          height: 100%;
-          background-color: #648b97;
-          border-left: 2px solid rgba(255, 255, 255, 0.3);
-        }
+      // position: relative;
+      @include xl {
+        position: unset;
       }
+      // &:hover {
+      //   // padding-bottom: 2px;
+      //   &::after {
+      //     content: "";
+      //     position: absolute;
+      //     left: -5px;
+      //     top: 6px;
+      //     width: 2px;
+      //     height: 100%;
+      //     background-color: #648b97;
+      //     border-left: 2px solid rgba(255, 255, 255, 0.3);
+      //   }
+      // }
     }
   }
 
@@ -197,6 +229,32 @@ $fs-15px: 15px;
   i {
     transition: all 0.15s ease-in-out;
     transform: rotate(180deg);
+    @include xl {
+      transform: rotate(90deg) !important;
+    }
+  }
+}
+
+.nav-items__wrapper {
+  @include xl {
+    padding: 0 50px;
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 51px;
+    bottom: 0;
+    right: 0;
+    background: rgba(36, 37, 37, 0.9);
+    backdrop-filter: blur(20px);
+    .nav-items {
+      padding: 24px 24px 0 0;
+      border-right: 1px solid rgba(66,66,66,.5);
+      flex-direction: column;
+      align-items: flex-start !important;
+      // justify-content: flex-start;
+    }
   }
 }
 
@@ -242,6 +300,9 @@ hr {
         transition: all 0.15s ease-in-out;
         background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.4838 2.16294C11.0758 2.58094 6.78882 6.66494 6.78882 6.66494C6.68669 6.7708 6.56428 6.85499 6.42889 6.91249C6.2935 6.96999 6.14792 6.99963 6.00082 6.99963C5.85373 6.99963 5.70815 6.96999 5.57276 6.91249C5.43737 6.85499 5.31496 6.7708 5.21282 6.66494C5.21282 6.66494 0.923823 2.58094 0.517824 2.16294C0.109824 1.74494 0.0818233 0.992944 0.517824 0.547944C0.951824 0.101944 1.55882 0.0669441 2.09182 0.547944L5.99982 4.29494L9.90782 0.547944C10.4408 0.0669441 11.0488 0.101944 11.4838 0.547944C11.9198 0.992944 11.8928 1.74494 11.4838 2.16294Z' fill='black'/%3E%3C/svg%3E%0A");
       }
+      .icon-search {
+        background-image: url("data:image/svg+xml,%3Csvg width='36' height='35' viewBox='0 0 36 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M27.4658 27L22.9798 22.506L27.4658 27ZM25.4658 16.5C25.4658 18.7543 24.5703 20.9163 22.9762 22.5104C21.3822 24.1045 19.2202 25 16.9658 25C14.7115 25 12.5495 24.1045 10.9554 22.5104C9.36135 20.9163 8.46582 18.7543 8.46582 16.5C8.46582 14.2457 9.36135 12.0837 10.9554 10.4896C12.5495 8.89553 14.7115 8 16.9658 8C19.2202 8 21.3822 8.89553 22.9762 10.4896C24.5703 12.0837 25.4658 14.2457 25.4658 16.5V16.5Z' stroke='black' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+      }
     }
   }
 }
@@ -252,6 +313,14 @@ hr {
 
 ul li ul li a {
   transition: all 0.2s ease;
+}
+
+.active-bg {
+  background: rgba(36, 37, 37, 0.9);
+  backdrop-filter: blur(20px);
+  width: 100vw !important;
+  padding: 0 50px;
+  border-bottom: 1px solid rgba(66, 66, 66, 0.5);
 }
 
 @keyframes translateHeader {
