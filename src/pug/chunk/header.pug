@@ -23,11 +23,11 @@ header.header
           img.logo(src="../img/Logo.svg" alt="")
       nav.header-nav
         .nav-items__wrapper
-          ul.nav-items.dropdown.menu(data-dropdown-menu data-click-open='false' data-disable-hover='true'  data-force-follow='false' data-close-on-click-inside='true' )
-            li.nav-item.is-dropdown-submenu-parent
+          ul.nav-items.dropdown.menu(data-dropdown-menu data-click-open='true' data-disable-hover='true' data-force-follow='false')
+            li.nav-item
               a(href="#").nav-link О группе компаний
                 i.arrow-white
-              ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu')
+              ul.menu
                 li.nav-item__child
                   a(href="about.html") О группе
                 li.nav-item__child
@@ -40,10 +40,10 @@ header.header
                   a(href="about-history.html") Партнеры
                 li.nav-item__child
                   a(href="about-history.html") Соглашения
-            li.nav-item.is-dropdown-submenu-parent 
+            li.nav-item
               a(href="#").nav-link Проекты
                 i.arrow-white
-              ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu' )
+              ul.menu
                 li.nav-item__child
                   a(href="about.html") Проекты в инвестиционной стадии
                 li.nav-item__child
@@ -52,42 +52,20 @@ header.header
                   a(href="about-history.html") Реализованные проекты
                 li.nav-item__child
                   a(href="about-history.html") Показ нижней карты
-            li.nav-item.is-dropdown-submenu-parent(data-disable-hover='true')
+            li.nav-item
               a(href="#").nav-link Деятельность 
                 i.arrow-white
-              ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu' )
+              ul.menu
                 li.nav-item__child
                   a(href="about.html") Инвестиционная деятельность
                 li.nav-item__child
                   a(href="about-history.html") Capstone
                 li.nav-item__child.sub 
                   a(href="about-history.html") Теплоснабжение
-                    i.arrow-white.sub-arrow
-                  ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu')
-                    li.nav-item__child
-                      a(href="about.html") Инвестиционная деятельность
-                    li.nav-item__child
-                      a(href="about-history.html") Capstone
-                li.nav-item__child.sub 
-                  a(href="about-history.html") Теплоснабжение
-                    i.arrow-white.sub-arrow
-                  ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu')
-                    li.nav-item__child
-                      a(href="about.html") Инвестиционная деятельность
-                    li.nav-item__child
-                      a(href="about-history.html") Capstone
-                li.nav-item__child.sub 
-                  a(href="about-history.html") Теплоснабжение
-                    i.arrow-white.sub-arrow
-                  ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu')
-                    li.nav-item__child
-                      a(href="about.html") Инвестиционная деятельность
-                    li.nav-item__child
-                      a(href="about-history.html") Capstone
             li.nav-item.is-dropdown-submenu-parent 
               a(href="#").nav-link Пресс-центр
                 i.arrow-white
-              ul.dropdown.menu.submenu.is-dropdown-submenu.vertical(data-submenu role='menu')
+              ul.menu
                 li.nav-item__child
                   a(href="about.html") Группа компаний Генерации в СМИ
                 li.nav-item__child
@@ -98,15 +76,12 @@ header.header
                   a(href="about-history.html") Контакты для прессы
             li.nav-item 
               a(href="contacts.html").nav-link Контакты
-            //- li.nav-item 
-            //-   a(href="javascript:void(0)").nav-link 
-            //-     i.icon-search
         a(href="javascript:void(0)").nav-search
           .icon-search
-        .navTrigger   
+        .navTrigger
           span   
           span 
           span
-        .btnClose
-          span 
-          span
+        //- .btnClose
+        //-   span 
+        //-   span

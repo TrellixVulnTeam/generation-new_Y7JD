@@ -111,6 +111,9 @@
 // 50%{transform: translateY(-9px) rotate(0deg);}
 // 100%{transform: translateY(-9px) rotate(135deg);}
 // }
+.navTrigger {
+  display: none;
+}
 .navTrigger,
 .btnClose {
   cursor: pointer;
