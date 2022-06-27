@@ -132,7 +132,6 @@ scrollHeader;
 
 // header burger
 const burgerBtn = document.querySelector(".navTrigger");
-// const burgerBtnClose = document.querySelector(".navTrigger");
 const topHeader = document.querySelector(".header-top");
 const navBg = document.querySelector(".header-content");
 const nav = document.querySelector(".nav-items");
@@ -141,78 +140,27 @@ const hr = document.querySelector(".hr");
 const navWrapper = document.querySelector(".nav-items__wrapper");
 const header = document.querySelector(".header");
 
-let currentPos = window.pageYOffset || document.documentElement.scrollTop;
-let pageY = currentPos + ;
+let pageY = window.innerHeight - window.innerHeight + 1;
 
 burgerBtn.addEventListener("click", function () {
-  // header.classList.toggle('scrolled-header')
   topHeader.classList.toggle("active-bg");
   nav.classList.toggle("vertical");
   burgerBtn.classList.toggle("active-burger");
-  // if (header.classList.contains("scrolled-header")) {
-  //   // console.log("DONE");
-  //   header.classList.remove("scrolled-header");
-  // }
 
   if (burgerBtn.classList.contains("active-burger")) {
     document.body.style.overflow = "hidden";
     if (window.scrollY >= 50) {
-      console.log("scrolled");
       header.classList.remove("scrolled-header");
-      // async function check() {
-      //   console.log(header.classList.contains("scrolled-header"));
-      //   if (header.classList.contains("scrolled-header")) {
-      //     await setTimeout(() => {
-      //       window.scroll({
-      //         top: 1,
-      //         behavior: "smooth",
-      //       });
-      //     }, 100);
-      //   }
-      // }
-      // check();
-      // if(!!burgerBtn.classList.contains("active-burger")) {
-      //   console.log("DONE");
-      // }
-      // return check()
-      // setTimeout(() => header.classList.remove("scrolled-header"), 1);
-
-      // setTimeout(() => header.classList.add("scrolled-header"), 1000)
-      // console.log(header.classList.contains("scrolled-header"));
-      // let checkClass = setInterval(() => check(), 500);
-      // function check() {
-      //   console.log("CHECK");
-      //   // if (!header.classList.contains("scrolled-header")) {
-      //   //   header.classList.add("scrolled-header");
-      //   // }
-      // }
-      // if (!header.classList.contains("scrolled-header")) {
-      //   header.classList.add("scrolled-header");
-      // }
-      // burgerBtn.addEventListener('click', () => {
-      //   setTimeout(() => header.classList.add('scrolled-header'), 1)
-      // })
     }
-    if (window.scrollY < 50) {
-      console.log("not scrolled");
-    }
+    // if (window.scrollY < 50) {
+    //   console.log("not scrolled");
+    // }
   } else {
     document.body.style.overflow = "unset";
-    // currentPos = window.pageYOffset + "10";
-
     setTimeout(() => {
-      window.scrollTo(pageY, "10");
-    });
-    // header.classList.add("scrolled-header");
+      window.scrollBy(0, pageY)
+    }, 10);
   }
-  // else {
-  //   header.classList.add("scrolled-header");
-  // }
-  // if (burgerBtn.classList.contains("active-burger")) {
-  //   header.classList.remove("scrolled-header");
-  // } else {
-  //   header.classList.add("scrolled-header");
-  // }
   if (nav.classList.length >= 4) {
     nav.style.position = "relative";
     navWrapper.style.top = "0";
@@ -232,3 +180,4 @@ burgerBtn.addEventListener("click", function () {
     hr.style.display = "block";
   }
 });
+

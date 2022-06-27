@@ -3,18 +3,10 @@ const hideHeader = document.querySelector(".header-content");
 const btnBurger = document.querySelector(".navTrigger");
 
 const scrollHeader = window.addEventListener("scroll", function () {
- 
   if (this.window.scrollY >= 50) {
     header.classList.add("scrolled-header");
-    // if(btnBurger.classList.contains('active-burger')) {
-    //   header.classList.remove('scrolled-header')
-    // }else {
-    //   header.classList.add("scrolled-header");
-  
-    // }
     if (header.classList.contains("scrolled-header")) {
       this.document.querySelector(".logo").src = "./img/LogoScroll.png";
-      
     }
   } else {
     header.classList.remove("scrolled-header");
