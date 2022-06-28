@@ -3,7 +3,12 @@
 *:after {
   box-sizing: border-box;
 }
-
+// =========================================================================
+// eto xyuna pri klike na ssulku ybrat fon sinego sveta nado dobavit na element
+// * {
+  // -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+// }
+//=================================================
 html,
 body,
 div,
@@ -365,4 +370,13 @@ a {
 
 .breadcrumbs li {
   text-transform: unset;
+}
+
+ol ol, ol ul, ul ol, ul ul {
+  margin-left:  unset;
+}
+
+.menu.nested {
+  margin-right: unset;
+  margin-left:  unset;
 }

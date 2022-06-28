@@ -31,6 +31,9 @@ $fs-15px: 15px;
   transform: translateY(0);
   @include xl {
     padding: 0 50px;
+    @include m-840 {
+      padding: 0 20px;
+    }
   }
   .header-top {
     display: flex;
@@ -38,7 +41,11 @@ $fs-15px: 15px;
     justify-content: space-between;
     width: 100%;
     height: 51px;
-    transition: all .2s linear;
+    transition: all 0.1s linear;
+    z-index: 101;
+    @include xm {
+      display: none;
+    }
     .contacts {
       gap: 20px;
       .point {
@@ -54,11 +61,72 @@ $fs-15px: 15px;
   }
 }
 
+.top-companys {
+  .top-menu {
+    position: relative;
+    li {
+      button {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 120%;
+        color: #ffffff;
+        border-radius: 6px;
+        padding: 8px 16px;
+        &:hover {
+          background: rgba(109, 173, 185, 0.1);
+        }
+        &:focus {
+          background: #648b97;
+          backdrop-filter: blur(40px);
+          .arrow-white {
+            transform: rotate(180deg);
+          }
+        }
+        &:focus + .top-menu__submenu {
+          display: block;
+        }
+      }
+      .top-menu__submenu {
+        width: max-content;
+        display: none;
+        position: absolute;
+        padding: 19px 16px;
+        background: #648b97;
+        backdrop-filter: blur(40px);
+        border-radius: 6px;
+        top: 43px;
+        z-index: 100;
+        li {
+          margin-top: 24px;
+          &:first-child {
+            margin-top: unset;
+          }
+          a {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 120%;
+            color: #ffffff;
+            &:first-child {
+              margin-top: unset;
+            }
+            &:hover {
+              color: rgba(0, 0, 0, 0.486);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 .hr {
   width: 100%;
   opacity: 0.5;
   margin: unset;
   transition: all 0.3s;
+  @include xm {
+    display: none;
+  }
 }
 
 .header-bottom {
@@ -72,6 +140,7 @@ $fs-15px: 15px;
     display: flex;
     align-items: center;
     .nav-items__wrapper {
+      z-index: 100;
       @include l-1100 {
         position: absolute;
         top: -600%;
@@ -80,7 +149,13 @@ $fs-15px: 15px;
         backdrop-filter: blur(20px);
         width: 105vw;
         height: 442px;
-        transition: all .3s linear;
+        transition: all 0.3s linear;
+        -webkit-box-shadow: -3px 100px 61px -3px rgba(0, 0, 0, 0.52);
+        -moz-box-shadow: -3px 100px 61px -3px rgba(0, 0, 0, 0.52);
+        box-shadow: -3px 100px 61px -3px rgba(0, 0, 0, 0.52);
+        @include xm {
+          display: none;
+        }
       }
       .nav-items {
         @include l-1100 {
@@ -120,7 +195,6 @@ $fs-15px: 15px;
                 }
               }
             }
-            
           }
           .menu {
             top: 136%;
@@ -132,7 +206,7 @@ $fs-15px: 15px;
             @include l-1100 {
               padding: 24px 40px;
               top: 0;
-              background:unset;
+              background: unset;
               backdrop-filter: blur(0);
             }
             .nav-item__child {
@@ -188,15 +262,27 @@ $fs-15px: 15px;
 }
 
 .nav-search {
-  @include l-1100 {
-    margin-right: 26px;
-  }
+  // @include l-1100 {
+  //   margin-right: 26px;
+  // }
 }
 
 .navTrigger {
+  z-index: 111;
   display: none;
   @include l-1100 {
     display: block;
+    @include xm {
+      display: none;
+    }
+  }
+}
+.navTrigger2 {
+  display: none;
+  width: 62px;
+  @include xm {
+    display: block;
+    z-index: 200;
   }
 }
 
@@ -205,7 +291,6 @@ $fs-15px: 15px;
   background-color: #fffffff3;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
   transition: background-color 0.05s !important;
-  // transition: all 0.15s;
   transform: translateY(-51px);
   animation: translateHeader 0.2s;
   .header-content {
@@ -217,8 +302,8 @@ $fs-15px: 15px;
     .header-bottom {
       // transition: all 0.15s ease-in-out;
       .navTrigger {
-        span {
-          background-color: black;
+        .line {
+          stroke: black;
         }
       }
       [data-is-click="true"] {
@@ -252,12 +337,14 @@ $fs-15px: 15px;
 }
 
 .active-bg {
-  
   background: rgba(36, 37, 37, 0.9);
   backdrop-filter: blur(20px);
   width: 100vw !important;
   padding: 0 50px;
   border-bottom: 1px solid rgba(66, 66, 66, 0.5);
+  @include m-840 {
+    padding: 0 20px;
+  }
 }
 
 @keyframes translateHeader {
@@ -268,14 +355,6 @@ $fs-15px: 15px;
     transform: translateY(-51px);
   }
 }
-// @keyframes translateHeaderChild {
-//   0% {
-//     transform: translateY(0);
-//   }
-//   100% {
-//     transform: translateY(-8px);
-//   }
-// }
 
 @keyframes transHeaderOut {
   0% {

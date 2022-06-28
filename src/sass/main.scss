@@ -35,12 +35,15 @@ body {
   margin: 0 auto;
   @media screen and (max-width: 1200px) {
     padding: 0 50px;
-    @media screen and (max-width: 470px) {
-      padding: 0 24px;
+    @include m-840 {
+      padding: 0 20px;
+    }
+    // @media screen and (max-width: 470px) {
+    //   padding: 0 24px;
       @media screen and (max-width: 375px) {
         padding: 0 14px;
       }
-    }
+    // }
   }
 }
 
@@ -252,6 +255,7 @@ body {
 
 
 @import "block/header.scss";
+@import "block/header-mob.scss";
 
 // MAIN PAGE SCSS
 @import "block/q-main/about.scss";
