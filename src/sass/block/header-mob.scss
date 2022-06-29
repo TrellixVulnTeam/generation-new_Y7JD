@@ -11,9 +11,14 @@
   left: -20px;
   padding: 20px 14px;
   transform: translateX(200%);
-  transition: all .3s linear;
+  transition: all 0.3s linear;
+  @include xxs {
+    width: 102vw;
+    padding: 8px 14px;
+  }
   &.active-mob__wrapper {
     transform: translateX(0);
+    overflow: scroll;
   }
   .nav-mob__top {
     padding: 10px 0 15px 0;
@@ -38,6 +43,9 @@
         padding: 16px 23px;
         background: #2e2e2e;
         border-radius: 6px;
+        @include m-small {
+          justify-content: space-between;
+        }
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         &:last-child {
           -webkit-tap-highlight-color: rgba(0, 0, 0, 0.363);
@@ -61,7 +69,6 @@
         }
       }
     }
-    
   }
   .accord-contacts {
     padding: 36px 22px;
@@ -71,6 +78,12 @@
         padding-top: 30px;
         &:first-child {
           padding-top: unset;
+        }
+        a{
+          @include xxs {
+            white-space: normal;
+          }
+
         }
       }
     }
@@ -88,12 +101,30 @@
   }
 }
 
+
 .scrolled-mob-header {
-  background: white;
+  background-color: #fffffff3;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
   .navTrigger2 {
     .line {
-      
-      stroke: black !important;
+      stroke: black;
     }
+  }
+  .nav-search {
+    .icon-search {
+      background-image: url("data:image/svg+xml,%3Csvg width='36' height='35' viewBox='0 0 36 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M27.4658 27L22.9798 22.506L27.4658 27ZM25.4658 16.5C25.4658 18.7543 24.5703 20.9163 22.9762 22.5104C21.3822 24.1045 19.2202 25 16.9658 25C14.7115 25 12.5495 24.1045 10.9554 22.5104C9.36135 20.9163 8.46582 18.7543 8.46582 16.5C8.46582 14.2457 9.36135 12.0837 10.9554 10.4896C12.5495 8.89553 14.7115 8 16.9658 8C19.2202 8 21.3822 8.89553 22.9762 10.4896C24.5703 12.0837 25.4658 14.2457 25.4658 16.5V16.5Z' stroke='black' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    }
+  }
+}
+
+.stroke-white {
+  .line {
+    stroke: white !important;
+  }
+}
+
+.nav-search {
+  @include xxs {
+    transform: translate3d(14px, 1px, 10px);
   }
 }

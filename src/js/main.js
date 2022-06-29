@@ -176,10 +176,20 @@ burgerBtn.addEventListener("click", function () {
 });
 
 const mobBurger = document.querySelector(".navTrigger2");
-const mobWrapper = document.querySelector(".nav-mob__wrapper ");
+const mobWrapper = document.querySelector(".nav-mob__wrapper");
+const navSearch = document.querySelector(".icon-search");
 
 mobBurger.addEventListener("click", function () {
   mobBurger.classList.toggle("active-burger");
   // console.log("dsad");
   mobWrapper.classList.toggle("active-mob__wrapper");
+  if (mobWrapper.classList.contains("active-mob__wrapper")) {
+    mobBurger.classList.add("stroke-white");
+    navSearch.classList.add("search-scrolled");
+    document.body.style.overflow = "hidden";
+  } else {
+    mobBurger.classList.remove("stroke-white");
+    navSearch.classList.remove("search-scrolled");
+    document.body.style.overflow = "unset";
+  }
 });

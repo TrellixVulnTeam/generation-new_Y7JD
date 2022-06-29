@@ -33,6 +33,9 @@ $fs-15px: 15px;
     padding: 0 50px;
     @include m-840 {
       padding: 0 20px;
+      @include xxxs {
+        padding: 0 14px;
+      }
     }
   }
   .header-top {
@@ -136,6 +139,14 @@ $fs-15px: 15px;
   align-items: center;
   width: 100%;
   height: 100px;
+  @include xxs {
+    height: 70px;
+  }
+  .header-logo {
+    @include xxs {
+      width: 132px;
+    }
+  }
   .header-nav {
     display: flex;
     align-items: center;
@@ -262,6 +273,7 @@ $fs-15px: 15px;
 }
 
 .nav-search {
+  transition: all .2s linear;
   // @include l-1100 {
   //   margin-right: 26px;
   // }
@@ -283,6 +295,12 @@ $fs-15px: 15px;
   @include xm {
     display: block;
     z-index: 200;
+    @include xxs {
+      transform: translate3d(14px, 0px, 10px);
+      &.active-burger {
+        transform: translate3d(14px, 0px, 10px) rotate(45deg);
+      }
+    }
   }
 }
 
