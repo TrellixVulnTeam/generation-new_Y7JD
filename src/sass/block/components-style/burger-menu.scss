@@ -6,6 +6,14 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  .b-color {
+    stroke: #0B1600;
+  }
+  &.active-burger {
+    .b-color {
+      stroke: aliceblue;
+    }
+  }
 }
 .hamRotate.active-burger {
   transform: rotate(45deg);

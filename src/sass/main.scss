@@ -49,6 +49,12 @@ body {
 
 .section {
   padding-top: 140px;
+  @include xm {
+    padding-top: 85px;
+    @include xxs {
+      padding-top: 55px;
+    }
+  }
 }
 
 .c-black-h {
@@ -252,10 +258,16 @@ body {
   overflow: hidden;
 }
 
+.white-h {
+  .w-l {
+    color: #0B1600;
+  }
+}
 
 
 @import "block/header.scss";
 @import "block/header-mob.scss";
+@import "block/header-white.scss";
 
 // MAIN PAGE SCSS
 @import "block/q-main/about.scss";

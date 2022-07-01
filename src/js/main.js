@@ -143,6 +143,7 @@ const header = document.querySelector(".header");
 let pageY = window.innerHeight - window.innerHeight + 1;
 
 burgerBtn.addEventListener("click", function () {
+  header.classList.toggle("active-white-header");
   topHeader.classList.toggle("active-bg");
   nav.classList.toggle("vertical");
   burgerBtn.classList.toggle("active-burger");
@@ -181,7 +182,6 @@ const navSearch = document.querySelector(".icon-search");
 
 mobBurger.addEventListener("click", function () {
   mobBurger.classList.toggle("active-burger");
-  // console.log("dsad");
   mobWrapper.classList.toggle("active-mob__wrapper");
   if (mobWrapper.classList.contains("active-mob__wrapper")) {
     mobBurger.classList.add("stroke-white");

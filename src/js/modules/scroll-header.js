@@ -25,12 +25,22 @@ function scrollHeader() {
       if (this.window.scrollY >= 50) {
         header.classList.add("scrolled-mob-header");
         if (header.classList.contains("scrolled-mob-header")) {
-          this.document.querySelector(".logo").src = "./img/LogoScroll.png";
+          if(this.location.pathname == '/') {
+            this.document.querySelector(".logo").src = "./img/LogoScroll.png";
+          }
+          if(this.location.pathname == '/index.html') {
+            this.document.querySelector(".logo").src = "./img/LogoScroll.png";
+          }
         }
       } else {
         header.classList.remove("scrolled-mob-header");
         if (!header.classList.contains("scrolled-mob-header")) {
-          this.document.querySelector(".logo").src = "./img/Logo.svg";
+          if(this.location.pathname == '/index.html') {
+            this.document.querySelector(".logo").src = "./img/Logo.svg";
+          }
+          if(this.location.pathname == '/') {
+            this.document.querySelector(".logo").src = "./img/Logo.svg";
+          }
         }
       }
     });

@@ -51,6 +51,12 @@ $fs-15px: 15px;
     }
     .contacts {
       gap: 20px;
+      .w {
+        color: white;
+        .w-m {
+          color: white;
+        }
+      }
       .point {
         a {
           span {
@@ -178,6 +184,7 @@ $fs-15px: 15px;
         .nav-item {
           margin-right: 20px;
           border-radius: 6px;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0.363);
           @include xl-1300 {
             margin-right: unset;
             @include l-1100 {
@@ -189,6 +196,9 @@ $fs-15px: 15px;
           }
           &:hover {
             background: rgba(109, 173, 185, 0.1);
+            @include l-1100 {
+              background: unset;
+            }
           }
           .nav-link {
             padding: 8px 16px;
@@ -324,6 +334,7 @@ $fs-15px: 15px;
           stroke: black;
         }
       }
+
       [data-is-click="true"] {
         background: #d3e6ea;
         &:hover {

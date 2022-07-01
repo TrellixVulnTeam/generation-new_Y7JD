@@ -1,11 +1,11 @@
-header.header
+header.header.header-white
   .header-content
     .header-top
       nav.top-companys
         ul.top-menu
           li
-            button Компании
-              i.arrow-white
+            button.b-text Компании
+              i.arrow-black
             ul.top-menu__submenu
               li
                 a(href="#") Captone(ДВ Энерджи)
@@ -20,13 +20,13 @@ header.header
     .header-bottom 
       .header-logo
         a(href="index.html") 
-          img.logo(src="../img/Logo.svg" alt="")
+          img.logo-white(src="./img/LogoScroll.png" alt="")
       nav.header-nav
-        .nav-items__wrapper
+        .nav-items__wrapper.white-h
           ul.nav-items.dropdown.menu(data-dropdown-menu data-click-open='true' data-disable-hover='true' data-force-follow='false')
             li.nav-item
-              a(href="#").nav-link О группе компаний
-                i.arrow-white
+              a(href="#").nav-link.w-l О группе компаний
+                i.arrow-black
               ul.menu
                 li.nav-item__child
                   a(href="about.html") О группе
@@ -41,8 +41,8 @@ header.header
                 li.nav-item__child
                   a(href="about-history.html") Соглашения
             li.nav-item
-              a(href="#").nav-link Проекты
-                i.arrow-white
+              a(href="#").nav-link.w-l Проекты
+                i.arrow-black
               ul.menu
                 li.nav-item__child
                   a(href="about.html") Проекты в инвестиционной стадии
@@ -53,8 +53,8 @@ header.header
                 li.nav-item__child
                   a(href="about-history.html") Показ нижней карты
             li.nav-item
-              a(href="#").nav-link Деятельность 
-                i.arrow-white
+              a(href="#").nav-link.w-l Деятельность 
+                i.arrow-black
               ul.menu
                 li.nav-item__child
                   a(href="about.html") Инвестиционная деятельность
@@ -63,8 +63,8 @@ header.header
                 li.nav-item__child.sub 
                   a(href="about-history.html") Теплоснабжение
             li.nav-item
-              a(href="#").nav-link Пресс-центр
-                i.arrow-white
+              a(href="#").nav-link.w-l Пресс-центр
+                i.arrow-black
               ul.menu
                 li.nav-item__child
                   a(href="about.html") Группа компаний Генерации в СМИ
@@ -75,7 +75,7 @@ header.header
                 li.nav-item__child
                   a(href="about-history.html") Контакты для прессы
             li.nav-item 
-              a(href="contacts.html").nav-link Контакты
+              a(href="contacts.html").nav-link.w-l Контакты
         .nav-mob__wrapper 
           .nav-mob__top 
             nav.top-companys
@@ -150,12 +150,12 @@ header.header
           .accord-contacts
             include components/contacts
         a(href="javascript:void(0)").nav-search
-          .icon-search
+          .icon-search.icon-search-black
         svg.navTrigger.ham.hamRotate.ham4(viewBox='0 0 100 100' width='80')
-          path.line.top(d='m 70,36 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20')
-          path.line.middle(d='m 70,50 h -40')
-          path.line.bottom(d='m 30,63 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20')
+          path.line.top.b-color(d='m 70,36 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20')
+          path.line.middle.b-color(d='m 70,50 h -40')
+          path.line.bottom.b-color(d='m 30,63 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20')
         svg.navTrigger2.ham1.hamRotate1.ham5(viewBox='0 0 100 100' width='80')
-          path.line.top(d='m 70,36 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20')
-          path.line.middle(d='m 70,50 h -40')
-          path.line.bottom(d='m 30,63 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20')
+          path.line.top.b-color(d='m 70,36 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20')
+          path.line.middle.b-color(d='m 70,50 h -40')
+          path.line.bottom.b-color(d='m 30,63 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20')
