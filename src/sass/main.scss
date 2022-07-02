@@ -106,10 +106,13 @@ body {
   width: auto;
   span {
     white-space: nowrap;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 36px;
     line-height: 120%;
     color: #0b1600;
+    @include xxm {
+      font-size: 32px;
+    }
   }
 }
 
@@ -160,6 +163,9 @@ body {
     font-size: 24px;
     line-height: 140%;
     color: #0b1600;
+    @include xxm {
+      font-size: 20px ;
+    }
   }
 }
 

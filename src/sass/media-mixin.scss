@@ -23,6 +23,7 @@
     @content;
   }
 }
+// TYT XXM font size menyaetsya ochti u vsex!
 @mixin xxm {
   @media (max-width: 960px) {
     @content;
