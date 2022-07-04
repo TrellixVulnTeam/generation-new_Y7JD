@@ -112,6 +112,9 @@ body {
     color: #0b1600;
     @include xxm {
       font-size: 32px;
+      @include m-small {
+        font-size: 24px;
+      }
     }
   }
 }
@@ -164,7 +167,10 @@ body {
     line-height: 140%;
     color: #0b1600;
     @include xxm {
-      font-size: 20px ;
+      font-size: 20px;
+      @include m-small {
+        font-size: 18px;
+      }
     }
   }
 }

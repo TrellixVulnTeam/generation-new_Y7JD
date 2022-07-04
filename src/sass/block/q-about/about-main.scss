@@ -40,10 +40,16 @@
   width: 100%;
   height: auto;
   margin-top: 40px;
+  @include m-small {
+    margin-top: 32px;
+  }
   .about-content__head {
     .title-border {
       max-width: 166px;
       width: 100%;
+      @include xm {
+        max-width: 150px;
+      }
     }
   }
 }
@@ -65,6 +71,9 @@
     .mission-group__descr {
       display: flex;
       margin-top: 20px;
+      @include xm {
+        flex-direction: column;
+      }
       .title-mini {
         max-width: 420px;
         min-width: 350px;
@@ -74,6 +83,7 @@
           min-width: 310px;
         }
       }
+      
     }
   }
   .about-body__middle {
@@ -82,11 +92,17 @@
     padding: 50px 0 50px 0;
     @include l-1100 {
       padding: 24px 0 50px 0;
+      @include m-small {
+        padding: 10px 0 20px;
+      }
     }
     .img-block {
       img {
         max-height: 420px;
         // height: 100%;
+        @include m-small {
+          min-height: 170px;
+        }
       }
     }
   }
@@ -98,6 +114,13 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  @include xm {
+    flex-direction: column;
+    align-items: unset;
+    @include m-small {
+      padding: 50px 0 70px 0;
+    }
+  }
   .left {
     max-width: 570px;
     width: 100%;
@@ -105,12 +128,21 @@
     flex-direction: column;
     gap: 20px;
     margin-right: 20px;
+    @include m-small {
+      gap: unset;
+    }
     .title-mini {
       max-width: 420px;
       width: 100%;
+      @include m-small {
+        margin-top: 20px;
+      }
     }
   }
   .img-block {
+    @include xm {
+      margin-top: 32px;
+    }
     img {
       @include l-1100 {
         min-height: 275px;
@@ -118,6 +150,17 @@
         width: 100%;
         max-width: 420px;
         min-width: 420px;
+        @include xm {
+          max-width: unset;
+          max-height: 300px;
+          @include m-small {
+            min-width: unset;
+            max-height: 170px;
+            @include xxs {
+              min-height: unset;
+            }
+          }
+        }
       }
     }
   }
@@ -133,6 +176,9 @@
       letter-spacing: normal;
       @include xxm {
         font-size: 32px;
+        @include m-small {
+          font-size: 24px;
+        }
       }
     }
   }
@@ -142,6 +188,9 @@
     flex-direction: column;
     gap: 24px;
     margin: 48px 0 100px 0;
+    @include m-small {
+      margin: 32px 0 70px 0;
+    }
     .partners-top {
       .swiper-wrapper {
         -webkit-transition-timing-function: linear !important;
@@ -157,6 +206,9 @@
           @include xxm {
             height: 120px;
             padding: 20px;
+            @include xm {
+              width: 250px !important;
+            }
           }
           a {
             width: 100%;
@@ -172,6 +224,17 @@
             }
           }
         }
+      }
+    }
+  }
+}
+.mission-descr {
+  @include xm {
+    margin-top: 16px;
+    @include m-small {
+      
+      span {
+        font-size: 14px;
       }
     }
   }
