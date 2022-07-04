@@ -187,6 +187,12 @@ body {
     font-size: 18px;
     line-height: 120%;
     color: #7c7c87;
+    @include xxm {
+      font-size: 16px;
+    }
+    @include xxs {
+      font-size: 14px !important;
+    }
   }
 }
 

@@ -10,6 +10,17 @@
 .q-structure-wrapper {
   padding-top: 40px;
   padding-bottom: 100px;
+  .q-structure-head {
+    .title-border {
+      @include m-small {
+        width: auto;
+        
+      }
+      @include xxs {
+        width: 24rem;
+      }
+    }
+  }
 }
 
 .q-structure-body {
@@ -17,8 +28,21 @@
     display: flex;
     justify-content: space-between;
     padding: 64px 0 54px 0;
+
+    @include m-950 {
+      flex-direction: column;
+      .q-str-card__descr {
+        margin-top: 32px;
+      }
+    }
+    @include m-small {
+      padding: 54px 0 54px 0;
+    }
     &:last-child {
       padding: 64px 0 0 0;
+    }
+    .img-block {
+      margin-right: 40px;
     }
     .q-str-card__descr {
       max-width: 860px;
@@ -34,18 +58,28 @@
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
+        @include m-small {
+          flex-direction: column;
+          align-items: flex-start;
+        }
         .card-footer__left {
           display: flex;
           flex-direction: column;
           justify-content: start;
           .grey-text {
             margin-top: 24px;
+            @include xxm {
+              span {
+                font-size: 16px;
+              }
+            }
             span {
               font-family: "Inter", sans-serif;
               font-weight: 300;
               font-size: 18px;
               line-height: 120%;
               color: #7c7c87;
+
               &:last-child {
                 font-family: "Open Sans", sans-serif;
                 font-weight: 400;
@@ -53,14 +87,29 @@
                 line-height: 120%;
                 color: #0b1600;
                 margin-left: 20px;
+                @include xxm {
+                  font-size: 16px;
+                }
               }
             }
           }
         }
         .btn-more {
           align-self: flex-end;
+          @include m-small {
+            align-self: flex-start;
+            @include xxs {
+              padding: 12px 26px;
+            }
+          }
         }
       }
     }
+  }
+}
+
+.q-structure-content {
+  hr {
+    margin: unset;
   }
 }
