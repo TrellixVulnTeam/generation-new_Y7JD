@@ -1,11 +1,20 @@
-section.history 
+section.history.section
+  hr
   .wrapper
-    include ../components/breadcrumbs
-    .q-history-wrapper 
+    nav.breadcrumbs 
+      ul  
+        li.breadcrumbs-item
+          a(href="/") 
+            i.icon-home 
+        li 
+          i.arrow-black
+        li 
+          a(href="javascript:void(0)") История
+    .q-history-wrapper
       .q-history-head
         .title-border
           span История
-      .q-history-content  
+      .q-history-content
         .timeline 
           .timeline-card 
             .timeline-card__date 2013

@@ -7,7 +7,7 @@
   -ms-user-select: none;
   user-select: none;
   .b-color {
-    stroke: #0B1600;
+    stroke: #0b1600;
   }
   &.active-burger {
     .b-color {
@@ -16,14 +16,14 @@
   }
 }
 .hamRotate.active-burger {
-  transform: rotate(45deg);
+  transform: rotate(45deg) translate3d(16px, -17px, 0);
 }
 .line {
-  fill:none;
+  fill: none;
   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-  stroke:white;
-  stroke-width:3.5;
-  stroke-linecap:round;
+  stroke: white;
+  stroke-width: 3.5;
+  stroke-linecap: round;
 }
 .ham4 .top {
   stroke-dasharray: 40 121;
@@ -56,11 +56,11 @@
   transform: rotate(45deg);
 }
 .line {
-  fill:none;
+  fill: none;
   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-  stroke:white;
-  stroke-width:3.5;
-  stroke-linecap:round;
+  stroke: white;
+  stroke-width: 3.5;
+  stroke-linecap: round;
 }
 .ham5 .top {
   stroke-dasharray: 40 121;

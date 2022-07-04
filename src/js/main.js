@@ -59,10 +59,10 @@ var swiper2 = new Swiper(".mySwiper2", {
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
-  slidesPerView: "3",
+  slidesPerView: 3,
   coverflowEffect: {
     rotate: 100,
-    stretch: -50,
+    stretch: -55,
     depth: 100,
     modifier: 0,
   },

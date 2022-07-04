@@ -276,6 +276,10 @@ body {
   }
 }
 
+.border-top {
+  border-top: 2px solid rgba(11, 22, 0, 0.1);
+}
+
 
 @import "block/header.scss";
 @import "block/header-mob.scss";
