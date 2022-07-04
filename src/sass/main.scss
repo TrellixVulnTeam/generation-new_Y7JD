@@ -104,6 +104,9 @@ body {
   padding-bottom: 8px;
   display: inline-block;
   width: auto;
+  @include m-small {
+    width: min-content;
+  }
   span {
     white-space: nowrap;
     font-weight: 700;
@@ -114,6 +117,7 @@ body {
       font-size: 32px;
       @include m-small {
         font-size: 24px;
+        white-space: normal;
       }
     }
   }
@@ -190,20 +194,38 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  @include m-670 {
+    flex-direction: column;
+  }
   .left {
     max-width: 420px;
     width: 100%;
     min-width: 420px;
+    @include xxm {
+      min-width: 288px;
+      span {
+        font-size: 20px;
+        @include xxs {
+          font-size: 18px;
+        }
+      }
+      @include m-670 {
+        max-width: unset;
+        
+      }
+    }
     .green-text {
       color: #77b946;
     }
     span {
       // display: inline-block;
+      color: #0B1600;
       width: 100%;
       font-family: "Open sans", sans-serif;
       font-weight: 700;
       font-size: 24px;
       line-height: 140%;
+
     }
   }
   .right {
@@ -217,12 +239,18 @@ body {
       // &:last-child {
       //   margin-top: 20px;
       // }
+      @include xxm {
+        font-size: 16px;
+      }
     }
   }
 }
 
 .pt-64 {
   padding-top: 64px;
+  @include xxm {
+    padding-top: 48px;
+  }
 }
 .pt-100 {
   padding-top: 100px;
