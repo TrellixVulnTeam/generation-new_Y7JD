@@ -1,10 +1,22 @@
-section.vacancys-jobs
+section.vacancys-jobs.section
+  hr
   .wrapper 
-    include ../components/breadcrumbs
+    nav.breadcrumbs 
+      ul  
+        li.breadcrumbs-item
+          a(href="/") 
+            i.icon-home 
+        li 
+          i.arrow-black
+        li Вакансии
+        li 
+          i.arrow-black
+        li 
+          a(href="javascript:void(0)") Производство
     .q-jobs-wrapper  
       .q-jobs-head
         .title-border
-          span Производство
+          span Производство и изготовление
       .q-jobs-content.pt-64
         .q-jobs-card_wrapper
           .q-jobs-card 

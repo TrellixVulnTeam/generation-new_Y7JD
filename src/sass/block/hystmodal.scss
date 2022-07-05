@@ -38,7 +38,7 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
-  z-index: 99;
+  z-index: 1000;
   visibility: hidden;
 }
 .hystmodal--active {
@@ -104,11 +104,24 @@
 }
 @media all and (max-width: 767px) {
   .hystmodal__close {
-    top: 10px;
-    right: 10px;
+    position: absolute;
+    transform: unset;
+    top: 24px;
+    right: 30px;
     width: 24px;
     height: 24px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' stroke='%23111' stroke-linecap='square' stroke-miterlimit='50' stroke-width='2' d='M22 2L2 22'/%3E%3Cpath fill='none' stroke='%23111' stroke-linecap='square' stroke-miterlimit='50' stroke-width='2' d='M2 2l20 20'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    @include xxs-big {
+      width: 18px;
+      height: 18px;
+      right: 16px;
+      top: 16px;
+    }
+    
+    &::after, &::before {
+      display: none;
+    }
   }
   .hystmodal__window {
     margin: 0;

@@ -4,22 +4,33 @@
   height: 100%;
   width: 100%;
   background-color: #fbfefe;
-  border-top: 2px solid rgba(11, 22, 0, 0.1);
-  padding-top: 33px;
 }
 
 .q-jobs-wrapper {
   padding-top: 40px;
   padding-bottom: 100px;
+  .q-jobs-head {
+    .title-border {
+      @include xxs {
+        width: 21rem;
+      }
+    }
+  }
+  @include m-670 {
+    padding-bottom: 70px;
+  }
 }
 
 .q-jobs-content {
   .q-jobs-card_wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
     width: 100%;
-    height: auto;
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 20px 20px; 
+    @include xm {
+      grid-template-columns: 1fr; 
+    }
     .q-jobs-card {
       background: #dbebee;
       border-radius: 6px;
@@ -29,15 +40,25 @@
       padding: 32px;
       display: flex;
       flex-direction: column;
+      @include xm {
+        max-width: unset;
+      }
+      @include xxs {
+        padding: 20px;
+      }
     }
   }
 }
 
 .q-jobs-popup {
   padding: 30px;
+  @include m-small {
+    padding: 20px;
+  }
   .q-popup-body {
     flex-shrink: 0;
     flex-grow: 0;
+    max-width: 660px;
     width: 100%;
     min-height: 100%;
     margin: auto;
@@ -63,7 +84,9 @@
       background-color: #fff;
       padding: 60px 40px 50px 40px;
       border-radius: 6px;
-
+      @include xxs-big {
+        padding: 60px 14px 50px 14px;
+      }
       .q-popup-content__head {
         display: flex;
         flex-direction: column;
@@ -81,6 +104,9 @@
         font-size: 18px;
         line-height: 140%;
         color: #0b1600;
+        @include xxs-big {
+          font-size: 16px;
+        }
       }
     }
     .q-p-list {
@@ -95,12 +121,15 @@
         font-size: 16px;
         line-height: 140%;
         color: #7c7c87;
+        @include xxs-big {
+          font-size: 14px;
+        }
         &::before {
           content: counter(li);
           counter-increment: li;
           position: absolute;
           left: 0;
-          top: -1px;
+          top: 2px;
           height: 22px;
           width: 22px;
           background-color: #b0d0d6;

@@ -278,6 +278,10 @@ body {
   transition: all .25s ease-in-out;
   background-color: transparent;
   cursor: pointer;
+  @include xxs {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
   &:hover {
     background: #77B946;
     color: white;
@@ -290,6 +294,9 @@ body {
   font-weight: 400;
   font-size: 20px;
   line-height: 140%;
+  @include xxm {
+    font-size: 16px;
+  }
 }
 .q-jobs-grey-text {
   color: #7c7c87;
@@ -298,6 +305,9 @@ body {
   font-weight: 400;
   line-height: 140%;
   font-size: 16px;
+  @include xxm {
+    font-size: 14px;
+  }
 }
 
 .popup-opened {
