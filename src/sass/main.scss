@@ -208,7 +208,7 @@ body {
     width: 100%;
     min-width: 420px;
     @include xxm {
-      min-width: 288px;
+      min-width: 293px;
       span {
         font-size: 20px;
         @include xxs {
@@ -260,6 +260,9 @@ body {
 }
 .pt-100 {
   padding-top: 100px;
+  @include m-670 {
+    padding-top: 70px;
+  }
 }
 
 .btn-more {

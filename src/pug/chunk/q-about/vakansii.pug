@@ -1,6 +1,15 @@
-section.vacancys
+section.vacancys.section 
+  hr
   .wrapper 
-    include ../components/breadcrumbs
+    nav.breadcrumbs 
+      ul  
+        li.breadcrumbs-item
+          a(href="/") 
+            i.icon-home 
+        li 
+          i.arrow-black
+        li 
+          a(href="javascript:void(0)") Вакансии
     .q-vacancys-wrapper   
       .q-vacancys-head
         .title-border
@@ -19,32 +28,61 @@ section.vacancys
           .q-vac-cards 
             .q-vac-card   
               .img-block 
-                img(src="../img/activity/сервисное.png", alt="")
+                img(src="./img/activity/сервисное.png", alt="")
               .title-mini 
                 span Производство и изготовление
               p Изготовление, выработка, создание какой-н. продукции.
               a.btn-more(href="about-vacancys-production.html") Посмотреть 
             .q-vac-card   
               .img-block 
-                img(src="../img/activity/проектирование.png", alt="")
+                img(src="./img/activity/проектирование.png", alt="")
               .title-mini 
                 span Производство и изготовление
               p Изготовление, выработка, создание какой-н. продукции.
               a.btn-more(href="#") Посмотреть 
             .q-vac-card   
               .img-block 
-                img(src="../img/activity/контроль.png", alt="")
+                img(src="./img/activity/контроль.png", alt="")
               .title-mini 
                 span Производство и изготовление
               p Изготовление, выработка, создание какой-н. продукции.
               a.btn-more(href="#") Посмотреть 
             .q-vac-card   
               .img-block 
-                img(src="../img/activity/прогресс.png", alt="")
+                img(src="./img/activity/прогресс.png", alt="")
               .title-mini 
                 span Производство и изготовление
               p Изготовление, выработка, создание какой-н. продукции.
               a.btn-more(href="#") Посмотреть 
+          .q-vac-cards__grid 
+            a(href="#").q-vac-card   
+              .img-block 
+                img(src="./img/activity/сервисное.png", alt="")
+              .gr-card__descr 
+                .title-mini 
+                  span Производство и изготовление
+                p Изготовление, выработка, создание какой-н. продукции.
+            a(href="#").q-vac-card  
+              .img-block 
+                img(src="./img/activity/проектирование.png", alt="")
+              .gr-card__descr 
+                .title-mini 
+                  span Производство и изготовление
+                p Изготовление, выработка, создание какой-н. продукции.
+            a(href="#").q-vac-card  
+              .img-block 
+                img(src="./img/activity/контроль.png", alt="")
+              .gr-card__descr 
+                .title-mini 
+                  span Производство и изготовление
+                p Изготовление, выработка, создание какой-н. продукции.
+            a(href="#").q-vac-card   
+              .img-block 
+                img(src="./img/activity/прогресс.png", alt="")
+              .gr-card__descr 
+                .title-mini 
+                  span Производство и изготовление
+                p Изготовление, выработка, создание какой-н. продукции.
         .q-vacancys-lower.pt-100
           .title 
             span Рабочий момент
@@ -54,21 +92,21 @@ section.vacancys
             .swiper-wrapper 
               .q-vac-swiper__card.swiper-slide
                 .img-block 
-                  img(src="../img/vacancys/1.png", alt="")
+                  img(src="./img/vacancys/1.png", alt="")
                 .q-vac-swiper__card-text
                   span Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie et.
               .q-vac-swiper__card.swiper-slide
                 .img-block 
-                  img(src="../img/vacancys/2.png", alt="")
+                  img(src="./img/vacancys/2.png", alt="")
                 .q-vac-swiper__card-text
                   span Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie et.
               .q-vac-swiper__card.swiper-slide
                 .img-block 
-                  img(src="../img/vacancys/1.png", alt="")
+                  img(src="./img/vacancys/1.png", alt="")
                 .q-vac-swiper__card-text
                   span Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie et.
               .q-vac-swiper__card.swiper-slide
                 .img-block 
-                  img(src="../img/vacancys/2.png", alt="")
+                  img(src="./img/vacancys/2.png", alt="")
                 .q-vac-swiper__card-text
                   span Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie et.

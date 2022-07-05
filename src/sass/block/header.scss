@@ -16,6 +16,9 @@ $fs-15px: 15px;
   transition: all 0.3s ease-in-out;
   background-color: transparent;
   animation: transHeaderOut 0.2s;
+  @include m-small {
+    transition: all .1s ease-in-out;
+  }
 }
 .header-content {
   position: relative;
