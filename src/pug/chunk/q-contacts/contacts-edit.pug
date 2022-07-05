@@ -1,6 +1,15 @@
-section.contacts-page
+section.contacts-page.section
+  hr
   .wrapper 
-    include ../components/breadcrumbs
+    nav.breadcrumbs 
+      ul  
+        li.breadcrumbs-item
+          a(href="/") 
+            i.icon-home 
+        li 
+          i.arrow-black
+        li 
+          a(href="javascript:void(0)") Контакты
     .q-contacts-wrapper 
       .q-contacts-head
         .title-border
@@ -12,7 +21,8 @@ section.contacts-page
               .q-card-title 
                 span Адрес
               .q-card-adress  
-                span 677010, г. Якутск, мкр. Птицефабрика, д. 1/2
+                span 677010, г. Якутск,
+                span мкр. Птицефабрика, д. 1/2
             .q-card-item 
               .q-card-title 
                 span Телефоны
@@ -24,7 +34,8 @@ section.contacts-page
               .q-card-title 
                 span Режим работы
               .q-card-adress  
-                span 09:00 - 18:00 Понедельник - Пятница
+                span 09:00 - 18:00 
+                span Понедельник - Пятница
             .q-card-item 
               .q-card-title 
                 span E-mail

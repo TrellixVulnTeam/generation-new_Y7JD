@@ -2,8 +2,6 @@
   height: 100%;
   width: 100%;
   background-color: #fbfefe;
-  border-top: 2px solid rgba(11, 22, 0, 0.1);
-  padding-top: 33px;
 }
 
 .q-contacts-wrapper {
@@ -41,6 +39,9 @@
           -webkit-text-fill-color: transparent;
           background-clip: text;
           text-fill-color: transparent;
+          @include xxm {
+            font-size: 20px ;
+          }
         }
       }
       .q-card-adress {
@@ -50,6 +51,10 @@
           font-size: 18px;
           line-height: 140%;
           color: #0b1600;
+          display: inline-flex;
+          @include xxm {
+            font-size: 16px;
+          }
         }
       }
     }
@@ -70,6 +75,13 @@
       display: flex;
       justify-content: space-between;
       flex-direction: column;
+      @include l-1100 {
+        max-height: 257px;
+        max-width: 310px;
+        min-height: unset;
+        padding: 24px 20px;
+        
+      }
       .q-hire-me__text {
         span {
           font-family: "Poppins", sans-serif;
@@ -77,14 +89,23 @@
           font-size: 18px;
           line-height: 160%;
           color: #0b1600;
+          @include xxm {
+            font-size: 16px;
+          }
         }
         .green-text {
           a {
             color: #77b946;
+            @include xxm {
+              font-size: 16px;
+            }
           }
         }
       }
       .q-hire-me__btn {
+        @include l-1100 {
+          padding-top: 30px;
+        }
         a {
           display: flex;
           align-items: center;

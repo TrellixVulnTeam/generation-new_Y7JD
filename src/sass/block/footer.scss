@@ -29,7 +29,10 @@
           @include xxm {
             flex-wrap: wrap;
             justify-content: unset;
-            gap: 41px;
+            gap: 12px;
+            @include m-950 {
+              gap: 41px;
+            }
             @include m-670 {
               flex-direction: column;
               align-items: flex-start;
