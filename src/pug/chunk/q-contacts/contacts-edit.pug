@@ -49,7 +49,33 @@ section.contacts-page.section
                 a(href="#") обратной связи
               span  или направить Ваше сообщение по электронной почте
             .q-hire-me__btn
-              a(href="#") Написать нам 
+              a(href="#" data-hystmodal='#hire-us') Написать нам 
+      .q-popup-form.hystmodal#hire-us 
+          .hystmodal__wrap
+            .q-p-form-content.hystmodal__window(role='dialog' aria-modal='true')
+              a(href='#' data-hystclose).hystmodal__close 
+              .q-p-form-head
+                .title-mini 
+                  span Обратная связь
+              .q-p-form-body 
+                form.q-form(action="")
+                  ul.q-form-row   
+                    li 
+                      input.q-form-name.input(type="text" placeholder='ФИО' required)
+                    li 
+                      input.q-form-phone.input(type="text" placeholder='Контактные данные'  required maxlength="12")
+                    li 
+                      input.q-form-email.input(type="text" placeholder='Электронная почта'  required )
+                    li 
+                      textarea#rewview(name="rewview" cols="20" rows="5" style="resize: vertical;" placeholder="Сопроводительное письмо (по желанию)")
+                    li.q-form__file-upload 
+                      input.q-form-file(type="file" id="file-input" multiple style="display: none;")
+                      label(for="file-input") Прикрепите резюме
+                    li.q-form__privacy
+                      span Нажимая кнопку вы даете информационное согласие 
+                      a(href="#") на обработку персональных данных
+                    li 
+                      button.btn-more(type='sumbit') Отправить
   .q-contacts-map 
     .img-block
       img(src="https://via.placeholder.com/1440x450", alt="")

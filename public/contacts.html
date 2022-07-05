@@ -196,7 +196,42 @@
               <div class="q-right">
                 <div class="q-hire-me"> 
                   <div class="q-hire-me__text"><span>Вы можете обратиться к нам через форм </span><span class="green-text"><a href="#">обратной связи</a></span><span> или направить Ваше сообщение по электронной почте</span></div>
-                  <div class="q-hire-me__btn"><a href="#">Написать нам </a></div>
+                  <div class="q-hire-me__btn"><a href="#" data-hystmodal="#hire-us">Написать нам </a></div>
+                </div>
+              </div>
+            </div>
+            <div class="q-popup-form hystmodal" id="hire-us"> 
+              <div class="hystmodal__wrap">
+                <div class="q-p-form-content hystmodal__window" role="dialog" aria-modal="true"><a class="hystmodal__close" href="#" data-hystclose> </a>
+                  <div class="q-p-form-head">
+                    <div class="title-mini"> <span>Обратная связь</span></div>
+                  </div>
+                  <div class="q-p-form-body"> 
+                    <form class="q-form" action="">
+                      <ul class="q-form-row">  
+                        <li> 
+                          <input class="q-form-name input" type="text" placeholder="ФИО" required>
+                        </li>
+                        <li> 
+                          <input class="q-form-phone input" type="text" placeholder="Контактные данные" required maxlength="12">
+                        </li>
+                        <li> 
+                          <input class="q-form-email input" type="text" placeholder="Электронная почта" required>
+                        </li>
+                        <li> 
+                          <textarea id="rewview" name="rewview" cols="20" rows="5" style="resize: vertical;" placeholder="Сопроводительное письмо (по желанию)"></textarea>
+                        </li>
+                        <li class="q-form__file-upload"> 
+                          <input class="q-form-file" type="file" id="file-input" multiple style="display: none;">
+                          <label for="file-input">Прикрепите резюме</label>
+                        </li>
+                        <li class="q-form__privacy"><span>Нажимая кнопку вы даете информационное согласие </span><a href="#">на обработку персональных данных</a></li>
+                        <li> 
+                          <button class="btn-more" type="sumbit">Отправить</button>
+                        </li>
+                      </ul>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
