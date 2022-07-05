@@ -4,22 +4,42 @@
   height: 100%;
   width: 100%;
   background-color: #fbfefe;
-  border-top: 2px solid rgba(11, 22, 0, 0.1);
-  padding-top: 33px;
 }
 .q-docs-wrapper {
   padding-top: 40px;
   .q-docs-content {
     padding-top: 64px;
     padding-bottom: 150px;
+    @include m-small {
+      padding-top: 54px;
+      padding-bottom: 70px;
+    }
     .q-docs-card__wrapper {
       display: flex;
       flex-wrap: wrap;
+      @include xxxs {
+        gap: 40px 20px;
+      }
       .q-docs-card {
         display: inline-block;
         height: auto;
         margin:0 40px 40px 0;
         transition: all .4s ease-in-out;
+        @include xl {
+          margin: 0 20px 20px 0;
+          &:last-child {
+            margin: unset;
+          }
+          @include l-1100 {
+            width: 199px;
+            @include m-small {
+              width: 136px;
+              @include xxxs {
+                margin: unset;
+              }
+            }
+          }
+        }
         &:hover {
           transform: scale(1.02);
 
@@ -32,6 +52,9 @@
             font-size: 18px;
             line-height: 120%;
             color: #0b1600;
+            @include m-small {
+              font-size: 14px;
+            }
           }
         }
       }

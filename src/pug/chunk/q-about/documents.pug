@@ -1,6 +1,15 @@
-section.documents   
+section.documents.section 
+  hr
   .wrapper 
-    include ../components/breadcrumbs
+    nav.breadcrumbs 
+      ul  
+        li.breadcrumbs-item
+          a(href="/") 
+            i.icon-home 
+        li 
+          i.arrow-black
+        li 
+          a(href="javascript:void(0)") Документы
     .q-docs-wrapper 
       .q-docs-head 
         .title-border
@@ -9,21 +18,21 @@ section.documents
         .q-docs-card__wrapper 
           a(href="http://localhost:3000/about-documents-files.html").q-docs-card
             .img-block 
-              img(src="../img/folders/folder_1.png", alt="" loading="lazy")
+              img(src="./img/folders/folder_1.png", alt="" loading="lazy")
             .q-docs-title   
               span Федеральные законы
           a(href="http://localhost:3000/about-documents-files.html").q-docs-card
             .img-block 
-              img(src="../img/folders/folder_2.png", alt="" loading="lazy")
+              img(src="./img/folders/folder_2.png", alt="" loading="lazy")
             .q-docs-title   
               span Указы президента РФ
           a(href="#").q-docs-card
             .img-block 
-              img(src="../img/folders/folder_3.png", alt="" loading="lazy")
+              img(src="./img/folders/folder_3.png", alt="" loading="lazy")
             .q-docs-title   
               span Соглашения
           a(href="#").q-docs-card
             .img-block 
-              img(src="../img/folders/folder_4.png", alt="" loading="lazy")
+              img(src="./img/folders/folder_4.png", alt="" loading="lazy")
             .q-docs-title   
               span Презентации
