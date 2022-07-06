@@ -4,14 +4,22 @@
   height: 100%;
   width: 100%;
   background-color: #fbfefe;
-  border-top: 2px solid rgba(11, 22, 0, 0.1);
-  padding-top: 33px;
 }
 
 .q-news-wrapper {
   width: 100%;
   height: auto;
   padding-top: 40px;
+  @include m-small {
+    padding-top: 32px;
+  }
+  .q-news-head {
+    .title-border {
+      @include m-small {
+        width: max-content;
+      }
+    }
+  }
 }
 
 .q-news-tabs {
@@ -30,6 +38,10 @@
     line-height: 120%;
     text-align: center;
     margin-right: 10px;
+    @include m-small {
+      padding: 10px 20px;
+      margin-right: unset;
+    }
     &:last-child {
       margin-right: unset;
     }
@@ -42,6 +54,9 @@
 
 .q-news-tabs__content {
   padding-top: 52px;
+  @include m-670 {
+    padding-top: 32px;
+  }
 }
 
 .news-wrapper {
@@ -55,20 +70,32 @@
     }
     .news-card__link {
       display: flex;
+      @include m-670 {
+        flex-direction: column;
+
+      }
       .img-block {
         margin-right: 20px;
+        @include m-670 {
+          margin-right: unset;
+          margin-bottom: 20px;
+        }
         img {
           max-width: 310px;
           min-width: 309px;
           max-height: 216px;
           height: 100%;
           width: 100%;
+          @include m-670 {
+            max-width: unset;
+            min-width: unset;
+            max-height: 300px;
+          }
         }
       }
       .news-card-content {
         display: flex;
         flex-flow: column;
-        justify-content: space-between;
         .news-card__title {
           span {
             font-weight: 700;
@@ -80,16 +107,21 @@
             -webkit-box-orient: vertical;
             text-overflow: ellipsis;
             overflow: hidden;
-            // height: 50px;
             width: 100%;
             @include l {
-              font-size: 16px;
-              line-height: 150%;
+              font-size: 20px;
               letter-spacing: normal;
+              @include m-small {
+                font-size: 16px;
+              }
             }
           }
         }
         .news-card__descr {
+          padding-top: 16px;
+          @include m-small {
+            padding-top: 10px;
+          }
           span {
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -100,17 +132,30 @@
             font-size: 18px;
             line-height: 130%;
             color: #0b1600;
+            @include l {
+              font-size: 16px;
+              @include m-small {
+                font-size: 14px;
+              }
+            }
           }
         }
         .news-card__date {
+          padding-top: 32px;
           display: flex;
           gap: 10px;
+          @include m-small {
+            padding-top: 24px;
+          }
           span {
             font-family: "Inter", sans-serif;
             font-weight: 600;
             font-size: 16px;
             line-height: 120%;
             color: #0b1600;
+            @include m-small {
+              font-size: 14px;
+            }
             &:first-child {
               padding-right: 10px;
               border-right: 2px solid #05111b;
