@@ -1,6 +1,15 @@
-section.projects
-  .wrapper 
-    include ../components/breadcrumbs
+section.projects.section
+  hr
+  .wrapper
+    nav.breadcrumbs 
+      ul  
+        li.breadcrumbs-item
+          a(href="/") 
+            i.icon-home 
+        li 
+          i.arrow-black
+        li 
+          a(href="javascript:void(0)") Проекты
     .q-projects-wrapper 
       .q-projects-head 
         .title-border
@@ -15,26 +24,29 @@ section.projects
         .q-projects-cards.pt-100
           a(href="projects-investStadii.html").q-projects-card
             .img-block 
-              img(src="../img/activity/project_1.png" alt="")
-            .q-projects-card__title 
-              span Проекты в инвестиционной стадии
-            .q-projects-card__descr
-              span Это промежуток времени от момента начала проектно-изыскательских работ до выхода предприятия на проектную мощность
+              img(src="./img/activity/project_1.png" alt="")
+            .block
+              .q-projects-card__title 
+                span Проекты в инвестиционной стадии
+              .q-projects-card__descr
+                span Это промежуток времени от момента начала проектно-изыскательских работ до выхода предприятия на проектную мощность
           a(href="#").q-projects-card
             .img-block 
-              img(src="../img/activity/project_2.png" alt="")
-            .q-projects-card__title 
-              span Проекты в стадии эксплуатации
-            .q-projects-card__descr
-              span Это промежуток времени между выходом предприятия на проектную мощность и завершением проекта, то есть ликвидацией предприятия.
+              img(src="./img/activity/project_2.png" alt="")
+            .block
+              .q-projects-card__title 
+                span Проекты в стадии эксплуатации
+              .q-projects-card__descr
+                span Это промежуток времени между выходом предприятия на проектную мощность и завершением проекта, то есть ликвидацией предприятия.
           a(href="#").q-projects-card
             .img-block 
-              img(src="../img/activity/project_3.png" alt="")
-            .q-projects-card__title 
-              span Реализованные проекты
-            .q-projects-card__descr
-              span Наши выполненные работы по строительству, проектированию, сервисному обслуживанию объектов.
+              img(src="./img/activity/project_3.png" alt="")
+            .block
+              .q-projects-card__title 
+                span Реализованные проекты
+              .q-projects-card__descr
+                span Наши выполненные работы по строительству, проектированию, сервисному обслуживанию объектов.
         .q-map-section.pt-64
-          include ../q-main/map
+          //- include ../q-main/map
 
 
