@@ -2,15 +2,23 @@
   height: 100%;
   width: 100%;
   background-color: #fbfefe;
-  border-top: 2px solid rgba(11, 22, 0, 0.1);
-  padding-top: 33px;
 }
 
 .q-invest-wrapper {
   padding: 40px 0 100px 0;
+  @include m-small  {
+    padding: 30px 0 70px 0;
+  }
 }
 
 .q-invest-head {
+  .title-border {
+    span {
+      @include m-640 {
+        white-space: normal;
+      }
+    }
+  }
   .q-invest-descr {
     .green-text {
       color: #77b946;
@@ -23,15 +31,33 @@
       line-height: 140%;
       color: #0b1600;
       letter-spacing: normal;
+      @include xxm {
+        font-size: 18px;
+        @include xxs-big {
+          font-size: 16px;
+        }
+      }
     }
   }
 }
 
 .q-invest-content {
   .q-invest-card__wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 71px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 80px 80px;
+    @include xl-1300 {
+      gap: 28px 28px;
+      @include xm {
+        gap: 20px;
+        @include m-640 {
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr;
+          gap: 56px;
+        }
+      }
+    }
     .q-invest-card {
       .q-card-title {
         span {
@@ -39,6 +65,13 @@
           font-size: 24px;
           line-height: 140%;
           color: #0b1600;
+          letter-spacing: -0.9px;
+          @include xxm {
+            font-size: 18px;
+            @include xxs-big {
+              font-size: 16px;
+            }
+          }
         }
       }
       .q-card-descr {
@@ -49,6 +82,9 @@
           font-size: 18px;
           line-height: 130%;
           color: #7c7c87;
+          @include xxm {
+            font-size: 14px;
+          }
         }
       }
       .img-block {
