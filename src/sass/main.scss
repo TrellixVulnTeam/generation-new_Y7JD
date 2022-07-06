@@ -262,6 +262,9 @@ body {
   padding-top: 100px;
   @include m-670 {
     padding-top: 70px;
+    @include xxs-big {
+      padding-top: 48px;
+    }
   }
 }
 

@@ -1,6 +1,21 @@
-section.project-invest 
+section.project-invest.section 
+  hr
   .wrapper 
-    include ../components/breadcrumbs
+    nav.breadcrumbs 
+      ul  
+        li.breadcrumbs-item
+          a(href="/") 
+            i.icon-home 
+        li 
+          i.arrow-black
+        li Проекты
+        li 
+          i.arrow-black
+        li Проекты в инвестиционной стадии
+        li 
+          i.arrow-black
+        li 
+          a(href="javascript:void(0)") Строительство энергоцентра в Нижнем Бестяхе.
     .q-invest-wrapper 
       .q-invest-head 
         .title-border 
@@ -27,16 +42,16 @@ section.project-invest
       .q-invest-content.pt-100  
         .q-invest-card__swiper
           .swiper-wrapper 
-            .swiper-slide
+            .swiper-slide.invest-swiper__item
               .img-block 
                 img(src="./img/projects-card/1.png", alt="" loading="lazy")
-            .swiper-slide
+            .swiper-slide.invest-swiper__item
               .img-block 
                 img(src="./img/projects-card/2.png", alt="" loading="lazy")
-            .swiper-slide
+            .swiper-slide.invest-swiper__item
               .img-block 
                 img(src="./img/projects-card/3.png", alt="" loading="lazy")
-            .swiper-slide
+            .swiper-slide.invest-swiper__item
               .img-block 
                 img(src="./img/projects-card/4.png", alt="" loading="lazy")
         .q-other-projects.pt-100 

@@ -66,7 +66,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \******************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"projectCardSwiper\": function() { return /* binding */ projectCardSwiper; }\n/* harmony export */ });\nlet projectCardSwiper = new Swiper(\".q-invest-card__swiper\", {\r\n  spaceBetween: 20,\r\n  // centeredSlides: true,\r\n  slidesPerView: 2,\r\n  allowTouchMove: true,\r\n  // disableOnInteraction: true,\r\n});\r\n\r\n\n\n//# sourceURL=webpack://gulp-settings/./src/js/modules/project-swiper.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"projectCardSwiper\": function() { return /* binding */ projectCardSwiper; }\n/* harmony export */ });\nlet projectCardSwiper = new Swiper(\".q-invest-card__swiper\", {\r\n  spaceBetween: 20,\r\n  // centeredSlides: true,\r\n  slidesPerView: 'auto',\r\n  allowTouchMove: true,\r\n  // disableOnInteraction: true,\r\n\r\n});\r\n\r\n\n\n//# sourceURL=webpack://gulp-settings/./src/js/modules/project-swiper.js?");
 
 /***/ }),
 

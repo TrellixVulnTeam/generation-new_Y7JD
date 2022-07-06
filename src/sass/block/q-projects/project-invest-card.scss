@@ -6,35 +6,77 @@
   text-fill-color: transparent;
 }
 
+.q-invest-head {
+  .title-border {
+    @include m-small {
+      width: 76% !important;
+    }
+    span {
+      @include xxm {
+        white-space: normal;
+        
+      }
+    }
+  }
+}
+
 .q-invest-plan {
   display: flex;
   justify-content: space-between;
+  @include xl {
+    flex-direction: column;
+    gap: 56px;
+  }
   .q-left {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 56px 20px;
-    // max-width: 640px;
-    min-width: 640px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 56px 61px;
     width: 100%;
     height: auto;
+    max-width: 640px;
+    @include xxs-big {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      gap: 32px;
+
+    }
     .q-left-item {
       display: flex;
       flex-flow: column;
       gap: 24px;
       max-width: 310px;
       width: 100%;
+      @include m-small {
+        gap: 16px;
+      }
+      .gradient-text {
+        white-space: nowrap;
+      }
       span {
         font-family: "Inter", sans-serif;
         &:first-child {
           font-weight: 300;
           font-size: 24px;
           line-height: 120%;
+          @include xm {
+            font-size: 20px;
+            @include m-small {
+              font-size: 18px;
+            }
+          }
         }
         &:last-child {
           font-weight: 600;
           font-size: 18px;
           line-height: 140%;
           color: #0b1600;
+          @include xm {
+            font-size: 16px;
+            @include m-small {
+              font-size: 14px;
+            }
+          }
         }
       }
     }
@@ -43,12 +85,23 @@
     display: flex;
     flex-flow: column;
     gap: 24px;
+    max-width: 640px;
+    width: 100%;
+    @include m-small {
+      gap: 16px;
+    }
     div {
       .gradient-text {
         font-family: "Inter", sans-serif;
         font-weight: 300;
         font-size: 24px;
         line-height: 120%;
+        @include xm {
+          font-size: 20px;
+          @include m-small {
+            font-size: 18px;
+          }
+        }
       }
       span {
         font-family: "Inter", sans-serif;
@@ -56,24 +109,34 @@
         font-size: 18px;
         line-height: 150%;
         color: #0b1600;
+        @include xm {
+          font-size: 16px;
+          @include m-small {
+            font-size: 14px;
+          }
+        }
       }
     }
   }
 }
 
 .q-invest-card__swiper {
-  .swiper-slide {
-    cursor: grab;
-    .img-block {
-      img {
-        max-width: 640px;
-        min-width: 639px;
-        min-height: 444px;
-        max-height: 445px;
-        width: 100%;
-        height: 100%;
+  .invest-swiper__item {
+    width: 640px !important;
+    max-height: 443px;
+    height: 100%;
+    @include xm {
+      width: 500px !important;
+      @include m-small {
+        width: 380px !important;
+        @include xxs {
+          width: 272px !important;
+        }
       }
     }
+  }
+  .swiper-slide {
+    cursor: grab;
   }
 }
 
@@ -81,17 +144,39 @@
   padding-top: 48px;
   display: flex;
   gap: 20px;
-  .q-p-card  {
+  @include m-670 {
+    flex-direction: column;
+    align-items: center;
+  }
+  .q-p-card {
     display: flex;
     flex-flow: column;
+    .title-mini {
+      span {
+        @include xl {
+          font-size: 20px;
+          @include xxm {
+            font-size: 16px;
+          }
+        }
+      }
+    }
     .grey-text {
       padding-top: 10px;
+      span {
+        @include xl {
+          font-size: 16px;
+          @include xxm {
+            font-size: 14px;
+          }
+        }
+      }
     }
     .img-block {
       padding-top: 24px;
       img {
         max-width: 420px;
-        min-width: 419px;
+        // min-width: 419px;
         width: 100%;
         height: auto;
       }
