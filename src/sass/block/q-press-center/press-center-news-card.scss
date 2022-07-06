@@ -4,14 +4,31 @@
   height: 100%;
   width: 100%;
   background-color: #fbfefe;
-  border-top: 2px solid rgba(11, 22, 0, 0.1);
-  padding-top: 33px;
   padding-bottom: 100px;
+  @include m-small {
+    padding-bottom: 70px;
+  }
+}
+.q-news-head {
+  .title-border {
+    @include m-small {
+      width: 27rem !important;
+    }
+    span {
+      white-space: normal;
+      
+    }
+  }
 }
 
 .q-news-card__links {
   display: flex;
   align-items: center;
+  @include m-small {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
   .news-card__date {
     display: flex;
     gap: 10px;
@@ -31,39 +48,53 @@
       }
     }
   }
-  .news-card__look {
+  .block {
     display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-right: 32px;
-    span {
-      font-family: "Inter", sans-serif;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 120%;
-      color: #6b9b3c;
+    gap: 10px;
+    .news-card__look {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 32px;
+      span {
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 120%;
+        color: #6b9b3c;
+      }
+    }
+    .news-card__repost {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      span {
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 120%;
+        color: #0b1600;
+      }
     }
   }
-  .news-card__repost {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    span {
-      font-family: "Inter", sans-serif;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 120%;
-      color: #0b1600;
-    }
-  }
+  
 }
 
 .q-news-card-wrapper {
   padding: 0 110px;
+  @include m-950 {
+    padding: 0 40px;
+    @include xm {
+      padding: unset;
+    }
+  }
   .q-news-card__content {
     padding-top: 64px;
     display: flex;
     flex-flow: column;
+    @include xm {
+      padding-top: 60px;
+    }
     .news-card__p {
       margin-top: 15px;
       &:first-child {
@@ -73,6 +104,9 @@
     hr {
       margin: 24px 0 64px 0;
       opacity: 0.4;
+      @include xm {
+        margin: 24px 0 30px 0;
+      }
     }
     figure {
       font-family: "Inter", sans-serif;
@@ -81,6 +115,10 @@
       line-height: 150%;
       color: #7c7c87;
       margin: 24px 0 64px 0;
+      @include xm {
+        font-size: 14px;
+        margin: 24px 0 30px 0;
+      }
     }
     p {
       font-family: "Inter", sans-serif;
@@ -89,6 +127,12 @@
       line-height: 150%;
       color: #000000;
       text-indent: 20px;
+      @include l {
+        font-size: 16px;
+        @include xxs {
+          text-indent: unset;
+        }
+      }
     }
   }
   .q-back {

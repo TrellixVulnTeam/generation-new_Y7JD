@@ -1,6 +1,18 @@
-section.news-link-content 
+section.news-link-content.section 
+  hr
   .wrapper 
-    include ../components/breadcrumbs
+    nav.breadcrumbs 
+      ul  
+        li.breadcrumbs-item
+          a(href="/") 
+            i.icon-home 
+        li 
+          i.arrow-black
+        li Пресс-центр
+        li 
+          i.arrow-black
+        li 
+          a(href="javascript:void(0)") Взгляд инвестора на План Козака
     .q-news-wrapper 
       .q-news-head
         .title-border 
@@ -10,12 +22,13 @@ section.news-link-content
           .news-card__date 
             span.news-author DvEnergy  
             span 05.09.2021
-          .news-card__look 
-            i.eye 
-            span 2600
-          a(href="#").news-card__repost 
-            span Поделиться
-            i.repost
+          .block
+            .news-card__look 
+              i.eye 
+              span 2600
+            a(href="#").news-card__repost 
+              span Поделиться
+              i.repost
         .q-news-card-wrapper 
           .q-news-card__content 
             .news-card__p 
@@ -35,12 +48,13 @@ section.news-link-content
             .news-card__p 
               p Я, как убежденный рыночник полагаю, что любые попытки государства управлять бизнес-процессами приводят лишь к очередным бюрократическим барьерам, которые бизнес упорно преодолевает, затрачивая при этом дополнительные ресурсы. Считаю, что и в решении затронутой сложной проблемы необходимо установить разумные правила игры, чтобы инвестиции в её решение стали привлекательными.
           .q-news-card__links.pt-64
-            .news-card__look 
-              i.eye 
-              span 2600
-            a(href="#").news-card__repost 
-              span Поделиться
-              i.repost
+            .block 
+              .news-card__look 
+                i.eye 
+                span 2600
+              a(href="#").news-card__repost 
+                span Поделиться
+                i.repost
           a(href="#").q-back 
             i.arrow-pagination 
             span Вернуться к списку
