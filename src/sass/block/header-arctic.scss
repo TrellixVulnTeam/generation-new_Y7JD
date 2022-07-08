@@ -1,0 +1,15 @@
+.contacts-arctic {
+  display: flex;
+  gap: 25px;
+  li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    a {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 120%;
+      color: white;
+    }
+  }
+}
