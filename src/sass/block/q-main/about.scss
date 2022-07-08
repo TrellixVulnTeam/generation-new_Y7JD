@@ -7,12 +7,33 @@
 
 .about-card-first {
   background: url("../img/Слайдер.png") no-repeat;
+  &::after {
+    content: '';
+    background: rgba(36, 36, 36, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
 }
 .about-card-second {
   background: url("../img/Слайдер.png") no-repeat;
+  &::after {
+    content: '';
+    background: rgba(36, 36, 36, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
 }
 .about-card-third {
   background: url("../img/Слайдер.png") no-repeat;
+  &::after {
+    content: '';
+    background: rgba(36, 36, 36, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
 }
 
 .about-card {
@@ -31,6 +52,7 @@
   .about-content {
     position: absolute;
     top: 250px;
+    z-index: 10;
     @include m-small {
       left: 40px;
       @include xxs {

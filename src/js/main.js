@@ -19,6 +19,11 @@ let swiper = new Swiper(".mySwiper", {
     el: ".swiper-pagination",
   },
 });
+let arcticSwiper = new Swiper(".arctic-swiper", {
+  pagination: {
+    el: ".swiper-pagination",
+  },
+});
 
 let swiper1 = new Swiper(".mySwiper1", {
   pagination: {
@@ -169,7 +174,7 @@ burgerBtn.addEventListener("click", function () {
     });
   } else {
     nav.style.position = "unset";
-    navWrapper.style.top = "-600%";
+    navWrapper.style.top = "-800px";
     navItem.forEach((el) => {
       el.style.position = "relative";
     });
