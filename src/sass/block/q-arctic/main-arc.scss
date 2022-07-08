@@ -18,4 +18,11 @@
     height: 100%;
     position: absolute;
   }
+  .wrapper {
+    .about-content {
+      .b-border {
+        border-bottom: 3px solid #5A76B6;
+      }
+    }
+  }
 }
