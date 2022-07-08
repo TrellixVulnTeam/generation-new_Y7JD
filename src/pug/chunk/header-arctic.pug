@@ -1,0 +1,161 @@
+header.header.header-white
+  .header-content
+    .header-top
+      nav.top-companys
+        ul.top-menu
+          li
+            button.b-text Компании
+              i.arrow-black
+            ul.top-menu__submenu
+              li
+                a(href="#") Captone(ДВ Энерджи)
+              li
+                a(href="#") СПК Первомайский
+              li
+                a(href="#") ДВ Энерджи
+              li
+                a(href="#") Артик Консалт
+      include components/contacts
+    hr.hr
+    .header-bottom 
+      .header-logo
+        a(href="index.html") 
+          img.logo-white(src="./img/LogoScroll.png" alt="")
+      nav.header-nav
+        .nav-items__wrapper.white-h
+          ul.nav-items.dropdown.menu(data-dropdown-menu data-click-open='true' data-disable-hover='true' data-force-follow='false')
+            li.nav-item
+              a(href="#").nav-link.w-l О группе компаний
+                i.arrow-black
+              ul.menu
+                li.nav-item__child
+                  a(href="about.html") О группе
+                li.nav-item__child
+                  a(href="about-history.html") История
+                li.nav-item__child
+                  a(href="about-history.html") Руководство компаний
+                li.nav-item__child
+                  a(href="about-history.html") Структурa группы компаний
+                li.nav-item__child
+                  a(href="about-history.html") Партнеры
+                li.nav-item__child
+                  a(href="about-history.html") Соглашения
+            li.nav-item
+              a(href="#").nav-link.w-l Проекты
+                i.arrow-black
+              ul.menu
+                li.nav-item__child
+                  a(href="about.html") Проекты в инвестиционной стадии
+                li.nav-item__child
+                  a(href="about-history.html") Проекты в стадии эксплуатации 
+                li.nav-item__child
+                  a(href="about-history.html") Реализованные проекты
+                li.nav-item__child
+                  a(href="about-history.html") Показ нижней карты
+            li.nav-item
+              a(href="#").nav-link.w-l Деятельность 
+                i.arrow-black
+              ul.menu
+                li.nav-item__child
+                  a(href="about.html") Инвестиционная деятельность
+                li.nav-item__child
+                  a(href="about-history.html") Capstone
+                li.nav-item__child.sub 
+                  a(href="about-history.html") Теплоснабжение
+            li.nav-item
+              a(href="#").nav-link.w-l Пресс-центр
+                i.arrow-black
+              ul.menu
+                li.nav-item__child
+                  a(href="about.html") Группа компаний Генерации в СМИ
+                li.nav-item__child
+                  a(href="about-history.html") Новости группы компаний
+                li.nav-item__child
+                  a(href="about-history.html") Презентации
+                li.nav-item__child
+                  a(href="about-history.html") Контакты для прессы
+            li.nav-item 
+              a(href="contacts.html").nav-link.w-l Контакты
+        .nav-mob__wrapper 
+          .nav-mob__top 
+            nav.top-companys
+              ul.top-menu
+                li
+                  button Компании
+                    i.arrow-white
+                  ul.top-menu__submenu
+                    li
+                      a(href="#") Captone(ДВ Энерджи)
+                    li
+                      a(href="#") СПК Первомайский
+                    li
+                      a(href="#") ДВ Энерджи
+                    li
+                      a(href="#") Артик Консалт
+          ul.accordion.vertical.menu(data-accordion-menu data-multi-open='false' )
+            li 
+              a(href="#").accordion-link О группе компаний
+                i.arrow-white 
+              ul.menu.vertical.nested.accordion-sub-menu
+                li 
+                  a(href="#") О группе
+                li 
+                  a(href="#") История
+                li 
+                  a(href="#") Руководство компаний
+                li 
+                  a(href="#") Структурa группы компаний
+                li 
+                  a(href="#") Партнеры
+                li 
+                  a(href="#") Соглашения
+            li
+              a(href="#").accordion-link Проекты
+                i.arrow-white
+              ul.menu.vertical.nested.accordion-sub-menu
+                li
+                  a(href="about.html") Проекты в инвестиционной стадии
+                li
+                  a(href="about-history.html") Проекты в стадии эксплуатации 
+                li
+                  a(href="about-history.html") Реализованные проекты
+                li
+                  a(href="about-history.html") Показ нижней карты
+            li
+              a(href="#").accordion-link Деятельность
+                i.arrow-white
+              ul.menu.vertical.nested.accordion-sub-menu
+                li
+                  a(href="about.html") Инвестиционная деятельность
+                li
+                  a(href="about-history.html") Capstone
+                li
+                  a(href="about-history.html") Реализованные проекты
+                li
+                  a(href="about-history.html") Показ нижней карты
+            li
+              a(href="#").accordion-link Пресс-центр
+                i.arrow-white
+              ul.menu.vertical.nested.accordion-sub-menu
+                li
+                  a(href="about.html") Группа компаний Генерации в СМИ
+                li
+                  a(href="about-history.html") Новости группы компаний
+                li
+                  a(href="about-history.html") Презентации
+                li
+                  a(href="about-history.html") Контакты для прессы
+            li 
+              a(href="#").accordion-link Контакты
+          .accord-contacts
+            include components/contacts
+        a(href="javascript:void(0)").nav-search
+          .icon-search.icon-search-black
+        svg.navTrigger.ham.hamRotate.ham4(viewBox='0 0 100 100' width='80')
+          path.line.top.b-color(d='m 70,36 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20')
+          path.line.middle.b-color(d='m 70,50 h -40')
+          path.line.bottom.b-color(d='m 30,63 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20')
+        svg.navTrigger2.ham1.hamRotate1.ham5(viewBox='0 0 100 100' width='80')
+          path.line.top.b-color(d='m 70,36 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20')
+          path.line.middle.b-color(d='m 70,50 h -40')
+          path.line.bottom.b-color(d='m 30,63 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20')
