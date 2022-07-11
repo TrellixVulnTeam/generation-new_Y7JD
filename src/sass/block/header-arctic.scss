@@ -1,10 +1,22 @@
 .contacts-arctic {
   display: flex;
   gap: 25px;
+  @include xm {
+    flex-direction: column;
+  }
   li {
     display: flex;
     align-items: center;
     gap: 10px;
+    @include xxxs {
+      gap: 5px;
+      a {
+        width: 100%;
+         span {
+          display: inline-block;
+         }
+      }
+    }
     a {
       font-weight: 400;
       font-size: 14px;
