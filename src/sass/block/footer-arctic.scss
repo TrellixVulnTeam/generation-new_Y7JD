@@ -1,9 +1,18 @@
 .arc-footer {
   background: #112b66;
   .footer-content {
+    @include xxs {
+      padding: 24px 0 20px 0;
+    }
     .footer-top__block {
+      @include xxs {
+        padding-bottom: 30px;
+      }
       div.arc-list-f {
         align-items: flex-start;
+        @include xxs {
+          gap: 30px;
+        }
         .footer-nav__arc {
           margin-top: 20px;
           ul {
@@ -15,12 +24,18 @@
             grid-template-areas:
               ". ."
               ". .";
+            @include xxs {
+              grid-template-areas: none;
+              grid-template-columns: unset;
+              gap: 24px;
+            }
             li {
               a {
                 font-weight: 600;
                 font-size: 16px;
                 line-height: 120%;
                 color: #ffffff;
+                white-space: nowrap;
               }
             }
           }
@@ -39,8 +54,16 @@
       border-bottom: 2px solid #304982;
       opacity: 1;
     }
+    .footer-date {
+      span {
+        font-family: "Inter",sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        color: #7e95c7;
+      }
+    }
   }
- 
 }
 .arc-p {
   max-width: 291px !important;
