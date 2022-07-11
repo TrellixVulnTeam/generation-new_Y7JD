@@ -5,7 +5,7 @@ section.services-arc.section
       ul  
         li.breadcrumbs-item
           a(href="/") 
-            i.icon-home 
+            i.icon-home-blue 
         li 
           i.arrow-black
         li 
@@ -13,5 +13,22 @@ section.services-arc.section
     .q-arc-service  
       .title-blue
         span Услуги
-      .q-arc-service__body 
-        .q-servie-content
+      .q-arc-service__body.pt-64
+        .q-service-content
+          .q-service-tabs
+            button.arc-tab-btn.active-arc-tab-btn(data-tab-arc="project") Структурирование проекта
+            button.arc-tab-btn(data-tab-arc="concurs") Подготовка и сопровождение конкурсов
+            button.arc-tab-btn(data-tab-arc="chki") Сопровождение процедур ЧКИ
+            button.arc-tab-btn(data-tab-arc="finance") Сопровождение финансового закрытия
+          .q-service-body.tab-content.tab-content-active#project
+            ul 
+              li Анализ целей и задач проекта, экономики проекта, рыночной ситуации, законодательно нормативного регулирования, определение источников финансирования, механизмов возврата инвестиций, оценка возможности привлечения заёмного финансирования, оценка рисков проекта;
+              li Проработка и сравнительный анализ возможных моделей реализации проекта с учетом опыта реализации аналогичных проектов в России и за рубежом, общей стоимости проекта, оптимального распределения рисков, необходимости изменения законодательно-нормативного регулирования;
+              li Выбор оптимальной организационно-правовой модели, закрепляющей выбранную клиентом структуру будущей сделки; - Разработка основных условий ключевого соглашения, а также формирование общей договорной модели проекта, схемы движения капиталов и имущества, распределения рисков между участниками сделки;
+              li При необходимости – формирование концепции изменения законодательства для обеспечения реализации и контроля хода ГЧП-проекта
+          .q-service-body.tab-content#concurs
+            h5 TEST
+          .q-service-body.tab-content#chki  
+            h5 TEST
+          .q-service-body.tab-content#finance
+            h5 TEST

@@ -1,0 +1,25 @@
+.q-arc-service__body {
+  .q-service-content {
+    .q-service-tabs {
+      .active-arc-tab-btn {
+        background: #5a76b6;
+        color: white;
+        &:hover {
+          background: #5a76b6;
+        }
+      }
+      button {
+        border-radius: 6px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 120%;
+        color: #0E2252;
+        padding: 12px 24px;
+        cursor: pointer;
+        &:hover {
+          background-color: #5a76b62f;
+        }
+      }
+    }
+  }
+}

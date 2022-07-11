@@ -131,6 +131,23 @@ function openTabs(el) {
   document.querySelector("#" + tab).classList.add("tab-content-active");
   btnTarget.classList.add("active-tab-btn");
 }
+// arctic services tabs
+const tabsArctic = document.querySelector(".q-arc-service__body");
+const tabArcContent = document.querySelectorAll(".q-service-body");
+
+const tabArcBtn = document.querySelectorAll(".arc-tab-btn").forEach((e) => {
+  e.addEventListener("click", function openTabsArc() {
+    let btnTarget = this;
+    btnTarget.classList.remove("active-arc-tab-btn");
+
+    let tab = btnTarget.dataset.tabArc;
+    tabArcContent.forEach((el) => {
+      el.classList.remove("tab-content-active");
+    });
+    document.querySelector("#" + tab).classList.add('tab-content-active"');
+    btnTarget.classList.add("active-arc-tab-btn");
+  });
+});
 
 // scroll header
 scrollHeader();

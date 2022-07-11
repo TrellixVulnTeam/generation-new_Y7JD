@@ -355,6 +355,7 @@ body {
 @import "block/header-mob.scss";
 @import "block/header-white.scss";
 @import "block/header-arctic.scss";
+@import "block/header-arctic-white.scss";
 
 // MAIN PAGE SCSS
 @import "block/q-main/about.scss";
@@ -387,6 +388,7 @@ body {
 
 // arctic scss
 @import "block/q-arctic/main-arc.scss";
+@import "block/q-arctic/services-arc.scss";
 
 @import "block/footer.scss";
 @import "block/footer-arctic.scss";
