@@ -17,9 +17,35 @@
     position: absolute;
   }
   .wrapper {
-    .about-content {
+    .about-content-card {
+      position: absolute;
+      top: 250px;
+      z-index: 10;
+      // @include l-1150 {
+      //   width: 69%;
+      // }
       .b-border {
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 120%;
+        color: #ffffff;
         border-bottom: 3px solid #5a76b6;
+        padding-bottom: 6px;
+        width: auto;
+        display: inline-block;
+        @include l-1150 {
+          width: 83%;
+          @include xxm {
+            font-size: 36px;
+            @include xm {
+              // width: 386px;
+              @include m-small {
+                font-size: 24px;
+              }
+            }
+          }
+          
+        }
       }
       p {
         font-family: "Inter", sans-serif;
@@ -29,6 +55,10 @@
         line-height: 140%;
         color: #ffffff;
         max-width: 950px;
+        margin-top: 16px;
+        @include m-small {
+          font-size: 14px;
+        }
       }
     }
   }
@@ -272,6 +302,7 @@
         font-size: 16px;
         line-height: 140%;
         color: white;
+        cursor: pointer;
       }
     }
   }

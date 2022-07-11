@@ -1,40 +1,46 @@
-footer.footer
+footer.footer.arc-footer
   .wrapper  
     .footer-content 
       .footer-top__block
-        .footer__list-items 
+        .footer__list-items.arc-list-f
           .footer-logo 
             a(href="index.html")
               img(src="./img/logo-arctic.svg", alt="")
             p.arc-p Арктик Консалт оказывает качественные комплексные услуги по сопровождению проектов на основе государственно-частного партнерства
-          .footer-nav
+          .footer-nav__arc
             ul 
               li 
                 a(href="#") О компании
               li 
-                a(href="#") Деятельность
+                a(href="#") Услуги
               li 
-                a(href="#") Пресс-центр
-              li 
-                a(href="#") Проекты
+                a(href="#") Опыт и клиенты
               li 
                 a(href="#") Контакты
-          .footer-contacts 
-            include components/contacts
+          .footer-contacts__arc
+            ul.contacts-arctic
+              li
+                i.icon-mail-orange
+                a(href="mailto: dsadsa@mai.ru").b.w stm@dvenergy.pro
+              li
+                i.icon-point-orange
+                a(href="#")
+                  span ​г.Москва, Киевское шоссе 22-й км.
+                  span 
           .space
           .space
       hr
       .footer-lower__block
         .footer-date 
-          span © 2022 Группа компаний Генерация - инвестиции в сферу ЖКХ и энергетики
+          span © 2022 Арктик Консалт
         .footer__social-icons
           ul  
             li.vk 
               a(href="#") 
-                img(src="./img/icons/vk-icon.svg", alt="")
+                img(src="./img/icons/arc-vk.svg", alt="")
             li.odnoklassniki 
               a(href="#") 
-                img(src="./img/icons/odnoklassniki.svg", alt="")
+                img(src="./img/icons/arc-odno.svg", alt="")
             li.telegram 
               a(href="#") 
-                img(src="./img/icons/telega.svg", alt="")
+                img(src="./img/icons/arc-telegram.svg", alt="")
