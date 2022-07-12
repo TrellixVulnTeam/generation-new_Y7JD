@@ -1,0 +1,114 @@
+.capstone-about {
+  background: url("../img/capstone/bg-capsone.png") no-repeat center/cover;
+  .wrapper {
+    .about-content-card {
+      position: absolute;
+      top: 265px;
+      z-index: 10;
+      @include m-640 {
+        width: 90%;
+        @include xxs {
+          // width: unset;
+          top: 133px;
+          left: unset;
+        }
+      }
+
+      .b-border {
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 120%;
+        color: #ffffff;
+        border-bottom: 3px solid #77b946;
+        padding-bottom: 6px;
+        width: auto;
+        display: inline-block;
+        @include l-1150 {
+          width: 83%;
+          @include xxm {
+            font-size: 36px;
+            @include xm {
+              //
+              @include m-small {
+                font-size: 24px;
+              }
+            }
+          }
+        }
+      }
+      p {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 140%;
+        color: #ffffff;
+        max-width: 950px;
+        margin-top: 16px;
+        @include m-small {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.card-content {
+  span {
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    color: #0b1600;
+  }
+}
+
+.capstone-text {
+}
+
+.capstone-about-section {
+  .about-card-content {
+    .left {
+      .title-blue {
+        span {
+          color: #6b9b3c;
+        }
+      }
+      .capstone-text {
+        span {
+          color: #0b1600;
+        }
+      }
+    }
+  }
+}
+
+.capstone-swiper__cards {
+  .wrapper {
+    .about-content__footer {
+      .title-block {
+        .title-green {
+          span {
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 130%;
+            color: #6b9b3c;
+          }
+        }
+        .title-descr {
+          padding-top: 20px;
+          max-width: 870px;
+          width: 100%;
+          span {
+            font-family: "Inter", sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 140%;
+            color: #0b1600;
+          }
+        }
+      }
+    }
+  }
+}

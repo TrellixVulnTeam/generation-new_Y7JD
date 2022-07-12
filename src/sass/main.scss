@@ -351,6 +351,25 @@ body {
   padding-top: unset !important;
 }
 
+.about-card {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  min-height: 650px;
+  width: 100%;
+  @include xxs {
+    min-height: 440px;
+  }
+  &::after {
+    content: "";
+    background: rgba(36, 36, 36, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+}
+
 @import "block/header.scss";
 @import "block/header-mob.scss";
 @import "block/header-white.scss";
@@ -389,6 +408,9 @@ body {
 // arctic scss
 @import "block/q-arctic/main-arc.scss";
 @import "block/q-arctic/services-arc.scss";
+
+// CAPSTONE SSCSCSSCSC
+@import 'block/q-capstone/main-capstone.scss';
 
 @import "block/footer.scss";
 @import "block/footer-arctic.scss";

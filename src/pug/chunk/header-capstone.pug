@@ -1,0 +1,99 @@
+header.header
+  .header-content
+    .header-top
+      nav.top-companys
+        ul.top-menu
+          li
+            button Компании
+              i.arrow-white
+            ul.top-menu__submenu
+              li
+                a(href="#") Captone(ДВ Энерджи)
+              li
+                a(href="#") СПК Первомайский
+              li
+                a(href="#") ДВ Энерджи
+              li
+                a(href="arctic.html") Артик Консалт
+      include components/contacts
+    hr.hr
+    .header-bottom 
+      .header-logo
+        a(href="index.html") 
+          img.logo(src="./img/logo-capstone.svg" alt="")
+      nav.header-nav
+        .nav-items__wrapper
+          ul.nav-items.dropdown.menu(data-dropdown-menu data-click-open='true' data-disable-hover='true' data-force-follow='false')
+            li.nav-item
+              a(href="#").nav-link Оборудование
+                i.arrow-white
+              ul.menu
+                li.nav-item__child
+                  a(href="#") Capstone C65
+                li.nav-item__child
+                  a(href="#") ТЕСТ
+                li.nav-item__child
+                  a(href="#") ТЕС
+                li.nav-item__child
+                  a(href="#") выфв
+                li.nav-item__child
+                  a(href="#") ТЕСТ
+            li.nav-item
+              a(href="#").nav-link Проекты
+            li.nav-item
+              a(href="#").nav-link Сервис
+            li.nav-item
+              a(href="#").nav-link Запчасти
+            li.nav-item 
+              a(href="contacts.html").nav-link Контакты
+            li.nav-item 
+              a(href="#").nav-link О компании
+        .nav-mob__wrapper 
+          .nav-mob__top 
+            nav.top-companys
+              ul.top-menu
+                li
+                  button Компании
+                    i.arrow-white
+                  ul.top-menu__submenu
+                    li
+                      a(href="#") Captone(ДВ Энерджи)
+                    li
+                      a(href="#") СПК Первомайский
+                    li
+                      a(href="#") ДВ Энерджи
+                    li
+                      a(href="#") Артик Консалт
+          ul.accordion.vertical.menu(data-accordion-menu data-multi-open='false' )
+            li 
+              a(href="#").accordion-link Оборудование
+                i.arrow-white 
+              ul.menu.vertical.nested.accordion-sub-menu
+                li 
+                  a(href="#") CAPSTONE C65
+                li 
+                  a(href="#") ТЕСТ
+                li 
+                  a(href="#") 234234
+            li
+              a(href="#").accordion-link Проекты
+            li
+              a(href="#").accordion-link Сервис
+            li
+              a(href="#").accordion-link Запчасти
+            li 
+              a(href="#").accordion-link Контакты
+            li 
+              a(href="#").accordion-link О компании
+          .accord-contacts
+            include components/contacts
+        a(href="javascript:void(0)").nav-search
+          .icon-search
+        svg.navTrigger.ham.hamRotate.ham4(viewBox='0 0 100 100' width='80')
+          path.line.top(d='m 70,36 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20')
+          path.line.middle(d='m 70,50 h -40')
+          path.line.bottom(d='m 30,63 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20')
+        svg.navTrigger2.ham1.hamRotate1.ham5(viewBox='0 0 100 100' width='80')
+          path.line.top(d='m 70,36 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20')
+          path.line.middle(d='m 70,50 h -40')
+          path.line.bottom(d='m 30,63 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20')

@@ -23,7 +23,6 @@
         font-size: 16px;
         line-height: 140%;
         color: #0b1600;
-        letter-spacing: 0.5px;
         &:first-child {
           @include xxs-big {
             display: none;
@@ -77,7 +76,7 @@
       .card-title {
         display: inline-block;
         margin: 16px 0 10px 0;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 18px;
         line-height: 140%;
         color: #0b1600;
