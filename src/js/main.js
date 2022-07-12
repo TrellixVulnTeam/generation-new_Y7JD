@@ -7,11 +7,13 @@ import { vacancySwiper } from "./modules/vacancys-swiper.js";
 import { phoneValidate } from "./modules/phone-number.js";
 import { projectCardSwiper } from "./modules/project-swiper.js";
 import { scrollHeader } from "./modules/scroll-header.js";
+import { arcTabSwiper} from "./modules/arc-service.js";
 
 parnersSwiperTop;
 parnersSwiperLower;
 vacancySwiper;
 projectCardSwiper;
+arcTabSwiper;
 
 // SWIPERS
 let swiper = new Swiper(".mySwiper", {
@@ -135,19 +137,24 @@ function openTabs(el) {
 const tabsArctic = document.querySelector(".q-arc-service__body");
 const tabArcContent = document.querySelectorAll(".q-service-body");
 
-const tabArcBtn = document.querySelectorAll(".arc-tab-btn").forEach((e) => {
-  e.addEventListener("click", function openTabsArc() {
-    let btnTarget = this;
-    btnTarget.classList.remove("active-arc-tab-btn");
-
-    let tab = btnTarget.dataset.tabArc;
-    tabArcContent.forEach((el) => {
-      el.classList.remove("tab-content-active");
-    });
-    document.querySelector("#" + tab).classList.add('tab-content-active"');
-    btnTarget.classList.add("active-arc-tab-btn");
-  });
+const tabArcBtn = document.querySelectorAll(".arc-tab-btn")
+tabArcBtn.forEach((e) => {
+  e.addEventListener("click", openTabsArc);
 });
+
+function openTabsArc(el) {
+  let btnTarget = el.currentTarget;
+  let tab = btnTarget.dataset.tabArc;
+  tabArcContent.forEach((el) => {
+    el.classList.remove("tab-content-active");
+  });
+  tabArcBtn.forEach((e) => {
+    
+    e.classList.remove("active-arc-tab-btn");
+  });
+  document.querySelector("#" + tab).classList.add("tab-content-active");
+  btnTarget.classList.add("active-arc-tab-btn");
+}
 
 // scroll header
 scrollHeader();

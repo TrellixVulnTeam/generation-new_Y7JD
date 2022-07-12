@@ -15,11 +15,13 @@ section.services-arc.section
         span Услуги
       .q-arc-service__body.pt-64
         .q-service-content
-          .q-service-tabs
-            button.arc-tab-btn.active-arc-tab-btn(data-tab-arc="project") Структурирование проекта
-            button.arc-tab-btn(data-tab-arc="concurs") Подготовка и сопровождение конкурсов
-            button.arc-tab-btn(data-tab-arc="chki") Сопровождение процедур ЧКИ
-            button.arc-tab-btn(data-tab-arc="finance") Сопровождение финансового закрытия
+          .q-service-tabs.q-arc-tab-swiper  
+            .swiper-wrapper 
+              button.swiper-slide.arc-tab-btn.active-arc-tab-btn(data-tab-arc="project") Структурирование 
+                span проекта
+              button.swiper-slide.arc-tab-btn(data-tab-arc="concurs") Подготовка и сопровождение конкурсов
+              button.swiper-slide.arc-tab-btn(data-tab-arc="chki") Сопровождение процедур ЧКИ
+              button.swiper-slide.arc-tab-btn(data-tab-arc="finance") Сопровождение финансового закрытия
           .q-service-body.tab-content.tab-content-active#project
             ul 
               li Анализ целей и задач проекта, экономики проекта, рыночной ситуации, законодательно нормативного регулирования, определение источников финансирования, механизмов возврата инвестиций, оценка возможности привлечения заёмного финансирования, оценка рисков проекта;
@@ -27,8 +29,11 @@ section.services-arc.section
               li Выбор оптимальной организационно-правовой модели, закрепляющей выбранную клиентом структуру будущей сделки; - Разработка основных условий ключевого соглашения, а также формирование общей договорной модели проекта, схемы движения капиталов и имущества, распределения рисков между участниками сделки;
               li При необходимости – формирование концепции изменения законодательства для обеспечения реализации и контроля хода ГЧП-проекта
           .q-service-body.tab-content#concurs
-            h5 TEST
+            ul 
+              li Анализ целей
           .q-service-body.tab-content#chki  
-            h5 TEST
+            ul 
+              li Анализ целей
           .q-service-body.tab-content#finance
-            h5 TEST
+            ul 
+              li Анализ целей
