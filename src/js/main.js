@@ -85,7 +85,7 @@ var swiper2 = new Swiper(".mySwiper2", {
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
-  slidesPerView: 3,
+  slidesPerView: "auto",
   coverflowEffect: {
     rotate: 100,
     stretch: -55,
@@ -97,6 +97,11 @@ var swiper2 = new Swiper(".mySwiper2", {
     prevEl: ".swiper-button-prev",
   },
   initialSlide: 1,
+  breakpoints: {
+    880: {
+      slidesPerView: 3,
+    },
+  },
 });
 
 var newsSwiper = new Swiper(".news-swiper", {

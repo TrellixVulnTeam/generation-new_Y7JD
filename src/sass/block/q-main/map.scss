@@ -33,6 +33,9 @@
                   width: 100%;
                   @include m-small {
                     min-height: 380px;
+                    @include xxs {
+                      min-height: 200px;
+                    }
                   }
                 }
               }
@@ -358,6 +361,9 @@
     width: 100%;
     max-height: unset;
     min-height: unset;
+    @include m-880 {
+      overflow: unset;
+    }
   }
   .swiper-wrapper {
     display: flex;

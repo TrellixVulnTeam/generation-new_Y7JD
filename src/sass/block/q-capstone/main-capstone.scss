@@ -248,6 +248,7 @@ section.slider-casptone {
             &::after {
               content: "";
             }
+            
           }
         }
       }
@@ -333,6 +334,17 @@ section.slider-casptone {
     background: #8bacb2 !important;
     box-shadow: 0px 4px 16px rgba(17, 79, 92, 0.1) !important;
     border-radius: 4px !important;
+  }
+}
+
+section.map-capstone {
+  .map-swiper__container {
+    .swiper-button-prev,
+    .swiper-button-next {
+      @include xxm {
+        display: none;
+      }
+    }
   }
 }
 
