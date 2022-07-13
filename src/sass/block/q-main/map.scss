@@ -28,8 +28,12 @@
               width: 768px;
               @include m-940 {
                 width: 666px;
+                min-height: 480px;
                 @include m-768 {
                   width: 100%;
+                  @include m-small {
+                    min-height: 380px;
+                  }
                 }
               }
             }
