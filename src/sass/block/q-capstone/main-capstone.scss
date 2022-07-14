@@ -90,6 +90,9 @@ section.capstone-activity {
 }
 
 section.capstone-swiper__cards {
+  @include m-small {
+    padding-top: 70px;
+  }
   .wrapper {
     .about-content__footer {
       .title-block {

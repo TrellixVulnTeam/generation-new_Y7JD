@@ -27,7 +27,7 @@
             @include xxs {
               grid-template-areas: none;
               grid-template-columns: unset;
-              gap: 24px;
+              // gap: 24px;
             }
             li {
               a {
@@ -36,6 +36,9 @@
                 line-height: 120%;
                 color: #ffffff;
                 white-space: nowrap;
+                @include  l {
+                  font-size:14px;
+                }
               }
             }
           }

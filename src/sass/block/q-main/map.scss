@@ -66,6 +66,7 @@
         background: url('../img/');
         @include xxm {
           margin-top: unset;
+          display: none;
         }
         &::after {
           content: '';
@@ -79,6 +80,7 @@
         position: unset;
         @include xxm {
           margin-top: unset;
+          display: none;
         }
         &::after {
           content: '';
