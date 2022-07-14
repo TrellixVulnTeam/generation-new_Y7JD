@@ -350,90 +350,105 @@ section.map-capstone {
 
 section.capstone-contacts {
   padding-bottom: 100px;
-  .q-left {
-    .q-contacts-cards__left,
-    .q-contacts-cards__right {
-      .q-card-adress {
-        span {
-          font-weight: 500;
-        }
-      }
+  @include m-small {
+    padding-bottom: 70px;
+  }
+  .q-contacts-head {
+    @include xm {
+      margin-top: 0;
     }
   }
-  .capstone-hire-me {
-    max-width: 640px;
-    width: 100%;
-    height: auto;
-    @include xl-1300 {
-      max-width: 550px;
-      @include l-1150 {
-        max-width: 420px;
+  .q-contacts-body {
+    gap: 10px;
+    .q-left {
+      @include xm {
+        margin-bottom: 30px;
       }
-    }
-    @include m-840 {
-      max-width: 365px;
-    }
-    @include xm {
-      max-width: unset;
-    }
-    .hire-me {
-      background: #fafbfc;
-      border: 1px solid #dadfea;
-      box-shadow: 0px 4px 16px rgba(17, 79, 92, 0.1);
-      border-radius: 6px;
-      padding: 24px;
-      .hire-me__title {
-        span {
-          font-weight: 700;
-          font-size: 24px;
-          line-height: 160%;
-          color: #14213a;
-          @include xxm {
-            font-size: 20px;
+      .q-contacts-cards__left,
+      .q-contacts-cards__right {
+        .q-card-adress {
+          span {
+            font-weight: 500;
           }
         }
       }
-      .hire-me__items {
-        margin-top: 20px;
-        li {
-          margin-bottom: 24px;
-          &:last-child {
-            margin-bottom: 40px;
-          }
-          input {
-            background: #fdfdfd;
-            border: 1px solid #dadfea;
-            border-radius: 6px;
-            padding: 11px 18px;
-            height: 48px;
-            font-family: "Inter", sans-serif;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 24px;
-
+    }
+    .capstone-hire-me {
+      max-width: 640px;
+      width: 100%;
+      height: auto;
+      @include xl-1300 {
+        max-width: 550px;
+        @include l-1150 {
+          max-width: 420px;
+        }
+      }
+      @include m-840 {
+        max-width: 365px;
+      }
+      @include xm {
+        max-width: unset;
+      }
+      .hire-me {
+        background: #fafbfc;
+        border: 1px solid #dadfea;
+        box-shadow: 0px 4px 16px rgba(17, 79, 92, 0.1);
+        border-radius: 6px;
+        padding: 24px;
+        .hire-me__title {
+          span {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 160%;
+            color: #14213a;
             @include xxm {
-              font-size: 16px;
-              @include m-small {
-                font-size: 14px;
-                margin-bottom: 20px;
-                &:last-child {
+              font-size: 20px;
+            }
+          }
+        }
+        .hire-me__items {
+          margin-top: 20px;
+          li {
+            margin-bottom: 24px;
+            &:last-child {
+              margin-bottom: 40px;
+            }
+            input {
+              background: #fdfdfd;
+              border: 1px solid #dadfea;
+              border-radius: 6px;
+              padding: 11px 18px;
+              height: 48px;
+              font-family: "Inter", sans-serif;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 24px;
+  
+              @include xxm {
+                font-size: 16px;
+                @include m-small {
+                  font-size: 14px;
                   margin-bottom: 20px;
+                  &:last-child {
+                    margin-bottom: 20px;
+                  }
                 }
               }
             }
           }
         }
-      }
-      button {
-        background: #77b946;
-        border-radius: 6px;
-        padding: 12px 28px;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 140%;
-        color: white;
-        cursor: pointer;
+        button {
+          background: #77b946;
+          border-radius: 6px;
+          padding: 12px 28px;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 140%;
+          color: white;
+          cursor: pointer;
+        }
       }
     }
   }
+  
 }

@@ -96,10 +96,12 @@ var swiper2 = new Swiper(".mySwiper2", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-  initialSlide: 1,
+  initialSlide: 0,
   breakpoints: {
+    
     880: {
       slidesPerView: 3,
+      initialSlide: 1,
     },
   },
 });

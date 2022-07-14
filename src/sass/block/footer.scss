@@ -20,24 +20,25 @@
         padding-bottom: 39px;
       }
       .footer__list-items {
-        display: flex;
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-template-columns: .9fr 1fr 1fr 0.64fr;
+        grid-template-rows: 1fr;
         align-items: flex-end;
-        justify-content: space-between;
-        gap: 30px;
-        @include l {
+        @include xl {
           gap: 10px;
-          @include xxm {
-            flex-wrap: wrap;
-            justify-content: unset;
-            gap: 12px;
+          grid-template-columns: .9fr 1fr 1fr;
             @include m-950 {
-              gap: 41px;
+              grid-template-columns: .7fr 1fr;
+              gap: 40px 10px;
             }
             @include m-670 {
-              flex-direction: column;
-              align-items: flex-start;
+              grid-template-columns: 1fr;
+              grid-template-rows: 1fr 1fr 1fr;
+              @include xxs {
+                grid-template-rows: 1fr 1.5fr 1fr;
+              }
             }
-          }
         }
         .footer-logo {
           a {
@@ -60,7 +61,7 @@
             line-height: 140%;
             margin-top: 16px;
             letter-spacing: 0;
-            opacity: .8;
+            opacity: 0.8;
             @include xl {
               min-width: 240px;
             }
@@ -72,8 +73,16 @@
           width: 100%;
           max-height: 140px;
           height: 100%;
-          @include m-670 {
+          @include xxs {
+            max-width: unset;
             max-height: unset;
+            ul {
+              flex-wrap: unset;
+              gap: unset;
+              height: 100%;
+              max-height: unset;
+              justify-content: space-between;
+            }
           }
           ul {
             display: flex;
@@ -84,11 +93,6 @@
             max-height: 140px;
             height: 100%;
             gap: 40px;
-            @include m-670 {
-              flex-wrap: unset;
-              gap: 30px;
-              max-height: unset;
-            }
             li {
               max-width: 165px;
               a {
@@ -112,7 +116,6 @@
             flex-direction: column;
             gap: 33px;
             @include l {
-              gap: 31px;
             }
             li {
               a {
@@ -157,7 +160,6 @@
       font-weight: 400;
       font-size: 12px;
       line-height: 140%;
-      
     }
   }
   .footer__social-icons {
