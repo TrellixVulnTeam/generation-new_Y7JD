@@ -49,6 +49,9 @@ body {
 
 .section {
   padding-top: 140px;
+  hr {
+    opacity: .7;
+  }
   @include xm {
     padding-top: 85px;
     @include xxs {
@@ -241,7 +244,6 @@ body {
       color: #77b946;
     }
     span {
-      // display: inline-block;
       color: #0B1600;
       width: 100%;
       font-family: "Open sans", sans-serif;
@@ -259,9 +261,6 @@ body {
       line-height: 140%;
       color: #7c7c87;
       letter-spacing: normal;
-      // &:last-child {
-      //   margin-top: 20px;
-      // }
       @include xxm {
         font-size: 16px;
       }
@@ -375,6 +374,7 @@ body {
 @import "block/header-white.scss";
 @import "block/header-arctic.scss";
 @import "block/header-arctic-white.scss";
+@import "block/header-capstone-white.scss";
 
 // MAIN PAGE SCSS
 @import "block/q-main/about.scss";
@@ -411,6 +411,7 @@ body {
 
 // CAPSTONE SSCSCSSCSC
 @import 'block/q-capstone/main-capstone.scss';
+@import 'block/q-capstone/capstone-item.scss';
 
 @import "block/footer.scss";
 @import "block/footer-arctic.scss";

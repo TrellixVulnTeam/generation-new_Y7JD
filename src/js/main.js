@@ -8,12 +8,14 @@ import { phoneValidate } from "./modules/phone-number.js";
 import { projectCardSwiper } from "./modules/project-swiper.js";
 import { scrollHeader } from "./modules/scroll-header.js";
 import { arcTabSwiper } from "./modules/arc-service.js";
+import { init } from "./modules/capstone-swiper.js";
 
 parnersSwiperTop;
 parnersSwiperLower;
 vacancySwiper;
 projectCardSwiper;
 arcTabSwiper;
+init();
 
 let capstoneSwiper = new Swiper(".slider-capstone", {
   spaceBetween: 20,
@@ -23,7 +25,7 @@ let capstoneSwiper = new Swiper(".slider-capstone", {
     prevEl: ".swiper-button-prev",
   },
   pagination: {
-    el: '.capstone-pag',
+    el: ".capstone-pag",
     type: "progressbar",
   },
   // breakpoints: {
@@ -98,7 +100,6 @@ var swiper2 = new Swiper(".mySwiper2", {
   },
   initialSlide: 0,
   breakpoints: {
-    
     880: {
       slidesPerView: 3,
       initialSlide: 1,

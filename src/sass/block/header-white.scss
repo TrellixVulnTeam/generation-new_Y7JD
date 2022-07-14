@@ -47,16 +47,6 @@
 }
 
 [data-is-click="true"] {
-  // background: #648b97;
-  // @include l-1100 {
-  //   background: rgba(255, 255, 255, 0.2);
-  // }
-  // &:hover {
-  //   background: #648b97 !important;
-  //   @include l-1100 {
-  //     background: rgba(255, 255, 255, 0.2) !important;
-  //   }
-  // }
   .w-l {
     color: white !important;
     .arrow-black {
@@ -67,10 +57,6 @@
       }
     }
   }
-
-  // .menu {
-  //   display: flex !important;
-  // }
 }
 
 .scrolled-header {
