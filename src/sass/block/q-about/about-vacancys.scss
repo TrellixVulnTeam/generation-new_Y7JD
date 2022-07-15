@@ -10,6 +10,9 @@
   padding-bottom: 100px;
   @include m-670 {
     padding-bottom: 70px;
+    @include  xxs {
+      padding-top: 32px;
+    }
   }
 }
 

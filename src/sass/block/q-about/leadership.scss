@@ -20,40 +20,57 @@
 .q-leadership-leaders {
   padding: 0 0 100px 0;
   .q-leaders-wrapper {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
     gap: 20px;
-    @include l-1100 {
-      justify-content: space-between;
-      @include m-670 {
-        flex-direction: column;
-      }
+    @include l-1150 {
+      grid-template-columns: 1fr 1fr;
     }
+    @include xl-1300 {
+    }
+    
+      @include m-670 {
+        grid-template-columns: 1fr;
+      }
     .q-leaders-card {
       height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       margin-top: 100px;
+      max-height: 580px;
       @include m-670 {
         margin-top: 70px;
         align-self: center;
+        @include xxxs {
+          max-height: 480px;
+        }
       }
       .img-block {
-        @include m-950 {
-          width: 300px;
-        }
         img {
           max-width: 380px;
           width: 100%;
           min-height: 366px;
           max-height: 370px;
           height: 100%;
-          @include m-950 {
-            min-height: unset;
-            max-width: unset;
-            max-height: unset;
+          @include l-1150 {
+            min-height: 440px;
+            max-height: 440px;
+            max-width: 100%;
+            @include xxm {
+              min-height: 375px;
+              max-height: 375px;
+            }
+          }
+          @include m-670  {
+            max-height: 450px;
+
+          }
+          @include xxxs {
+            max-height: 281px;
+            min-height: 281px;
           }
         }
       }

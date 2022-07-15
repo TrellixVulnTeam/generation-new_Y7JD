@@ -154,9 +154,13 @@ $fs-15px: 15px;
     height: 70px;
   }
   .header-logo {
-    @include xxs {
-      width: 132px;
+    @include l-1150 {
+      width: 180px;
+      @include xxs {
+        width: 132px;
+      }
     }
+    
   }
   .header-nav {
     display: flex;
@@ -184,7 +188,7 @@ $fs-15px: 15px;
       .nav-items {
         @include l-1100 {
           max-width: 282px;
-          padding: 24px 24px 24px 50px;
+          padding: 24px 22px 24px 47px;
           border-right: 1px solid rgba(66, 66, 66, 0.5);
           height: 100%;
         }

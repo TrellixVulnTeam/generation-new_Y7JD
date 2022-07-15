@@ -50,7 +50,7 @@ body {
 .section {
   padding-top: 140px;
   hr {
-    opacity: .7;
+    opacity: .5;
   }
   @include xm {
     padding-top: 85px;
@@ -233,6 +233,7 @@ body {
         font-size: 20px;
         @include xxs {
           font-size: 18px;
+          
         }
       }
       @include m-670 {
@@ -263,6 +264,9 @@ body {
       letter-spacing: normal;
       @include xxm {
         font-size: 16px;
+        @include m-small {
+          font-size: 14px;
+        }
       }
     }
   }
