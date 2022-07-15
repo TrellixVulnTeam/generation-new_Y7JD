@@ -1,5 +1,8 @@
 .q-projects-wrapper {
   padding-top: 40px;
+  @include xxs {
+    padding-top: 32px;
+  }
   .q-projects-content {
     .q-projects-cards {
       display: flex;
@@ -75,9 +78,10 @@
                 }
               }
             }
-            @include xxs {
-              height: 160px;
-            }
+            
+          }
+          @include xxs-big {
+            height: 160px;
           }
         }
         &:last-child {

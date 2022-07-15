@@ -4,6 +4,9 @@
 .map {
   padding: 46px 0 82px 0;
   background-color: #fbfefe;
+  @include xm {
+    padding: 40px 0 70px 0;
+  }
   .map-content {
     .map-block {
       position: relative;
@@ -28,8 +31,15 @@
               width: 768px;
               @include m-940 {
                 width: 666px;
+                min-height: 480px;
                 @include m-768 {
                   width: 100%;
+                  @include m-small {
+                    min-height: 380px;
+                    @include xxs {
+                      min-height: 200px;
+                    }
+                  }
                 }
               }
             }
@@ -47,12 +57,16 @@
       gap: 20px;
       @include l-1150 {
         justify-content: space-between;
+        @include m-670 {
+          margin-top: 0;
+        }
       }
       .swiper-button-prev {
         position: unset;
         background: url('../img/');
         @include xxm {
           margin-top: unset;
+          display: none;
         }
         &::after {
           content: '';
@@ -66,6 +80,7 @@
         position: unset;
         @include xxm {
           margin-top: unset;
+          display: none;
         }
         &::after {
           content: '';
@@ -354,6 +369,9 @@
     width: 100%;
     max-height: unset;
     min-height: unset;
+    @include m-880 {
+      overflow: unset;
+    }
   }
   .swiper-wrapper {
     display: flex;
@@ -376,12 +394,20 @@
     transform: scale(0.88) !important;
     background: #fbfefe !important;
     opacity: 0.8 !important;
+    @include xm {
+      max-width: 268px;
+      min-width: none;
+      max-height: 100px;
+    }
     span {
       color: #8bacb2;
       &:first-child {
         font-weight: 600;
         font-size: 45px;
         line-height: 120%;
+        @include xm {
+          font-size: 25px;
+        } 
       }
       &:last-child {
         font-family: "Inter", sans-serif;
@@ -390,6 +416,9 @@
         font-size: 18px;
         line-height: 120%;
         text-align: center;
+        @include xm {
+          font-size: 14px;
+        }
       }
     }
   }
@@ -402,8 +431,12 @@
     @include xxm {
       transform: scale(1.15) !important;
       z-index: 2 !important;
+      @include xm {
+        transform: scale(1) !important;
+      }
     }
     span {
+      color: #05111b;
       &:first-child {
         color: #6b9b3c !important;
         margin-bottom: 10px;

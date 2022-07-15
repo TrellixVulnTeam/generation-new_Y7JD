@@ -21,9 +21,15 @@
       position: absolute;
       top: 250px;
       z-index: 10;
-      // @include l-1150 {
-      //   width: 69%;
-      // }
+      @include m-640 {
+        width: 90%;
+        @include xxs {
+          // width: unset;
+          top: 133px;
+          left: unset;
+        }
+      }
+
       .b-border {
         font-weight: 600;
         font-size: 40px;
@@ -44,7 +50,6 @@
               }
             }
           }
-          
         }
       }
       p {
@@ -66,23 +71,57 @@
 
 .about-card-arc {
   padding: 100px 0 0 0;
+  @include l-1150 {
+    padding: 80px 0 0 0;
+    @include xm {
+      padding: 70px 0 0 0;
+    }
+  }
   .about-card-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     height: 100%;
+    gap: 20px;
+    @include xm {
+      flex-direction: column;
+      .left {
+        max-width: unset;
+      }
+      .right {
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+    }
     .left {
       max-width: 570px;
       width: 100%;
       .arctic-text {
         margin-top: 32px;
+        @include xxm {
+          margin-top: 16px;
+          span {
+            font-size: 16px;
+          }
+          @include m-small {
+            span {
+              font-size: 14px;
+            }
+          }
+        }
       }
     }
     .right {
       img {
         max-width: 640px;
         max-height: 420px;
+        @include l-1150 {
+          max-width: 420px;
+          max-height: 275px;
+        }
       }
     }
   }
@@ -90,6 +129,9 @@
 
 .activity-arc {
   padding-top: 100px;
+  @include m-small {
+    padding-top: 70px;
+  }
 }
 
 .activity-content {
@@ -102,6 +144,12 @@
         font-size: 18px;
         line-height: 140%;
         color: #7080a3;
+        @include xxm {
+          font-size: 16px;
+          @include m-small {
+            font-size: 14px;
+          }
+        }
       }
     }
   }
@@ -111,11 +159,15 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
     padding-top: 32px;
+    @include l-1150 {
+      grid-auto-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+    }
+    @include xm {
+      grid-auto-columns: 1fr;
+      grid-template-columns: 1fr;
+    }
     .arctic-act-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
       max-width: 310px;
       height: auto;
       width: 100%;
@@ -124,19 +176,60 @@
       box-shadow: 0px 4px 16px rgba(17, 79, 92, 0.1);
       border-radius: 6px;
       padding: 40px 20px 20px 20px;
+      @include l-1150 {
+        max-width: unset;
+        padding: 32px;
+        
+        .card-content {
+          flex-direction: row;
+        }
+        @include l {
+          height: 188px;
+          @include xxs-big {
+            height: 160px;
+          }
+        }
+        @include xxs-big {
+          padding: 20px;
+        }
+      }
       .card-content {
         display: flex;
         align-items: center;
         flex-direction: column;
+        justify-content: space-between;
         width: 100%;
+        @include l {
+          gap: 10px;
+          height: 100%;
+        }
         .img-block {
           margin-bottom: 30px;
+          @include l-1150 {
+            margin-bottom: unset;
+            @include  xxs {
+              align-self: flex-start;
+            }
+          } 
         }
         .block {
           display: flex;
           flex-direction: column;
           width: 100%;
-          height: auto;
+          height: 155px;
+          @include l-1150 {
+            height: 100%;
+            max-width: 65%;
+          }
+          @include xxm {
+            max-width: 60%;
+          }
+          @include xm {
+            max-width: 75%;
+          }
+          @include m-small {
+            max-width: 65%;
+          }
           img {
             width: 124px;
             height: 124px;
@@ -144,11 +237,14 @@
           span {
             display: inline-block;
             align-self: flex-start;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 18px;
             line-height: 140%;
             color: #0e2252;
             text-shadow: 0px 4px 16px rgba(17, 79, 92, 0.1);
+            @include m-small {
+              font-size: 16px;
+            }
           }
           p {
             align-self: flex-start;
@@ -159,17 +255,29 @@
             line-height: 130%;
             color: #7080a3;
             text-shadow: 0px 4px 16px rgba(17, 79, 92, 0.1);
+            @include l {
+              display: none;
+            }
+            @include xm {
+              display: inline-block;
+            }
+            @include xxs-big {
+              display: none;
+            }
           }
           .more-link {
             display: flex;
             align-items: center;
             align-self: flex-start;
             gap: 7px;
-            margin-top: 30px;
+            margin-top: auto;
             font-weight: 600;
             font-size: 16px;
             line-height: 130%;
             color: #ff8202;
+            @include m-small {
+              font-size: 14px;
+            }
           }
         }
       }
@@ -179,6 +287,9 @@
 
 .contacts-arc {
   padding: 100px 0;
+  @include m-small {
+    padding: 70px 0;
+  }
 }
 
 .arc-contacts-body {
@@ -188,11 +299,23 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  @include xxm {
+    padding-top: 38px;
+    @include m-small {
+      padding-top: 30px;
+    }
+  }
+  @include xm {
+    flex-direction: column;
+  }
   .left {
     padding: 16px 4px;
     .arc-contacts__items {
       max-width: 604px;
       width: 100%;
+      @include xm {
+        max-width: unset;
+      }
       .top-items {
         .block {
           display: flex;
@@ -217,6 +340,19 @@
               font-size: 18px;
               line-height: 140%;
               color: #7080a3;
+              @include xxm {
+                font-size: 16px;
+                @include m-small {
+                  font-size: 14px;
+                }
+              }
+            }
+            .block-column {
+              @include m-950 {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+              }
             }
           }
         }
@@ -246,6 +382,13 @@
                 line-height: 140%;
                 color: #7080a3;
                 max-width: 494px;
+                width: 100%;
+                @include xxm {
+                  font-size: 16px;
+                  @include m-small {
+                    font-size: 14px;
+                  }
+                }
               }
             }
             .arrow-opacity {
@@ -260,6 +403,18 @@
     max-width: 640px;
     width: 100%;
     height: auto;
+    @include xl-1300 {
+      max-width: 550px;
+      @include l-1150 {
+        max-width: 420px;
+      }
+    }
+    @include m-840 {
+      max-width: 365px;
+    }
+    @include xm {
+      max-width: unset;
+    }
     .hire-me {
       background: #fafbfc;
       border: 1px solid #dadfea;
@@ -268,15 +423,22 @@
       padding: 24px;
       .hire-me__title {
         span {
-          font-weight: 600;
+          font-weight: 700;
           font-size: 24px;
           line-height: 160%;
           color: #14213a;
+          @include xxm {
+            font-size: 20px;
+          }
         }
       }
       .hire-me__items {
         margin-top: 20px;
         li {
+          margin-bottom: 24px;
+          &:last-child {
+            margin-bottom: 40px;
+          }
           input {
             background: #fdfdfd;
             border: 1px solid #dadfea;
@@ -287,9 +449,16 @@
             font-weight: 400;
             font-size: 18px;
             line-height: 24px;
-            margin-bottom: 24px;
-            &:last-child {
-              margin-bottom: 40px;
+            
+            @include xxm {
+              font-size: 16px;
+              @include m-small {
+                font-size: 14px;
+                margin-bottom: 20px;
+                &:last-child {
+                  margin-bottom: 20px;
+                }
+              }
             }
           }
         }
@@ -303,6 +472,7 @@
         line-height: 140%;
         color: white;
         cursor: pointer;
+
       }
     }
   }

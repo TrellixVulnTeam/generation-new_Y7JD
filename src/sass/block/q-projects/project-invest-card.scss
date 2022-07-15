@@ -6,6 +6,19 @@
   text-fill-color: transparent;
 }
 
+.project-invest {
+  .breadcrumbs {
+    ul{
+      li {
+        &:nth-child(5) {
+          
+        }
+      }
+    }
+  }
+}
+
+
 .q-invest-head {
   .title-border {
     @include m-small {

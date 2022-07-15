@@ -49,6 +49,9 @@ body {
 
 .section {
   padding-top: 140px;
+  hr {
+    opacity: .5;
+  }
   @include xm {
     padding-top: 85px;
     @include xxs {
@@ -230,6 +233,7 @@ body {
         font-size: 20px;
         @include xxs {
           font-size: 18px;
+          
         }
       }
       @include m-670 {
@@ -241,7 +245,6 @@ body {
       color: #77b946;
     }
     span {
-      // display: inline-block;
       color: #0B1600;
       width: 100%;
       font-family: "Open sans", sans-serif;
@@ -259,11 +262,11 @@ body {
       line-height: 140%;
       color: #7c7c87;
       letter-spacing: normal;
-      // &:last-child {
-      //   margin-top: 20px;
-      // }
       @include xxm {
         font-size: 16px;
+        @include m-small {
+          font-size: 14px;
+        }
       }
     }
   }
@@ -351,10 +354,31 @@ body {
   padding-top: unset !important;
 }
 
+.about-card {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  min-height: 650px;
+  width: 100%;
+  @include xxs {
+    min-height: 440px;
+  }
+  &::after {
+    content: "";
+    background: rgba(36, 36, 36, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+}
+
 @import "block/header.scss";
 @import "block/header-mob.scss";
 @import "block/header-white.scss";
 @import "block/header-arctic.scss";
+@import "block/header-arctic-white.scss";
+@import "block/header-capstone-white.scss";
 
 // MAIN PAGE SCSS
 @import "block/q-main/about.scss";
@@ -387,6 +411,11 @@ body {
 
 // arctic scss
 @import "block/q-arctic/main-arc.scss";
+@import "block/q-arctic/services-arc.scss";
+
+// CAPSTONE SSCSCSSCSC
+@import 'block/q-capstone/main-capstone.scss';
+@import 'block/q-capstone/capstone-item.scss';
 
 @import "block/footer.scss";
 @import "block/footer-arctic.scss";
