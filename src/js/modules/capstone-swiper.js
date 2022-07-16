@@ -9,6 +9,7 @@ function init() {
 let capstoneImgItemTop = new Swiper(".capstone-item-swiper-top", {
   spaceBetween: 10,
   slidesPerView: 'auto',
+  slideToClickedSlide: true,
   thumbs: {
     swiper: capstoneImgItemLower,
   },

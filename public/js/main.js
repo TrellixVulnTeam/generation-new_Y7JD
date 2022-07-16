@@ -46,7 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*******************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"init\": function() { return /* binding */ init; }\n/* harmony export */ });\nfunction init() {\r\n  let capstoneImgItemLower = new Swiper(\".capstone-item-swiper-lower\", {\r\n  spaceBetween: 10,\r\n  slidesPerView: 'auto',\r\n  slideToClickedSlide: true,\r\n  touchRatio: 0.2,\r\n});\r\n\r\nlet capstoneImgItemTop = new Swiper(\".capstone-item-swiper-top\", {\r\n  spaceBetween: 10,\r\n  slidesPerView: 'auto',\r\n  thumbs: {\r\n    swiper: capstoneImgItemLower,\r\n  },\r\n});\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack://gulp-settings/./src/js/modules/capstone-swiper.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"init\": function() { return /* binding */ init; }\n/* harmony export */ });\nfunction init() {\r\n  let capstoneImgItemLower = new Swiper(\".capstone-item-swiper-lower\", {\r\n  spaceBetween: 10,\r\n  slidesPerView: 'auto',\r\n  slideToClickedSlide: true,\r\n  touchRatio: 0.2,\r\n});\r\n\r\nlet capstoneImgItemTop = new Swiper(\".capstone-item-swiper-top\", {\r\n  spaceBetween: 10,\r\n  slidesPerView: 'auto',\r\n  slideToClickedSlide: true,\r\n  thumbs: {\r\n    swiper: capstoneImgItemLower,\r\n  },\r\n});\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack://gulp-settings/./src/js/modules/capstone-swiper.js?");
 
 /***/ }),
 

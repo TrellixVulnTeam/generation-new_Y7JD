@@ -10,8 +10,13 @@
       }
       div.arc-list-f {
         align-items: flex-start;
+        @include m-670 {
+          grid-template-rows: 1fr .5fr .5fr;
+          
+        }
         @include xxs {
           gap: 30px;
+          grid-template-rows: .5fr .5fr .5fr
         }
         .footer-nav__arc {
           margin-top: 20px;
@@ -24,6 +29,11 @@
             grid-template-areas:
               ". ."
               ". .";
+            @include m-670 {
+              gap: 40px;
+              grid-template-columns: .5fr 1fr;
+              
+            }
             @include xxs {
               grid-template-areas: none;
               grid-template-columns: unset;
@@ -36,8 +46,8 @@
                 line-height: 120%;
                 color: #ffffff;
                 white-space: nowrap;
-                @include  l {
-                  font-size:14px;
+                @include l {
+                  font-size: 14px;
                 }
               }
             }
@@ -59,7 +69,7 @@
     }
     .footer-date {
       span {
-        font-family: "Inter",sans-serif;
+        font-family: "Inter", sans-serif;
         font-weight: 400;
         font-size: 12px;
         line-height: 140%;
