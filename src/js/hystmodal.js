@@ -242,6 +242,7 @@ export default class HystModal {
     let html = document.documentElement;
     if (this.isOpened === true) {
       html.classList.remove("hystmodal__opened");
+      
       html.style.marginRight = "";
       fixedSelectors.map((el) => {
         el.style.marginRight = "";

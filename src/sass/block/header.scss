@@ -247,13 +247,13 @@ $fs-15px: 15px;
               backdrop-filter: blur(0);
             }
             .nav-item__child {
-              margin-top: 21px;
+              margin-top: 15px;
 
               &:first-child {
                 margin-top: unset;
               }
               a {
-                padding: unset;
+                padding: 5px 0;
                 white-space: nowrap;
                 font-weight: 700;
                 font-size: 14px;

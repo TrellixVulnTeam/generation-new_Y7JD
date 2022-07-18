@@ -1,10 +1,12 @@
+
+
 const header = document.querySelector(".header");
 const hideHeader = document.querySelector(".header-content");
 const btnBurger = document.querySelector(".navTrigger");
 
 function scrollHeader() {
   if(window.innerWidth > 768) {
-
+    
     const scrollHeader = window.addEventListener("scroll", function () {
       if (this.window.scrollY >= 50) {
         header.classList.add("scrolled-header");

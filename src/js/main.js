@@ -248,3 +248,8 @@ mobBurger.addEventListener("click", function () {
     document.body.style.overflow = "unset";
   }
 });
+
+
+if(document.documentElement.classList.contains('.hystmodal__opened')) {
+  console.log("ASD");
+}
