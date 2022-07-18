@@ -46,7 +46,7 @@ function ready() {
     let a = math * (1 - percent / 100);
     elem.style.strokeDashoffset = a;
     percent = percent.toFixed(1);
-    if (percent >= 98.8) {
+    if (percent >= 99.8) {
       removeClass();
       let infoShow = document.querySelector(`[data-info-id="${idx}"]`);
       infoShow.classList.add("show");
@@ -62,7 +62,7 @@ function ready() {
     if (funcStatus === true) {
       let idx = isLoading;
       requestAnimationFrame(draw);
-      setAround((t / 10) % 100, idx);
+      setAround((t / 30) % 100, idx);
     }
   }
 }
