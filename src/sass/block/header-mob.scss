@@ -45,7 +45,8 @@
         padding: 16px 23px;
         background: #2e2e2e;
         border-radius: 6px;
-        @include m-small {
+        border: 1px solid transparent;
+        @include xm{
           justify-content: space-between;
         }
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);

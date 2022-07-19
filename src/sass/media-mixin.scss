@@ -87,3 +87,8 @@
     @content;
   }
 }
+@mixin kura {
+  @media screen and (max-width: 340px) {
+    @content;
+  }
+}
