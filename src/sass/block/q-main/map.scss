@@ -33,11 +33,26 @@
                 width: 666px;
                 min-height: 480px;
                 @include m-768 {
-                  width: 100%;
-                  @include m-small {
-                    min-height: 380px;
-                    @include xxs {
-                      min-height: 200px;
+                  width: 560px;
+                  min-height: 400px;
+                  @include m-600 {
+                    width: 480px;
+                    min-height: 300px;
+                    @include s-540 {
+                      width: 400px;
+                      min-height: 240px;
+                      @include xxs-big {
+                        width: 360px;
+                        min-height: 215px;
+                        @include xxs {
+                          width: 315px;
+                          min-height: 190px;
+                          @include kura {
+                            width: 290px;
+                            min-height: 150px;
+                          }
+                        }
+                      }
                     }
                   }
                 }
@@ -53,7 +68,7 @@
       align-items: center;
       justify-content: center;
       height: auto;
-      margin-top: 55px;
+      margin-top: 25px;
       gap: 20px;
       @include l-1150 {
         justify-content: space-between;
@@ -63,13 +78,13 @@
       }
       .swiper-button-prev {
         position: unset;
-        background: url('../img/');
+        transform: translate3d(0, 10px, 0);
         @include xxm {
           margin-top: unset;
           display: none;
         }
         &::after {
-          content: '';
+          content: "";
         }
         img {
           width: 32px;
@@ -78,12 +93,13 @@
       }
       .swiper-button-next {
         position: unset;
+        transform: translate3d(0, 10px, 0);
         @include xxm {
           margin-top: unset;
           display: none;
         }
         &::after {
-          content: '';
+          content: "";
         }
         img {
           width: 32px;
@@ -92,24 +108,48 @@
         }
       }
       .map-swiper {
-
       }
     }
   }
+}
+
+.dota {
+  cursor: pointer;
 }
 
 .dot1 {
   width: 22px;
   height: 22px;
   position: absolute;
-  transform: translate3d(297px,278px,0);
-  z-index: 1000;
+  transform: translate3d(297px, 278px, 0);
+  z-index: 900;
   @include m-1440 {
-    transform: translate3d(177px,274px,0);
+    transform: translate3d(177px, 274px, 0);
     @include m-1100 {
-      transform: translate3d(147px,274px,0);
+      transform: translate3d(147px, 274px, 0);
       @include m-960 {
-        transform: translate3d(130px,274px,0);
+        transform: translate3d(130px, 274px, 0);
+        @include m-940 {
+          transform: translate3d(112px, 235px, 0);
+          @include xm {
+            transform: translate3d(94px, 195px, 0);
+            @include m-600 {
+              transform: translate3d(79px, 146px, 0);
+              @include s-540 {
+                transform: translate3d(63px, 115px, 0);
+                @include xxs-big {
+                  transform: translate3d(56px, 101px, 0);
+                  @include xxs {
+                    transform: translate3d(48px, 88px, 0);
+                    @include kura {
+                      transform: translate3d(44px, 68px, 0);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -117,20 +157,40 @@
     width: 22px;
     height: 22px;
   }
-
 }
 .dot2 {
   width: 22px;
   height: 22px;
   position: absolute;
-  transform: translate3d(846px,477px,0);
-  z-index: 1000;
+  transform: translate3d(846px, 477px, 0);
+  z-index: 900;
   @include m-1440 {
-    transform: translate3d(681px,459px,0);
+    transform: translate3d(681px, 459px, 0);
     @include m-1100 {
-      transform: translate3d(583px,432px,0);
+      transform: translate3d(583px, 432px, 0);
       @include m-960 {
-        transform: translate3d(521px,417px,0)
+        transform: translate3d(521px, 417px, 0);
+        @include m-940 {
+          transform: translate3d(454px, 356px, 0);
+          @include xm {
+            transform: translate3d(379px, 298px, 0);
+            @include m-600 {
+              transform: translate3d(324px, 232px, 0);
+              @include s-540 {
+                transform: translate3d(266px, 186px, 0);
+                @include xxs-big {
+                  transform: translate3d(238px, 164px, 0);
+                  @include xxs {
+                    transform: translate3d(209px, 144px, 0);
+                    @include kura {
+                      transform: translate3d(189px, 116px, 0);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -143,14 +203,35 @@
   width: 22px;
   height: 22px;
   position: absolute;
-  transform: translate3d(895px,320px,0);
-  z-index: 1000;
+  transform: translate3d(895px, 320px, 0);
+  z-index: 900;
   @include m-1440 {
-    transform: translate3d(725px,320px,0);
+    transform: translate3d(725px, 320px, 0);
     @include m-1100 {
-      transform: translate3d(623px,308px,0);
+      transform: translate3d(623px, 308px, 0);
       @include m-960 {
-        transform: translate3d(557px,308px,0)
+        transform: translate3d(557px, 308px, 0);
+        @include m-940 {
+          transform: translate3d(481px, 276px, 0);
+          @include xm {
+            transform: translate3d(400px, 234px, 0);
+            @include m-600 {
+              transform: translate3d(343px, 174px, 0);
+              @include s-540 {
+                transform: translate3d(281px, 135px, 0);
+                @include xxs-big {
+                  transform: translate3d(256px, 123px, 0);
+                  @include xxs {
+                    transform: translate3d(224px, 107px, 0);
+                    @include kura {
+                      transform: translate3d(204px, 84px, 0);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -163,14 +244,35 @@
   width: 22px;
   height: 22px;
   position: absolute;
-  transform: translate3d(858px,310px,0);
-  z-index: 1000;
+  transform: translate3d(858px, 310px, 0);
+  z-index: 900;
   @include m-1440 {
-    transform: translate3d(694px,310px,0);
+    transform: translate3d(694px, 310px, 0);
     @include m-1100 {
-      transform: translate3d(591px,295px,0);
+      transform: translate3d(591px, 295px, 0);
       @include m-960 {
-        transform: translate3d(527px,295px,0)
+        transform: translate3d(527px, 295px, 0);
+        @include m-940 {
+          transform: translate3d(443px, 263px, 0);
+          @include xm {
+            transform: translate3d(375px, 219px, 0);
+            @include m-600 {
+              transform: translate3d(319px, 159px, 0);
+              @include s-540 {
+                transform: translate3d(262px, 124px, 0);
+                @include xxs-big {
+                  transform: translate3d(237px, 120px, 0);
+                  @include xxs {
+                    transform: translate3d(210px, 105px, 0);
+                    @include kura {
+                      transform: translate3d(187px, 82px, 0);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -183,14 +285,35 @@
   width: 22px;
   height: 22px;
   position: absolute;
-  transform: translate3d(879px,288px,0);
-  z-index: 1000;
+  transform: translate3d(879px, 288px, 0);
+  z-index: 900;
   @include m-1440 {
-    transform: translate3d(717px,288px,0);
+    transform: translate3d(717px, 288px, 0);
     @include m-1100 {
-      transform: translate3d(616px,281px,0);
+      transform: translate3d(616px, 281px, 0);
       @include m-960 {
-        transform: translate3d(550px,281px,0)
+        transform: translate3d(550px, 281px, 0);
+        @include m-940 {
+          transform: translate3d(473px, 244px, 0);
+          @include xm {
+            transform: translate3d(402px, 205px, 0);
+            @include m-600 {
+              transform: translate3d(343px, 144px, 0);
+              @include s-540 {
+                transform: translate3d(280px, 115px, 0);
+                @include xxs-big {
+                  transform: translate3d(250px, 107px, 0);
+                  @include xxs {
+                    transform: translate3d(220px, 94px, 0);
+                    @include kura {
+                      transform: translate3d(198px, 69px, 0);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -203,14 +326,35 @@
   width: 22px;
   height: 22px;
   position: absolute;
-  transform: translate3d(815px,189px,0);
-  z-index: 1000;
+  transform: translate3d(815px, 189px, 0);
+  z-index: 900;
   @include m-1440 {
-    transform: translate3d(652px,189px,0);
+    transform: translate3d(652px, 189px, 0);
     @include m-1100 {
-      transform: translate3d(562px,205px,0);
+      transform: translate3d(562px, 205px, 0);
       @include m-960 {
-        transform: translate3d(502px,214px,0)
+        transform: translate3d(502px, 214px, 0);
+        @include m-940 {
+          transform: translate3d(434px, 190px, 0);
+          @include xm {
+            transform: translate3d(358px, 158px, 0);
+            @include m-600 {
+              transform: translate3d(307px, 113px, 0);
+              @include s-540 {
+                transform: translate3d(252px, 85px, 0);
+                @include xxs-big {
+                  transform: translate3d(225px, 73px, 0);
+                  @include xxs {
+                    transform: translate3d(200px, 66px, 0);
+                    @include kura {
+                      transform: translate3d(178px, 48px, 0);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -223,14 +367,35 @@
   width: 22px;
   height: 22px;
   position: absolute;
-  transform: translate3d(1092px,89px,0);
-  z-index: 1000;
+  transform: translate3d(1092px, 89px, 0);
+  z-index: 900;
   @include m-1440 {
-    transform: translate3d(906px,96px,0);
+    transform: translate3d(906px, 96px, 0);
     @include m-1100 {
-      transform: translate3d(780px,123px,0);
+      transform: translate3d(780px, 123px, 0);
       @include m-960 {
-        transform: translate3d(691px,137px,0)
+        transform: translate3d(691px, 137px, 0);
+        @include m-940 {
+          transform: translate3d(594px, 123px, 0);
+          @include xm {
+            transform: translate3d(500px, 101px, 0);
+            @include m-600 {
+              transform: translate3d(429px, 61px, 0);
+              @include s-540 {
+                transform: translate3d(352px, 49px, 0);
+                @include xxs-big {
+                  transform: translate3d(318px, 40px, 0);
+                  @include xxs {
+                    transform: translate3d(278px, 35px, 0);
+                    @include kura {
+                      transform: translate3d(252px, 19px, 0);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -243,14 +408,35 @@
   width: 22px;
   height: 22px;
   position: absolute;
-  transform: translate3d(1071px,28px,0);
-  z-index: 1000;
+  transform: translate3d(1071px, 28px, 0);
+  z-index: 900;
   @include m-1440 {
-    transform: translate3d(889px,43px,0);
+    transform: translate3d(889px, 43px, 0);
     @include m-1100 {
-      transform: translate3d(758px,75px,0);
+      transform: translate3d(758px, 75px, 0);
       @include m-960 {
-        transform: translate3d(677px,97px,0)
+        transform: translate3d(677px, 97px, 0);
+        @include m-940 {
+          transform: translate3d(582px, 85px, 0);
+          @include xm {
+            transform: translate3d(488px, 68px, 0);
+            @include m-600 {
+              transform: translate3d(416px, 35px, 0);
+              @include s-540 {
+                transform: translate3d(344px, 23px, 0);
+                @include xxs-big {
+                  transform: translate3d(309px, 18px, 0);
+                  @include xxs {
+                    transform: translate3d(267px, 18px, 0);
+                    @include kura {
+                      transform: translate3d(244px, 3px, 0);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -263,20 +449,93 @@
   width: 22px;
   height: 22px;
   position: absolute;
-  transform: translate3d(1063px,395px,0);
-  z-index: 1000;
+  transform: translate3d(1063px, 395px, 0);
+  z-index: 900;
   @include m-1440 {
-    transform: translate3d(886px,387px,0);
+    transform: translate3d(886px, 387px, 0);
     @include m-1100 {
-      transform: translate3d(757px,366px,0);
+      transform: translate3d(757px, 366px, 0);
       @include m-960 {
-        transform: translate3d(676px,359px,0)
+        transform: translate3d(676px, 359px, 0);
+        @include m-940 {
+          transform: translate3d(585px, 308px, 0);
+          @include xm {
+            transform: translate3d(490px, 257px, 0);
+            @include m-600 {
+              transform: translate3d(417px, 196px, 0);
+              @include s-540 {
+                transform: translate3d(346px, 159px, 0);
+                @include xxs-big {
+                  transform: translate3d(311px, 142px, 0);
+                  @include xxs {
+                    transform: translate3d(270px, 124px, 0);
+                    @include kura {
+                      transform: translate3d(247px, 99px, 0);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
   svg {
     width: 22px;
     height: 22px;
+  }
+}
+
+.card-hide__wrapper {
+  @include xm {
+    display: none;
+  }
+}
+
+.card-hide__swiper {
+  display: none;
+
+  @include xm {
+    display: flex;
+  }
+  .card-hide-swiper {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    max-width: 240px;
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #d6e9ec;
+    box-shadow: 0px 4px 16px rgba(17, 79, 92, 0.1);
+    transform: scale(1.12);
+    margin-top: 40px;
+    .t-card {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 130%;
+      color: #0b1600;
+    }
+    span {
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      color: #05111b;
+      display: inline-block;
+      margin-bottom: 15px;
+      display: block;
+      &:last-child {
+        margin-bottom: unset;
+        color: #0b1600;
+        font-weight: 600;
+      }
+    }
   }
 }
 
@@ -293,7 +552,24 @@
   border-radius: 10px;
   border: 1px solid #d6e9ec;
   box-shadow: 0px 4px 16px rgba(17, 79, 92, 0.1);
-  z-index: 2000;
+  z-index: 900;
+  a.close-hide {
+    background: url("data:image/svg+xml,%3Csvg width='11' height='12' viewBox='0 0 11 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.64175 6.00048L10.2251 2.42548C10.382 2.26856 10.4702 2.05573 10.4702 1.83381C10.4702 1.6119 10.382 1.39907 10.2251 1.24215C10.0682 1.08523 9.85533 0.99707 9.63341 0.99707C9.41149 0.99707 9.19867 1.08523 9.04175 1.24215L5.46675 4.82548L1.89175 1.24215C1.73483 1.08523 1.522 0.99707 1.30008 0.99707C1.07816 0.99707 0.865332 1.08523 0.708413 1.24215C0.551493 1.39907 0.463336 1.6119 0.463336 1.83381C0.463336 2.05573 0.551493 2.26856 0.708413 2.42548L4.29175 6.00048L0.708413 9.57548C0.630306 9.65295 0.568311 9.74512 0.526003 9.84666C0.483696 9.94821 0.461914 10.0571 0.461914 10.1671C0.461914 10.2772 0.483696 10.3861 0.526003 10.4876C0.568311 10.5892 0.630306 10.6813 0.708413 10.7588C0.785882 10.8369 0.878049 10.8989 0.979599 10.9412C1.08115 10.9835 1.19007 11.0053 1.30008 11.0053C1.41009 11.0053 1.51901 10.9835 1.62056 10.9412C1.72211 10.8989 1.81428 10.8369 1.89175 10.7588L5.46675 7.17548L9.04175 10.7588C9.11922 10.8369 9.21138 10.8989 9.31293 10.9412C9.41448 10.9835 9.5234 11.0053 9.63341 11.0053C9.74342 11.0053 9.85234 10.9835 9.95389 10.9412C10.0554 10.8989 10.1476 10.8369 10.2251 10.7588C10.3032 10.6813 10.3652 10.5892 10.4075 10.4876C10.4498 10.3861 10.4716 10.2772 10.4716 10.1671C10.4716 10.0571 10.4498 9.94821 10.4075 9.84666C10.3652 9.74512 10.3032 9.65295 10.2251 9.57548L6.64175 6.00048Z' fill='%238BACB2'/%3E%3C/svg%3E%0A")
+      no-repeat center/cover;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 16px;
+    top: 19px;
+    padding: 5px;
+  }
+  .t-card {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 130%;
+    color: #0b1600;
+  }
   span {
     font-family: "Inter", sans-serif;
     font-style: normal;
@@ -303,14 +579,7 @@
     color: #05111b;
     display: inline-block;
     margin-bottom: 15px;
-    &:first-child {
-      font-family: "Poppins", sans-serif;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 130%;
-      color: #0b1600;
-    }
+    display: block;
     &:last-child {
       margin-bottom: unset;
       color: #0b1600;
@@ -320,39 +589,170 @@
 }
 
 .info1 {
-  transform: translate3d(319px,295px,0)
+  transform: translate3d(319px, 295px, 0);
+  // top: 294px;
+  // left: 319px;
+  @include m-1440 {
+    transform: translate3d(199px, 295px, 0);
+    @include l-1100 {
+      transform: translate3d(171px, 295px, 0);
+      @include xxm {
+        transform: translate3d(149px, 295px, 0);
+        @include m-940 {
+          transform: translate3d(129px, 251px, 0);
+          @include xm {
+            transform: translate3d(114px, 211px, 0);
+          }
+        }
+      }
+    }
+  }
 }
 
 .info2 {
-  transform: translate3d(869px,492px,0)
+  transform: translate3d(869px, 492px, 0);
+  @include m-1440 {
+    transform: translate3d(701px, 477px, 0);
+    @include l-1100 {
+      transform: translate3d(603px, 449px, 0);
+      @include xxm {
+        transform: translate3d(543px, 433px, 0);
+        @include m-940 {
+          transform: translate3d(474px, 372px, 0);
+          @include xm {
+            transform: translate3d(399px, 317px, 0);
+          }
+        }
+      }
+    }
+  }
 }
 
 .info3 {
-  transform: translate3d(914px,338px,0)
+  transform: translate3d(914px, 338px, 0);
+  @include m-1440 {
+    transform: translate3d(747px, 338px, 0);
+    @include l-1100 {
+      transform: translate3d(641px, 323px, 0);
+      @include xxm {
+        transform: translate3d(578px, 323px, 0);
+        @include m-940 {
+          transform: translate3d(497px, 295px, 0);
+          @include xm {
+            transform: translate3d(418px, 251px, 0);
+          }
+        }
+      }
+    }
+  }
 }
 
 .info4 {
-  transform: translate3d(876px,329px,0)
+  transform: translate3d(876px, 329px, 0);
+  @include m-1440 {
+    transform: translate3d(714px, 329px, 0);
+    @include l-1100 {
+      transform: translate3d(615px, 309px, 0);
+      @include xxm {
+        transform: translate3d(549px, 309px, 0);
+        @include m-940 {
+          transform: translate3d(459px, 283px, 0);
+          @include xm {
+          }
+        }
+      }
+    }
+  }
 }
 
 .info5 {
-  transform: translate3d(899px,303px,0)
+  transform: translate3d(899px, 303px, 0);
+  @include m-1440 {
+    transform: translate3d(742px, 303px, 0);
+    @include l-1100 {
+      transform: translate3d(637px, 294px, 0);
+      @include xxm {
+        transform: translate3d(573px, 294px, 0);
+        @include m-940 {
+          transform: translate3d(491px, 258px, 0);
+          @include xm {
+          }
+        }
+      }
+    }
+  }
 }
 
 .info6 {
-  transform: translate3d(835px,205px,0)
+  transform: translate3d(835px, 205px, 0);
+  @include m-1440 {
+    transform: translate3d(678px, 205px, 0);
+    @include l-1100 {
+      transform: translate3d(588px, 215px, 0);
+      @include xxm {
+        transform: translate3d(528px, 225px, 0);
+        @include m-940 {
+          transform: translate3d(452px, 208px, 0);
+          @include xm {
+          }
+        }
+      }
+    }
+  }
 }
 
 .info7 {
-  transform: translate3d(1114px,108px,0)
+  transform: translate3d(1114px, 108px, 0);
+  @include m-1440 {
+    transform: translate3d(929px, 108px, 0);
+    @include l-1100 {
+      transform: translate3d(806px, 135px, 0);
+      @include xxm {
+        transform: translate3d(715px, 145px, 0);
+        @include m-940 {
+          transform: translate3d(614px, 136px, 0);
+          @include xm {
+          }
+        }
+      }
+    }
+  }
 }
 
 .info8 {
-  transform: translate3d(1090px,44px,0)
+  transform: translate3d(1090px, 44px, 0);
+  @include m-1440 {
+    transform: translate3d(916px, 50px, 0);
+    @include l-1100 {
+      transform: translate3d(784px, 87px, 0);
+      @include xxm {
+        transform: translate3d(699px, 109px, 0);
+        @include m-940 {
+          transform: translate3d(601px, 101px, 0);
+          @include xm {
+          }
+        }
+      }
+    }
+  }
 }
 
 .info9 {
-  transform: translate3d(1090px,395px,0)
+  transform: translate3d(1090px, 395px, 0);
+  @include m-1440 {
+    transform: translate3d(911px, 395px, 0);
+    @include l-1100 {
+      transform: translate3d(782px, 380px, 0);
+      @include xxm {
+        transform: translate3d(697px, 373px, 0);
+        @include m-940 {
+          transform: translate3d(606px, 324px, 0);
+          @include xm {
+          }
+        }
+      }
+    }
+  }
 }
 
 .show {
@@ -407,7 +807,7 @@
         line-height: 120%;
         @include xm {
           font-size: 25px;
-        } 
+        }
       }
       &:last-child {
         font-family: "Inter", sans-serif;

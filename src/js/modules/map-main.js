@@ -28,6 +28,7 @@ function addCircle(idx) {
 }
 
 function ready() {
+
   function setAround(percent, idx) {
     removeCircle();
     let beforeElemIdx;
@@ -46,7 +47,7 @@ function ready() {
     let a = math * (1 - percent / 100);
     elem.style.strokeDashoffset = a;
     percent = percent.toFixed(1);
-    if (percent >= 99.8) {
+    if (percent >= 99.5) {
       removeClass();
       let infoShow = document.querySelector(`[data-info-id="${idx}"]`);
       infoShow.classList.add("show");
@@ -97,6 +98,7 @@ function showInfo(idx) {
   //сейчас: при нажатии кружок заполняется на 100%, после возобновлении функции откатывает кружок до заполнения на 100%
   let elem2 = document.querySelector('[data-id="' + idx + '"]');
   elem2.style.strokeDasharray = 0;
+
 }
 
 closeBtn.forEach((el) => {
@@ -116,5 +118,13 @@ function closeInfo(idx) {
   // нужно изменить beforeElemIdx на только что нажатый элемент
 }
 
+const swiperCardActive = document.querySelectorAll('.card-hide__swiper');
+
+swiperCardActive.forEach((el) => {
+  let items = el.children[0];
+  // console.log(el.children[0]);
+  console.log(items);
+  // items.classList
+})
 
 export { ready }

@@ -15,7 +15,7 @@
   left: 0;
   overflow: hidden;
   pointer-events: none;
-  z-index: 98;
+  z-index: 1001;
   opacity: 0;
   transition: opacity 0.15s ease;
   background-color: black;
@@ -23,6 +23,7 @@
 .hystmodal__shadow--show {
   pointer-events: auto;
   opacity: 0.6;
+  // z-index: 1000;
 }
 .hystmodal {
   position: fixed;
@@ -38,7 +39,7 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
-  z-index: 1000;
+  z-index: 1002;
   visibility: hidden;
 }
 .hystmodal--active {

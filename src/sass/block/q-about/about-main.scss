@@ -203,6 +203,7 @@
           border: 1px solid #d6e9ec;
           box-shadow: 0px 4px 16px rgba(17, 79, 92, 0.1);
           border-radius: 8px;
+          
           @include l {
             padding: 20px;
           }
@@ -224,6 +225,10 @@
               display: block;
               max-width: 100%;
               max-height: 100%;
+            }
+            span {
+              text-align: center;
+              padding: 30px;
             }
           }
         }

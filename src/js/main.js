@@ -17,6 +17,12 @@ projectCardSwiper;
 arcTabSwiper;
 init();
 
+let mapCardHideSwiper = new Swiper('.card-hide__swiper', {
+  spaceBetween: 45,
+  slidesPerView: "auto",
+  centeredSlides: true,
+})
+
 let capstoneSwiper = new Swiper(".slider-capstone", {
   spaceBetween: 20,
   slidesPerView: "auto",
@@ -28,12 +34,7 @@ let capstoneSwiper = new Swiper(".slider-capstone", {
     el: ".capstone-pag",
     type: "progressbar",
   },
-  // breakpoints: {
-  //   880: {
-  //     pagination: {
-  //     }
-  //   }
-  // }
+
 });
 
 // SWIPERS
