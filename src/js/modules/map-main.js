@@ -118,13 +118,24 @@ function closeInfo(idx) {
   // нужно изменить beforeElemIdx на только что нажатый элемент
 }
 
-const swiperCardActive = document.querySelectorAll('.card-hide__swiper');
+const swiperCardActive = document.querySelectorAll('.card-hide-swiper');
 
 swiperCardActive.forEach((el) => {
-  let items = el.children[0];
-  // console.log(el.children[0]);
-  console.log(items);
-  // items.classList
+  // setTimeout(() => {
+  //   console.log(el.classList.contains('swiper-slide-active'))
+  // }, 100)
+  
+  // setInterval(() => {
+  //   if(el.classList.contains('swiper-slide-active')) {
+  //     console.log("DONE");
+  //   }
+  // }, 300)
+  
 })
 
-export { ready }
+// testovaya xuina
+// if(window.innerWidth < 768) {
+//   console.log("DSADASD");
+//   closeInfo(isLoading)
+// }
+// export { ready }

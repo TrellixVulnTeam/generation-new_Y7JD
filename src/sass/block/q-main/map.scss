@@ -5,7 +5,7 @@
   padding: 46px 0 82px 0;
   background-color: #fbfefe;
   @include xm {
-    padding: 40px 0 70px 0;
+    padding: 40px 0 50px 0;
   }
   .map-content {
     .map-block {
@@ -73,7 +73,7 @@
       @include l-1150 {
         justify-content: space-between;
         @include m-670 {
-          margin-top: 0;
+          margin-top: 25px;
         }
       }
       .swiper-button-prev {
@@ -495,7 +495,8 @@
 
 .card-hide__swiper {
   display: none;
-
+  height: 100%;
+  max-height: 200px;
   @include xm {
     display: flex;
   }
@@ -505,7 +506,7 @@
     flex-direction: column;
     max-width: 240px;
     width: 100%;
-    height: auto;
+    height: 100%;
     padding: 15px;
     background-color: #fff;
     border-radius: 10px;
@@ -513,6 +514,7 @@
     box-shadow: 0px 4px 16px rgba(17, 79, 92, 0.1);
     transform: scale(1.12);
     margin-top: 40px;
+    gap: 15px;
     .t-card {
       font-family: "Poppins", sans-serif;
       font-weight: 700;
@@ -520,21 +522,24 @@
       line-height: 130%;
       color: #0b1600;
     }
+    ul {
+      li {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        color: #05111b;
+        display: inline-block;
+        display: block;
+      }
+    }
     span {
       font-family: "Inter", sans-serif;
-      font-style: normal;
-      font-weight: 400;
+      font-weight: 600;
       font-size: 14px;
       line-height: 130%;
-      color: #05111b;
-      display: inline-block;
-      margin-bottom: 15px;
-      display: block;
-      &:last-child {
-        margin-bottom: unset;
-        color: #0b1600;
-        font-weight: 600;
-      }
+      color: #0b1600;
     }
   }
 }
@@ -553,6 +558,7 @@
   border: 1px solid #d6e9ec;
   box-shadow: 0px 4px 16px rgba(17, 79, 92, 0.1);
   z-index: 900;
+  gap: 15px;
   a.close-hide {
     background: url("data:image/svg+xml,%3Csvg width='11' height='12' viewBox='0 0 11 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.64175 6.00048L10.2251 2.42548C10.382 2.26856 10.4702 2.05573 10.4702 1.83381C10.4702 1.6119 10.382 1.39907 10.2251 1.24215C10.0682 1.08523 9.85533 0.99707 9.63341 0.99707C9.41149 0.99707 9.19867 1.08523 9.04175 1.24215L5.46675 4.82548L1.89175 1.24215C1.73483 1.08523 1.522 0.99707 1.30008 0.99707C1.07816 0.99707 0.865332 1.08523 0.708413 1.24215C0.551493 1.39907 0.463336 1.6119 0.463336 1.83381C0.463336 2.05573 0.551493 2.26856 0.708413 2.42548L4.29175 6.00048L0.708413 9.57548C0.630306 9.65295 0.568311 9.74512 0.526003 9.84666C0.483696 9.94821 0.461914 10.0571 0.461914 10.1671C0.461914 10.2772 0.483696 10.3861 0.526003 10.4876C0.568311 10.5892 0.630306 10.6813 0.708413 10.7588C0.785882 10.8369 0.878049 10.8989 0.979599 10.9412C1.08115 10.9835 1.19007 11.0053 1.30008 11.0053C1.41009 11.0053 1.51901 10.9835 1.62056 10.9412C1.72211 10.8989 1.81428 10.8369 1.89175 10.7588L5.46675 7.17548L9.04175 10.7588C9.11922 10.8369 9.21138 10.8989 9.31293 10.9412C9.41448 10.9835 9.5234 11.0053 9.63341 11.0053C9.74342 11.0053 9.85234 10.9835 9.95389 10.9412C10.0554 10.8989 10.1476 10.8369 10.2251 10.7588C10.3032 10.6813 10.3652 10.5892 10.4075 10.4876C10.4498 10.3861 10.4716 10.2772 10.4716 10.1671C10.4716 10.0571 10.4498 9.94821 10.4075 9.84666C10.3652 9.74512 10.3032 9.65295 10.2251 9.57548L6.64175 6.00048Z' fill='%238BACB2'/%3E%3C/svg%3E%0A")
       no-repeat center/cover;
@@ -570,21 +576,24 @@
     line-height: 130%;
     color: #0b1600;
   }
+  ul {
+    li {
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      color: #05111b;
+      display: inline-block;
+      display: block;
+    }
+  }
   span {
     font-family: "Inter", sans-serif;
-    font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 14px;
     line-height: 130%;
-    color: #05111b;
-    display: inline-block;
-    margin-bottom: 15px;
-    display: block;
-    &:last-child {
-      margin-bottom: unset;
-      color: #0b1600;
-      font-weight: 600;
-    }
+    color: #0b1600;
   }
 }
 
@@ -637,7 +646,7 @@
       @include xxm {
         transform: translate3d(578px, 323px, 0);
         @include m-940 {
-          transform: translate3d(497px, 295px, 0);
+          transform: translate3d(474px, 301px, 0);
           @include xm {
             transform: translate3d(418px, 251px, 0);
           }
@@ -674,7 +683,7 @@
       @include xxm {
         transform: translate3d(573px, 294px, 0);
         @include m-940 {
-          transform: translate3d(491px, 258px, 0);
+          transform: translate3d(470px, 270px, 0);
           @include xm {
           }
         }
@@ -704,13 +713,13 @@
 .info7 {
   transform: translate3d(1114px, 108px, 0);
   @include m-1440 {
-    transform: translate3d(929px, 108px, 0);
+    transform: translate3d(660px, 108px, 0);
     @include l-1100 {
-      transform: translate3d(806px, 135px, 0);
+      transform: translate3d(536px, 135px, 0);
       @include xxm {
-        transform: translate3d(715px, 145px, 0);
+        transform: translate3d(448px, 153px, 0);
         @include m-940 {
-          transform: translate3d(614px, 136px, 0);
+          transform: translate3d(354px, 143px, 0);
           @include xm {
           }
         }
@@ -722,13 +731,13 @@
 .info8 {
   transform: translate3d(1090px, 44px, 0);
   @include m-1440 {
-    transform: translate3d(916px, 50px, 0);
+    transform: translate3d(645px, 50px, 0);
     @include l-1100 {
-      transform: translate3d(784px, 87px, 0);
+      transform: translate3d(518px, 87px, 0);
       @include xxm {
-        transform: translate3d(699px, 109px, 0);
+        transform: translate3d(435px, 109px, 0);
         @include m-940 {
-          transform: translate3d(601px, 101px, 0);
+          transform: translate3d(342px, 101px, 0);
           @include xm {
           }
         }
@@ -740,13 +749,13 @@
 .info9 {
   transform: translate3d(1090px, 395px, 0);
   @include m-1440 {
-    transform: translate3d(911px, 395px, 0);
+    transform: translate3d(648px, 395px, 0);
     @include l-1100 {
-      transform: translate3d(782px, 380px, 0);
+      transform: translate3d(514px, 380px, 0);
       @include xxm {
-        transform: translate3d(697px, 373px, 0);
+        transform: translate3d(438px, 375px, 0);
         @include m-940 {
-          transform: translate3d(606px, 324px, 0);
+          transform: translate3d(347px, 322px, 0);
           @include xm {
           }
         }

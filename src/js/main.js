@@ -17,12 +17,65 @@ projectCardSwiper;
 arcTabSwiper;
 init();
 
-let mapCardHideSwiper = new Swiper('.card-hide__swiper', {
+let mapCardHideSwiper = new Swiper(".card-hide__swiper", {
   spaceBetween: 45,
   slidesPerView: "auto",
   centeredSlides: true,
-})
-
+  autoplay: {
+    delay: 1500,
+  },
+  // observer: 'true',
+  // on: {
+  //   init: function(el) {
+  //     console.log(el);
+  //   }
+  // }
+});
+mapCardHideSwiper.on("slideChange", function () {
+  mapCardHideSwiper.onAny(function () {
+    let circle = document.querySelectorAll(".circle");
+    circle.forEach((el) => {
+      el.style.display = "none";
+    });
+    if (mapCardHideSwiper.activeIndex == 0) {
+      let circle2 = document.querySelector(`[data-id='${0}']`);
+      circle2.style.display = "block";
+    }
+    if (mapCardHideSwiper.activeIndex == 1) {
+      let circle2 = document.querySelector(`[data-id='${1}']`);
+      circle2.style.display = "block";
+    }
+    if (mapCardHideSwiper.activeIndex == 2) {
+      let circle2 = document.querySelector(`[data-id='${2}']`);
+      circle2.style.display = "block";
+    }
+    if (mapCardHideSwiper.activeIndex == 3) {
+      let circle2 = document.querySelector(`[data-id='${3}']`);
+      circle2.style.display = "block";
+    }
+    if (mapCardHideSwiper.activeIndex == 4) {
+      let circle2 = document.querySelector(`[data-id='${4}']`);
+      circle2.style.display = "block";
+    }
+    if (mapCardHideSwiper.activeIndex == 5) {
+      let circle2 = document.querySelector(`[data-id='${5}']`);
+      circle2.style.display = "block";
+    }
+    if (mapCardHideSwiper.activeIndex == 6) {
+      let circle2 = document.querySelector(`[data-id='${6}']`);
+      circle2.style.display = "block";
+    }
+    if (mapCardHideSwiper.activeIndex == 7) {
+      let circle2 = document.querySelector(`[data-id='${7}']`);
+      circle2.style.display = "block";
+    }
+    if (mapCardHideSwiper.activeIndex == 8) {
+      let circle2 = document.querySelector(`[data-id='${8}']`);
+      circle2.style.display = "block";
+    }
+  });
+});
+mapCardHideSwiper.update();
 let capstoneSwiper = new Swiper(".slider-capstone", {
   spaceBetween: 20,
   slidesPerView: "auto",
@@ -34,7 +87,6 @@ let capstoneSwiper = new Swiper(".slider-capstone", {
     el: ".capstone-pag",
     type: "progressbar",
   },
-
 });
 
 // SWIPERS
