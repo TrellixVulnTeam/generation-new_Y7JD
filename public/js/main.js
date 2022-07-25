@@ -107,6 +107,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/js/modules/search-btn.js":
+/*!**************************************!*\
+  !*** ./src/js/modules/search-btn.js ***!
+  \**************************************/
+/***/ (function() {
+
+eval("const searchBtn = document.querySelector(\".nav-search\");\r\nconst closeSearchBar = document.querySelector(\".closebtn-search\");\r\nconst inputSearch = document.querySelector(\".search-bar-input\");\r\nconst searchOverlay = document.querySelector(\".search-overlay\");\r\n\r\nlet html = document.documentElement;\r\n\r\nfunction openSearch() {\r\n  searchOverlay.classList.add(\"search-overlay--active\");\r\n  document.documentElement.classList.add(\"hystmodal__opened\");\r\n}\r\nfunction closeSearch() {\r\n  searchOverlay.classList.remove(\"search-overlay--active\");\r\n  document.documentElement.classList.remove(\"hystmodal__opened\");\r\n}\r\n\r\nsearchBtn.addEventListener(\"click\", openSearch);\r\ncloseSearchBar.addEventListener(\"click\", closeSearch);\r\n\n\n//# sourceURL=webpack://gulp-settings/./src/js/modules/search-btn.js?");
+
+/***/ }),
+
 /***/ "./src/js/modules/vacancys-swiper.js":
 /*!*******************************************!*\
   !*** ./src/js/modules/vacancys-swiper.js ***!
@@ -211,6 +221,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	__webpack_require__("./src/js/modules/phone-number.js");
 /******/ 	__webpack_require__("./src/js/modules/project-swiper.js");
 /******/ 	__webpack_require__("./src/js/modules/scroll-header.js");
+/******/ 	__webpack_require__("./src/js/modules/search-btn.js");
 /******/ 	var __webpack_exports__ = __webpack_require__("./src/js/modules/vacancys-swiper.js");
 /******/ 	
 /******/ })()
