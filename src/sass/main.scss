@@ -17,12 +17,12 @@ body {
   position: relative;
   font-family: "Open Sans", sans-serif !important;
   width: 100%;
-  height: auto;
+  height: 100%;
   overflow-x: hidden;
   background: #fbfefe;
-  // @include ph {
-  //     background-color: rgb(141, 138, 138);
-  // }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .wrapper {
@@ -383,6 +383,12 @@ body {
   justify-content: center;
   transition: all .4s cubic-bezier(0.075, 0.82, 0.165, 1);
   transform: translateY(-200px);
+  @include xm {
+    padding: 40px;
+    @include xxs {
+      padding: 15px;
+    }
+  }
   .closebtn-search {
     background: url("data:image/svg+xml,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.567 9.99854L20.667 1.89854C20.8491 1.68598 20.9442 1.41257 20.9334 1.13293C20.9226 0.853286 20.8067 0.58802 20.6088 0.390137C20.4109 0.192255 20.1456 0.0763291 19.866 0.0655278C19.5863 0.0547265 19.3129 0.149845 19.1004 0.331874L11.0004 8.43187L2.90036 0.320763C2.68781 0.138734 2.41439 0.0436162 2.13475 0.0544175C1.85511 0.0652188 1.58984 0.181143 1.39196 0.379026C1.19408 0.576909 1.07815 0.842174 1.06735 1.12181C1.05655 1.40145 1.15167 1.67487 1.3337 1.88743L9.4337 9.99854L1.32259 18.0985C1.20627 18.1982 1.11181 18.3207 1.04511 18.4586C0.978421 18.5964 0.940943 18.7466 0.935032 18.8996C0.929122 19.0526 0.954906 19.2052 1.01077 19.3478C1.06663 19.4904 1.15136 19.6199 1.25964 19.7282C1.36792 19.8364 1.49742 19.9212 1.64001 19.977C1.78259 20.0329 1.93518 20.0587 2.0882 20.0528C2.24122 20.0469 2.39137 20.0094 2.52922 19.9427C2.66707 19.876 2.78964 19.7815 2.88925 19.6652L11.0004 11.5652L19.1004 19.6652C19.3129 19.8472 19.5863 19.9424 19.866 19.9316C20.1456 19.9208 20.4109 19.8048 20.6088 19.6069C20.8067 19.4091 20.9226 19.1438 20.9334 18.8642C20.9442 18.5845 20.8491 18.3111 20.667 18.0985L12.567 9.99854Z' fill='%230B1600'/%3E%3C/svg%3E%0A") no-repeat center/cover;
     width: 20px;
@@ -391,6 +397,9 @@ body {
     top: 81px;
     right: 87px;
     cursor: pointer;
+    @include xm {
+      right: 42px;
+    }
   }
   .search-overlay__content {
     max-width: 840px;
@@ -408,12 +417,24 @@ body {
         padding: 16px 0;
         border-bottom: 3px solid #77b946 !important;
         height: unset;
+        @include xxm {
+          font-size: 32px;
+          @include m-small {
+            font-size: 24px;
+          }
+        }
       }
       .arrow-search  {
         position: absolute;
         top: 32px;
         right: 15px;
         opacity: 0.5;
+        @include xxm {
+          top: 28px;
+          @include m-small {
+            top: 21px;
+          }
+        }
       }
       .close-btn-search {
         display: none;

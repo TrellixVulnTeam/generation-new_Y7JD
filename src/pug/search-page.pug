@@ -18,8 +18,15 @@ block page
         .search-content
           .search-overlay__content 
             form(action="")
-              input(type="text" placeholder='Поиск по сайту').search-bar-input
-              span.arrow-search 
-              span.close-btn-search
-        .serch-input-content 
+              input(type="text" placeholder='Поиск по сайту').search-bar--in
+              span.arrow-search.arrow-search--page
+              span.close-btn-search--page
+            //- вот эти шпаны сам поймешь
+            //- span.search-undefined По вашему запросу “Lorem ipsum” ничего не найдено
+            //- span.search-result__text По вашему запросу “Чпок в пупок”  найдено: 12
+        //- результат вписки
+        //- .search-input-content 
+        //-   ul 
+        //-     li Любой текст
+        //-       span Lorem ipsum dolor sit amet, consectetur adipiscing elit. Чпок в пупок. Netus aenean.
   include chunk/footer
