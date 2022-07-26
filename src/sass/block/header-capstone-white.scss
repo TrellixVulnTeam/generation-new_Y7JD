@@ -5,6 +5,9 @@ header.header-casptone-white {
         button {
           color: #0b1600;
           font-weight: 600;
+          @include xm {
+            color: white;
+          }
           .arrow-skinny {
             background: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.4838 2.16294C11.0758 2.58094 6.78882 6.66494 6.78882 6.66494C6.68669 6.7708 6.56428 6.85499 6.42889 6.91249C6.2935 6.96999 6.14792 6.99963 6.00082 6.99963C5.85373 6.99963 5.70815 6.96999 5.57276 6.91249C5.43737 6.85499 5.31496 6.7708 5.21282 6.66494C5.21282 6.66494 0.923823 2.58094 0.517824 2.16294C0.109824 1.74494 0.0818233 0.992944 0.517824 0.547944C0.951824 0.101944 1.55882 0.0669441 2.09182 0.547944L5.99982 4.29494L9.90782 0.547944C10.4408 0.0669441 11.0488 0.101944 11.4838 0.547944C11.9198 0.992944 11.8928 1.74494 11.4838 2.16294Z' fill='black'/%3E%3C/svg%3E%0A")
               center/cover;
@@ -23,6 +26,12 @@ header.header-casptone-white {
       li {
         a {
           color: #0b1600 !important;
+          @include xm {
+            color: white !important;
+            span {
+              color: white !important;
+            }
+          }
           span {
             color: #0b1600 !important;
           }
@@ -60,6 +69,11 @@ header.header-casptone-white {
             .line {
               stroke: white;
             }
+          }
+        }
+        .navTrigger2 {
+          .line {
+            stroke: #0b1600;
           }
         }
       }

@@ -7,6 +7,7 @@ const btnBurger = document.querySelector(".navTrigger");
 function scrollHeader() {
   if(window.innerWidth > 768) {
     
+
     const scrollHeader = window.addEventListener("scroll", function () {
       if (this.window.scrollY >= 50) {
         header.classList.add("scrolled-header");
@@ -60,6 +61,9 @@ function scrollHeader() {
     });
   }
 }
+
+
+
 
 
 export { scrollHeader };

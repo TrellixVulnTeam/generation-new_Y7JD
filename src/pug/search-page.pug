@@ -1,0 +1,32 @@
+extends layout/app
+
+block page
+  include chunk/header-white
+  main.main
+    section.search-bar.section
+      hr
+      .wrapper
+        nav.breadcrumbs 
+          ul  
+            li.breadcrumbs-item
+              a(href="/") 
+                i.icon-home 
+            li 
+              i.arrow-skinny
+            li 
+              a(href="javascript:void(0)") Поиск по сайту
+        .search-content
+          .search-overlay__content 
+            form(action="")
+              input(type="text" placeholder='Поиск по сайту').search-bar--in
+              span.arrow-search.arrow-search--page
+              span.close-btn-search--page
+            //- вот эти шпаны сам поймешь
+            //- span.search-undefined По вашему запросу “Lorem ipsum” ничего не найдено
+            //- span.search-result__text По вашему запросу “Чпок в пупок”  найдено: 12
+        //- результат вписки
+        //- .search-input-content 
+        //-   ul 
+        //-     li Любой текст
+        //-       span Lorem ipsum dolor sit amet, consectetur adipiscing elit. Чпок в пупок. Netus aenean.
+  include chunk/footer
