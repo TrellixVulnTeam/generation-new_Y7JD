@@ -32,6 +32,7 @@ let capstoneSwiper = new Swiper(".slider-capstone", {
 
 // SWIPERS
 let swiper = new Swiper(".mySwiper", {
+  loop: true,
   pagination: {
     el: ".swiper-pagination",
   },
