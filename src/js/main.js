@@ -32,6 +32,9 @@ let capstoneSwiper = new Swiper(".slider-capstone", {
 
 // SWIPERS
 let swiper = new Swiper(".mySwiper", {
+  autoplay: {
+    delay: 4000,
+  },
   loop: true,
   pagination: {
     el: ".swiper-pagination",
@@ -113,7 +116,6 @@ var newsSwiper = new Swiper(".news-swiper", {
     },
   },
 });
-
 
 const myModal = new HystModal({
   linkAttributeName: "data-hystmodal",
@@ -234,8 +236,6 @@ mobBurger.addEventListener("click", function () {
   }
 });
 
-
-
 if (document.querySelector(".q-form-phone")) {
   phoneValidate();
 }
@@ -243,9 +243,12 @@ if (document.querySelector(".map")) {
   // ready();
   console.log(" with map page");
 
-  let dotCircle = document.querySelector(`[data-dota='${0}']`);
-  dotCircle.click()
   
+
+  // let dotCircle = document.querySelector(`[data-dota='${0}']`);
+  // dotCircle.click()
+  let closeBtnCard = document.querySelector(".close-hide");
+  closeBtnCard.click();
 
   let mapCardHideSwiper = new Swiper(".card-hide__swiper", {
     spaceBetween: 45,
@@ -267,7 +270,7 @@ if (document.querySelector(".map")) {
       mapCardHideSwiper.autoplay.start();
       if (mapCardHideSwiper.activeIndex == 0) {
         let circle2 = document.querySelector(`[data-id='${0}']`);
-        
+
         circle2.style.display = "block";
       }
       if (mapCardHideSwiper.activeIndex == 1) {
@@ -305,3 +308,14 @@ if (document.querySelector(".map")) {
     });
   });
 }
+
+
+// MAP RUSSIA
+const mapBig = document.querySelector(".map-russia-svg");
+
+function toggleDone(event) {
+  console.dir(event.target);
+  event.target.style.fill = "black";
+  
+}
+mapBig.addEventListener("click", toggleDone);

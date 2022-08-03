@@ -5,6 +5,7 @@
   height: auto;
 }
 
+
 .about-card-first {
   background: url("../img/Слайдер.png") no-repeat;
   &::after {
@@ -43,10 +44,17 @@
   height: 100%;
   min-height: 650px;
   width: 100%;
+  cursor: grab;
   @include xxs {
     min-height: 440px;
   }
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
 }
+
 
 .swiper-slide {
   .about-content {
