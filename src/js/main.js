@@ -312,10 +312,19 @@ if (document.querySelector(".map")) {
 
 // MAP RUSSIA
 const mapBig = document.querySelector(".map-russia-svg");
+var pt = mapBig.createSVGPoint();
 
 function toggleDone(event) {
   console.dir(event.target);
   event.target.style.fill = "black";
-  
+  pt.x = event.clientX;
+  pt.y = event.clientY;
+
+  var cursorpt =  pt.matrixTransform(mapBig.getScreenCTM().inverse());
+    console.log("(" + cursorpt.x + ", " + cursorpt.y + ")");
 }
-mapBig.addEventListener("click", toggleDone);
+
+if(document.querySelector('.map-picker')) {
+  mapBig.addEventListener("click", toggleDone);
+
+}
