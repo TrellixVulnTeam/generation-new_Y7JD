@@ -1,7 +1,7 @@
-import {
-  parnersSwiperTop,
-  parnersSwiperLower,
-} from "./modules/partners-swiper.js";
+// import {
+//   parnersSwiperTop,
+//   parnersSwiperLower,
+// } from "./modules/partners-swiper.js";
 import { ready } from "./modules/map-main.js";
 import { vacancySwiper } from "./modules/vacancys-swiper.js";
 import { phoneValidate } from "./modules/phone-number.js";
@@ -10,8 +10,39 @@ import { scrollHeader } from "./modules/scroll-header.js";
 import { arcTabSwiper } from "./modules/arc-service.js";
 import { init } from "./modules/capstone-swiper.js";
 
-parnersSwiperTop;
-parnersSwiperLower;
+if (document.querySelector(".about-group")) {
+  let parnersSwiperTop = new Swiper(".partners--top", {
+    spaceBetween: 20,
+    centeredSlides: true,
+    speed: 5000,
+    autoplay: {
+      delay: 1,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    slidesPerView: 4,
+    allowTouchMove: true,
+    disableOnInteraction: true,
+  });
+
+  let parnersSwiperLower = new Swiper(".partners--lower", {
+    spaceBetween: 20,
+    centeredSlides: true,
+    speed: 5000,
+    autoplay: {
+      delay: 1,
+      reverseDirection: true,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    slidesPerView: 4,
+    allowTouchMove: true,
+    disableOnInteraction: true,
+  });
+}
+
+// parnersSwiperTop;
+// parnersSwiperLower;
 vacancySwiper;
 projectCardSwiper;
 arcTabSwiper;
@@ -243,8 +274,6 @@ if (document.querySelector(".map")) {
   // ready();
   console.log(" with map page");
 
-  
-
   // let dotCircle = document.querySelector(`[data-dota='${0}']`);
   // dotCircle.click()
   let closeBtnCard = document.querySelector(".close-hide");
@@ -309,22 +338,27 @@ if (document.querySelector(".map")) {
   });
 }
 
-
 // MAP RUSSIA
-const mapBig = document.querySelector(".map-russia-svg");
-var pt = mapBig.createSVGPoint();
 
-function toggleDone(event) {
-  console.dir(event.target);
-  event.target.style.fill = "black";
-  pt.x = event.clientX;
-  pt.y = event.clientY;
+if (document.querySelector(".map-picker")) {
+  const mapBig = document.querySelector(".map-russia-svg");
+  let pt = mapBig.createSVGPoint();
+  const NS = mapBig.getAttribute("xmlns");
 
-  var cursorpt =  pt.matrixTransform(mapBig.getScreenCTM().inverse());
+  function toggleDone(event) {
+    event.target.style.fill = "#6B9B3C";
+    pt.x = event.clientX;
+    pt.y = event.clientY;
+
+    var cursorpt = pt.matrixTransform(mapBig.getScreenCTM().inverse());
+    const circle = document.createElementNS(NS, "circle");
+    circle.setAttribute("cx", cursorpt.x);
+    circle.setAttribute("cy", cursorpt.y);
+    circle.setAttribute("r", 10);
+    circle.style.fill = "white";
+    mapBig.appendChild(circle);
     console.log("(" + cursorpt.x + ", " + cursorpt.y + ")");
-}
+  }
 
-if(document.querySelector('.map-picker')) {
   mapBig.addEventListener("click", toggleDone);
-
 }

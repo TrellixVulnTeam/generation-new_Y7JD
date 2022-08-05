@@ -14,20 +14,20 @@ function scrollHeader() {
         if (header.classList.contains("scrolled-header")) {
           // this.document.querySelector(".logo").src = "./img/LogoScroll.png";
           if(this.location.pathname == '/') {
-            this.document.querySelector(".logo").src = "./img/LogoScroll.png";
+            this.document.querySelector(".logo").src = "../img/LogoScroll.png";
           }
           if(this.location.pathname == '/index.html') {
-            this.document.querySelector(".logo").src = "./img/LogoScroll.png";
+            this.document.querySelector(".logo").src = "../img/LogoScroll.png";
           }
         }
       } else {
         header.classList.remove("scrolled-header");
         if (!header.classList.contains("scrolled-header")) {
           if(this.location.pathname == '/index.html') {
-            this.document.querySelector(".logo").src = "./img/Logo.svg";
+            this.document.querySelector(".logo").src = "../img/Logo.svg";
           }
           if(this.location.pathname == '/') {
-            this.document.querySelector(".logo").src = "./img/Logo.svg";
+            this.document.querySelector(".logo").src = "../img/Logo.svg";
           }
           // this.document.querySelector(".logo").src = "./img/Logo.svg";
         }
@@ -41,20 +41,20 @@ function scrollHeader() {
         header.classList.add("scrolled-mob-header");
         if (header.classList.contains("scrolled-mob-header")) {
           if(this.location.pathname == '/') {
-            this.document.querySelector(".logo").src = "./img/LogoScroll.png";
+            this.document.querySelector(".logo").src = "../img/LogoScroll.png";
           }
           if(this.location.pathname == '/index.html') {
-            this.document.querySelector(".logo").src = "./img/LogoScroll.png";
+            this.document.querySelector(".logo").src = "../img/LogoScroll.png";
           }
         }
       } else {
         header.classList.remove("scrolled-mob-header");
         if (!header.classList.contains("scrolled-mob-header")) {
           if(this.location.pathname == '/index.html') {
-            this.document.querySelector(".logo").src = "./img/Logo.svg";
+            this.document.querySelector(".logo").src = "../img/Logo.svg";
           }
           if(this.location.pathname == '/') {
-            this.document.querySelector(".logo").src = "./img/Logo.svg";
+            this.document.querySelector(".logo").src = "../img/Logo.svg";
           }
         }
       }

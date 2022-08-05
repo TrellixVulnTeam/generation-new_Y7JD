@@ -15,12 +15,12 @@
       justify-content: center;
       margin-top: 20px;
       .map-bg {
-        max-height: 557px;
-        min-height: 555px;
+        // max-height: 557px;
+        // min-height: 555px;
         height: 100%;
-        background: url("../img/mother-russia.svg") no-repeat;
-        background-position: 50% 50%;
-        background-size: contain;
+        // background: url("../img/mother-russia.svg") no-repeat;
+        // background-position: 50% 50%;
+        // background-size: contain;
         width: 100%;
         position: relative;
         @include m-1440 {
