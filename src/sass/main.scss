@@ -469,6 +469,12 @@ body {
   
 }
 
+.map-russia-svg {
+  @include xm {
+    // height: 
+  }
+}
+
 @import "block/search-bar.scss";
 
 @import "block/header.scss";
