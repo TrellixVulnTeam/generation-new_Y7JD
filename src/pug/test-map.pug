@@ -1,0 +1,13 @@
+
+extends layout/app
+
+block page
+  include chunk/header-white
+  main.main
+    section.section.map-picker
+      .wrapper 
+        .map-wrapper.pt-100
+          .block
+            h4 Выберите на карте место, куда хотите добавить точку
+          include chunk/q-main/maprussia
+  include chunk/footer

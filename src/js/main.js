@@ -1,7 +1,7 @@
-import {
-  parnersSwiperTop,
-  parnersSwiperLower,
-} from "./modules/partners-swiper.js";
+// import {
+//   parnersSwiperTop,
+//   parnersSwiperLower,
+// } from "./modules/partners-swiper.js";
 import { ready } from "./modules/map-main.js";
 import { vacancySwiper } from "./modules/vacancys-swiper.js";
 import { phoneValidate } from "./modules/phone-number.js";
@@ -10,8 +10,39 @@ import { scrollHeader } from "./modules/scroll-header.js";
 import { arcTabSwiper } from "./modules/arc-service.js";
 import { init } from "./modules/capstone-swiper.js";
 
-parnersSwiperTop;
-parnersSwiperLower;
+if (document.querySelector(".about-group")) {
+  let parnersSwiperTop = new Swiper(".partners--top", {
+    spaceBetween: 20,
+    centeredSlides: true,
+    speed: 5000,
+    autoplay: {
+      delay: 1,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    slidesPerView: 4,
+    allowTouchMove: true,
+    disableOnInteraction: true,
+  });
+
+  let parnersSwiperLower = new Swiper(".partners--lower", {
+    spaceBetween: 20,
+    centeredSlides: true,
+    speed: 5000,
+    autoplay: {
+      delay: 1,
+      reverseDirection: true,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    slidesPerView: 4,
+    allowTouchMove: true,
+    disableOnInteraction: true,
+  });
+}
+
+// parnersSwiperTop;
+// parnersSwiperLower;
 vacancySwiper;
 projectCardSwiper;
 arcTabSwiper;
@@ -32,6 +63,9 @@ let capstoneSwiper = new Swiper(".slider-capstone", {
 
 // SWIPERS
 let swiper = new Swiper(".mySwiper", {
+  autoplay: {
+    delay: 4000,
+  },
   loop: true,
   pagination: {
     el: ".swiper-pagination",
@@ -113,7 +147,6 @@ var newsSwiper = new Swiper(".news-swiper", {
     },
   },
 });
-
 
 const myModal = new HystModal({
   linkAttributeName: "data-hystmodal",
@@ -234,8 +267,6 @@ mobBurger.addEventListener("click", function () {
   }
 });
 
-
-
 if (document.querySelector(".q-form-phone")) {
   phoneValidate();
 }
@@ -243,9 +274,10 @@ if (document.querySelector(".map")) {
   // ready();
   console.log(" with map page");
 
-  let dotCircle = document.querySelector(`[data-dota='${0}']`);
-  dotCircle.click()
-  
+  // let dotCircle = document.querySelector(`[data-dota='${0}']`);
+  // dotCircle.click()
+  let closeBtnCard = document.querySelector(".close-hide");
+  closeBtnCard.click();
 
   let mapCardHideSwiper = new Swiper(".card-hide__swiper", {
     spaceBetween: 45,
@@ -267,7 +299,7 @@ if (document.querySelector(".map")) {
       mapCardHideSwiper.autoplay.start();
       if (mapCardHideSwiper.activeIndex == 0) {
         let circle2 = document.querySelector(`[data-id='${0}']`);
-        
+
         circle2.style.display = "block";
       }
       if (mapCardHideSwiper.activeIndex == 1) {
@@ -304,4 +336,29 @@ if (document.querySelector(".map")) {
       }
     });
   });
+}
+
+// MAP RUSSIA
+
+if (document.querySelector(".map-picker")) {
+  const mapBig = document.querySelector(".map-russia-svg");
+  let pt = mapBig.createSVGPoint();
+  const NS = mapBig.getAttribute("xmlns");
+
+  function toggleDone(event) {
+    event.target.style.fill = "#6B9B3C";
+    pt.x = event.clientX;
+    pt.y = event.clientY;
+
+    var cursorpt = pt.matrixTransform(mapBig.getScreenCTM().inverse());
+    const circle = document.createElementNS(NS, "circle");
+    circle.setAttribute("cx", cursorpt.x);
+    circle.setAttribute("cy", cursorpt.y);
+    circle.setAttribute("r", 8);
+    circle.style.fill = "white";
+    mapBig.appendChild(circle);
+    console.log("(" + cursorpt.x + ", " + cursorpt.y + ")");
+  }
+
+  mapBig.addEventListener("click", toggleDone);
 }

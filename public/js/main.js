@@ -1,228 +1,376 @@
-/*
- * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
-/******/ (function() { // webpackBootstrap
-/******/ 	var __webpack_modules__ = ({
-
-/***/ "./src/js/hystmodal.js":
-/*!*****************************!*\
-  !*** ./src/js/hystmodal.js ***!
-  \*****************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ HystModal; }\n/* harmony export */ });\nclass HystModal {\r\n  constructor(props) {\r\n    let defaultConfig = {\r\n      backscroll: true,\r\n      linkAttributeName: \"data-hystmodal\",\r\n      closeOnOverlay: true,\r\n      closeOnEsc: true,\r\n      closeOnButton: true,\r\n      waitTransitions: false,\r\n      catchFocus: true,\r\n      fixedSelectors: \"*[data-hystfixed]\",\r\n      beforeOpen: () => {},\r\n      afterClose: () => {},\r\n    };\r\n    this.config = Object.assign(defaultConfig, props);\r\n    if (this.config.linkAttributeName) {\r\n      this.init();\r\n    }\r\n    this._closeAfterTransition = this._closeAfterTransition.bind(this);\r\n  }\r\n\r\n  static _shadow = false;\r\n\r\n  init() {\r\n    this.isOpened = false;\r\n    this.openedWindow = false;\r\n    (this.starter = false), (this._nextWindows = false);\r\n    this._scrollPosition = 0;\r\n    this._reopenTrigger = false;\r\n    (this._overlayChecker = false), (this._isMoved = false);\r\n    this._focusElements = [\r\n      \"a[href]\",\r\n      \"area[href]\",\r\n      'input:not([disabled]):not([type=\"hidden\"]):not([aria-hidden])',\r\n      \"select:not([disabled]):not([aria-hidden])\",\r\n      \"textarea:not([disabled]):not([aria-hidden])\",\r\n      \"button:not([disabled]):not([aria-hidden])\",\r\n      \"iframe\",\r\n      \"object\",\r\n      \"embed\",\r\n      \"[contenteditable]\",\r\n      '[tabindex]:not([tabindex^=\"-\"])',\r\n    ];\r\n    this._modalBlock = false;\r\n\r\n    if (!HystModal._shadow) {\r\n      HystModal._shadow = document.createElement(\"button\");\r\n      HystModal._shadow.classList.add(\"hystmodal__shadow\");\r\n      document.body.appendChild(HystModal._shadow);\r\n    }\r\n    this.eventsFeeler();\r\n  }\r\n\r\n  eventsFeeler() {\r\n    document.addEventListener(\r\n      \"click\",\r\n      function (e) {\r\n        const clickedlink = e.target.closest(\r\n          \"[\" + this.config.linkAttributeName + \"]\"\r\n        );\r\n        if (!this._isMoved && clickedlink) {\r\n          e.preventDefault();\r\n          this.starter = clickedlink;\r\n          let targetSelector = this.starter.getAttribute(\r\n            this.config.linkAttributeName\r\n          );\r\n          this._nextWindows = document.querySelector(targetSelector);\r\n          this.open();\r\n          return;\r\n        }\r\n        if (this.config.closeOnButton && e.target.closest(\"[data-hystclose]\")) {\r\n          this.close();\r\n          return;\r\n        }\r\n      }.bind(this)\r\n    );\r\n\r\n    if (this.config.closeOnOverlay) {\r\n      document.addEventListener(\r\n        \"mousedown\",\r\n        function (e) {\r\n          if (\r\n            !this._isMoved &&\r\n            e.target instanceof Element &&\r\n            !e.target.classList.contains(\"hystmodal__wrap\")\r\n          )\r\n            return;\r\n          this._overlayChecker = true;\r\n        }.bind(this)\r\n      );\r\n\r\n      document.addEventListener(\r\n        \"mouseup\",\r\n        function (e) {\r\n          if (\r\n            !this._isMoved &&\r\n            e.target instanceof Element &&\r\n            this._overlayChecker &&\r\n            e.target.classList.contains(\"hystmodal__wrap\")\r\n          ) {\r\n            e.preventDefault();\r\n            !this._overlayChecker;\r\n            this.close();\r\n            return;\r\n          }\r\n          this._overlayChecker = false;\r\n        }.bind(this)\r\n      );\r\n    }\r\n\r\n    window.addEventListener(\r\n      \"keydown\",\r\n      function (e) {\r\n        if (\r\n          !this._isMoved &&\r\n          this.config.closeOnEsc &&\r\n          e.which == 27 &&\r\n          this.isOpened\r\n        ) {\r\n          e.preventDefault();\r\n          this.close();\r\n          return;\r\n        }\r\n        if (\r\n          !this._isMoved &&\r\n          this.config.catchFocus &&\r\n          e.which == 9 &&\r\n          this.isOpened\r\n        ) {\r\n          this.focusCatcher(e);\r\n          return;\r\n        }\r\n      }.bind(this)\r\n    );\r\n  }\r\n\r\n  open(selector) {\r\n    if (selector) {\r\n      if (typeof selector === \"string\") {\r\n        this._nextWindows = document.querySelector(selector);\r\n      } else {\r\n        this._nextWindows = selector;\r\n      }\r\n    }\r\n    if (!this._nextWindows) {\r\n      console.log(\"Warinig: hustModal selector is not found\");\r\n      return;\r\n    }\r\n    if (this.isOpened) {\r\n      this._reopenTrigger = true;\r\n      this.close();\r\n      return;\r\n    }\r\n    this.openedWindow = this._nextWindows;\r\n    this._modalBlock = this.openedWindow.querySelector(\".hystmodal__window\");\r\n    this.config.beforeOpen(this);\r\n    this._bodyScrollControl();\r\n    HystModal._shadow.classList.add(\"hystmodal__shadow--show\");\r\n    this.openedWindow.classList.add(\"hystmodal--active\");\r\n    this.openedWindow.setAttribute(\"aria-hidden\", \"false\");\r\n    if (this.config.catchFocus) this.focusContol();\r\n    this.isOpened = true;\r\n  }\r\n\r\n  close() {\r\n    if (!this.isOpened) {\r\n      return;\r\n    }\r\n    if (this.config.waitTransitions) {\r\n      this.openedWindow.classList.add(\"hystmodal--moved\");\r\n      this._isMoved = true;\r\n      this.openedWindow.addEventListener(\r\n        \"transitionend\",\r\n        this._closeAfterTransition\r\n      );\r\n      this.openedWindow.classList.remove(\"hystmodal--active\");\r\n    } else {\r\n      this.openedWindow.classList.remove(\"hystmodal--active\");\r\n      this._closeAfterTransition();\r\n    }\r\n  }\r\n\r\n  _closeAfterTransition() {\r\n    this.openedWindow.classList.remove(\"hystmodal--moved\");\r\n    this.openedWindow.removeEventListener(\r\n      \"transitionend\",\r\n      this._closeAfterTransition\r\n    );\r\n    this._isMoved = false;\r\n    HystModal._shadow.classList.remove(\"hystmodal__shadow--show\");\r\n    this.openedWindow.setAttribute(\"aria-hidden\", \"true\");\r\n\r\n    if (this.config.catchFocus) this.focusContol();\r\n    this._bodyScrollControl();\r\n    this.isOpened = false;\r\n    this.openedWindow.scrollTop = 0;\r\n    this.config.afterClose(this);\r\n\r\n    if (this._reopenTrigger) {\r\n      this._reopenTrigger = false;\r\n      this.open();\r\n    }\r\n  }\r\n\r\n  focusContol() {\r\n    const nodes = this.openedWindow.querySelectorAll(this._focusElements);\r\n    if (this.isOpened && this.starter) {\r\n      this.starter.focus();\r\n    } else {\r\n      if (nodes.length) nodes[0].focus();\r\n    }\r\n  }\r\n\r\n  focusCatcher(e) {\r\n    const nodes = this.openedWindow.querySelectorAll(this._focusElements);\r\n    const nodesArray = Array.prototype.slice.call(nodes);\r\n    if (!this.openedWindow.contains(document.activeElement)) {\r\n      nodesArray[0].focus();\r\n      e.preventDefault();\r\n    } else {\r\n      const focusedItemIndex = nodesArray.indexOf(document.activeElement);\r\n      console.log(focusedItemIndex);\r\n      if (e.shiftKey && focusedItemIndex === 0) {\r\n        nodesArray[nodesArray.length - 1].focus();\r\n        e.preventDefault();\r\n      }\r\n      if (!e.shiftKey && focusedItemIndex === nodesArray.length - 1) {\r\n        nodesArray[0].focus();\r\n        e.preventDefault();\r\n      }\r\n    }\r\n  }\r\n\r\n  _bodyScrollControl() {\r\n    if (!this.config.backscroll) return;\r\n\r\n    // collect fixel selectors to array\r\n    let fixedSelectors = Array.prototype.slice.call(\r\n      document.querySelectorAll(this.config.fixedSelectors)\r\n    );\r\n\r\n    let html = document.documentElement;\r\n    if (this.isOpened === true) {\r\n      html.classList.remove(\"hystmodal__opened\");\r\n      \r\n      html.style.marginRight = \"\";\r\n      fixedSelectors.map((el) => {\r\n        el.style.marginRight = \"\";\r\n      });\r\n      window.scrollTo(0, this._scrollPosition);\r\n      html.style.top = \"\";\r\n      return;\r\n    }\r\n    this._scrollPosition = window.pageYOffset;\r\n    let marginSize = window.innerWidth - html.clientWidth;\r\n    html.style.top = -this._scrollPosition + \"px\";\r\n\r\n    if (marginSize) {\r\n      html.style.marginRight = marginSize + \"px\";\r\n      fixedSelectors.map((el) => {\r\n        el.style.marginRight =\r\n          parseInt(getComputedStyle(el).marginRight) + marginSize + \"px\";\r\n      });\r\n    }\r\n    html.classList.add(\"hystmodal__opened\");\r\n  }\r\n}\r\n\n\n//# sourceURL=webpack://gulp-settings/./src/js/hystmodal.js?");
 
-/***/ }),
+var _mapMain = require("./modules/map-main.js");
 
-/***/ "./src/js/main.js":
-/*!************************!*\
-  !*** ./src/js/main.js ***!
-  \************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+var _vacancysSwiper = require("./modules/vacancys-swiper.js");
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_partners_swiper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/partners-swiper.js */ \"./src/js/modules/partners-swiper.js\");\n/* harmony import */ var _modules_map_main_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/map-main.js */ \"./src/js/modules/map-main.js\");\n/* harmony import */ var _modules_map_main_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_map_main_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _modules_vacancys_swiper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/vacancys-swiper.js */ \"./src/js/modules/vacancys-swiper.js\");\n/* harmony import */ var _modules_phone_number_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/phone-number.js */ \"./src/js/modules/phone-number.js\");\n/* harmony import */ var _modules_project_swiper_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/project-swiper.js */ \"./src/js/modules/project-swiper.js\");\n/* harmony import */ var _modules_scroll_header_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/scroll-header.js */ \"./src/js/modules/scroll-header.js\");\n/* harmony import */ var _modules_arc_service_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/arc-service.js */ \"./src/js/modules/arc-service.js\");\n/* harmony import */ var _modules_capstone_swiper_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/capstone-swiper.js */ \"./src/js/modules/capstone-swiper.js\");\n/* harmony import */ var _hystmodal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./hystmodal */ \"./src/js/hystmodal.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n_modules_partners_swiper_js__WEBPACK_IMPORTED_MODULE_0__.parnersSwiperTop;\r\n_modules_partners_swiper_js__WEBPACK_IMPORTED_MODULE_0__.parnersSwiperLower;\r\n_modules_vacancys_swiper_js__WEBPACK_IMPORTED_MODULE_2__.vacancySwiper;\r\n_modules_project_swiper_js__WEBPACK_IMPORTED_MODULE_4__.projectCardSwiper;\r\n_modules_arc_service_js__WEBPACK_IMPORTED_MODULE_6__.arcTabSwiper;\r\n(0,_modules_capstone_swiper_js__WEBPACK_IMPORTED_MODULE_7__.init)();\r\n\r\nlet capstoneSwiper = new Swiper(\".slider-capstone\", {\r\n  spaceBetween: 20,\r\n  slidesPerView: \"auto\",\r\n  navigation: {\r\n    nextEl: \".swiper-button-next\",\r\n    prevEl: \".swiper-button-prev\",\r\n  },\r\n  pagination: {\r\n    el: \".capstone-pag\",\r\n    type: \"progressbar\",\r\n  },\r\n});\r\n\r\n// SWIPERS\r\nlet swiper = new Swiper(\".mySwiper\", {\r\n  loop: true,\r\n  pagination: {\r\n    el: \".swiper-pagination\",\r\n  },\r\n});\r\nlet arcticSwiper = new Swiper(\".arctic-swiper\", {\r\n  pagination: {\r\n    el: \".swiper-pagination\",\r\n  },\r\n});\r\n\r\nlet swiper1 = new Swiper(\".mySwiper1\", {\r\n  pagination: {\r\n    el: \".swiper-pagination1\",\r\n    type: \"progressbar\",\r\n  },\r\n  spaceBetween: 20,\r\n  slidesPerView: \"auto\",\r\n  breakpoints: {\r\n    475: {\r\n      centeredSlides: true,\r\n    },\r\n    752: {\r\n      slidesPerView: \"auto\",\r\n    },\r\n    880: {\r\n      slidesPerView: 2.5,\r\n    },\r\n    960: {\r\n      slidesPerView: 3,\r\n    },\r\n    1024: {\r\n      slidesPerView: 3.5,\r\n    },\r\n    1150: {\r\n      slidesPerView: 4,\r\n    },\r\n    1320: {\r\n      slidesPerView: 4.5,\r\n    },\r\n    1440: {\r\n      slidesPerView: 4.5,\r\n    },\r\n  },\r\n});\r\n\r\nvar swiper2 = new Swiper(\".mySwiper2\", {\r\n  effect: \"coverflow\",\r\n  grabCursor: true,\r\n  centeredSlides: true,\r\n  slidesPerView: \"auto\",\r\n  coverflowEffect: {\r\n    rotate: 100,\r\n    stretch: -55,\r\n    depth: 100,\r\n    modifier: 0,\r\n  },\r\n  navigation: {\r\n    nextEl: \".swiper-button-next\",\r\n    prevEl: \".swiper-button-prev\",\r\n  },\r\n  initialSlide: 0,\r\n  breakpoints: {\r\n    880: {\r\n      slidesPerView: 3,\r\n      initialSlide: 1,\r\n    },\r\n  },\r\n});\r\n\r\nvar newsSwiper = new Swiper(\".news-swiper\", {\r\n  spaceBetween: 20,\r\n  slidesPerView: \"auto\",\r\n  enabled: true,\r\n  speed: 400,\r\n  breakpoints: {\r\n    950: {\r\n      enabled: false,\r\n    },\r\n  },\r\n});\r\n\r\n\r\nconst myModal = new _hystmodal__WEBPACK_IMPORTED_MODULE_8__[\"default\"]({\r\n  linkAttributeName: \"data-hystmodal\",\r\n  catchFocus: true,\r\n  closeOnEsc: true,\r\n  backscroll: true,\r\n});\r\n\r\n\r\n__webpack_require__.g.HystModal = _hystmodal__WEBPACK_IMPORTED_MODULE_8__[\"default\"];\r\n\r\n// press center tabs\r\nconst tabs = document.querySelector(\".q-news-body\");\r\nconst tabBtn = document.querySelectorAll(\".tab-btn\");\r\nconst tabContent = document.querySelectorAll(\".tab-content\");\r\n\r\ntabBtn.forEach((el) => {\r\n  el.addEventListener(\"click\", openTabs);\r\n});\r\nfunction openTabs(el) {\r\n  var btnTarget = el.currentTarget;\r\n  var tab = btnTarget.dataset.tab;\r\n  tabContent.forEach(function (el) {\r\n    el.classList.remove(\"tab-content-active\");\r\n  });\r\n  tabBtn.forEach(function (el) {\r\n    el.classList.remove(\"active-tab-btn\");\r\n  });\r\n  document.querySelector(\"#\" + tab).classList.add(\"tab-content-active\");\r\n  btnTarget.classList.add(\"active-tab-btn\");\r\n}\r\n// arctic services tabs\r\nconst tabsArctic = document.querySelector(\".q-arc-service__body\");\r\nconst tabArcContent = document.querySelectorAll(\".q-service-body\");\r\n\r\nconst tabArcBtn = document.querySelectorAll(\".arc-tab-btn\");\r\ntabArcBtn.forEach((e) => {\r\n  e.addEventListener(\"click\", openTabsArc);\r\n});\r\n\r\nfunction openTabsArc(el) {\r\n  let btnTarget = el.currentTarget;\r\n  let tab = btnTarget.dataset.tabArc;\r\n  tabArcContent.forEach((el) => {\r\n    el.classList.remove(\"tab-content-active\");\r\n  });\r\n  tabArcBtn.forEach((e) => {\r\n    e.classList.remove(\"active-arc-tab-btn\");\r\n  });\r\n  document.querySelector(\"#\" + tab).classList.add(\"tab-content-active\");\r\n  btnTarget.classList.add(\"active-arc-tab-btn\");\r\n}\r\n\r\n// scroll header\r\n(0,_modules_scroll_header_js__WEBPACK_IMPORTED_MODULE_5__.scrollHeader)();\r\n\r\n// header burger\r\nconst burgerBtn = document.querySelector(\".navTrigger\");\r\nconst topHeader = document.querySelector(\".header-top\");\r\nconst navBg = document.querySelector(\".header-content\");\r\nconst nav = document.querySelector(\".nav-items\");\r\nconst navItem = document.querySelectorAll(\".nav-item\");\r\nconst hr = document.querySelector(\".hr\");\r\nconst navWrapper = document.querySelector(\".nav-items__wrapper\");\r\nconst header = document.querySelector(\".header\");\r\n\r\nlet pageY = window.innerHeight - window.innerHeight + 1;\r\n\r\nburgerBtn.addEventListener(\"click\", function () {\r\n  header.classList.toggle(\"active-white-header\");\r\n  topHeader.classList.toggle(\"active-bg\");\r\n  nav.classList.toggle(\"vertical\");\r\n  burgerBtn.classList.toggle(\"active-burger\");\r\n\r\n  if (burgerBtn.classList.contains(\"active-burger\")) {\r\n    hr.style.display = \"none\";\r\n    document.body.style.overflow = \"hidden\";\r\n    if (window.scrollY >= 50) {\r\n      header.classList.remove(\"scrolled-header\");\r\n    }\r\n  } else {\r\n    hr.style.display = \"block\";\r\n    document.body.style.overflow = \"unset\";\r\n    setTimeout(() => {\r\n      window.scrollBy(0, pageY);\r\n    }, 10);\r\n  }\r\n  if (nav.classList.length >= 4) {\r\n    nav.style.position = \"relative\";\r\n    navWrapper.style.top = \"0\";\r\n    navItem.forEach((el) => {\r\n      el.style.position = \"unset\";\r\n    });\r\n  } else {\r\n    nav.style.position = \"unset\";\r\n    navWrapper.style.top = \"-800px\";\r\n    navItem.forEach((el) => {\r\n      el.style.position = \"relative\";\r\n    });\r\n  }\r\n});\r\n\r\nconst mobBurger = document.querySelector(\".navTrigger2\");\r\nconst mobWrapper = document.querySelector(\".nav-mob__wrapper\");\r\nconst navSearch = document.querySelector(\".icon-search\");\r\n\r\nmobBurger.addEventListener(\"click\", function () {\r\n  mobBurger.classList.toggle(\"active-burger\");\r\n  mobWrapper.classList.toggle(\"active-mob__wrapper\");\r\n  if (mobWrapper.classList.contains(\"active-mob__wrapper\")) {\r\n    mobBurger.classList.add(\"stroke-white\");\r\n    navSearch.classList.add(\"search-scrolled\");\r\n    document.body.style.overflow = \"hidden\";\r\n  } else {\r\n    mobBurger.classList.remove(\"stroke-white\");\r\n    navSearch.classList.remove(\"search-scrolled\");\r\n    document.body.style.overflow = \"unset\";\r\n  }\r\n});\r\n\r\n\r\n\r\nif (document.querySelector(\".q-form-phone\")) {\r\n  (0,_modules_phone_number_js__WEBPACK_IMPORTED_MODULE_3__.phoneValidate)();\r\n}\r\nif (document.querySelector(\".map\")) {\r\n  // ready();\r\n  console.log(\" with map page\");\r\n\r\n  let dotCircle = document.querySelector(`[data-dota='${0}']`);\r\n  dotCircle.click()\r\n  \r\n\r\n  let mapCardHideSwiper = new Swiper(\".card-hide__swiper\", {\r\n    spaceBetween: 45,\r\n    slidesPerView: \"auto\",\r\n    centeredSlides: true,\r\n    autoplay: {\r\n      delay: 1500,\r\n    },\r\n    // autoplayDisableOnInteraction:false,\r\n  });\r\n  mapCardHideSwiper.autoplay.stop();\r\n\r\n  mapCardHideSwiper.on(\"slideChange\", function () {\r\n    mapCardHideSwiper.onAny(function () {\r\n      let circle = document.querySelectorAll(\".circle\");\r\n      circle.forEach((el) => {\r\n        el.style.display = \"none\";\r\n      });\r\n      mapCardHideSwiper.autoplay.start();\r\n      if (mapCardHideSwiper.activeIndex == 0) {\r\n        let circle2 = document.querySelector(`[data-id='${0}']`);\r\n        \r\n        circle2.style.display = \"block\";\r\n      }\r\n      if (mapCardHideSwiper.activeIndex == 1) {\r\n        let circle2 = document.querySelector(`[data-id='${1}']`);\r\n        circle2.style.display = \"block\";\r\n      }\r\n      if (mapCardHideSwiper.activeIndex == 2) {\r\n        let circle2 = document.querySelector(`[data-id='${2}']`);\r\n        circle2.style.display = \"block\";\r\n      }\r\n      if (mapCardHideSwiper.activeIndex == 3) {\r\n        let circle2 = document.querySelector(`[data-id='${3}']`);\r\n        circle2.style.display = \"block\";\r\n      }\r\n      if (mapCardHideSwiper.activeIndex == 4) {\r\n        let circle2 = document.querySelector(`[data-id='${4}']`);\r\n        circle2.style.display = \"block\";\r\n      }\r\n      if (mapCardHideSwiper.activeIndex == 5) {\r\n        let circle2 = document.querySelector(`[data-id='${5}']`);\r\n        circle2.style.display = \"block\";\r\n      }\r\n      if (mapCardHideSwiper.activeIndex == 6) {\r\n        let circle2 = document.querySelector(`[data-id='${6}']`);\r\n        circle2.style.display = \"block\";\r\n      }\r\n      if (mapCardHideSwiper.activeIndex == 7) {\r\n        let circle2 = document.querySelector(`[data-id='${7}']`);\r\n        circle2.style.display = \"block\";\r\n      }\r\n      if (mapCardHideSwiper.activeIndex == 8) {\r\n        let circle2 = document.querySelector(`[data-id='${8}']`);\r\n        circle2.style.display = \"block\";\r\n      }\r\n    });\r\n  });\r\n}\r\n\n\n//# sourceURL=webpack://gulp-settings/./src/js/main.js?");
+var _phoneNumber = require("./modules/phone-number.js");
 
-/***/ }),
+var _projectSwiper = require("./modules/project-swiper.js");
 
-/***/ "./src/js/modules/arc-service.js":
-/*!***************************************!*\
-  !*** ./src/js/modules/arc-service.js ***!
-  \***************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+var _scrollHeader = require("./modules/scroll-header.js");
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"arcTabSwiper\": function() { return /* binding */ arcTabSwiper; }\n/* harmony export */ });\nlet arcTabSwiper = new Swiper(\".q-arc-tab-swiper\", {\r\n  spaceBetween: 10,\r\n  freemode: true,\r\n  slidesPerView: 'auto',\r\n  allowTouchMove: true,\r\n  enabled: true,\r\n  grabCursor: true,\r\n  simulateTouch: true,\r\n  breakpoints: {\r\n    1260: {\r\n      enabled: false,\r\n    },\r\n  },\r\n});\r\n\r\n\n\n//# sourceURL=webpack://gulp-settings/./src/js/modules/arc-service.js?");
+var _arcService = require("./modules/arc-service.js");
 
-/***/ }),
+var _capstoneSwiper = require("./modules/capstone-swiper.js");
 
-/***/ "./src/js/modules/capstone-swiper.js":
-/*!*******************************************!*\
-  !*** ./src/js/modules/capstone-swiper.js ***!
-  \*******************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+var _hystmodal = _interopRequireDefault(require("./hystmodal"));
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"init\": function() { return /* binding */ init; }\n/* harmony export */ });\nfunction init() {\r\n  let capstoneImgItemLower = new Swiper(\".capstone-item-swiper-lower\", {\r\n  spaceBetween: 10,\r\n  slidesPerView: 'auto',\r\n  slideToClickedSlide: true,\r\n  touchRatio: 0.2,\r\n});\r\n\r\nlet capstoneImgItemTop = new Swiper(\".capstone-item-swiper-top\", {\r\n  spaceBetween: 10,\r\n  slidesPerView: 'auto',\r\n  slideToClickedSlide: true,\r\n  thumbs: {\r\n    swiper: capstoneImgItemLower,\r\n  },\r\n});\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack://gulp-settings/./src/js/modules/capstone-swiper.js?");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/***/ }),
+// import {
+//   parnersSwiperTop,
+//   parnersSwiperLower,
+// } from "./modules/partners-swiper.js";
+if (document.querySelector(".about-group")) {
+  var parnersSwiperTop = new Swiper(".partners--top", {
+    spaceBetween: 20,
+    centeredSlides: true,
+    speed: 5000,
+    autoplay: {
+      delay: 1,
+      disableOnInteraction: false
+    },
+    loop: true,
+    slidesPerView: 4,
+    allowTouchMove: true,
+    disableOnInteraction: true
+  });
+  var parnersSwiperLower = new Swiper(".partners--lower", {
+    spaceBetween: 20,
+    centeredSlides: true,
+    speed: 5000,
+    autoplay: {
+      delay: 1,
+      reverseDirection: true,
+      disableOnInteraction: false
+    },
+    loop: true,
+    slidesPerView: 4,
+    allowTouchMove: true,
+    disableOnInteraction: true
+  });
+} // parnersSwiperTop;
+// parnersSwiperLower;
 
-/***/ "./src/js/modules/map-main.js":
-/*!************************************!*\
-  !*** ./src/js/modules/map-main.js ***!
-  \************************************/
-/***/ (function() {
 
-eval("// map with dots\r\n\r\nvar isActive = 0;\r\nvar isLoading = 1;\r\nvar funcStatus = true;\r\nvar test = 1;\r\nconst count = document.querySelectorAll(\"[data-id]\");\r\n\r\n//удаляет модальное окно с инфой\r\nfunction removeClass() {\r\n  let infoCards = document.querySelectorAll(\"[data-info-id]\");\r\n  infoCards.forEach((el) => {\r\n    el.classList.remove(\"show\");\r\n  });\r\n}\r\n\r\n//удаляет внешний круг\r\nfunction removeCircle() {\r\n  count.forEach((el) => {\r\n    el.style.display = \"none\";\r\n  });\r\n}\r\n\r\n//добавляет внешний круг\r\nfunction addCircle(idx) {\r\n  let circle2 = document.querySelector(`[data-id='${idx}']`);\r\n  circle2.style.display = \"block\";\r\n}\r\n\r\nfunction ready() {\r\n\r\n  function setAround(percent, idx) {\r\n    removeCircle();\r\n    let beforeElemIdx;\r\n\r\n    beforeElemIdx = idx === 0 ? count.length - 1 : idx - 1;\r\n    let beforeElem = document.querySelector(\r\n      '[data-id=\"' + beforeElemIdx + '\"]'\r\n    );\r\n    let elem = document.querySelector('[data-id=\"' + idx + '\"]');\r\n    elem.style.display = \"block\";\r\n    beforeElem.style.display = \"block\";\r\n    const math = 2 * Math.PI * elem.r.baseVal.value;\r\n\r\n    elem.style.strokeDasharray = `${math} 1000`;\r\n\r\n    let a = math * (1 - percent / 100);\r\n    elem.style.strokeDashoffset = a;\r\n    percent = percent.toFixed(1);\r\n    if (percent >= 99.5) {\r\n      removeClass();\r\n      let infoShow = document.querySelector(`[data-info-id=\"${idx}\"]`);\r\n      infoShow.classList.add(\"show\");\r\n      isLoading++;\r\n      if (isLoading === count.length) {\r\n        isLoading = 0;\r\n      }\r\n    }\r\n  }\r\n\r\n  requestAnimationFrame(draw);\r\n  function draw(t) {\r\n    if (funcStatus === true) {\r\n      let idx = isLoading;\r\n      requestAnimationFrame(draw);\r\n      setAround((t / 30) % 100, idx);\r\n    }\r\n  }\r\n}\r\n\r\n\r\nvar dots = document.querySelectorAll(\".dota\");\r\nvar infoCards = document.querySelectorAll(\"[data-info-id]\");\r\nvar closeBtn = document.querySelectorAll(\".close-hide\");\r\n\r\nlet circle = document.querySelectorAll(\"[data-id]\");\r\n\r\nlet i = 0;\r\n\r\ndots.forEach((el) => {\r\n  el.addEventListener(\"click\", (elem) => {\r\n    let idx = el.dataset.dota;\r\n    showInfo(idx);\r\n  });\r\n});\r\n\r\n//открывает модальное окно и ставит на паузу\r\nfunction showInfo(idx) {\r\n  // isLoading = 0;\r\n  removeClass();\r\n  removeCircle();\r\n  addCircle(idx);\r\n  funcStatus = false;\r\n  let elem = document.querySelector(`[data-info-id='${idx}']`);\r\n  elem.classList.add(\"show\");\r\n\r\n  //должно: при нажатии кружок заполняется на 100%\r\n  //сейчас: при нажатии кружок заполняется на 100%, после возобновлении функции откатывает кружок до заполнения на 100%\r\n  let elem2 = document.querySelector('[data-id=\"' + idx + '\"]');\r\n  elem2.style.strokeDasharray = 0;\r\n\r\n}\r\n\r\ncloseBtn.forEach((el) => {\r\n  el.addEventListener(\"click\", () => {\r\n    let idx = el.parentNode.dataset.infoId;\r\n    closeInfo(idx);\r\n  });\r\n});\r\n\r\n//закрывает модалку и далее запускает функцию\r\nfunction closeInfo(idx) {\r\n  removeClass();\r\n  ready(idx);\r\n  funcStatus = true;\r\n  // test = idx;\r\n  // beforeElemIdx = idx;\r\n  // нужно изменить beforeElemIdx на только что нажатый элемент\r\n}\r\n\r\nconst swiperCardActive = document.querySelectorAll('.card-hide-swiper');\r\n\r\nswiperCardActive.forEach((el) => {\r\n  // setTimeout(() => {\r\n  //   console.log(el.classList.contains('swiper-slide-active'))\r\n  // }, 100)\r\n  \r\n  // setInterval(() => {\r\n  //   if(el.classList.contains('swiper-slide-active')) {\r\n  //     console.log(\"DONE\");\r\n  //   }\r\n  // }, 300)\r\n  \r\n})\r\n\r\n// testovaya xuina\r\n// if(window.innerWidth < 768) {\r\n//   console.log(\"DSADASD\");\r\n//   closeInfo(isLoading)\r\n// }\r\n// export { ready }\n\n//# sourceURL=webpack://gulp-settings/./src/js/modules/map-main.js?");
+_vacancysSwiper.vacancySwiper;
+_projectSwiper.projectCardSwiper;
+_arcService.arcTabSwiper;
+(0, _capstoneSwiper.init)();
+var capstoneSwiper = new Swiper(".slider-capstone", {
+  spaceBetween: 20,
+  slidesPerView: "auto",
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
+  pagination: {
+    el: ".capstone-pag",
+    type: "progressbar"
+  }
+}); // SWIPERS
 
-/***/ }),
+var swiper = new Swiper(".mySwiper", {
+  autoplay: {
+    delay: 4000
+  },
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination"
+  }
+});
+var arcticSwiper = new Swiper(".arctic-swiper", {
+  pagination: {
+    el: ".swiper-pagination"
+  }
+});
+var swiper1 = new Swiper(".mySwiper1", {
+  pagination: {
+    el: ".swiper-pagination1",
+    type: "progressbar"
+  },
+  spaceBetween: 20,
+  slidesPerView: "auto",
+  breakpoints: {
+    475: {
+      centeredSlides: true
+    },
+    752: {
+      slidesPerView: "auto"
+    },
+    880: {
+      slidesPerView: 2.5
+    },
+    960: {
+      slidesPerView: 3
+    },
+    1024: {
+      slidesPerView: 3.5
+    },
+    1150: {
+      slidesPerView: 4
+    },
+    1320: {
+      slidesPerView: 4.5
+    },
+    1440: {
+      slidesPerView: 4.5
+    }
+  }
+});
+var swiper2 = new Swiper(".mySwiper2", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  coverflowEffect: {
+    rotate: 100,
+    stretch: -55,
+    depth: 100,
+    modifier: 0
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
+  initialSlide: 0,
+  breakpoints: {
+    880: {
+      slidesPerView: 3,
+      initialSlide: 1
+    }
+  }
+});
+var newsSwiper = new Swiper(".news-swiper", {
+  spaceBetween: 20,
+  slidesPerView: "auto",
+  enabled: true,
+  speed: 400,
+  breakpoints: {
+    950: {
+      enabled: false
+    }
+  }
+});
+var myModal = new _hystmodal.default({
+  linkAttributeName: "data-hystmodal",
+  catchFocus: true,
+  closeOnEsc: true,
+  backscroll: true
+});
+global.HystModal = _hystmodal.default; // press center tabs
 
-/***/ "./src/js/modules/partners-swiper.js":
-/*!*******************************************!*\
-  !*** ./src/js/modules/partners-swiper.js ***!
-  \*******************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+var tabs = document.querySelector(".q-news-body");
+var tabBtn = document.querySelectorAll(".tab-btn");
+var tabContent = document.querySelectorAll(".tab-content");
+tabBtn.forEach(function (el) {
+  el.addEventListener("click", openTabs);
+});
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"parnersSwiperLower\": function() { return /* binding */ parnersSwiperLower; },\n/* harmony export */   \"parnersSwiperTop\": function() { return /* binding */ parnersSwiperTop; }\n/* harmony export */ });\nvar parnersSwiperTop = new Swiper(\".partners--top\", {\r\n  spaceBetween: 20,\r\n  centeredSlides: true,\r\n  speed: 5000,\r\n  autoplay: {\r\n    delay: 1,\r\n    disableOnInteraction: false,\r\n  },\r\n  loop: true,\r\n  slidesPerView: 4,\r\n  allowTouchMove: true,\r\n  disableOnInteraction: true,\r\n});\r\n\r\nvar parnersSwiperLower = new Swiper(\".partners--lower\", {\r\n  spaceBetween: 20,\r\n  centeredSlides: true,\r\n  speed: 5000,\r\n  autoplay: {\r\n    delay: 1,\r\n    reverseDirection: true,\r\n    disableOnInteraction: false,\r\n  },\r\n  loop: true,\r\n  slidesPerView: 4,\r\n  allowTouchMove: true,\r\n  disableOnInteraction: true,\r\n});\r\n\r\n\r\n\n\n//# sourceURL=webpack://gulp-settings/./src/js/modules/partners-swiper.js?");
+function openTabs(el) {
+  var btnTarget = el.currentTarget;
+  var tab = btnTarget.dataset.tab;
+  tabContent.forEach(function (el) {
+    el.classList.remove("tab-content-active");
+  });
+  tabBtn.forEach(function (el) {
+    el.classList.remove("active-tab-btn");
+  });
+  document.querySelector("#" + tab).classList.add("tab-content-active");
+  btnTarget.classList.add("active-tab-btn");
+} // arctic services tabs
 
-/***/ }),
 
-/***/ "./src/js/modules/phone-number.js":
-/*!****************************************!*\
-  !*** ./src/js/modules/phone-number.js ***!
-  \****************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+var tabsArctic = document.querySelector(".q-arc-service__body");
+var tabArcContent = document.querySelectorAll(".q-service-body");
+var tabArcBtn = document.querySelectorAll(".arc-tab-btn");
+tabArcBtn.forEach(function (e) {
+  e.addEventListener("click", openTabsArc);
+});
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"phoneValidate\": function() { return /* binding */ phoneValidate; }\n/* harmony export */ });\nfunction phoneValidate() {\r\n  const input = document.body.querySelector(\".q-form-phone\");\r\n\r\n  input.addEventListener(\"keypress\", (evt) => {\r\n    if (evt.keyCode < 47 || evt.keyCode > 57) {\r\n      evt.preventDefault();\r\n    }\r\n  });\r\n\r\n  input.addEventListener(\"focus\", () => {\r\n    if (input.value.length === 0) {\r\n      input.value = \"+7\";\r\n      input.selectionStart = input.value.length;\r\n    }\r\n  });\r\n\r\n  input.addEventListener(\"click\", (evt) => {\r\n    if (input.selectionStart < 2) {\r\n      input.selectionStart = input.value.length;\r\n    }\r\n    if (evt.key === \"Backspace\" && input.value.length <= 2) {\r\n      evt.preventDefault();\r\n    }\r\n  });\r\n\r\n  input.addEventListener(\"blur\", () => {\r\n    if (input.value === \"+7\") {\r\n      input.value = \"\";\r\n    }\r\n  });\r\n\r\n  input.addEventListener(\"keydown\", (evt) => {\r\n    if (evt.key === \"Backspace\" && input.value.length <= 2) {\r\n      evt.preventDefault();\r\n    }\r\n  });\r\n}\r\n\r\n\n\n//# sourceURL=webpack://gulp-settings/./src/js/modules/phone-number.js?");
+function openTabsArc(el) {
+  var btnTarget = el.currentTarget;
+  var tab = btnTarget.dataset.tabArc;
+  tabArcContent.forEach(function (el) {
+    el.classList.remove("tab-content-active");
+  });
+  tabArcBtn.forEach(function (e) {
+    e.classList.remove("active-arc-tab-btn");
+  });
+  document.querySelector("#" + tab).classList.add("tab-content-active");
+  btnTarget.classList.add("active-arc-tab-btn");
+} // scroll header
 
-/***/ }),
 
-/***/ "./src/js/modules/project-swiper.js":
-/*!******************************************!*\
-  !*** ./src/js/modules/project-swiper.js ***!
-  \******************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+(0, _scrollHeader.scrollHeader)(); // header burger
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"projectCardSwiper\": function() { return /* binding */ projectCardSwiper; }\n/* harmony export */ });\nlet projectCardSwiper = new Swiper(\".q-invest-card__swiper\", {\r\n  spaceBetween: 20,\r\n  // centeredSlides: true,\r\n  slidesPerView: 'auto',\r\n  allowTouchMove: true,\r\n  // disableOnInteraction: true,\r\n\r\n});\r\n\r\n\n\n//# sourceURL=webpack://gulp-settings/./src/js/modules/project-swiper.js?");
+var burgerBtn = document.querySelector(".navTrigger");
+var topHeader = document.querySelector(".header-top");
+var navBg = document.querySelector(".header-content");
+var nav = document.querySelector(".nav-items");
+var navItem = document.querySelectorAll(".nav-item");
+var hr = document.querySelector(".hr");
+var navWrapper = document.querySelector(".nav-items__wrapper");
+var header = document.querySelector(".header");
+var pageY = window.innerHeight - window.innerHeight + 1;
+burgerBtn.addEventListener("click", function () {
+  header.classList.toggle("active-white-header");
+  topHeader.classList.toggle("active-bg");
+  nav.classList.toggle("vertical");
+  burgerBtn.classList.toggle("active-burger");
 
-/***/ }),
+  if (burgerBtn.classList.contains("active-burger")) {
+    hr.style.display = "none";
+    document.body.style.overflow = "hidden";
 
-/***/ "./src/js/modules/scroll-header.js":
-/*!*****************************************!*\
-  !*** ./src/js/modules/scroll-header.js ***!
-  \*****************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    if (window.scrollY >= 50) {
+      header.classList.remove("scrolled-header");
+    }
+  } else {
+    hr.style.display = "block";
+    document.body.style.overflow = "unset";
+    setTimeout(function () {
+      window.scrollBy(0, pageY);
+    }, 10);
+  }
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"scrollHeader\": function() { return /* binding */ scrollHeader; }\n/* harmony export */ });\n\r\n\r\nconst header = document.querySelector(\".header\");\r\nconst hideHeader = document.querySelector(\".header-content\");\r\nconst btnBurger = document.querySelector(\".navTrigger\");\r\n\r\nfunction scrollHeader() {\r\n  if(window.innerWidth > 768) {\r\n    \r\n\r\n    const scrollHeader = window.addEventListener(\"scroll\", function () {\r\n      if (this.window.scrollY >= 50) {\r\n        header.classList.add(\"scrolled-header\");\r\n        if (header.classList.contains(\"scrolled-header\")) {\r\n          // this.document.querySelector(\".logo\").src = \"./img/LogoScroll.png\";\r\n          if(this.location.pathname == '/') {\r\n            this.document.querySelector(\".logo\").src = \"./img/LogoScroll.png\";\r\n          }\r\n          if(this.location.pathname == '/index.html') {\r\n            this.document.querySelector(\".logo\").src = \"./img/LogoScroll.png\";\r\n          }\r\n        }\r\n      } else {\r\n        header.classList.remove(\"scrolled-header\");\r\n        if (!header.classList.contains(\"scrolled-header\")) {\r\n          if(this.location.pathname == '/index.html') {\r\n            this.document.querySelector(\".logo\").src = \"./img/Logo.svg\";\r\n          }\r\n          if(this.location.pathname == '/') {\r\n            this.document.querySelector(\".logo\").src = \"./img/Logo.svg\";\r\n          }\r\n          // this.document.querySelector(\".logo\").src = \"./img/Logo.svg\";\r\n        }\r\n      }\r\n    });\r\n    // return scrollHeader\r\n  } else {\r\n\r\n    const scrollHeader = window.addEventListener(\"scroll\", function () {\r\n      if (this.window.scrollY >= 50) {\r\n        header.classList.add(\"scrolled-mob-header\");\r\n        if (header.classList.contains(\"scrolled-mob-header\")) {\r\n          if(this.location.pathname == '/') {\r\n            this.document.querySelector(\".logo\").src = \"./img/LogoScroll.png\";\r\n          }\r\n          if(this.location.pathname == '/index.html') {\r\n            this.document.querySelector(\".logo\").src = \"./img/LogoScroll.png\";\r\n          }\r\n        }\r\n      } else {\r\n        header.classList.remove(\"scrolled-mob-header\");\r\n        if (!header.classList.contains(\"scrolled-mob-header\")) {\r\n          if(this.location.pathname == '/index.html') {\r\n            this.document.querySelector(\".logo\").src = \"./img/Logo.svg\";\r\n          }\r\n          if(this.location.pathname == '/') {\r\n            this.document.querySelector(\".logo\").src = \"./img/Logo.svg\";\r\n          }\r\n        }\r\n      }\r\n    });\r\n  }\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://gulp-settings/./src/js/modules/scroll-header.js?");
+  if (nav.classList.length >= 4) {
+    nav.style.position = "relative";
+    navWrapper.style.top = "0";
+    navItem.forEach(function (el) {
+      el.style.position = "unset";
+    });
+  } else {
+    nav.style.position = "unset";
+    navWrapper.style.top = "-800px";
+    navItem.forEach(function (el) {
+      el.style.position = "relative";
+    });
+  }
+});
+var mobBurger = document.querySelector(".navTrigger2");
+var mobWrapper = document.querySelector(".nav-mob__wrapper");
+var navSearch = document.querySelector(".icon-search");
+mobBurger.addEventListener("click", function () {
+  mobBurger.classList.toggle("active-burger");
+  mobWrapper.classList.toggle("active-mob__wrapper");
 
-/***/ }),
+  if (mobWrapper.classList.contains("active-mob__wrapper")) {
+    mobBurger.classList.add("stroke-white");
+    navSearch.classList.add("search-scrolled");
+    document.body.style.overflow = "hidden";
+  } else {
+    mobBurger.classList.remove("stroke-white");
+    navSearch.classList.remove("search-scrolled");
+    document.body.style.overflow = "unset";
+  }
+});
 
-/***/ "./src/js/modules/search-btn.js":
-/*!**************************************!*\
-  !*** ./src/js/modules/search-btn.js ***!
-  \**************************************/
-/***/ (function() {
+if (document.querySelector(".q-form-phone")) {
+  (0, _phoneNumber.phoneValidate)();
+}
 
-eval("const searchBtn = document.querySelector(\".nav-search\");\r\nconst closeSearchBar = document.querySelector(\".closebtn-search\");\r\nconst inputSearch = document.querySelector(\".search-bar-input\");\r\nconst inputSearchPage = document.querySelector(\".search-bar--in\");\r\nconst searchOverlay = document.querySelector(\".search-overlay\");\r\nconst closeBtnInput = document.querySelector(\".close-btn-search--page\");\r\n\r\nlet html = document.documentElement;\r\n\r\nfunction openSearch() {\r\n  searchOverlay.classList.add(\"search-overlay--active\");\r\n  document.documentElement.classList.add(\"hystmodal__opened\");\r\n}\r\nfunction closeSearch() {\r\n  searchOverlay.classList.remove(\"search-overlay--active\");\r\n  document.documentElement.classList.remove(\"hystmodal__opened\");\r\n}\r\n\r\nsearchBtn.addEventListener(\"click\", openSearch);\r\ncloseSearchBar.addEventListener(\"click\", closeSearch);\r\ninputSearchPage.addEventListener(\"keyup\", function () {\r\n  if (this.value != \"\") {\r\n    document\r\n      .querySelector(\".close-btn-search--page\")\r\n      .classList.add(\"close-btn-search--active\");\r\n    document.querySelector(\".arrow-search--page\").style.display = \"none\";\r\n  } else {\r\n    document\r\n      .querySelector(\".close-btn-search--page\")\r\n      .classList.remove(\"close-btn-search--active\");\r\n    document.querySelector(\".arrow-search--page\").style.display =\r\n      \"inline-block\";\r\n  }\r\n});\r\ncloseBtnInput.addEventListener(\"click\", function () {\r\n  inputSearchPage.value = \"\";\r\n  closeBtnInput.classList.remove(\"close-btn-search--active\");\r\n  document.querySelector(\".arrow-search--page\").style.display = \"inline-block\";\r\n});\r\n\n\n//# sourceURL=webpack://gulp-settings/./src/js/modules/search-btn.js?");
+if (document.querySelector(".map")) {
+  // ready();
+  console.log(" with map page"); // let dotCircle = document.querySelector(`[data-dota='${0}']`);
+  // dotCircle.click()
 
-/***/ }),
+  var closeBtnCard = document.querySelector(".close-hide");
+  closeBtnCard.click();
+  var mapCardHideSwiper = new Swiper(".card-hide__swiper", {
+    spaceBetween: 45,
+    slidesPerView: "auto",
+    centeredSlides: true,
+    autoplay: {
+      delay: 1500
+    } // autoplayDisableOnInteraction:false,
 
-/***/ "./src/js/modules/vacancys-swiper.js":
-/*!*******************************************!*\
-  !*** ./src/js/modules/vacancys-swiper.js ***!
-  \*******************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+  });
+  mapCardHideSwiper.autoplay.stop();
+  mapCardHideSwiper.on("slideChange", function () {
+    mapCardHideSwiper.onAny(function () {
+      var circle = document.querySelectorAll(".circle");
+      circle.forEach(function (el) {
+        el.style.display = "none";
+      });
+      mapCardHideSwiper.autoplay.start();
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"vacancySwiper\": function() { return /* binding */ vacancySwiper; }\n/* harmony export */ });\nvar vacancySwiper = new Swiper(\".q-vacancys-swiper\", {\r\n  spaceBetween: 20,\r\n  // centeredSlides: true,\r\n  slidesPerView: 'auto',\r\n  allowTouchMove: true,\r\n  // disableOnInteraction: true,\r\n  breakpoints: {\r\n    // 960: {\r\n    //   slidesPerView: 'auto',\r\n    // },\r\n  },\r\n});\r\n\r\n\r\n\n\n//# sourceURL=webpack://gulp-settings/./src/js/modules/vacancys-swiper.js?");
+      if (mapCardHideSwiper.activeIndex == 0) {
+        var circle2 = document.querySelector("[data-id='".concat(0, "']"));
+        circle2.style.display = "block";
+      }
 
-/***/ })
+      if (mapCardHideSwiper.activeIndex == 1) {
+        var _circle = document.querySelector("[data-id='".concat(1, "']"));
 
-/******/ 	});
-/************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/ 	
-/************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	!function() {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = function(module) {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				function() { return module['default']; } :
-/******/ 				function() { return module; };
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	!function() {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = function(exports, definition) {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/******/ 	/* webpack/runtime/global */
-/******/ 	!function() {
-/******/ 		__webpack_require__.g = (function() {
-/******/ 			if (typeof globalThis === 'object') return globalThis;
-/******/ 			try {
-/******/ 				return this || new Function('return this')();
-/******/ 			} catch (e) {
-/******/ 				if (typeof window === 'object') return window;
-/******/ 			}
-/******/ 		})();
-/******/ 	}();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	!function() {
-/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
-/******/ 	}();
-/******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	!function() {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = function(exports) {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	__webpack_require__("./src/js/hystmodal.js");
-/******/ 	__webpack_require__("./src/js/main.js");
-/******/ 	__webpack_require__("./src/js/modules/arc-service.js");
-/******/ 	__webpack_require__("./src/js/modules/capstone-swiper.js");
-/******/ 	__webpack_require__("./src/js/modules/map-main.js");
-/******/ 	__webpack_require__("./src/js/modules/partners-swiper.js");
-/******/ 	__webpack_require__("./src/js/modules/phone-number.js");
-/******/ 	__webpack_require__("./src/js/modules/project-swiper.js");
-/******/ 	__webpack_require__("./src/js/modules/scroll-header.js");
-/******/ 	__webpack_require__("./src/js/modules/search-btn.js");
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/modules/vacancys-swiper.js");
-/******/ 	
-/******/ })()
-;
+        _circle.style.display = "block";
+      }
+
+      if (mapCardHideSwiper.activeIndex == 2) {
+        var _circle2 = document.querySelector("[data-id='".concat(2, "']"));
+
+        _circle2.style.display = "block";
+      }
+
+      if (mapCardHideSwiper.activeIndex == 3) {
+        var _circle3 = document.querySelector("[data-id='".concat(3, "']"));
+
+        _circle3.style.display = "block";
+      }
+
+      if (mapCardHideSwiper.activeIndex == 4) {
+        var _circle4 = document.querySelector("[data-id='".concat(4, "']"));
+
+        _circle4.style.display = "block";
+      }
+
+      if (mapCardHideSwiper.activeIndex == 5) {
+        var _circle5 = document.querySelector("[data-id='".concat(5, "']"));
+
+        _circle5.style.display = "block";
+      }
+
+      if (mapCardHideSwiper.activeIndex == 6) {
+        var _circle6 = document.querySelector("[data-id='".concat(6, "']"));
+
+        _circle6.style.display = "block";
+      }
+
+      if (mapCardHideSwiper.activeIndex == 7) {
+        var _circle7 = document.querySelector("[data-id='".concat(7, "']"));
+
+        _circle7.style.display = "block";
+      }
+
+      if (mapCardHideSwiper.activeIndex == 8) {
+        var _circle8 = document.querySelector("[data-id='".concat(8, "']"));
+
+        _circle8.style.display = "block";
+      }
+    });
+  });
+} // MAP RUSSIA
+
+
+if (document.querySelector(".map-picker")) {
+  var toggleDone = function toggleDone(event) {
+    event.target.style.fill = "#6B9B3C";
+    pt.x = event.clientX;
+    pt.y = event.clientY;
+    var cursorpt = pt.matrixTransform(mapBig.getScreenCTM().inverse());
+    var circle = document.createElementNS(NS, "circle");
+    circle.setAttribute("cx", cursorpt.x);
+    circle.setAttribute("cy", cursorpt.y);
+    circle.setAttribute("r", 8);
+    circle.style.fill = "white";
+    mapBig.appendChild(circle);
+    console.log("(" + cursorpt.x + ", " + cursorpt.y + ")");
+  };
+
+  var mapBig = document.querySelector(".map-russia-svg");
+  var pt = mapBig.createSVGPoint();
+  var NS = mapBig.getAttribute("xmlns");
+  mapBig.addEventListener("click", toggleDone);
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4uanMiXSwibmFtZXMiOlsiZG9jdW1lbnQiLCJxdWVyeVNlbGVjdG9yIiwicGFybmVyc1N3aXBlclRvcCIsIlN3aXBlciIsInNwYWNlQmV0d2VlbiIsImNlbnRlcmVkU2xpZGVzIiwic3BlZWQiLCJhdXRvcGxheSIsImRlbGF5IiwiZGlzYWJsZU9uSW50ZXJhY3Rpb24iLCJsb29wIiwic2xpZGVzUGVyVmlldyIsImFsbG93VG91Y2hNb3ZlIiwicGFybmVyc1N3aXBlckxvd2VyIiwicmV2ZXJzZURpcmVjdGlvbiIsInZhY2FuY3lTd2lwZXIiLCJwcm9qZWN0Q2FyZFN3aXBlciIsImFyY1RhYlN3aXBlciIsImNhcHN0b25lU3dpcGVyIiwibmF2aWdhdGlvbiIsIm5leHRFbCIsInByZXZFbCIsInBhZ2luYXRpb24iLCJlbCIsInR5cGUiLCJzd2lwZXIiLCJhcmN0aWNTd2lwZXIiLCJzd2lwZXIxIiwiYnJlYWtwb2ludHMiLCJzd2lwZXIyIiwiZWZmZWN0IiwiZ3JhYkN1cnNvciIsImNvdmVyZmxvd0VmZmVjdCIsInJvdGF0ZSIsInN0cmV0Y2giLCJkZXB0aCIsIm1vZGlmaWVyIiwiaW5pdGlhbFNsaWRlIiwibmV3c1N3aXBlciIsImVuYWJsZWQiLCJteU1vZGFsIiwiSHlzdE1vZGFsIiwibGlua0F0dHJpYnV0ZU5hbWUiLCJjYXRjaEZvY3VzIiwiY2xvc2VPbkVzYyIsImJhY2tzY3JvbGwiLCJnbG9iYWwiLCJ0YWJzIiwidGFiQnRuIiwicXVlcnlTZWxlY3RvckFsbCIsInRhYkNvbnRlbnQiLCJmb3JFYWNoIiwiYWRkRXZlbnRMaXN0ZW5lciIsIm9wZW5UYWJzIiwiYnRuVGFyZ2V0IiwiY3VycmVudFRhcmdldCIsInRhYiIsImRhdGFzZXQiLCJjbGFzc0xpc3QiLCJyZW1vdmUiLCJhZGQiLCJ0YWJzQXJjdGljIiwidGFiQXJjQ29udGVudCIsInRhYkFyY0J0biIsImUiLCJvcGVuVGFic0FyYyIsInRhYkFyYyIsImJ1cmdlckJ0biIsInRvcEhlYWRlciIsIm5hdkJnIiwibmF2IiwibmF2SXRlbSIsImhyIiwibmF2V3JhcHBlciIsImhlYWRlciIsInBhZ2VZIiwid2luZG93IiwiaW5uZXJIZWlnaHQiLCJ0b2dnbGUiLCJjb250YWlucyIsInN0eWxlIiwiZGlzcGxheSIsImJvZHkiLCJvdmVyZmxvdyIsInNjcm9sbFkiLCJzZXRUaW1lb3V0Iiwic2Nyb2xsQnkiLCJsZW5ndGgiLCJwb3NpdGlvbiIsInRvcCIsIm1vYkJ1cmdlciIsIm1vYldyYXBwZXIiLCJuYXZTZWFyY2giLCJjb25zb2xlIiwibG9nIiwiY2xvc2VCdG5DYXJkIiwiY2xpY2siLCJtYXBDYXJkSGlkZVN3aXBlciIsInN0b3AiLCJvbiIsIm9uQW55IiwiY2lyY2xlIiwic3RhcnQiLCJhY3RpdmVJbmRleCIsImNpcmNsZTIiLCJ0b2dnbGVEb25lIiwiZXZlbnQiLCJ0YXJnZXQiLCJmaWxsIiwicHQiLCJ4IiwiY2xpZW50WCIsInkiLCJjbGllbnRZIiwiY3Vyc29ycHQiLCJtYXRyaXhUcmFuc2Zvcm0iLCJtYXBCaWciLCJnZXRTY3JlZW5DVE0iLCJpbnZlcnNlIiwiY3JlYXRlRWxlbWVudE5TIiwiTlMiLCJzZXRBdHRyaWJ1dGUiLCJhcHBlbmRDaGlsZCIsImNyZWF0ZVNWR1BvaW50IiwiZ2V0QXR0cmlidXRlIl0sIm1hcHBpbmdzIjoiOztBQUlBOztBQUNBOztBQUNBOztBQUNBOztBQUNBOztBQUNBOztBQUNBOztBQW1KQTs7OztBQTdKQTtBQUNBO0FBQ0E7QUFDQTtBQVNBLElBQUlBLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixjQUF2QixDQUFKLEVBQTRDO0FBQzFDLE1BQUlDLGdCQUFnQixHQUFHLElBQUlDLE1BQUosQ0FBVyxnQkFBWCxFQUE2QjtBQUNsREMsSUFBQUEsWUFBWSxFQUFFLEVBRG9DO0FBRWxEQyxJQUFBQSxjQUFjLEVBQUUsSUFGa0M7QUFHbERDLElBQUFBLEtBQUssRUFBRSxJQUgyQztBQUlsREMsSUFBQUEsUUFBUSxFQUFFO0FBQ1JDLE1BQUFBLEtBQUssRUFBRSxDQURDO0FB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SUFBcEIsRUFBMEJQLFFBQVEsQ0FBQ0osQ0FBbkM7QUFDQVQsSUFBQUEsTUFBTSxDQUFDb0IsWUFBUCxDQUFvQixJQUFwQixFQUEwQlAsUUFBUSxDQUFDRixDQUFuQztBQUNBWCxJQUFBQSxNQUFNLENBQUNvQixZQUFQLENBQW9CLEdBQXBCLEVBQXlCLENBQXpCO0FBQ0FwQixJQUFBQSxNQUFNLENBQUNyQixLQUFQLENBQWE0QixJQUFiLEdBQW9CLE9BQXBCO0FBQ0FRLElBQUFBLE1BQU0sQ0FBQ00sV0FBUCxDQUFtQnJCLE1BQW5CO0FBQ0FSLElBQUFBLE9BQU8sQ0FBQ0MsR0FBUixDQUFZLE1BQU1vQixRQUFRLENBQUNKLENBQWYsR0FBbUIsSUFBbkIsR0FBMEJJLFFBQVEsQ0FBQ0YsQ0FBbkMsR0FBdUMsR0FBbkQ7QUFDRCxHQWxCd0M7O0FBQ3pDLE1BQU1JLE1BQU0sR0FBR3BILFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixpQkFBdkIsQ0FBZjtBQUNBLE1BQUk0RyxFQUFFLEdBQUdPLE1BQU0sQ0FBQ08sY0FBUCxFQUFUO0FBQ0EsTUFBTUgsRUFBRSxHQUFHSixNQUFNLENBQUNRLFlBQVAsQ0FBb0IsT0FBcEIsQ0FBWDtBQWlCQVIsRUFBQUEsTUFBTSxDQUFDaEUsZ0JBQVAsQ0FBd0IsT0FBeEIsRUFBaUNxRCxVQUFqQztBQUNEIiwic291cmNlc0NvbnRlbnQiOlsiLy8gaW1wb3J0IHtcclxuLy8gICBwYXJuZXJzU3dpcGVyVG9wLFxyXG4vLyAgIHBhcm5lcnNTd2lwZXJMb3dlcixcclxuLy8gfSBmcm9tIFwiLi9tb2R1bGVzL3BhcnRuZXJzLXN3aXBlci5qc1wiO1xyXG5pbXBvcnQgeyByZWFkeSB9IGZyb20gXCIuL21vZHVsZXMvbWFwLW1haW4uanNcIjtcclxuaW1wb3J0IHsgdmFjYW5jeVN3aXBlciB9IGZyb20gXCIuL21vZHVsZXMvdmFjYW5jeXMtc3dpcGVyLmpzXCI7XHJcbmltcG9ydCB7IHBob25lVmFsaWRhdGUgfSBmcm9tIFwiLi9tb2R1bGVzL3Bob25lLW51bWJlci5qc1wiO1xyXG5pbXBvcnQgeyBwcm9qZWN0Q2FyZFN3aXBlciB9IGZyb20gXCIuL21vZHVsZXMvcHJvamVjdC1zd2lwZXIuanNcIjtcclxuaW1wb3J0IHsgc2Nyb2xsSGVhZGVyIH0gZnJvbSBcIi4vbW9kdWxlcy9zY3JvbGwtaGVhZGVyLmpzXCI7XHJcbmltcG9ydCB7IGFyY1RhYlN3aXBlciB9IGZyb20gXCIuL21vZHVsZXMvYXJjLXNlcnZpY2UuanNcIjtcclxuaW1wb3J0IHsgaW5pdCB9IGZyb20gXCIuL21vZHVsZXMvY2Fwc3RvbmUtc3dpcGVyLmpzXCI7XHJcblxyXG5pZiAoZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5hYm91dC1ncm91cFwiKSkge1xyXG4gIGxldCBwYXJuZXJzU3dpcGVyVG9wID0gbmV3IFN3aXBlcihcIi5wYXJ0bmVycy0tdG9wXCIsIHtcclxuICAgIHNwYWNlQmV0d2VlbjogMjAsXHJcbiAgICBjZW50ZXJlZFNsaWRlczogdHJ1ZSxcclxuICAgIHNwZWVkOiA1MDAwLFxyXG4gICAgYXV0b3BsYXk6IHtcclxuICAgICAgZGVsYXk6IDEsXHJcbiAgICAgIGRpc2FibGVPbkludGVyYWN0aW9uOiBmYWxzZSxcclxuICAgIH0sXHJcbiAgICBsb29wOiB0cnVlLFxyXG4gICAgc2xpZGVzUGVyVmlldzogNCxcclxuICAgIGFsbG93VG91Y2hNb3ZlOiB0cnVlLFxyXG4gICAgZGlzYWJsZU9uSW50ZXJhY3Rpb246IHRydWUsXHJcbiAgfSk7XHJcblxyXG4gIGxldCBwYXJuZXJzU3dpcGVyTG93ZXIgPSBuZXcgU3dpcGVyKFwiLnBhcnRuZXJzLS1sb3dlclwiLCB7XHJcbiAgICBzcGFjZUJldHdlZW46IDIwLFxyXG4gICAgY2VudGVyZWRTbGlkZXM6IHRydWUsXHJcbiAgICBzcGVlZDogNTAwMCxcclxuICAgIGF1dG9wbGF5OiB7XHJcbiAgICAgIGRlbGF5OiAxLFxyXG4gICAgICByZXZlcnNlRGlyZWN0aW9uOiB0cnVlLFxyXG4gICAgICBkaXNhYmxlT25JbnRlcmFjdGlvbjogZmFsc2UsXHJcbiAgICB9LFxyXG4gICAgbG9vcDogdHJ1ZSxcclxuICAgIHNsaWRlc1BlclZpZXc6IDQsXHJcbiAgICBhbGxvd1RvdWNoTW92ZTogdHJ1ZSxcclxuICAgIGRpc2FibGVPbkludGVyYWN0aW9uOiB0cnVlLFxyXG4gIH0pO1xyXG59XHJcblxyXG4vLyBwYXJuZXJzU3dpcGVyVG9wO1xyXG4vLyBwYXJuZXJzU3dpcGVyTG93ZXI7XHJcbnZhY2FuY3lTd2lwZXI7XHJcbnByb2plY3RDYXJkU3dpcGVyO1xyXG5hcmNUYWJTd2lwZXI7XHJcbmluaXQoKTtcclxuXHJcbmxldCBjYXBzdG9uZVN3aXBlciA9IG5ldyBTd2lwZXIoXCIuc2xpZGVyLWNhcHN0b25lXCIsIHtcclxuICBzcGFjZUJldHdlZW46IDIwLFxyXG4gIHNsaWRlc1BlclZpZXc6IFwiYXV0b1wiLFxyXG4gIG5hdmlnYXRpb246IHtcclxuICAgIG5leHRFbDogXCIuc3dpcGVyLWJ1dHRvbi1uZXh0XCIsXHJcbiAgICBwcmV2RWw6IFwiLnN3aXBlci1idXR0b24tcHJldlwiLFxyXG4gIH0sXHJcbiAgcGFnaW5hdGlvbjoge1xyXG4gICAgZWw6IFwiLmNhcHN0b25lLXBhZ1wiLFxyXG4gICAgdHlwZTogXCJwcm9ncmVzc2JhclwiLFxyXG4gIH0sXHJcbn0pO1xyXG5cclxuLy8gU1dJUEVSU1xyXG5sZXQgc3dpcGVyID0gbmV3IFN3aXBlcihcIi5teVN3aXBlclwiLCB7XHJcbiAgYXV0b3BsYXk6IHtcclxuICAgIGRlbGF5OiA0MDAwLFxyXG4gIH0sXHJcbiAgbG9vcDogdHJ1ZSxcclxuICBwYWdpbmF0aW9uOiB7XHJcbiAgICBlbDogXCIuc3dpcGVyLXBhZ2luYXRpb25cIixcclxuICB9LFxyXG59KTtcclxubGV0IGFyY3RpY1N3aXBlciA9IG5ldyBTd2lwZXIoXCIuYXJjdGljLXN3aXBlclwiLCB7XHJcbiAgcGFnaW5hdGlvbjoge1xyXG4gICAgZWw6IFwiLnN3aXBlci1wYWdpbmF0aW9uXCIsXHJcbiAgfSxcclxufSk7XHJcblxyXG5sZXQgc3dpcGVyMSA9IG5ldyBTd2lwZXIoXCIubXlTd2lwZXIxXCIsIHtcclxuICBwYWdpbmF0aW9uOiB7XHJcbiAgICBlbDogXCIuc3dpcGVyLXBhZ2luYXRpb24xXCIsXHJcbiAgICB0eXBlOiBcInByb2dyZXNzYmFyXCIsXHJcbiAgfSxcclxuICBzcGFjZUJldHdlZW46IDIwLFxyXG4gIHNsaWRlc1BlclZpZXc6IFwiYXV0b1wiLFxyXG4gIGJyZWFrcG9pbnRzOiB7XHJcbiAgICA0NzU6IHtcclxuICAgICAgY2VudGVyZWRTbGlkZXM6IHRydWUsXHJcbiAgICB9LFxyXG4gICAgNzUyOiB7XHJcbiAgICAgIHNsaWRlc1BlclZpZXc6IFwiYXV0b1wiLFxyXG4gICAgfSxcclxuICAgIDg4MDoge1xyXG4gICAgICBzbGlkZXNQZXJWaWV3OiAyLjUsXHJcbiAgICB9LFxyXG4gICAgOTYwOiB7XHJcbiAgICAgIHNsaWRlc1BlclZpZXc6IDMsXHJcbiAgICB9LFxyXG4gICAgMTAyNDoge1xyXG4gICAgICBzbGlkZXNQZXJWaWV3OiAzLjUsXHJcbiAgICB9LFxyXG4gICAgMTE1MDoge1xyXG4gICAgICBzbGlkZXNQZXJWaWV3OiA0LFxyXG4gICAgfSxcclxuICAgIDEzMjA6IHtcclxuICAgICAgc2xpZGVzUGVyVmlldzogNC41LFxyXG4gICAgfSxcclxuICAgIDE0NDA6IHtcclxuICAgICAgc2xpZGVzUGVyVmlldzogNC41LFxyXG4gICAgfSxcclxuICB9LFxyXG59KTtcclxuXHJcbnZhciBzd2lwZXIyID0gbmV3IFN3aXBlcihcIi5teVN3aXBlcjJcIiwge1xyXG4gIGVmZmVjdDogXCJjb3ZlcmZsb3dcIixcclxuICBncmFiQ3Vyc29yOiB0cnVlLFxyXG4gIGNlbnRlcmVkU2xpZGVzOiB0cnVlLFxyXG4gIHNsaWRlc1BlclZpZXc6IFwiYXV0b1wiLFxyXG4gIGNvdmVyZmxvd0VmZmVjdDoge1xyXG4gICAgcm90YXRlOiAxMDAsXHJcbiAgICBzdHJldGNoOiAtNTUsXHJcbiAgICBkZXB0aDogMTAwLFxyXG4gICAgbW9kaWZpZXI6IDAsXHJcbiAgfSxcclxuICBuYXZpZ2F0aW9uOiB7XHJcbiAgICBuZXh0RWw6IFwiLnN3aXBlci1idXR0b24tbmV4dFwiLFxyXG4gICAgcHJldkVsOiBcIi5zd2lwZXItYnV0dG9uLXByZXZcIixcclxuICB9LFxyXG4gIGluaXRpYWxTbGlkZTogMCxcclxuICBicmVha3BvaW50czoge1xyXG4gICAgODgwOiB7XHJcbiAgICAgIHNsaWRlc1BlclZpZXc6IDMsXHJcbiAgICAgIGluaXRpYWxTbGlkZTogMSxcclxuICAgIH0sXHJcbiAgfSxcclxufSk7XHJcblxyXG52YXIgbmV3c1N3aXBlciA9IG5ldyBTd2lwZXIoXCIubmV3cy1zd2lwZXJcIiwge1xyXG4gIHNwYWNlQmV0d2VlbjogMjAsXHJcbiAgc2xpZGVzUGVyVmlldzogXCJhdXRvXCIsXHJcbiAgZW5hYmxlZDogdHJ1ZSxcclxuICBzcGVlZDogNDAwLFxyXG4gIGJyZWFrcG9pbnRzOiB7XHJcbiAgICA5NTA6IHtcclxuICAgICAgZW5hYmxlZDogZmFsc2UsXHJcbiAgICB9LFxyXG4gIH0sXHJcbn0pO1xyXG5cclxuY29uc3QgbXlNb2RhbCA9IG5ldyBIeXN0TW9kYWwoe1xyXG4gIGxpbmtBdHRyaWJ1dGVOYW1lOiBcImRhdGEtaHlzdG1vZGFsXCIsXHJcbiAgY2F0Y2hGb2N1czogdHJ1ZSxcclxuICBjbG9zZU9uRXNjOiB0cnVlLFxyXG4gIGJhY2tzY3JvbGw6IHRydWUsXHJcbn0pO1xyXG5cclxuaW1wb3J0IEh5c3RNb2RhbCBmcm9tIFwiLi9oeXN0bW9kYWxcIjtcclxuZ2xvYmFsLkh5c3RNb2RhbCA9IEh5c3RNb2RhbDtcclxuXHJcbi8vIHByZXNzIGNlbnRlciB0YWJzXHJcbmNvbnN0IHRhYnMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnEtbmV3cy1ib2R5XCIpO1xyXG5jb25zdCB0YWJCdG4gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKFwiLnRhYi1idG5cIik7XHJcbmNvbnN0IHRhYkNvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKFwiLnRhYi1jb250ZW50XCIpO1xyXG5cclxudGFiQnRuLmZvckVhY2goKGVsKSA9PiB7XHJcbiAgZWwuYWRkRXZlbnRMaXN0ZW5lcihcImNsaWNrXCIsIG9wZW5UYWJzKTtcclxufSk7XHJcbmZ1bmN0aW9uIG9wZW5UYWJzKGVsKSB7XHJcbiAgdmFyIGJ0blRhcmdldCA9IGVsLmN1cnJlbnRUYXJnZXQ7XHJcbiAgdmFyIHRhYiA9IGJ0blRhcmdldC5kYXRhc2V0LnRhYjtcclxuICB0YWJDb250ZW50LmZvckVhY2goZnVuY3Rpb24gKGVsKSB7XHJcbiAgICBlbC5jbGFzc0xpc3QucmVtb3ZlKFwidGFiLWNvbnRlbnQtYWN0aXZlXCIpO1xyXG4gIH0pO1xyXG4gIHRhYkJ0bi5mb3JFYWNoKGZ1bmN0aW9uIChlbCkge1xyXG4gICAgZWwuY2xhc3NMaXN0LnJlbW92ZShcImFjdGl2ZS10YWItYnRuXCIpO1xyXG4gIH0pO1xyXG4gIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIjXCIgKyB0YWIpLmNsYXNzTGlzdC5hZGQoXCJ0YWItY29udGVudC1hY3RpdmVcIik7XHJcbiAgYnRuVGFyZ2V0LmNsYXNzTGlzdC5hZGQoXCJhY3RpdmUtdGFiLWJ0blwiKTtcclxufVxyXG4vLyBhcmN0aWMgc2VydmljZXMgdGFic1xyXG5jb25zdCB0YWJzQXJjdGljID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5xLWFyYy1zZXJ2aWNlX19ib2R5XCIpO1xyXG5jb25zdCB0YWJBcmNDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbChcIi5xLXNlcnZpY2UtYm9keVwiKTtcclxuXHJcbmNvbnN0IHRhYkFyY0J0biA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoXCIuYXJjLXRhYi1idG5cIik7XHJcbnRhYkFyY0J0bi5mb3JFYWNoKChlKSA9PiB7XHJcbiAgZS5hZGRFdmVudExpc3RlbmVyKFwiY2xpY2tcIiwgb3BlblRhYnNBcmMpO1xyXG59KTtcclxuXHJcbmZ1bmN0aW9uIG9wZW5UYWJzQXJjKGVsKSB7XHJcbiAgbGV0IGJ0blRhcmdldCA9IGVsLmN1cnJlbnRUYXJnZXQ7XHJcbiAgbGV0IHRhYiA9IGJ0blRhcmdldC5kYXRhc2V0LnRhYkFyYztcclxuICB0YWJBcmNDb250ZW50LmZvckVhY2goKGVsKSA9PiB7XHJcbiAgICBlbC5jbGFzc0xpc3QucmVtb3ZlKFwidGFiLWNvbnRlbnQtYWN0aXZlXCIpO1xyXG4gIH0pO1xyXG4gIHRhYkFyY0J0bi5mb3JFYWNoKChlKSA9PiB7XHJcbiAgICBlLmNsYXNzTGlzdC5yZW1vdmUoXCJhY3RpdmUtYXJjLXRhYi1idG5cIik7XHJcbiAgfSk7XHJcbiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIiNcIiArIHRhYikuY2xhc3NMaXN0LmFkZChcInRhYi1jb250ZW50LWFjdGl2ZVwiKTtcclxuICBidG5UYXJnZXQuY2xhc3NMaXN0LmFkZChcImFjdGl2ZS1hcmMtdGFiLWJ0blwiKTtcclxufVxyXG5cclxuLy8gc2Nyb2xsIGhlYWRlclxyXG5zY3JvbGxIZWFkZXIoKTtcclxuXHJcbi8vIGhlYWRlciBidXJnZXJcclxuY29uc3QgYnVyZ2VyQnRuID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5uYXZUcmlnZ2VyXCIpO1xyXG5jb25zdCB0b3BIZWFkZXIgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLmhlYWRlci10b3BcIik7XHJcbmNvbnN0IG5hdkJnID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5oZWFkZXItY29udGVudFwiKTtcclxuY29uc3QgbmF2ID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5uYXYtaXRlbXNcIik7XHJcbmNvbnN0IG5hdkl0ZW0gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKFwiLm5hdi1pdGVtXCIpO1xyXG5jb25zdCBociA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuaHJcIik7XHJcbmNvbnN0IG5hdldyYXBwZXIgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLm5hdi1pdGVtc19fd3JhcHBlclwiKTtcclxuY29uc3QgaGVhZGVyID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5oZWFkZXJcIik7XHJcblxyXG5sZXQgcGFnZVkgPSB3aW5kb3cuaW5uZXJIZWlnaHQgLSB3aW5kb3cuaW5uZXJIZWlnaHQgKyAxO1xyXG5cclxuYnVyZ2VyQnRuLmFkZEV2ZW50TGlzdGVuZXIoXCJjbGlja1wiLCBmdW5jdGlvbiAoKSB7XHJcbiAgaGVhZGVyLmNsYXNzTGlzdC50b2dnbGUoXCJhY3RpdmUtd2hpdGUtaGVhZGVyXCIpO1xyXG4gIHRvcEhlYWRlci5jbGFzc0xpc3QudG9nZ2xlKFwiYWN0aXZlLWJnXCIpO1xyXG4gIG5hdi5jbGFzc0xpc3QudG9nZ2xlKFwidmVydGljYWxcIik7XHJcbiAgYnVyZ2VyQnRuLmNsYXNzTGlzdC50b2dnbGUoXCJhY3RpdmUtYnVyZ2VyXCIpO1xyXG5cclxuICBpZiAoYnVyZ2VyQnRuLmNsYXNzTGlzdC5jb250YWlucyhcImFjdGl2ZS1idXJnZXJcIikpIHtcclxuICAgIGhyLnN0eWxlLmRpc3BsYXkgPSBcIm5vbmVcIjtcclxuICAgIGRvY3VtZW50LmJvZHkuc3R5bGUub3ZlcmZsb3cgPSBcImhpZGRlblwiO1xyXG4gICAgaWYgKHdpbmRvdy5zY3JvbGxZID49IDUwKSB7XHJcbiAgICAgIGhlYWRlci5jbGFzc0xpc3QucmVtb3ZlKFwic2Nyb2xsZWQtaGVhZGVyXCIpO1xyXG4gICAgfVxyXG4gIH0gZWxzZSB7XHJcbiAgICBoci5zdHlsZS5kaXNwbGF5ID0gXCJibG9ja1wiO1xyXG4gICAgZG9jdW1lbnQuYm9keS5zdHlsZS5vdmVyZmxvdyA9IFwidW5zZXRcIjtcclxuICAgIHNldFRpbWVvdXQoKCkgPT4ge1xyXG4gICAgICB3aW5kb3cuc2Nyb2xsQnkoMCwgcGFnZVkpO1xyXG4gICAgfSwgMTApO1xyXG4gIH1cclxuICBpZiAobmF2LmNsYXNzTGlzdC5sZW5ndGggPj0gNCkge1xyXG4gICAgbmF2LnN0eWxlLnBvc2l0aW9uID0gXCJyZWxhdGl2ZVwiO1xyXG4gICAgbmF2V3JhcHBlci5zdHlsZS50b3AgPSBcIjBcIjtcclxuICAgIG5hdkl0ZW0uZm9yRWFjaCgoZWwpID0+IHtcclxuICAgICAgZWwuc3R5bGUucG9zaXRpb24gPSBcInVuc2V0XCI7XHJcbiAgICB9KTtcclxuICB9IGVsc2Uge1xyXG4gICAgbmF2LnN0eWxlLnBvc2l0aW9uID0gXCJ1bnNldFwiO1xyXG4gICAgbmF2V3JhcHBlci5zdHlsZS50b3AgPSBcIi04MDBweFwiO1xyXG4gICAgbmF2SXRlbS5mb3JFYWNoKChlbCkgPT4ge1xyXG4gICAgICBlbC5zdHlsZS5wb3NpdGlvbiA9IFwicmVsYXRpdmVcIjtcclxuICAgIH0pO1xyXG4gIH1cclxufSk7XHJcblxyXG5jb25zdCBtb2JCdXJnZXIgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLm5hdlRyaWdnZXIyXCIpO1xyXG5jb25zdCBtb2JXcmFwcGVyID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5uYXYtbW9iX193cmFwcGVyXCIpO1xyXG5jb25zdCBuYXZTZWFyY2ggPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLmljb24tc2VhcmNoXCIpO1xyXG5cclxubW9iQnVyZ2VyLmFkZEV2ZW50TGlzdGVuZXIoXCJjbGlja1wiLCBmdW5jdGlvbiAoKSB7XHJcbiAgbW9iQnVyZ2VyLmNsYXNzTGlzdC50b2dnbGUoXCJhY3RpdmUtYnVyZ2VyXCIpO1xyXG4gIG1vYldyYXBwZXIuY2xhc3NMaXN0LnRvZ2dsZShcImFjdGl2ZS1tb2JfX3dyYXBwZXJcIik7XHJcbiAgaWYgKG1vYldyYXBwZXIuY2xhc3NMaXN0LmNvbnRhaW5zKFwiYWN0aXZlLW1vYl9fd3JhcHBlclwiKSkge1xyXG4gICAgbW9iQnVyZ2VyLmNsYXNzTGlzdC5hZGQoXCJzdHJva2Utd2hpdGVcIik7XHJcbiAgICBuYXZTZWFyY2guY2xhc3NMaXN0LmFkZChcInNlYXJjaC1zY3JvbGxlZFwiKTtcclxuICAgIGRvY3VtZW50LmJvZHkuc3R5bGUub3ZlcmZsb3cgPSBcImhpZGRlblwiO1xyXG4gIH0gZWxzZSB7XHJcbiAgICBtb2JCdXJnZXIuY2xhc3NMaXN0LnJlbW92ZShcInN0cm9rZS13aGl0ZVwiKTtcclxuICAgIG5hdlNlYXJjaC5jbGFzc0xpc3QucmVtb3ZlKFwic2VhcmNoLXNjcm9sbGVkXCIpO1xyXG4gICAgZG9jdW1lbnQuYm9keS5zdHlsZS5vdmVyZmxvdyA9IFwidW5zZXRcIjtcclxuICB9XHJcbn0pO1xyXG5cclxuaWYgKGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucS1mb3JtLXBob25lXCIpKSB7XHJcbiAgcGhvbmVWYWxpZGF0ZSgpO1xyXG59XHJcbmlmIChkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLm1hcFwiKSkge1xyXG4gIC8vIHJlYWR5KCk7XHJcbiAgY29uc29sZS5sb2coXCIgd2l0aCBtYXAgcGFnZVwiKTtcclxuXHJcbiAgLy8gbGV0IGRvdENpcmNsZSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYFtkYXRhLWRvdGE9JyR7MH0nXWApO1xyXG4gIC8vIGRvdENpcmNsZS5jbGljaygpXHJcbiAgbGV0IGNsb3NlQnRuQ2FyZCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuY2xvc2UtaGlkZVwiKTtcclxuICBjbG9zZUJ0bkNhcmQuY2xpY2soKTtcclxuXHJcbiAgbGV0IG1hcENhcmRIaWRlU3dpcGVyID0gbmV3IFN3aXBlcihcIi5jYXJkLWhpZGVfX3N3aXBlclwiLCB7XHJcbiAgICBzcGFjZUJldHdlZW46IDQ1LFxyXG4gICAgc2xpZGVzUGVyVmlldzogXCJhdXRvXCIsXHJcbiAgICBjZW50ZXJlZFNsaWRlczogdHJ1ZSxcclxuICAgIGF1dG9wbGF5OiB7XHJcbiAgICAgIGRlbGF5OiAxNTAwLFxyXG4gICAgfSxcclxuICAgIC8vIGF1dG9wbGF5RGlzYWJsZU9uSW50ZXJhY3Rpb246ZmFsc2UsXHJcbiAgfSk7XHJcbiAgbWFwQ2FyZEhpZGVTd2lwZXIuYXV0b3BsYXkuc3RvcCgpO1xyXG5cclxuICBtYXBDYXJkSGlkZVN3aXBlci5vbihcInNsaWRlQ2hhbmdlXCIsIGZ1bmN0aW9uICgpIHtcclxuICAgIG1hcENhcmRIaWRlU3dpcGVyLm9uQW55KGZ1bmN0aW9uICgpIHtcclxuICAgICAgbGV0IGNpcmNsZSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoXCIuY2lyY2xlXCIpO1xyXG4gICAgICBjaXJjbGUuZm9yRWFjaCgoZWwpID0+IHtcclxuICAgICAgICBlbC5zdHlsZS5kaXNwbGF5ID0gXCJub25lXCI7XHJcbiAgICAgIH0pO1xyXG4gICAgICBtYXBDYXJkSGlkZVN3aXBlci5hdXRvcGxheS5zdGFydCgpO1xyXG4gICAgICBpZiAobWFwQ2FyZEhpZGVTd2lwZXIuYWN0aXZlSW5kZXggPT0gMCkge1xyXG4gICAgICAgIGxldCBjaXJjbGUyID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihgW2RhdGEtaWQ9JyR7MH0nXWApO1xyXG5cclxuICAgICAgICBjaXJjbGUyLnN0eWxlLmRpc3BsYXkgPSBcImJsb2NrXCI7XHJcbiAgICAgIH1cclxuICAgICAgaWYgKG1hcENhcmRIaWRlU3dpcGVyLmFjdGl2ZUluZGV4ID09IDEpIHtcclxuICAgICAgICBsZXQgY2lyY2xlMiA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYFtkYXRhLWlkPSckezF9J11gKTtcclxuICAgICAgICBjaXJjbGUyLnN0eWxlLmRpc3BsYXkgPSBcImJsb2NrXCI7XHJcbiAgICAgIH1cclxuICAgICAgaWYgKG1hcENhcmRIaWRlU3dpcGVyLmFjdGl2ZUluZGV4ID09IDIpIHtcclxuICAgICAgICBsZXQgY2lyY2xlMiA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYFtkYXRhLWlkPSckezJ9J11gKTtcclxuICAgICAgICBjaXJjbGUyLnN0eWxlLmRpc3BsYXkgPSBcImJsb2NrXCI7XHJcbiAgICAgIH1cclxuICAgICAgaWYgKG1hcENhcmRIaWRlU3dpcGVyLmFjdGl2ZUluZGV4ID09IDMpIHtcclxuICAgICAgICBsZXQgY2lyY2xlMiA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYFtkYXRhLWlkPSckezN9J11gKTtcclxuICAgICAgICBjaXJjbGUyLnN0eWxlLmRpc3BsYXkgPSBcImJsb2NrXCI7XHJcbiAgICAgIH1cclxuICAgICAgaWYgKG1hcENhcmRIaWRlU3dpcGVyLmFjdGl2ZUluZGV4ID09IDQpIHtcclxuICAgICAgICBsZXQgY2lyY2xlMiA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYFtkYXRhLWlkPSckezR9J11gKTtcclxuICAgICAgICBjaXJjbGUyLnN0eWxlLmRpc3BsYXkgPSBcImJsb2NrXCI7XHJcbiAgICAgIH1cclxuICAgICAgaWYgKG1hcENhcmRIaWRlU3dpcGVyLmFjdGl2ZUluZGV4ID09IDUpIHtcclxuICAgICAgICBsZXQgY2lyY2xlMiA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYFtkYXRhLWlkPSckezV9J11gKTtcclxuICAgICAgICBjaXJjbGUyLnN0eWxlLmRpc3BsYXkgPSBcImJsb2NrXCI7XHJcbiAgICAgIH1cclxuICAgICAgaWYgKG1hcENhcmRIaWRlU3dpcGVyLmFjdGl2ZUluZGV4ID09IDYpIHtcclxuICAgICAgICBsZXQgY2lyY2xlMiA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYFtkYXRhLWlkPSckezZ9J11gKTtcclxuICAgICAgICBjaXJjbGUyLnN0eWxlLmRpc3BsYXkgPSBcImJsb2NrXCI7XHJcbiAgICAgIH1cclxuICAgICAgaWYgKG1hcENhcmRIaWRlU3dpcGVyLmFjdGl2ZUluZGV4ID09IDcpIHtcclxuICAgICAgICBsZXQgY2lyY2xlMiA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYFtkYXRhLWlkPSckezd9J11gKTtcclxuICAgICAgICBjaXJjbGUyLnN0eWxlLmRpc3BsYXkgPSBcImJsb2NrXCI7XHJcbiAgICAgIH1cclxuICAgICAgaWYgKG1hcENhcmRIaWRlU3dpcGVyLmFjdGl2ZUluZGV4ID09IDgpIHtcclxuICAgICAgICBsZXQgY2lyY2xlMiA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYFtkYXRhLWlkPSckezh9J11gKTtcclxuICAgICAgICBjaXJjbGUyLnN0eWxlLmRpc3BsYXkgPSBcImJsb2NrXCI7XHJcbiAgICAgIH1cclxuICAgIH0pO1xyXG4gIH0pO1xyXG59XHJcblxyXG4vLyBNQVAgUlVTU0lBXHJcblxyXG5pZiAoZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5tYXAtcGlja2VyXCIpKSB7XHJcbiAgY29uc3QgbWFwQmlnID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5tYXAtcnVzc2lhLXN2Z1wiKTtcclxuICBsZXQgcHQgPSBtYXBCaWcuY3JlYXRlU1ZHUG9pbnQoKTtcclxuICBjb25zdCBOUyA9IG1hcEJpZy5nZXRBdHRyaWJ1dGUoXCJ4bWxuc1wiKTtcclxuXHJcbiAgZnVuY3Rpb24gdG9nZ2xlRG9uZShldmVudCkge1xyXG4gICAgZXZlbnQudGFyZ2V0LnN0eWxlLmZpbGwgPSBcIiM2QjlCM0NcIjtcclxuICAgIHB0LnggPSBldmVudC5jbGllbnRYO1xyXG4gICAgcHQueSA9IGV2ZW50LmNsaWVudFk7XHJcblxyXG4gICAgdmFyIGN1cnNvcnB0ID0gcHQubWF0cml4VHJhbnNmb3JtKG1hcEJpZy5nZXRTY3JlZW5DVE0oKS5pbnZlcnNlKCkpO1xyXG4gICAgY29uc3QgY2lyY2xlID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKE5TLCBcImNpcmNsZVwiKTtcclxuICAgIGNpcmNsZS5zZXRBdHRyaWJ1dGUoXCJjeFwiLCBjdXJzb3JwdC54KTtcclxuICAgIGNpcmNsZS5zZXRBdHRyaWJ1dGUoXCJjeVwiLCBjdXJzb3JwdC55KTtcclxuICAgIGNpcmNsZS5zZXRBdHRyaWJ1dGUoXCJyXCIsIDgpO1xyXG4gICAgY2lyY2xlLnN0eWxlLmZpbGwgPSBcIndoaXRlXCI7XHJcbiAgICBtYXBCaWcuYXBwZW5kQ2hpbGQoY2lyY2xlKTtcclxuICAgIGNvbnNvbGUubG9nKFwiKFwiICsgY3Vyc29ycHQueCArIFwiLCBcIiArIGN1cnNvcnB0LnkgKyBcIilcIik7XHJcbiAgfVxyXG5cclxuICBtYXBCaWcuYWRkRXZlbnRMaXN0ZW5lcihcImNsaWNrXCIsIHRvZ2dsZURvbmUpO1xyXG59XHJcbiJdLCJmaWxlIjoibWFpbi5qcyJ9

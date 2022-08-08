@@ -127,7 +127,7 @@
   }
 }
 
-.activity-arc {
+section.activity-arc {
   padding-top: 100px;
   @include m-small {
     padding-top: 70px;
@@ -136,6 +136,7 @@
 
 .activity-content {
   .title-block {
+    max-width: 100%;
     .block {
       margin-top: 20px;
       span {

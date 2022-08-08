@@ -4,6 +4,9 @@ let projectCardSwiper = new Swiper(".q-invest-card__swiper", {
   slidesPerView: 'auto',
   allowTouchMove: true,
   // disableOnInteraction: true,
+  autoplay: {
+    delay: 3000,
+  }
 
 });
 

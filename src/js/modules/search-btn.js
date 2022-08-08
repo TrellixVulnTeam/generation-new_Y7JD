@@ -18,22 +18,27 @@ function closeSearch() {
 
 searchBtn.addEventListener("click", openSearch);
 closeSearchBar.addEventListener("click", closeSearch);
-inputSearchPage.addEventListener("keyup", function () {
-  if (this.value != "") {
-    document
-      .querySelector(".close-btn-search--page")
-      .classList.add("close-btn-search--active");
-    document.querySelector(".arrow-search--page").style.display = "none";
-  } else {
-    document
-      .querySelector(".close-btn-search--page")
-      .classList.remove("close-btn-search--active");
-    document.querySelector(".arrow-search--page").style.display =
-      "inline-block";
-  }
-});
-closeBtnInput.addEventListener("click", function () {
-  inputSearchPage.value = "";
-  closeBtnInput.classList.remove("close-btn-search--active");
-  document.querySelector(".arrow-search--page").style.display = "inline-block";
-});
+
+if(document.querySelector('.search-bar')) {
+  inputSearchPage.addEventListener("keyup", function () {
+    if (this.value != "") {
+      document
+        .querySelector(".close-btn-search--page")
+        .classList.add("close-btn-search--active");
+      document.querySelector(".arrow-search--page").style.display = "none";
+    } else {
+      document
+        .querySelector(".close-btn-search--page")
+        .classList.remove("close-btn-search--active");
+      document.querySelector(".arrow-search--page").style.display =
+        "inline-block";
+    }
+  });
+  closeBtnInput.addEventListener("click", function () {
+    inputSearchPage.value = "";
+    closeBtnInput.classList.remove("close-btn-search--active");
+    document.querySelector(".arrow-search--page").style.display = "inline-block";
+  });
+  
+}
+
