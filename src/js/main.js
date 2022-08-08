@@ -354,7 +354,7 @@ if (document.querySelector(".map-picker")) {
     const circle = document.createElementNS(NS, "circle");
     circle.setAttribute("cx", cursorpt.x);
     circle.setAttribute("cy", cursorpt.y);
-    circle.setAttribute("r", 10);
+    circle.setAttribute("r", 8);
     circle.style.fill = "white";
     mapBig.appendChild(circle);
     console.log("(" + cursorpt.x + ", " + cursorpt.y + ")");
