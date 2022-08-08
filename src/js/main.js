@@ -362,8 +362,8 @@ if (document.querySelector(".map-picker")) {
     let x = cursorpt.x - 60;
     let y = cursorpt.y -10;
 
-    document.querySelector('#coordX').innerHTML = x;
-    document.querySelector('#coordY').innerHTML = y;
+    document.querySelector('#coordX').innerHTML = x.toFixed(0);
+    document.querySelector('#coordY').innerHTML = y.toFixed(0);
 
     console.log("(" + x + ", " + y + ")");
   }
