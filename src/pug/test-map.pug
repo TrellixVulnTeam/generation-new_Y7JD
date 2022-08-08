@@ -10,4 +10,9 @@ block page
           .block
             h4 Выберите на карте место, куда хотите добавить точку
           include chunk/q-main/maprussia
+          .div.pt-64
+            div(style='font-size: 24px;') Координаты Х:
+              span#coordX(style='margin-left: 10px;')
+            div(style='font-size: 24px; margin-top: 15px;') Координаты Y:
+              span#coordY(style='margin-left: 10px;')
   include chunk/footer

@@ -182,8 +182,8 @@ section.slider-casptone {
           width: 100%;
           padding: unset;
           .block {
-            .swiper-button-prev,
-            .swiper-button-next {
+            .slider-casptone-button-next,
+            .slider-casptone-button-prev {
               display: none;
             }
           }
@@ -232,20 +232,27 @@ section.slider-casptone {
         .block {
           position: absolute;
           bottom: 50px;
-          .swiper-button-next {
+          display: flex;
+          gap: 20px;
+          .swiper-button-disabled {
+            opacity: .6;
+          }
+          .slider-casptone-button-next{
             right: -100px;
             transform: rotate(180deg);
             width: 40px;
             height: 40px;
+            cursor: pointer;
             background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='40' y='40' width='40' height='40' rx='8' transform='rotate(-180 40 40)' fill='white' fill-opacity='0.6'/%3E%3Cpath d='M17.9993 19.9994L24.2813 26.8394C24.539 27.0997 24.6836 27.4512 24.6836 27.8174C24.6836 28.1837 24.539 28.5352 24.2813 28.7954C24.1548 28.9239 24.0039 29.026 23.8376 29.0956C23.6712 29.1653 23.4927 29.2012 23.3123 29.2012C23.132 29.2012 22.9534 29.1653 22.7871 29.0956C22.6207 29.026 22.4699 28.9239 22.3433 28.7954L14.6833 20.9794C14.426 20.7186 14.2817 20.3669 14.2817 20.0004C14.2817 19.634 14.426 19.2823 14.6833 19.0214L22.3433 11.2054C22.4699 11.0769 22.6207 10.9749 22.7871 10.9052C22.9534 10.8356 23.132 10.7997 23.3123 10.7997C23.4927 10.7997 23.6712 10.8356 23.8376 10.9052C24.0039 10.9749 24.1548 11.0769 24.2813 11.2054C24.539 11.4657 24.6836 11.8172 24.6836 12.1834C24.6836 12.5497 24.539 12.9012 24.2813 13.1614L17.9993 19.9994Z' fill='%230B1600'/%3E%3C/svg%3E%0A");
             &::after {
               content: "";
             }
           }
-          .swiper-button-prev {
+          .slider-casptone-button-prev {
             left: 0;
             width: 40px;
             height: 40px;
+            cursor: pointer;
             background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='40' y='40' width='40' height='40' rx='8' transform='rotate(-180 40 40)' fill='white' fill-opacity='0.6'/%3E%3Cpath d='M17.9993 19.9994L24.2813 26.8394C24.539 27.0997 24.6836 27.4512 24.6836 27.8174C24.6836 28.1837 24.539 28.5352 24.2813 28.7954C24.1548 28.9239 24.0039 29.026 23.8376 29.0956C23.6712 29.1653 23.4927 29.2012 23.3123 29.2012C23.132 29.2012 22.9534 29.1653 22.7871 29.0956C22.6207 29.026 22.4699 28.9239 22.3433 28.7954L14.6833 20.9794C14.426 20.7186 14.2817 20.3669 14.2817 20.0004C14.2817 19.634 14.426 19.2823 14.6833 19.0214L22.3433 11.2054C22.4699 11.0769 22.6207 10.9749 22.7871 10.9052C22.9534 10.8356 23.132 10.7997 23.3123 10.7997C23.4927 10.7997 23.6712 10.8356 23.8376 10.9052C24.0039 10.9749 24.1548 11.0769 24.2813 11.2054C24.539 11.4657 24.6836 11.8172 24.6836 12.1834C24.6836 12.5497 24.539 12.9012 24.2813 13.1614L17.9993 19.9994Z' fill='%230B1600'/%3E%3C/svg%3E%0A");
             &::after {
               content: "";
