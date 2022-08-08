@@ -352,12 +352,20 @@ if (document.querySelector(".map-picker")) {
 
     var cursorpt = pt.matrixTransform(mapBig.getScreenCTM().inverse());
     const circle = document.createElementNS(NS, "circle");
+
     circle.setAttribute("cx", cursorpt.x);
     circle.setAttribute("cy", cursorpt.y);
     circle.setAttribute("r", 8);
     circle.style.fill = "white";
     mapBig.appendChild(circle);
-    console.log("(" + cursorpt.x + ", " + cursorpt.y + ")");
+
+    let x = cursorpt.x - 60;
+    let y = cursorpt.y -10;
+
+    document.querySelector('#coordX').innerHTML = x;
+    document.querySelector('#coordY').innerHTML = y;
+
+    console.log("(" + x + ", " + y + ")");
   }
 
   mapBig.addEventListener("click", toggleDone);
