@@ -1,7 +1,4 @@
-// import {
-//   parnersSwiperTop,
-//   parnersSwiperLower,
-// } from "./modules/partners-swiper.js";
+
 import { ready } from "./modules/map-main.js";
 import { vacancySwiper } from "./modules/vacancys-swiper.js";
 import { phoneValidate } from "./modules/phone-number.js";
@@ -52,8 +49,8 @@ let capstoneSwiper = new Swiper(".slider-capstone", {
   spaceBetween: 20,
   slidesPerView: "auto",
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".slider-casptone-button-next",
+    prevEl: ".slider-casptone-button-prev",
   },
   pagination: {
     el: ".capstone-pag",
@@ -72,6 +69,10 @@ let swiper = new Swiper(".mySwiper", {
   },
 });
 let arcticSwiper = new Swiper(".arctic-swiper", {
+  autoplay: {
+    delay: 4000,
+  },
+  loop: true,
   pagination: {
     el: ".swiper-pagination",
   },
@@ -274,68 +275,10 @@ if (document.querySelector(".map")) {
   // ready();
   console.log(" with map page");
 
-  // let dotCircle = document.querySelector(`[data-dota='${0}']`);
-  // dotCircle.click()
   let closeBtnCard = document.querySelector(".close-hide");
-  closeBtnCard.click();
-
-  let mapCardHideSwiper = new Swiper(".card-hide__swiper", {
-    spaceBetween: 45,
-    slidesPerView: "auto",
-    centeredSlides: true,
-    autoplay: {
-      delay: 1500,
-    },
-    // autoplayDisableOnInteraction:false,
-  });
-  mapCardHideSwiper.autoplay.stop();
-
-  mapCardHideSwiper.on("slideChange", function () {
-    mapCardHideSwiper.onAny(function () {
-      let circle = document.querySelectorAll(".circle");
-      circle.forEach((el) => {
-        el.style.display = "none";
-      });
-      mapCardHideSwiper.autoplay.start();
-      if (mapCardHideSwiper.activeIndex == 0) {
-        let circle2 = document.querySelector(`[data-id='${0}']`);
-
-        circle2.style.display = "block";
-      }
-      if (mapCardHideSwiper.activeIndex == 1) {
-        let circle2 = document.querySelector(`[data-id='${1}']`);
-        circle2.style.display = "block";
-      }
-      if (mapCardHideSwiper.activeIndex == 2) {
-        let circle2 = document.querySelector(`[data-id='${2}']`);
-        circle2.style.display = "block";
-      }
-      if (mapCardHideSwiper.activeIndex == 3) {
-        let circle2 = document.querySelector(`[data-id='${3}']`);
-        circle2.style.display = "block";
-      }
-      if (mapCardHideSwiper.activeIndex == 4) {
-        let circle2 = document.querySelector(`[data-id='${4}']`);
-        circle2.style.display = "block";
-      }
-      if (mapCardHideSwiper.activeIndex == 5) {
-        let circle2 = document.querySelector(`[data-id='${5}']`);
-        circle2.style.display = "block";
-      }
-      if (mapCardHideSwiper.activeIndex == 6) {
-        let circle2 = document.querySelector(`[data-id='${6}']`);
-        circle2.style.display = "block";
-      }
-      if (mapCardHideSwiper.activeIndex == 7) {
-        let circle2 = document.querySelector(`[data-id='${7}']`);
-        circle2.style.display = "block";
-      }
-      if (mapCardHideSwiper.activeIndex == 8) {
-        let circle2 = document.querySelector(`[data-id='${8}']`);
-        circle2.style.display = "block";
-      }
-    });
-  });
+  if(closeBtnCard) {
+    closeBtnCard.click();
+  }
 }
 
 // MAP RUSSIA
@@ -359,8 +302,8 @@ if (document.querySelector(".map-picker")) {
     circle.style.fill = "white";
     mapBig.appendChild(circle);
 
-    let x = cursorpt.x - 60;
-    let y = cursorpt.y -10;
+    let x = cursorpt.x - 10;
+    let y = cursorpt.y - 10;
 
     document.querySelector('#coordX').innerHTML = x.toFixed(0);
     document.querySelector('#coordY').innerHTML = y.toFixed(0);
