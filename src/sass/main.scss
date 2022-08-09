@@ -9,6 +9,7 @@ $color-gold: #f1cdb3;
 @import "./block/components-style/burger-menu.scss";
 @import "./block/hystmodal.scss";
 
+
 html {
   scroll-behavior: smooth;
 }
@@ -23,6 +24,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  .bx-panel-header {
+    top: 150px;
+    &.scrolled-header {
+      transform: translateY(-200px) !important;
+    }
+  }
 }
 
 .wrapper {
@@ -468,6 +475,14 @@ body {
   }
   
 }
+
+.map-russia-svg {
+  @include xm {
+    // height: 
+  }
+}
+
+
 
 @import "block/search-bar.scss";
 
