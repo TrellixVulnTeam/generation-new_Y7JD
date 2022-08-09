@@ -1,4 +1,3 @@
-
 import { ready } from "./modules/map-main.js";
 import { vacancySwiper } from "./modules/vacancys-swiper.js";
 import { phoneValidate } from "./modules/phone-number.js";
@@ -276,7 +275,7 @@ if (document.querySelector(".map")) {
   console.log(" with map page");
 
   let closeBtnCard = document.querySelector(".close-hide");
-  if(closeBtnCard) {
+  if (closeBtnCard) {
     closeBtnCard.click();
   }
 }
@@ -305,11 +304,31 @@ if (document.querySelector(".map-picker")) {
     let x = cursorpt.x - 10;
     let y = cursorpt.y - 10;
 
-    document.querySelector('#coordX').innerHTML = x.toFixed(0);
-    document.querySelector('#coordY').innerHTML = y.toFixed(0);
+    document.querySelector("#coordX").innerHTML = x.toFixed(0);
+    document.querySelector("#coordY").innerHTML = y.toFixed(0);
 
     console.log("(" + x + ", " + y + ")");
   }
 
   mapBig.addEventListener("click", toggleDone);
+}
+
+var width = $(window).width();
+$(window).resize(function () {
+  if (width > 769 && $(window).width() < 769) {
+    location.reload();
+  } else if (width < 769 && $(window).width() > 769) {
+    location.reload();
+  }
+});
+
+// BITRIX ADMIN is auth
+let headerBX = document.querySelector("header");
+
+if (document.querySelector("#bx-panel")) {
+  console.log("defined bx-panel hello admin");
+  headerBX.classList.add("bx-panel-header");
+} else {
+  console.log("not defined bx-panel");
+  headerBX.classList.remove("bx-panel-header");
 }

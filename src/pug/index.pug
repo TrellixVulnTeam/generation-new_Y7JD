@@ -1,35 +1,36 @@
 extends layout/app
 
 block page
-    include chunk/header
-    main.main
-      section.about
-        .swiper.mySwiper 
-          .swiper-wrapper 
-            .swiper-slide.about-card
-              img(src="./img/Слайдер.png", alt="")
-              .wrapper
-                .about-content
-                  h1.about-title Инвестиции в сферу ЖКХ и Энергетики
-                  p Жить на полную мощность
-                  a(href="")  Подробнее
-            .swiper-slide.about-card
-              img(src="./img/Слайдер.png", alt="")
-              .wrapper
-                .about-content
-                  h1.about-title Инвестиции в сферу ЖКХ и Энергетики
-                  p Жить на полную мощность
-                  a(href="")  Подробнее
-            .swiper-slide.about-card
-              img(src="./img/Слайдер.png", alt="")
-              .wrapper
-                .about-content 
-                  h1.about-title Инвестиции в сферу ЖКХ и Энергетики
-                  p Жить на полную мощность
-                  a(href="")  Подробнее
-          .swiper-pagination
-      include chunk/q-main/activity
-      include chunk/q-main/news
-      include chunk/q-main/map
+  div#bx-panel
+  include chunk/header
+  main.main
+    section.about
+      .swiper.mySwiper 
+        .swiper-wrapper 
+          .swiper-slide.about-card
+            img(src="./img/Слайдер.png" alt="")
+            .wrapper
+              .about-content
+                h1.about-title Инвестиции в сферу ЖКХ и Энергетики
+                p Жить на полную мощность
+                a(href="")  Подробнее
+          .swiper-slide.about-card
+            img(src="./img/Слайдер.png" alt="")
+            .wrapper
+              .about-content
+                h1.about-title Инвестиции в сферу ЖКХ и Энергетики
+                p Жить на полную мощность
+                a(href="")  Подробнее
+          .swiper-slide.about-card
+            img(src="./img/Слайдер.png" alt="")
+            .wrapper
+              .about-content 
+                h1.about-title Инвестиции в сферу ЖКХ и Энергетики
+                p Жить на полную мощность
+                a(href="")  Подробнее
+        .swiper-pagination
+    include chunk/q-main/activity
+    include chunk/q-main/news
+    include chunk/q-main/map
 
-    include chunk/footer
+  include chunk/footer
