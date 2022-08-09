@@ -22,7 +22,7 @@
       .footer__list-items {
         display: grid;
         grid-auto-columns: 1fr;
-        grid-template-columns: .9fr 1fr 1fr 0.64fr;
+        grid-template-columns: .9fr 1fr 1fr 0.001fr;
         grid-template-rows: 1fr;
         align-items: flex-end;
         @include xl {
@@ -52,16 +52,15 @@
             }
           }
           p {
-            max-width: 241px;
+            max-width: 272px;
             width: 100%;
             height: auto;
             font-family: "Inter", sans-serif;
             font-weight: 400;
-            font-size: 14px;
+            font-size: 16px;
             line-height: 140%;
             margin-top: 16px;
             letter-spacing: 0;
-            opacity: 0.8;
             @include xl {
               min-width: 240px;
             }
@@ -85,14 +84,15 @@
             }
           }
           ul {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: start;
-            max-height: 140px;
+            display: grid;
+            grid-auto-columns: 1fr; 
+            grid-template-columns: 1fr 1fr; 
+            grid-template-rows: 1fr 1fr 1fr; 
+            gap: 34px 70px; 
             height: 100%;
-            gap: 40px;
+            @include l-1100 {
+              gap: 34px 44px;
+            }
             li {
               max-width: 165px;
               a {

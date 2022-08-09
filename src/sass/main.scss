@@ -478,7 +478,22 @@ body {
 
 .map-russia-svg {
   @include xm {
-    // height: 
+    height: 500px;
+    @include m-640 {
+      height: 440px;
+      @include m-small {
+        height: 380px;
+        @include xxs-big {
+          height: 340px;
+          @include xxxs {
+            height: 300px;
+            @include kura {
+              height: 200px;
+            }
+          }
+        }
+      }
+    }
   }
 }
 

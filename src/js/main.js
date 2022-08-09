@@ -276,7 +276,7 @@ if (document.querySelector(".map")) {
 
   let closeBtnCard = document.querySelector(".close-hide");
   if (closeBtnCard) {
-    closeBtnCard.click();
+    // closeBtnCard.click();
   }
 }
 
