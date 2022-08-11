@@ -27,16 +27,50 @@ section.news-link-content.section
             .news-card__look 
               i.eye 
               span 2600
-            a(href="#").news-card__repost 
+            a(href="javascript:void(0)").btn-repost
               span Поделиться
               i.repost
+            .mask
+            ul.repost-modal 
+              li 
+                button.close-repost 
+                  i.close-repost
+              li 
+                i.repost-link
+                a(href="#") Копировать ссылку
+              li
+                i.repost-mail
+                a(href="#") E-mail
+              li
+                i.repost-telegram
+                a(href="#") Telegram
+              li
+                i.repost-whatsapp
+                a(href="arctic.html") WhatsApp
+            ul.news-card__repost(data-dropdown-menu data-click-open='true' data-disable-hover='true' data-force-follow='false')
+              li
+                a(href="#").repost-name Поделиться
+                  i.repost
+                ul.top-menu__submenu.menu.repost-menu
+                  li 
+                    i.repost-link
+                    a(href="#") Копировать ссылку
+                  li
+                    i.repost-mail
+                    a(href="#") E-mail
+                  li
+                    i.repost-telegram
+                    a(href="#") Telegram
+                  li
+                    i.repost-whatsapp
+                    a(href="arctic.html") WhatsApp
         .q-news-card-wrapper 
           .q-news-card__content 
             .news-card__p 
               p ООО "ДВ Энерджи" уже более трех лет пытается открыть для себя новые бизнес возможности на поприще государственно частного партнерства, а именно в формате заключения концессионных соглашений в республике Саха (Якутия). Вопреки всем сложностям, мало - помалу дело движется, и кажется, мы сегодня имеем неплохую репутацию в этой сфере. Нас даже стали замечать федеральные структуры: Правительство РФ и Государственная дума.
             hr
             .img-block 
-              img(src="https://dummyimage.com/1080x656/000/fff", alt="")
+              img(src="https://dummyimage.com/1080x656/000/fff" alt="")
               figure Генеральный директор ООО “Генерация” в  Государственной Думе.
             .news-card__p 
               p В середине декабря мы участвовали в круглом столе, прошедшем в аналитическом центре Правительства РФ в Москве, где рассматривались проблемные вопросы претворения в жизнь так называемого плана Козака. Мне представилась возможность выступить с нашим видением путей решения проблемных вопросов. Поскольку выступление было самым первым, то оно и задало направление и градус последовавшей затем дискуссии. О своем отношении к плану Козака я напишу чуть ниже, ну а что касается результатов круглого стола - здесь я затрудняюсь комментировать, поскольку ни протоколов, ни стенограмм разослано не было. Однако явным для нас позитивным результатом стало приглашение на заседание экспертного совета комитета по энергетике Государственной Думы РФ, которое и состоялось 6 декабря. В качестве повестки анонсировались обсуждение поправок в ряд законов в отношение микрогенерации и обсуждение все того же пресловутого плана Козака. Вот здесь остановимся на этом плане подробнее.
@@ -49,13 +83,47 @@ section.news-link-content.section
             .news-card__p 
               p Я, как убежденный рыночник полагаю, что любые попытки государства управлять бизнес-процессами приводят лишь к очередным бюрократическим барьерам, которые бизнес упорно преодолевает, затрачивая при этом дополнительные ресурсы. Считаю, что и в решении затронутой сложной проблемы необходимо установить разумные правила игры, чтобы инвестиции в её решение стали привлекательными.
           .q-news-card__links.pt-64
-            .block 
+            .block
               .news-card__look 
                 i.eye 
                 span 2600
-              a(href="#").news-card__repost 
+              a(href="javascript:void(0)").btn-repost
                 span Поделиться
                 i.repost
+              .mask
+              ul.repost-modal 
+                li 
+                  button.close-repost 
+                    i.close-repost
+                li 
+                  i.repost-link
+                  a(href="#") Копировать ссылку
+                li
+                  i.repost-mail
+                  a(href="#") E-mail
+                li
+                  i.repost-telegram
+                  a(href="#") Telegram
+                li
+                  i.repost-whatsapp
+                  a(href="arctic.html") WhatsApp
+              ul.news-card__repost(data-dropdown-menu data-click-open='true' data-disable-hover='true' data-force-follow='false')
+                li
+                  a(href="#").repost-name Поделиться
+                    i.repost
+                  ul.top-menu__submenu.menu.repost-menu
+                    li 
+                      i.repost-link
+                      a(href="#") Копировать ссылку
+                    li
+                      i.repost-mail
+                      a(href="#") E-mail
+                    li
+                      i.repost-telegram
+                      a(href="#") Telegram
+                    li
+                      i.repost-whatsapp
+                      a(href="arctic.html") WhatsApp
           a(href="#").q-back 
             i.arrow-pagination 
             span Вернуться к списку
@@ -66,7 +134,7 @@ section.news-link-content.section
             .swiper-wrapper 
               .swiper-slide.news-card
                 a(href="#").news-card__link
-                  img(src="https://dummyimage.com/310x216/000/fff", alt="")
+                  img(src="https://dummyimage.com/310x216/000/fff" alt="")
                   .news-card__title 
                     span Чистой артике быть! В пос.Тикси дан старт Lorem ipsum dolo s laboriosam!dsadadsadasdsadsa dsa sad  dsa dsa dsa dasdasdasdasdasdasdasdsa
                   .news-card__descr
@@ -76,7 +144,7 @@ section.news-link-content.section
                     span 05.09.2021
               .swiper-slide.news-card
                 a(href="#").news-card__link
-                  img(src="https://dummyimage.com/310x216/000/fff", alt="")
+                  img(src="https://dummyimage.com/310x216/000/fff" alt="")
                   .news-card__title 
                     span Чистой артике быть! В пос.Тикси дан старт Lorem ipsum dolo s laboriosam!
                   .news-card__descr
@@ -86,7 +154,7 @@ section.news-link-content.section
                     span 05.09.2021
               .swiper-slide.news-card
                 a(href="#").news-card__link
-                  img(src="https://dummyimage.com/310x216/000/fff", alt="")
+                  img(src="https://dummyimage.com/310x216/000/fff" alt="")
                   .news-card__title 
                     span Чистой артике быть! В пос.Тикси дан старт Lorem ipsum dolo s laboriosam!
                   .news-card__descr
@@ -96,7 +164,7 @@ section.news-link-content.section
                     span 05.09.2021
               .swiper-slide.news-card
                 a(href="#").news-card__link
-                  img(src="https://dummyimage.com/310x216/000/fff", alt="")
+                  img(src="https://dummyimage.com/310x216/000/fff" alt="")
                   .news-card__title 
                     span Чистой артике быть! В пос.Тикси дан старт Lorem ipsum dolo s laboriosam!
                   .news-card__descr
@@ -104,4 +172,3 @@ section.news-link-content.section
                   .news-card__date  
                     span.news-author DvEnergry
                     span 05.09.2021
-    

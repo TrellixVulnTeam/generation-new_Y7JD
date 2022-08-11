@@ -332,3 +332,24 @@ if (document.querySelector("#bx-panel")) {
   console.log("not defined bx-panel");
   headerBX.classList.remove("bx-panel-header");
 }
+
+
+// modal window in news page repost modal
+$(".btn-repost").on("click", function(){
+  $(".mask").addClass("active-repost-modal");
+});
+
+
+function closeModal(){
+  $(".mask").removeClass("active-repost-modal");
+}
+
+$(".close-repost , .mask").on("click", function(){
+  closeModal();
+});
+
+$(document).keyup(function(e) {
+  if (e.keyCode == 27) {
+    closeModal();
+  }
+});
